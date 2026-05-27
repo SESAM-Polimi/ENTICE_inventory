@@ -401,37 +401,37 @@ def _build_synthetic_up_clusters(
 # Public API
 # ─────────────────────────────────────────────────────────────────────────────
 
-def make_inventory(template_path: str | Path,
+def make_inventory(inventory_path: str | Path,
                    sector_code: str,
+                   repo_path: str,
                    output_path: str | Path = None,
                    version: str = '',
-                   gtap_path: str | Path = None) -> Path:
+                   ):
     """
     Parse *template_path* with template_checker and write a MARIO
     add_sector inventory to *output_path*.
 
     Parameters
     ----------
-    template_path : path to the ENTICE data-collection Excel template
+    inventory_path : path to the ENTICE data-collection Excel inventory
     sector_code   : code for the new sector (e.g. 'BAR', 'CEM')
     output_path   : output file; defaults to inventory_{sector_code}.xlsx
                     placed next to the template
     version       : inventory version string (e.g. 'Y26M05'); shown in Summary
-    gtap_path     : path to GTAP12_X.xlsx; auto-detected next to the template
-                    if not supplied.  Used to weight cluster distributions and
-                    to compute the median new/parent ratio for unknown regions.
+    repo_path     : path to repository where auxiliary excel files are stored (GTAP12_X.xlsx, GTAP12_matching.xlsx, Regions_clusters.xlsx)
 
     Returns
     -------
     Path of the written inventory file.
     """
-    template_path = Path(template_path)
+    inventory_path = Path(inventory_path)
+    repo_path = Path(repo_path)
     output_path = (Path(output_path) if output_path
-                   else template_path.parent / f"inventory_{sector_code}.xlsx")
+                   else inventory_path.parent / f"inventory_{sector_code}.xlsx")
 
     # ── Parse template ────────────────────────────────────────────────────────
     importlib.reload(template_checker)
-    result = template_checker.parse_template(template_path)
+    result = template_checker.parse_template(inventory_path)
 
     gi          = result['general_info']
     parent_code = gi['parent_code']   # e.g. 'GRO'
@@ -439,14 +439,14 @@ def make_inventory(template_path: str | Path,
     print(f"  Parent     : {gi['parent_name']}  [{parent_code}]")
 
     # ── Extra reads from workbook (clusters, name→code lookup) ────────────────
-    wb   = openpyxl.load_workbook(str(template_path), data_only=True)
+    wb   = openpyxl.load_workbook(str(inventory_path), data_only=True)
     n2c  = _name_to_code_map(wb)   # region full name → code
 
     # ── GTAP12 sector / factor-of-production code mapping ────────────────────
     # GTAP12_matching.xlsx:
     #   "Sector" sheet          col A = inventory name, col B = GTAP12 code
     #   "Factor of production"  col A = inventory name, col B = GTAP12 code
-    _matching_path = template_path.parent / 'GTAP12_matching.xlsx'
+    _matching_path = repo_path / 'GTAP12_matching.xlsx'
     _sector_to_gtap: dict[str, str] = {}
     _factprod_to_gtap: dict[str, str] = {}
     if _matching_path.exists():
@@ -504,15 +504,32 @@ def make_inventory(template_path: str | Path,
         for cluster, members in regions_clusters_raw.items()
     )
 
-    # Convert Sectors Clusters and Factors Clusters members to GTAP12 codes.
-    sectors_clusters = OrderedDict(
-        (cluster, [_sector_to_gtap.get(m, m) for m in members])
-        for cluster, members in sectors_clusters_raw.items()
-    )
-    factprod_clusters = OrderedDict(
-        (cluster, [_factprod_to_gtap.get(m, m) for m in members])
-        for cluster, members in factprod_clusters_raw.items()
-    )
+    # Convert Sectors Clusters and Factors Clusters members to GTAP12 codes,
+    # deduplicate (multiple inventory names may share the same GTAP code), and
+    # handle single-item results: a cluster with exactly one unique GTAP code is
+    # not a real cluster — any reference to it as a db_item in the inventory
+    # should be replaced directly with that code.
+    def _resolve_clusters(raw: dict, mapping: dict) -> tuple[OrderedDict, dict]:
+        """
+        Returns (clusters, direct_map) where:
+          clusters   – multi-item clusters only (OrderedDict cluster→[codes])
+          direct_map – single-item clusters: {cluster_name: single_gtap_code}
+        """
+        clusters: OrderedDict = OrderedDict()
+        direct_map: dict = {}
+        for cluster, members in raw.items():
+            codes = list(dict.fromkeys(mapping.get(m, m) for m in members))
+            if len(codes) == 1:
+                direct_map[cluster] = codes[0]
+                print(f"  Single-item cluster '{cluster}' → collapsed to '{codes[0]}'")
+            else:
+                clusters[cluster] = codes
+        return clusters, direct_map
+
+    sectors_clusters,  _sector_single_map  = _resolve_clusters(
+        sectors_clusters_raw,  _sector_to_gtap)
+    factprod_clusters, _factprod_single_map = _resolve_clusters(
+        factprod_clusters_raw, _factprod_to_gtap)
 
     # ── UN regional aggregate clusters (Region sheet, col A rows 3-165) ──
     # If a unit-process column or a total-production row is defined for one
@@ -548,13 +565,12 @@ def make_inventory(template_path: str | Path,
 
     # ── Shared reference data (reused by synthetic UP and Total outputs) ───────
     # Load once here so we don't read the same files twice later.
-    _shared_gtap_path = (Path(gtap_path) if gtap_path
-                         else template_path.parent / 'GTAP12_X.xlsx')
-    if _shared_gtap_path.exists():
-        _shared_gtap_x = template_checker._load_gtap_x(_shared_gtap_path)
+    db_X_path = (repo_path / 'GTAP12_X.xlsx')
+    if db_X_path.exists():
+        _shared_gtap_x = template_checker._load_gtap_x(db_X_path)
     else:
         _shared_gtap_x = {}
-        print(f"  Warning: {_shared_gtap_path.name} not found – "
+        print(f"  Warning: {db_X_path.name} not found – "
               "GTAP weights unavailable.")
 
     _shared_gtap_regions: list[tuple[str, str]] = []
@@ -597,8 +613,12 @@ def make_inventory(template_path: str | Path,
             raw_item = row['mapped_input']
             if mario_type == 'Factor of production':
                 db_item = _factprod_to_gtap.get(raw_item, raw_item)
+                # If the name resolved to a cluster that collapsed to 1 item,
+                # use the direct GTAP code instead of the cluster name.
+                db_item = _factprod_single_map.get(db_item, db_item)
             else:
                 db_item = _sector_to_gtap.get(raw_item, raw_item)
+                db_item = _sector_single_map.get(db_item, db_item)
             key = (mario_type, db_item, db_region)
             agg[key] = agg.get(key, 0.0) + row['value']
         inv_by_region[r_code] = agg
@@ -609,7 +629,7 @@ def make_inventory(template_path: str | Path,
     # rightward = broader) used to locate the finest cluster that contains at
     # least one covered region.  A weighted-average unit process is computed
     # from those covered contributors and registered as 'X_{cluster}'.
-    _rc_xlsx = template_path.parent / 'Regions_clusters.xlsx'
+    _rc_xlsx = repo_path / 'Regions_clusters.xlsx'
     if _rc_xlsx.exists():
         _syn_up, _syn_mbrs = _build_synthetic_up_clusters(
             inv_by_region,

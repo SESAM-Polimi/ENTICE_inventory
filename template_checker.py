@@ -45,6 +45,21 @@ def _issue(row: int, sheet: str, col: str, value: str, reason: str) -> dict:
     return dict(row=row, sheet=sheet, col=col, value=value, reason=reason)
 
 
+def _find_tp_columns(ws) -> tuple[int, int]:
+    """Find (val_col, unit_col) in row 1 of 'Total production' sheet."""
+    col_val  = 7
+    col_unit = 8
+    for c in range(1, ws.max_column + 1):
+        h = _s(ws.cell(1, c).value)
+        if h:
+            h_low = h.lower()
+            if h_low == '2023 value':
+                col_val = c
+            elif h_low == '2023 unit':
+                col_unit = c
+    return col_val, col_unit
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # 1. General info
 # ─────────────────────────────────────────────────────────────────────────────
@@ -189,21 +204,32 @@ def read_total_production(wb) -> list:
 
     Column layout (row 1 headers):
       A (1) = Region
-      B–F   = discarded (parent output, source, notes, value/unit)
-      G (7) = 2023 Value   <- the value used
-      H (8) = 2023 Unit
+      ...
+      Dynamic lookup for '2023 Value' and '2023 Unit' headers.
+      Defaulting to G (7) and H (8) if not found.
 
     Returns list of { region, value, unit }.
     """
     ws = wb['Total production']
+    col_val, col_unit = _find_tp_columns(ws)
+
     rows = []
     for r in range(3, ws.max_row + 1):
         region = _s(ws.cell(r, 1).value)
         if region is None:
             continue
-        value = ws.cell(r, 7).value   # col G
-        unit  = _s(ws.cell(r, 8).value)  # col H
-        rows.append({'region': region, 'value': value, 'unit': unit})
+
+        raw_val = ws.cell(r, col_val).value
+        try:
+            val_f = float(raw_val) if raw_val is not None else 0.0
+        except (ValueError, TypeError):
+            val_f = 0.0
+
+        if val_f == 0.0:
+            continue
+
+        unit = _s(ws.cell(r, col_unit).value)
+        rows.append({'region': region, 'value': val_f, 'unit': unit})
     return rows
 
 
@@ -378,13 +404,28 @@ def check_total_production_regions(wb, refs: dict) -> list:
     """
     Total production, rows 3+:
     col A values must be found in Region col A (rows 3+).
+    Skip rows where '2023 Value' is null or zero.
     """
     ws    = wb['Total production']
     valid = refs['region_col_a']
+    col_val, _ = _find_tp_columns(ws)
     issues = []
     for r in range(3, ws.max_row + 1):
         v = _s(ws.cell(r, 1).value)
-        if v and v not in valid:
+        if not v:
+            continue
+
+        # Skip rows without a nonzero numerical value in '2023 Value'
+        raw_val = ws.cell(r, col_val).value
+        try:
+            val_f = float(raw_val) if raw_val is not None else 0.0
+        except (ValueError, TypeError):
+            val_f = 0.0
+
+        if val_f == 0.0:
+            continue
+
+        if v not in valid:
             issues.append(_issue(r, 'Total production', 'A', v,
                                  'not found in Region col A'))
     return issues
@@ -485,10 +526,22 @@ def check_missing_regions(wb) -> dict:
 
     # ── Identifiers used in Total production col A (rows 3+) ─────────────
     ws_tp = wb['Total production']
+    col_val_tp, _ = _find_tp_columns(ws_tp)
     tp_ids_raw: set = set()
+    has_global_tp = False
     for r in range(3, ws_tp.max_row + 1):
         v = _s(ws_tp.cell(r, 1).value)
         if v:
+            # Check value in '2023 Value'
+            raw_val = ws_tp.cell(r, col_val_tp).value
+            try:
+                val_f = float(raw_val) if raw_val is not None else 0.0
+            except (ValueError, TypeError):
+                val_f = 0.0
+
+            if val_f == 0.0:
+                continue
+
             tp_ids_raw.add(v)
 
     has_global_up = 'GLOBAL' in up_ids_raw
@@ -676,6 +729,7 @@ def check_total_production_vs_gtap(wb, gtap_path) -> dict:
     cluster2members = _build_cluster_to_members(wb)
 
     ws_tp = wb['Total production']
+    col_val, _ = _find_tp_columns(ws_tp)
 
     violations   = []
     unresolved   = []
@@ -686,13 +740,16 @@ def check_total_production_vs_gtap(wb, gtap_path) -> dict:
         if not region_id:
             continue
 
-        # Template value: col G (MUSD@2023)
-        raw = ws_tp.cell(r, 7).value
+        # Template value: MUSD@2023
+        raw = ws_tp.cell(r, col_val).value
         if raw is None:
             continue
         try:
             tp_val = float(raw)
         except (ValueError, TypeError):
+            continue
+
+        if tp_val == 0.0:
             continue
 
         # Resolve region identifier to GTAP full names
