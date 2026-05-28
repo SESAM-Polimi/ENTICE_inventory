@@ -629,6 +629,13 @@ def make_inventory(inventory_path: str | Path,
             _shared_gtap_regions.append((str(_fn_s).strip(),
                                          str(_code_s).strip() if _code_s else ''))
 
+    # MARIO templates treat GLOBAL as a valid default region identifier.
+    # Export it explicitly as the full GTAP region set so downstream readers
+    # can expand Master rows that target GLOBAL.
+    regions_clusters['GLOBAL'] = [
+        code for _, code in _shared_gtap_regions if str(code).strip().upper() != 'GLOBAL'
+    ]
+
     _shared_cluster_mbrs = template_checker._build_cluster_to_members(wb)
 
     # ── Aggregate inventory rows per producing region ─────────────────────────
