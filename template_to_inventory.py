@@ -503,6 +503,18 @@ def make_inventory(inventory_path: str | Path,
     sectors_clusters_raw = _read_clusters(wb['Sector'],        start_row=369)
     factprod_clusters_raw = _read_clusters(wb['Primary input'], start_row=17)
 
+    _ws_sector = wb['Sector']
+    standard_sector_clusters_raw: OrderedDict = OrderedDict()
+    for _r in range(3, 186):
+        _cluster = _ws_sector.cell(_r, 1).value
+        _member = _ws_sector.cell(_r, 2).value
+        if _cluster and str(_cluster).strip() and _member and str(_member).strip():
+            _cluster = str(_cluster).strip()
+            _member = str(_member).strip()
+            standard_sector_clusters_raw.setdefault(_cluster, [])
+            if _member not in standard_sector_clusters_raw[_cluster]:
+                standard_sector_clusters_raw[_cluster].append(_member)
+
     # Convert Regions Clusters members from full names to 3-letter codes.
     # Members that are not found in n2c (e.g. already a code) are kept as-is.
     # GLOBAL is a special catch-all identifier, not a real GTAP region code:
@@ -539,6 +551,26 @@ def make_inventory(inventory_path: str | Path,
         sectors_clusters_raw,  _sector_to_gtap)
     factprod_clusters, _factprod_single_map = _resolve_clusters(
         factprod_clusters_raw, _factprod_to_gtap)
+
+    _used_sector_ids = {
+        row['mapped_input']
+        for rows in result['unit_process'].values()
+        for row in rows
+        if row['type'] == 'Sector' and row['mapped_input']
+    }
+    used_standard_sector_clusters_raw = OrderedDict(
+        (cluster, members)
+        for cluster, members in standard_sector_clusters_raw.items()
+        if cluster in _used_sector_ids and cluster not in sectors_clusters_raw
+    )
+    _std_sector_clusters, _std_sector_single_map = _resolve_clusters(
+        used_standard_sector_clusters_raw, _sector_to_gtap
+    )
+    for _cluster, _codes in _std_sector_clusters.items():
+        if _cluster not in sectors_clusters:
+            sectors_clusters[_cluster] = _codes
+    for _cluster, _code in _std_sector_single_map.items():
+        _sector_single_map.setdefault(_cluster, _code)
 
     # ── UN regional aggregate clusters (Region sheet, col A rows 3-165) ──
     # If a unit-process column or a total-production row is defined for one
