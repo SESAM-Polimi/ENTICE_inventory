@@ -267,36 +267,17 @@ def _build_synthetic_up_clusters(
     def _rc(name: str) -> str:
         return n2c.get(name, name)
 
+    def _members_from_identifier(region_id: str,
+                                 cluster_members: dict[str, set]) -> set[str]:
+        if region_id in gtap_fn_set:
+            return {region_id}
+        return set(cluster_members.get(region_id, set()))
+
     # GLOBAL is a special identifier, not a real GTAP region.
     gtap_fn_set = {fn for fn, _ in all_gtap_regions
                    if str(fn).upper() != 'GLOBAL'}
 
-    # ── Step 1: determine covered regions and their effective agg dict ─────────
-    covered: dict[str, dict] = {}   # full_name → agg_dict
-
-    # Category 1: direct (key is a GTAP full name)
-    for name in up_data_keys:
-        if name in gtap_fn_set:
-            code = _rc(name)
-            if code in inv_by_region:
-                covered[name] = inv_by_region[code]
-
-    # Category 2: cluster key → all members inherit the cluster's agg dict
-    for cluster_name, members in tpl_cluster_mbrs.items():
-        if cluster_name in up_data_keys:
-            cluster_code = _rc(cluster_name)
-            if cluster_code in inv_by_region:
-                cluster_agg = inv_by_region[cluster_code]
-                for member_fn in members:
-                    if member_fn in gtap_fn_set and member_fn not in covered:
-                        covered[member_fn] = cluster_agg
-
-    uncovered_fn = gtap_fn_set - set(covered.keys())
-    if not uncovered_fn:
-        print("  All 163 GTAP regions are covered; no synthetic clusters needed.")
-        return OrderedDict(), OrderedDict()
-
-    # ── Step 2: load hierarchy from Regions_clusters.xlsx ─────────────────────
+    # ── Step 1: load hierarchy from Regions_clusters.xlsx ─────────────────────
     # Col A = GTAP full name, col C = level-1 cluster, col D = level-2, …
     hierarchy: dict[str, list]          = {}   # full_name → [lvl1, lvl2, …]
     rc_cl_to_members: dict[str, set]    = {}   # cluster   → set of full_names
@@ -323,8 +304,30 @@ def _build_synthetic_up_clusters(
         print(f"  Warning: could not read {rc_path.name}: {e}")
         return OrderedDict(), OrderedDict()
 
-    # GLOBAL as the ultimate fallback
+    for cluster_name, members in tpl_cluster_mbrs.items():
+        rc_cl_to_members.setdefault(cluster_name, set()).update(
+            member for member in members if member in gtap_fn_set
+        )
+
+    # GLOBAL as a valid identifier and ultimate fallback
     rc_cl_to_members['GLOBAL'] = gtap_fn_set.copy()
+
+    # ── Step 2: determine covered regions and their effective agg dict ─────────
+    covered: dict[str, dict] = {}   # full_name → agg_dict
+    for region_id in up_data_keys:
+        region_code = _rc(region_id)
+        if region_code not in inv_by_region:
+            continue
+
+        agg_dict = inv_by_region[region_code]
+        for member_fn in _members_from_identifier(region_id, rc_cl_to_members):
+            if member_fn in gtap_fn_set and member_fn not in covered:
+                covered[member_fn] = agg_dict
+
+    uncovered_fn = gtap_fn_set - set(covered.keys())
+    if not uncovered_fn:
+        print("  All 163 GTAP regions are covered; no synthetic clusters needed.")
+        return OrderedDict(), OrderedDict()
 
     # ── Step 3: assign each uncovered region to the finest viable X cluster ────
     region_to_x_cluster: dict[str, str] = {}
@@ -490,6 +493,12 @@ def make_inventory(inventory_path: str | Path,
         """Resolve a region full-name to its code; unknowns / clusters as-is."""
         return n2c.get(name, name)
 
+    def _pick_residual_up_name(existing_names: set[str]) -> str:
+        """Choose a readable cluster name for the residual GLOBAL inventory."""
+        if 'GLOBAL_ROW' not in existing_names:
+            return 'GLOBAL_ROW'
+        return 'GLOBAL_ROW2'
+
     regions_clusters_raw = _read_clusters(wb['Region'],        start_row=328)
     sectors_clusters_raw = _read_clusters(wb['Sector'],        start_row=369)
     factprod_clusters_raw = _read_clusters(wb['Primary input'], start_row=17)
@@ -539,10 +548,13 @@ def make_inventory(inventory_path: str | Path,
     # Only clusters that are actually used are added; clusters already defined
     # as custom entries (rows 328+) are left untouched.
     _ws_r = wb['Region']
+    _gtap_region_names: set[str] = set()
     _un_clusters_raw: OrderedDict = OrderedDict()
     for _r in range(3, 166):
         _cn = _ws_r.cell(_r, 1).value
         _mb = _ws_r.cell(_r, 2).value
+        if _mb and str(_mb).strip():
+            _gtap_region_names.add(str(_mb).strip())
         if _cn and str(_cn).strip() and _mb and str(_mb).strip():
             _cn = str(_cn).strip()
             _mb = str(_mb).strip()
@@ -551,7 +563,10 @@ def make_inventory(inventory_path: str | Path,
                 _un_clusters_raw[_cn].append(_mb)
 
     # Identifiers actually used in Unit process (row-1 headers) and Total production (col A)
-    _used_ids: set = set(result['unit_process'].keys())
+    _raw_up_ids: set = set(result['unit_process'].keys())
+    _has_global_up = 'GLOBAL' in _raw_up_ids
+
+    _used_ids: set = set(_raw_up_ids)
     _used_ids |= {tp['region'] for tp in result['total_production'] if tp['region']}
 
     for _cn, _members in _un_clusters_raw.items():
@@ -600,6 +615,7 @@ def make_inventory(inventory_path: str | Path,
     #   Rows with the same (Item type, DB Item, DB Region) are summed.
 
     up_data = result['unit_process']
+
     inv_by_region: OrderedDict = OrderedDict()
 
     for region_name, rows in up_data.items():
@@ -608,8 +624,7 @@ def make_inventory(inventory_path: str | Path,
         for row in rows:
             mario_type = ('Factor of production'
                           if row['type'] == 'Primary_input' else 'Sector')
-            origin = (row['origin'] or 'GLOBAL').strip()
-            db_region = 'GLOBAL' if origin.upper() == 'GLOBAL' else rc(origin)
+            db_region = 'GLOBAL'
             raw_item = row['mapped_input']
             if mario_type == 'Factor of production':
                 db_item = _factprod_to_gtap.get(raw_item, raw_item)
@@ -624,13 +639,40 @@ def make_inventory(inventory_path: str | Path,
         inv_by_region[r_code] = agg
         print(f"  {r_code:<10}  {len(agg)} inventory rows")
 
+    if _has_global_up and 'GLOBAL' in inv_by_region:
+        _explicit_up_ids = set(up_data.keys()) - {'GLOBAL'}
+        if _explicit_up_ids:
+            _explicit_gtap_names = template_checker._expand_region_ids_to_gtap_names(
+                _explicit_up_ids, _shared_cluster_mbrs, _gtap_region_names
+            )
+            _residual_gtap_names = [
+                _fn for _fn, _ in _shared_gtap_regions
+                if _fn not in _explicit_gtap_names
+            ]
+            _global_agg = inv_by_region.pop('GLOBAL')
+
+            if _residual_gtap_names:
+                _residual_name = _pick_residual_up_name(
+                    set(inv_by_region.keys()) | set(regions_clusters.keys()) | _raw_up_ids
+                )
+                inv_by_region[_residual_name] = _global_agg
+                regions_clusters[_residual_name] = [rc(_name) for _name in _residual_gtap_names]
+                print(
+                    "  GLOBAL inventory converted to residual cluster "
+                    f"'{_residual_name}' excluding explicit inventories."
+                )
+            else:
+                print("  GLOBAL inventory fully overlapped by explicit inventories; removed.")
+
     # ── Synthetic unit processes for GTAP regions with no explicit UP ─────────
     # Regions_clusters.xlsx provides a cluster hierarchy (col C = finest level,
     # rightward = broader) used to locate the finest cluster that contains at
     # least one covered region.  A weighted-average unit process is computed
     # from those covered contributors and registered as 'X_{cluster}'.
     _rc_xlsx = repo_path / 'Regions_clusters.xlsx'
-    if _rc_xlsx.exists():
+    if _has_global_up:
+        print("  GLOBAL inventory present: synthetic unit processes skipped.")
+    elif _rc_xlsx.exists():
         _syn_up, _syn_mbrs = _build_synthetic_up_clusters(
             inv_by_region,
             n2c,

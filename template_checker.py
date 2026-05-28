@@ -40,6 +40,28 @@ def _s(v) -> str | None:
     """Strip a cell value to str, or return None."""
     return str(v).strip() if v is not None else None
 
+def _expand_region_ids_to_gtap_names(region_ids: set,
+                                     cluster2members: dict,
+                                     all_gtap_names: set) -> set:
+    """
+    Expand template region identifiers to GTAP full names.
+
+    Direct GTAP names are kept as-is; valid cluster identifiers expand to
+    their GTAP members. GLOBAL is handled separately by callers so it can
+    remain a dedicated fallback category in reports.
+    """
+    covered: set = set()
+    for region_id in region_ids:
+        if region_id in all_gtap_names:
+            covered.add(region_id)
+            continue
+
+        for member in cluster2members.get(region_id, []):
+            if member in all_gtap_names:
+                covered.add(member)
+
+    return covered
+
 
 def _issue(row: int, sheet: str, col: str, value: str, reason: str) -> dict:
     return dict(row=row, sheet=sheet, col=col, value=value, reason=reason)
@@ -184,6 +206,13 @@ def read_unit_process(wb) -> tuple[OrderedDict, list]:
         col_sum = sum(row['value'] for row in rows)
         if abs(col_sum - 1.0) <= _TOL_SUM:
             valid[region_name] = rows
+        elif str(region_name).strip().upper() == 'GLOBAL':
+            valid[region_name] = rows
+            warnings.append(_issue(
+                1, 'Unit process', f'col {col_idx}', region_name,
+                f"column values sum to {col_sum:.6g} "
+                f"(expected 1.0 ± {_TOL_SUM}); GLOBAL kept as fallback inventory"
+            ))
         else:
             warnings.append(_issue(
                 1, 'Unit process', f'col {col_idx}', region_name,
@@ -550,6 +579,14 @@ def check_missing_regions(wb) -> dict:
     # Work with GLOBAL removed so direct-coverage check is unambiguous
     up_ids = up_ids_raw - {'GLOBAL'}
     tp_ids = tp_ids_raw - {'GLOBAL'}
+    cluster2members = _build_cluster_to_members(wb)
+    all_gtap_names = {reg['full_name'] for reg in region_table}
+    covered_up_names = _expand_region_ids_to_gtap_names(
+        up_ids, cluster2members, all_gtap_names
+    )
+    covered_tp_names = _expand_region_ids_to_gtap_names(
+        tp_ids, cluster2members, all_gtap_names
+    )
 
     # ── Check coverage for each GTAP region ──────────────────────────────
     missing_both  = []
@@ -559,11 +596,10 @@ def check_missing_regions(wb) -> dict:
     global_cov_tp = []
 
     for reg in region_table:
-        fn       = reg['full_name']
-        clusters = set(reg['clusters'])
+        fn = reg['full_name']
 
-        in_up_direct = fn in up_ids or bool(clusters & up_ids)
-        in_tp_direct = fn in tp_ids or bool(clusters & tp_ids)
+        in_up_direct = fn in covered_up_names
+        in_tp_direct = fn in covered_tp_names
 
         # GLOBAL provides a fallback for anything not directly covered
         in_up = in_up_direct or has_global_up
@@ -585,6 +621,8 @@ def check_missing_regions(wb) -> dict:
         'region_table':      region_table,
         'up_ids':            sorted(up_ids_raw),
         'tp_ids':            sorted(tp_ids_raw),
+        'covered_up_count':  len(region_table) if has_global_up else len(covered_up_names),
+        'covered_tp_count':  len(region_table) if has_global_tp else len(covered_tp_names),
         'has_global_up':     has_global_up,
         'has_global_tp':     has_global_tp,
         'missing_both':      missing_both,
