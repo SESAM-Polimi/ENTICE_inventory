@@ -27,6 +27,8 @@ Public API
 Each issue dict has keys: row, sheet, col, value, reason.
 """
 
+from __future__ import annotations
+
 import openpyxl
 from collections import OrderedDict
 from pathlib import Path

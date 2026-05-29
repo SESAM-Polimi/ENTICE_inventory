@@ -27,6 +27,8 @@ Sheets produced in the inventory:
 
 """
 
+from __future__ import annotations
+
 import argparse
 import importlib
 import openpyxl
@@ -34,6 +36,9 @@ import statistics
 import template_checker
 from collections import OrderedDict
 from pathlib import Path
+
+from matching_utils import load_legacy_gtap12_maps
+from residual_sector_cluster import apply_residual_sector_clusters
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -417,6 +422,7 @@ def make_inventory(inventory_path: str | Path,
                    repo_path: str,
                    output_path: str | Path = None,
                    version: str = '',
+                   residual_other_sectors_share: float = 0.0,
                    ):
     """
     Parse *template_path* with template_checker and write a MARIO
@@ -455,29 +461,18 @@ def make_inventory(inventory_path: str | Path,
 
     # ── GTAP12 sector / factor-of-production code mapping ────────────────────
     # GTAP12_matching.xlsx:
-    #   "Sector" sheet          col A = inventory name, col B = GTAP12 code
-    #   "Factor of production"  col A = inventory name, col B = GTAP12 code
+    #   key   = first column of each sheet
+    #   value = 'GTAP12' column
     _matching_path = repo_path / 'GTAP12_matching.xlsx'
     _sector_to_gtap: dict[str, str] = {}
     _factprod_to_gtap: dict[str, str] = {}
     if _matching_path.exists():
-        _wb_m = openpyxl.load_workbook(str(_matching_path), data_only=True)
-        if 'Sector' in _wb_m.sheetnames:
-            _ws_s = _wb_m['Sector']
-            for _r in range(2, _ws_s.max_row + 1):
-                _k = _ws_s.cell(_r, 1).value
-                _v = _ws_s.cell(_r, 2).value
-                if _k and _v:
-                    _sector_to_gtap[str(_k).strip()] = str(_v).strip()
-        if 'Factor of production' in _wb_m.sheetnames:
-            _ws_f = _wb_m['Factor of production']
-            for _r in range(2, _ws_f.max_row + 1):
-                _k = _ws_f.cell(_r, 1).value
-                _v = _ws_f.cell(_r, 2).value
-                if _k and _v:
-                    _factprod_to_gtap[str(_k).strip()] = str(_v).strip()
-        print(f"  GTAP matching: {len(_sector_to_gtap)} sectors, "
-              f"{len(_factprod_to_gtap)} factors loaded")
+        try:
+            _sector_to_gtap, _factprod_to_gtap = load_legacy_gtap12_maps(_matching_path)
+            print(f"  GTAP matching: {len(_sector_to_gtap)} sectors, "
+                  f"{len(_factprod_to_gtap)} factors loaded")
+        except ValueError as exc:
+            print(f"  Warning: {exc} – sector/factor codes will be used as-is.")
     else:
         print(f"  Warning: {_matching_path.name} not found – "
               "sector/factor codes will be used as-is.")
@@ -952,6 +947,25 @@ def make_inventory(inventory_path: str | Path,
         # Sheet names with spaces or special chars must be wrapped in single quotes.
         safe = sn.replace("'", "''")          # escape any literal apostrophes
         cell.hyperlink = f"#'{safe}'!A1"
+
+    residual_updates = apply_residual_sector_clusters(
+        wb_out,
+        repo_path,
+        residual_other_sectors_share,
+        sector_code=sector_code,
+    )
+    if residual_updates:
+        print(
+            "  Residual sector clusters added : "
+            f"{len(residual_updates)} inventory sheet(s) "
+            f"at {residual_other_sectors_share:.2%}"
+        )
+        for update in residual_updates[:10]:
+            print(
+                f"    {update.sheet_name}: {update.cluster_name} "
+                f"({len(update.cluster_members)} member(s), "
+                f"{len(update.missing_codes)} missing code(s))"
+            )
 
     wb_out.save(str(output_path))
     print(f"\nInventory saved: {output_path.name}")
