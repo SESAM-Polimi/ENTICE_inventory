@@ -152,7 +152,15 @@ def _name_to_code_map(wb) -> dict:
     """
     ws = wb['Region']
     m = {}
-    for r in range(3, 166):
+    # Determine last row using column D (4). Walk backwards from ws.max_row
+    # until a non-empty cell is found. If none, return empty map.
+    last = ws.max_row
+    while last >= 3 and ws.cell(last, 4).value in (None, ''):
+        last -= 1
+    if last < 3:
+        return m
+
+    for r in range(3, last + 1):
         fn   = ws.cell(r, 2).value   # col B = full name
         code = ws.cell(r, 3).value   # col C = code
         if fn and code:

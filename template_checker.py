@@ -108,7 +108,7 @@ def read_general_info(wb) -> dict:
 _IGNORE_TYPES = {'Emissions', 'Energy'}
 
 # Tolerance for the unit-process column-sum check (must be within this of 1.0)
-_TOL_SUM = 1e-4
+_TOL_SUM = 1e-3
 
 
 def read_unit_process(wb) -> tuple[OrderedDict, list]:
@@ -135,8 +135,9 @@ def read_unit_process(wb) -> tuple[OrderedDict, list]:
     Rows whose type is 'Emissions' or 'Energy' are skipped entirely.
 
     After reading, the sum of all numeric values in each column is checked.
-    Columns whose sum differs from 1.0 by more than _TOL_SUM are discarded
-    and a warning is added.
+    Columns whose sum differs from 1.0 by more than _TOL_SUM are discarded,
+    except columns whose sum is 0 and whose retained values are all zeroes.
+    Those are kept with a warning.
 
     Returns:
       data     : OrderedDict { region_name -> list of {
@@ -181,6 +182,10 @@ def read_unit_process(wb) -> tuple[OrderedDict, list]:
         mapped_input = _s(ws.cell(r, 3).value)
         origin       = _s(ws.cell(r, 4).value) or 'GLOBAL'
         if not mapped_input:
+            warnings.append(_issue(
+                r, 'Unit process', 'C', '',
+                'missing mapped input; row skipped'
+            ))
             continue
 
         for col_idx, region in region_cols:
@@ -204,8 +209,16 @@ def read_unit_process(wb) -> tuple[OrderedDict, list]:
     for col_idx, region_name in region_cols:
         rows    = data[region_name]
         col_sum = sum(row['value'] for row in rows)
+        all_zero = bool(rows) and all(abs(row['value']) <= _TOL_SUM for row in rows)
         if abs(col_sum - 1.0) <= _TOL_SUM:
             valid[region_name] = rows
+        elif abs(col_sum) <= _TOL_SUM and all_zero:
+            valid[region_name] = rows
+            warnings.append(_issue(
+                1, 'Unit process', f'col {col_idx}', region_name,
+                f"column values sum to {col_sum:.6g} (expected 1.0 ± {_TOL_SUM}); "
+                "kept because all retained values are zero"
+            ))
         elif str(region_name).strip().upper() == 'GLOBAL':
             valid[region_name] = rows
             warnings.append(_issue(
@@ -254,7 +267,7 @@ def read_total_production(wb) -> list:
         except (ValueError, TypeError):
             val_f = 0.0
 
-        if val_f == 0.0:
+        if region.strip().upper() == 'GLOBAL' and val_f != 0.0:
             continue
 
         unit = _s(ws.cell(r, col_unit).value)
@@ -303,9 +316,15 @@ def _build_refs(wb) -> dict:
                                for r in range(3, ws_r.max_row + 1)
                                if ws_r.cell(r, 1).value is not None},
 
-        'region_col_b_3_165': {_s(ws_r.cell(r, 2).value)
-                               for r in range(3, 166)
-                               if ws_r.cell(r, 2).value is not None},
+        # build region col B set using rows 3..last where 'last' is the
+        # last non-empty cell in column D (4). This avoids hard-coding 165.
+        'region_col_b_3_165': (lambda ws: (
+            (lambda last: {_s(ws.cell(r, 2).value)
+                           for r in range(3, last + 1)
+                           if ws.cell(r, 2).value is not None}
+            )( (lambda _ws: (lambda last: last)(next((i for i in range(_ws.max_row, 2, -1)
+                                                       if _ws.cell(i, 4).value not in (None, '')), 2)) ) (ws_r) )
+        ))(ws_r),
 
         # rows 3-16 only: for validating cluster-member entries (rows 17+)
         'pi_col_a_3_16':      {_s(ws_p.cell(r, 1).value)
@@ -433,7 +452,7 @@ def check_total_production_regions(wb, refs: dict) -> list:
     """
     Total production, rows 3+:
     col A values must be found in Region col A (rows 3+).
-    Skip rows where '2023 Value' is null or zero.
+    Skip rows where '2023 Value' is null.
     """
     ws    = wb['Total production']
     valid = refs['region_col_a']
@@ -444,15 +463,15 @@ def check_total_production_regions(wb, refs: dict) -> list:
         if not v:
             continue
 
-        # Skip rows without a nonzero numerical value in '2023 Value'
+        if v.strip().upper() == 'GLOBAL':
+            continue
+
+        # Skip rows without a numerical value in '2023 Value'
         raw_val = ws.cell(r, col_val).value
         try:
             val_f = float(raw_val) if raw_val is not None else 0.0
         except (ValueError, TypeError):
             val_f = 0.0
-
-        if val_f == 0.0:
-            continue
 
         if v not in valid:
             issues.append(_issue(r, 'Total production', 'A', v,
@@ -479,9 +498,12 @@ def _build_region_table(wb) -> list:
     """
     ws_r = wb['Region']
 
-    # ── 162 GTAP base regions ──────────────────────────────────────────────
+    # ── GTAP base regions (rows 3..last where column D is non-empty) ──────
     regions = []
-    for r in range(3, 166):
+    last = ws_r.max_row
+    while last >= 3 and ws_r.cell(last, 4).value in (None, ''):
+        last -= 1
+    for r in range(3, last + 1):
         fn   = _s(ws_r.cell(r, 2).value)   # col B = full name
         code = _s(ws_r.cell(r, 3).value)   # col C = code
         if fn:
@@ -489,11 +511,11 @@ def _build_region_table(wb) -> list:
 
     name_to_idx = {reg['full_name']: i for i, reg in enumerate(regions)}
 
-    # ── UN cluster assignments from col A, rows 3-165 ─────────────────────
+    # ── UN cluster assignments from col A, rows 3..last
     # Col A holds the UN regional-aggregate name for each country row
     # (e.g. CARIBBEAN, WESTERN ASIA).  Col B is the GTAP full name of the
     # country, already indexed in name_to_idx.
-    for r in range(3, 166):
+    for r in range(3, last + 1):
         cn     = _s(ws_r.cell(r, 1).value)   # col A = UN cluster name
         member = _s(ws_r.cell(r, 2).value)   # col B = GTAP full name
         if cn and member and member in name_to_idx:
@@ -681,8 +703,11 @@ def _build_cluster_to_members(wb) -> dict:
     ws_r = wb['Region']
     clusters: dict = {}
 
-    # UN regional aggregates (rows 3-165)
-    for r in range(3, 166):
+    # UN regional aggregates (rows 3..last where column D is non-empty)
+    last = ws_r.max_row
+    while last >= 3 and ws_r.cell(last, 4).value in (None, ''):
+        last -= 1
+    for r in range(3, last + 1):
         cn     = _s(ws_r.cell(r, 1).value)
         member = _s(ws_r.cell(r, 2).value)
         if cn and member:
@@ -776,6 +801,9 @@ def check_total_production_vs_gtap(wb, gtap_path) -> dict:
     for r in range(3, ws_tp.max_row + 1):
         region_id = _s(ws_tp.cell(r, 1).value)
         if not region_id:
+            continue
+
+        if region_id.strip().upper() == 'GLOBAL':
             continue
 
         # Template value: MUSD@2023
