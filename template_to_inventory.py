@@ -334,7 +334,7 @@ def _build_synthetic_up_clusters(
 
         agg_dict = inv_by_region[region_code]
         for member_fn in _members_from_identifier(region_id, rc_cl_to_members):
-            if member_fn in gtap_fn_set and member_fn not in covered:
+            if member_fn in gtap_fn_set:
                 covered[member_fn] = agg_dict
 
     uncovered_fn = gtap_fn_set - set(covered.keys())
@@ -663,21 +663,43 @@ def make_inventory(inventory_path: str | Path,
     for region_name, rows in up_data.items():
         r_code = rc(region_name)
         agg: dict = {}
-        for row in rows:
-            mario_type = ('Factor of production'
-                          if row['type'] == 'Primary_input' else 'Sector')
-            db_region = 'GLOBAL'
-            raw_item = row['mapped_input']
-            if mario_type == 'Factor of production':
-                db_item = _factprod_to_gtap.get(raw_item, raw_item)
-                # If the name resolved to a cluster that collapsed to 1 item,
-                # use the direct GTAP code instead of the cluster name.
-                db_item = _factprod_single_map.get(db_item, db_item)
-            else:
-                db_item = _sector_to_gtap.get(raw_item, raw_item)
-                db_item = _sector_single_map.get(db_item, db_item)
-            key = (mario_type, db_item, db_region)
-            agg[key] = agg.get(key, 0.0) + row['value']
+        if region_name in _gtap_region_names:
+            for row in rows:
+                mario_type = ('Factor of production'
+                            if row['type'] == 'Primary_input' else 'Sector')
+                raw_origin = row.get('origin')
+                if raw_origin and str(raw_origin).strip().upper() != 'GLOBAL':
+                    db_region = rc(str(raw_origin).strip())
+                else:
+                    db_region = 'GLOBAL'
+                raw_item = row['mapped_input']
+                if mario_type == 'Factor of production':
+                    db_item = _factprod_to_gtap.get(raw_item, raw_item)
+                    # If the name resolved to a cluster that collapsed to 1 item,
+                    # use the direct GTAP code instead of the cluster name.
+                    db_item = _factprod_single_map.get(db_item, db_item)
+                else:
+                    db_item = _sector_to_gtap.get(raw_item, raw_item)
+                    db_item = _sector_single_map.get(db_item, db_item)
+                key = (mario_type, db_item, db_region)
+                agg[key] = agg.get(key, 0.0) + row['value']
+        else:
+            for row in rows:
+                mario_type = ('Factor of production'
+                            if row['type'] == 'Primary_input' else 'Sector')
+                db_region = 'GLOBAL'
+                raw_item = row['mapped_input']
+                if mario_type == 'Factor of production':
+                    db_item = _factprod_to_gtap.get(raw_item, raw_item)
+                    # If the name resolved to a cluster that collapsed to 1 item,
+                    # use the direct GTAP code instead of the cluster name.
+                    db_item = _factprod_single_map.get(db_item, db_item)
+                else:
+                    db_item = _sector_to_gtap.get(raw_item, raw_item)
+                    db_item = _sector_single_map.get(db_item, db_item)
+                key = (mario_type, db_item, db_region)
+                agg[key] = agg.get(key, 0.0) + row['value']
+
         inv_by_region[r_code] = agg
         print(f"  {r_code:<10}  {len(agg)} inventory rows")
 
