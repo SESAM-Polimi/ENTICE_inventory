@@ -146,30 +146,27 @@ DB_UNITS_DATA = [
 # Internal helpers
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _name_to_code_map(wb) -> dict:
+def _name_to_code_map(repo_path) -> dict:
     """
-    Build {region_full_name -> 3-letter code} from Region sheet
-    col B (full name) → col C (code), rows 3-165.
+    Build {region_full_name -> 3-letter code} from Regions_clusters.xlsx
+    (repo root), col A (full name) → col B (code), starting from row 2.
 
     Used to convert full region names from Unit process row 1 into
     compact codes for sheet names and Master rows.
     Cluster names that are not in this table are returned unchanged.
     """
-    ws = wb['Region']
+    rc_path = Path(repo_path) / 'Regions_clusters.xlsx'
+    if not rc_path.exists():
+        return {}
+    rc_wb = openpyxl.load_workbook(str(rc_path), read_only=True, data_only=True)
+    ws = rc_wb.active
     m = {}
-    # Determine last row using column D (4). Walk backwards from ws.max_row
-    # until a non-empty cell is found. If none, return empty map.
-    last = ws.max_row
-    while last >= 3 and ws.cell(last, 4).value in (None, ''):
-        last -= 1
-    if last < 3:
-        return m
-
-    for r in range(3, last + 1):
-        fn   = ws.cell(r, 2).value   # col B = full name
-        code = ws.cell(r, 3).value   # col C = code
+    for r in range(2, ws.max_row + 1):
+        fn   = ws.cell(r, 1).value   # col A = full name
+        code = ws.cell(r, 2).value   # col B = code
         if fn and code:
             m[str(fn).strip()] = str(code).strip()
+    rc_wb.close()
     return m
 
 
@@ -457,7 +454,7 @@ def make_inventory(inventory_path: str | Path,
 
     # ── Extra reads from workbook (clusters, name→code lookup) ────────────────
     wb   = openpyxl.load_workbook(str(inventory_path), data_only=True)
-    n2c  = _name_to_code_map(wb)   # region full name → code
+    n2c  = _name_to_code_map(repo_path)   # region full name → code
 
     # ── GTAP12 sector / factor-of-production code mapping ────────────────────
     # GTAP12_matching.xlsx:
