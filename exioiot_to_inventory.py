@@ -241,7 +241,7 @@ def _load_target_cost_structure(
 
 def _load_total_outputs(
     splttargs_path: Path,
-    target_gtapce: str,
+    repout_sector_code: str,
 ) -> tuple[list[str], dict[str, float]]:
     workbook = openpyxl.load_workbook(str(splttargs_path), read_only=True, data_only=True)
 
@@ -263,7 +263,7 @@ def _load_total_outputs(
         region_code = _upper(ws_repout.cell(row, 1).value)
         sector_code = _lower(ws_repout.cell(row, 2).value)
         raw_value = ws_repout.cell(row, 3).value
-        if not region_code or sector_code != target_gtapce:
+        if not region_code or sector_code != repout_sector_code:
             continue
         try:
             value = float(raw_value)
@@ -304,6 +304,7 @@ def make_inventory(
     sector_code = _string(target.entice_code)
     parent_code = _string(target.gtap12)
     target_gtapce = _lower(target.gtapce)
+    target_repout_code = _lower(sector_code)
 
     output_path = (
         Path(output_path)
@@ -344,7 +345,7 @@ def make_inventory(
         factor_cluster_map,
     )
 
-    all_regions, total_outputs = _load_total_outputs(splttargs_path, target_gtapce)
+    all_regions, total_outputs = _load_total_outputs(splttargs_path, target_repout_code)
     if not all_regions:
         raise ValueError("No GTAP regions found in splttargs.xlsx/REG.")
 
@@ -361,7 +362,8 @@ def make_inventory(
 
     print(f"  New sector : {inventory_name}  [{sector_code}]")
     print(f"  Parent     : {parent_code}")
-    print(f"  GTAPCE     : {target_gtapce.upper()}")
+    print(f"  GTAPCE cost     : {target_gtapce.upper()}")
+    print(f"  REPOUT output   : {target_repout_code.upper()}")
     print(f"  Cost structures : {len(inventory_regions)} region(s)")
     print(f"  Total outputs   : {len(total_outputs)} non-zero region(s) from REPOUT")
     print(f"  Sector clusters : {list(used_sector_clusters.keys())}")
