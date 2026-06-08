@@ -13,7 +13,7 @@ db = mario.parse_from_parquet(
 
 # %%
 db.read_add_sectors_excel(
-    path = "/Users/lorenzorinaldi/Library/CloudStorage/OneDrive-SharedLibraries-eNextGen/ENTICE - Documents/WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories",
+    path = "/Users/lorenzorinaldi/Library/CloudStorage/OneDrive-SharedLibraries-eNextGen/ENTICE - Documents/WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories copy",
     # path = r"C:\Users\camic\eNextGen\ENTICE - Documenti\WPs, Tasks & Deliverables\WP2 - Data\T2.2 & T2.3 - GTAP disaggregation\Data collection\Inventory cleaning\MARIO inventories\Add_sector_Manufacture of solar panels.xlsx",
     read_inventories = True,
     split = False,
@@ -43,7 +43,7 @@ db = mario.parse_from_parquet(
 # %%
 export_d24_inventories(
     db,
-    source_dir="/Users/lorenzorinaldi/Library/CloudStorage/OneDrive-SharedLibraries-eNextGen/ENTICE - Documents/WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories",
+    source_dir="/Users/lorenzorinaldi/Library/CloudStorage/OneDrive-SharedLibraries-eNextGen/ENTICE - Documents/WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories copy",
     output_dir="/Users/lorenzorinaldi/Library/CloudStorage/OneDrive-SharedLibraries-eNextGen/ENTICE - Documents/WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories",
     tolerance=1e-12,
     inventory_sum_check_tolerance=0.01

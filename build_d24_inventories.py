@@ -21,7 +21,8 @@ DEFAULT_DATA_ROOT = (
 DEFAULT_DB_PATH = DEFAULT_DATA_ROOT / "Database/GTAP 2023/2023entice"
 DEFAULT_SOURCE_DIR = DEFAULT_DATA_ROOT / "Data collection/Inventory cleaning/MARIO inventories copy"
 DEFAULT_OUTPUT_DIR = DEFAULT_DATA_ROOT / "Data collection/Inventory cleaning/D2.4 inventories"
-DEFAULT_PURDUE_SPLITARGS_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/May27/splttargs.xlsx"
+DEFAULT_PURDUE_SPLITARGS_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/June1/splttargs.xlsx"
+DEFAULT_GTAP_SECTORS_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/May13/GTAP sectors H5.xlsx"
 DEFAULT_MARIO_SRC = Path.home() / "Documents/GitHub/MARIO"
 REPORT_FILENAME = "export_d24_report.txt"
 DEFAULT_INVENTORY_SUM_CHECK_TOLERANCE = 1e-3
@@ -47,6 +48,7 @@ class SectorTemplate:
     data_collection_lead: str | None
     add_or_split: str
     summary_sources: list[tuple[str | None, str | None]]
+    parent_sector_name: str | None = None
 
 
 def as_path(value: str | Path) -> Path:
@@ -120,6 +122,54 @@ def workbook_paths(source_dir: str | Path) -> list[Path]:
     return sorted(path for path in source_dir.glob("*.xlsx") if not path.name.startswith("~$"))
 
 
+def sector_name_from_source_path(source_path: str | Path) -> str:
+    stem = as_path(source_path).stem
+    if stem.startswith("Add_sector_"):
+        return stem.removeprefix("Add_sector_")
+    return stem
+
+
+def normalize_summary_sources(
+    summary_sources: list[tuple[str | None, str | None]],
+) -> list[tuple[str | None, str | None]]:
+    labels = {
+        str(label).strip().upper()
+        for label, _ in summary_sources
+        if label is not None
+    }
+    if {"EXIOIOT", "SPLTTARGS / REPOUT"}.issubset(labels):
+        return [("EXIOBASE", None), ("GTAP CE", None), ("GTAP CM", None)]
+    return summary_sources
+
+
+def load_gtap_sector_names(gtap_sectors_path: str | Path = DEFAULT_GTAP_SECTORS_PATH) -> dict[str, str]:
+    gtap_sectors_path = as_path(gtap_sectors_path)
+    if not gtap_sectors_path.exists():
+        return {}
+
+    wb = load_workbook(gtap_sectors_path, data_only=True, read_only=True)
+    sheet_name = "Finalized GTAP sectors"
+    ws = wb[sheet_name] if sheet_name in wb.sheetnames else wb[wb.sheetnames[0]]
+
+    names_by_code: dict[str, str] = {}
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        code = row[0] if len(row) > 0 else None
+        gtap_entice_name = row[3] if len(row) > 3 else None
+        gtap_parent_code = row[4] if len(row) > 4 else None
+        gtap_power_name = row[5] if len(row) > 5 else None
+        if code is None:
+            continue
+        name = gtap_entice_name or gtap_power_name
+        if name is None:
+            continue
+        names_by_code[str(code).upper()] = str(name)
+        if gtap_parent_code and gtap_power_name:
+            names_by_code[str(gtap_parent_code).upper()] = str(gtap_power_name)
+
+    wb.close()
+    return names_by_code
+
+
 def read_sector_templates(source_dir: str | Path) -> list[SectorTemplate]:
     templates: list[SectorTemplate] = []
 
@@ -143,12 +193,13 @@ def read_sector_templates(source_dir: str | Path) -> list[SectorTemplate]:
             SectorTemplate(
                 source_path=path,
                 sector_code=summary["B2"].value,
-                sector_name=summary["C2"].value,
+                sector_name=sector_name_from_source_path(path),
                 parent_sector=summary["B3"].value,
+                parent_sector_name=None,
                 inventory_version=summary["B4"].value,
                 data_collection_lead=summary["B5"].value,
                 add_or_split=first_master_row[11] or "Split",
-                summary_sources=summary_sources,
+                summary_sources=normalize_summary_sources(summary_sources),
             )
         )
         wb.close()
@@ -219,29 +270,36 @@ def rewrite_summary(
     ws["C2"] = template.sector_name
     ws["A3"] = "Parent sector"
     ws["B3"] = template.parent_sector
+    ws["C3"] = template.parent_sector_name or template.parent_sector
     ws["A4"] = "Inventory version"
     ws["B4"] = template.inventory_version
-    ws["A5"] = "Data collection lead"
-    ws["B5"] = template.data_collection_lead
+    ws["C4"] = None
+    ws["A5"] = None
+    ws["B5"] = None
+    ws["C5"] = None
+    ws["A6"] = None
+    ws["B6"] = None
+    ws["C6"] = None
     ws["A7"] = "Sources"
 
     row = 8
     for label, value in template.summary_sources:
-        ws.cell(row=row, column=1, value=label)
-        ws.cell(row=row, column=2, value=value)
+        ws.cell(row=row, column=1).value = label
+        ws.cell(row=row, column=2).value = value
+        ws.cell(row=row, column=3).value = None
         row += 1
 
     while row <= ws.max_row:
-        ws.cell(row=row, column=1, value=None)
-        ws.cell(row=row, column=2, value=None)
+        for col_idx in range(1, 4):
+            ws.cell(row=row, column=col_idx).value = None
         row += 1
 
     for row_idx in range(1, max(ws.max_row, len(link_sheet_names)) + 5):
-        ws.cell(row=row_idx, column=9, value=None)
+        ws.cell(row=row_idx, column=9).value = None
 
     ws.cell(row=1, column=9, value="LINKS TO PAGES")
     for idx, sheet_name in enumerate(link_sheet_names, start=2):
-        ws.cell(row=idx, column=9, value=sheet_name)
+        ws.cell(row=idx, column=9).value = sheet_name
 
 
 def rewrite_master(
@@ -259,7 +317,7 @@ def rewrite_master(
                 region,
                 template.sector_code,
                 sheet_name,
-                None,
+                1,
                 "M USD",
                 None,
                 None,
@@ -378,7 +436,7 @@ def build_inventory_rows(
             value = values.get(item)
             if value is None or is_effectively_zero(float(value), tolerance):
                 continue
-            rows.append([float(value), units[item], None, item_type, item, "GLOBAL", "Update"])
+            rows.append([float(value), units[item], item, item_type, item, "GLOBAL", "Update"])
 
     append_rows(sector_order, z_coeffs, "Sector")
     append_rows(factor_order, v_coeffs, "Factor of production")
@@ -420,7 +478,6 @@ def build_trade_rows(
     sector_code: str,
     trade_payload: list[tuple[str, str, float]] | None,
     exported_regions: Iterable[str],
-    source_label: str,
     tolerance: float,
 ) -> list[list[object]]:
     if not trade_payload:
@@ -435,7 +492,7 @@ def build_trade_rows(
             continue
         if region_from not in exported_region_codes or region_to not in exported_region_codes:
             continue
-        rows.append([region_from, region_to, float(quantity), "M USD", source_label, None])
+        rows.append([region_from, region_to, float(quantity), "M USD", "COMTRADE and BACI", None])
 
     return rows
 
@@ -554,7 +611,7 @@ def create_output_workbook(
     trade_rows: list[list[object]],
 ) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / f"{template.sector_name}.xlsx"
+    output_path = output_dir / f"{template.sector_code} - {template.sector_name}.xlsx"
 
     wb = load_workbook(template.source_path)
     inventory_templates = inventory_sheet_names(wb)
@@ -590,10 +647,10 @@ def create_output_workbook(
             "Regions Clusters",
             "Sectors Clusters",
             "Factors Clusters",
+            "Total outputs",
             "Trades",
             *desired_inventory_sheet_names,
             "DB units",
-            "Total outputs",
         ],
     )
     rewrite_master(master_ws, template, aggregated_regions)
@@ -629,10 +686,10 @@ def create_output_workbook(
         "Regions Clusters",
         "Sectors Clusters",
         "Factors Clusters",
+        "Total outputs",
         "Trades",
         *built_inventory_names,
         "DB units",
-        "Total outputs",
     ]
     reorder_sheets(wb, ordered_names)
     wb.save(output_path)
@@ -676,6 +733,11 @@ def export_d24_inventories(
         for item_type, frame in units_dict.items()
     }
     trades_by_sector, trade_source_name = read_purdue_trade_tables(purdue_splitargs_path)
+    sector_names = load_gtap_sector_names()
+    for template in templates:
+        sector_names[template.sector_code] = template.sector_name
+    for template in templates:
+        template.parent_sector_name = sector_names.get(template.parent_sector, template.parent_sector)
 
     written_files: list[Path] = []
     missing_trade_sectors: list[str] = []
@@ -703,7 +765,6 @@ def export_d24_inventories(
             template.sector_code,
             trades_by_sector.get(template.sector_code),
             [region for region, _ in rendered_inventories],
-            f"{trade_source_name} BLTTRD",
             tolerance,
         )
         output_path = create_output_workbook(
