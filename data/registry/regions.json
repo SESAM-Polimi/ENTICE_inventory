@@ -1,0 +1,1669 @@
+{
+  "schema_version": 1,
+  "revision": "2026-10-01",
+  "sources": {
+    "Regions_clusters": {
+      "path": "data/Regions_clusters.xlsx",
+      "sha256": "83b4ef690a8a224c79afca39b201a98089ddf4ab6cc465b341db421c678b8c4d"
+    }
+  },
+  "geographies": [
+    {
+      "id": "GTAP12",
+      "code_system": "GTAP region codes, including aggregate regions; not an ISO country list",
+      "regions": [
+        {
+          "id": "AFG",
+          "name": "Afghanistan",
+          "source_record": "Regions_clusters:Sheet1!A128:G128"
+        },
+        {
+          "id": "AGO",
+          "name": "Angola",
+          "source_record": "Regions_clusters:Sheet1!A72:G72"
+        },
+        {
+          "id": "ALB",
+          "name": "Albania",
+          "source_record": "Regions_clusters:Sheet1!A97:G97"
+        },
+        {
+          "id": "ARE",
+          "name": "United Arab Emirates",
+          "source_record": "Regions_clusters:Sheet1!A148:G148"
+        },
+        {
+          "id": "ARG",
+          "name": "Argentina",
+          "source_record": "Regions_clusters:Sheet1!A102:G102"
+        },
+        {
+          "id": "ARM",
+          "name": "Armenia",
+          "source_record": "Regions_clusters:Sheet1!A149:G149"
+        },
+        {
+          "id": "AUS",
+          "name": "Australia",
+          "source_record": "Regions_clusters:Sheet1!A90:G90"
+        },
+        {
+          "id": "AUT",
+          "name": "Austria",
+          "source_record": "Regions_clusters:Sheet1!A45:G45"
+        },
+        {
+          "id": "AZE",
+          "name": "Azerbaijan",
+          "source_record": "Regions_clusters:Sheet1!A150:G150"
+        },
+        {
+          "id": "BDI",
+          "name": "Burundi",
+          "source_record": "Regions_clusters:Sheet1!A21:G21"
+        },
+        {
+          "id": "BEL",
+          "name": "Belgium",
+          "source_record": "Regions_clusters:Sheet1!A46:G46"
+        },
+        {
+          "id": "BEN",
+          "name": "Benin",
+          "source_record": "Regions_clusters:Sheet1!A136:G136"
+        },
+        {
+          "id": "BFA",
+          "name": "Burkina Faso",
+          "source_record": "Regions_clusters:Sheet1!A137:G137"
+        },
+        {
+          "id": "BGD",
+          "name": "Bangladesh",
+          "source_record": "Regions_clusters:Sheet1!A129:G129"
+        },
+        {
+          "id": "BGR",
+          "name": "Bulgaria",
+          "source_record": "Regions_clusters:Sheet1!A47:G47"
+        },
+        {
+          "id": "BHR",
+          "name": "Bahrain",
+          "source_record": "Regions_clusters:Sheet1!A151:G151"
+        },
+        {
+          "id": "BLR",
+          "name": "Belarus",
+          "source_record": "Regions_clusters:Sheet1!A93:G93"
+        },
+        {
+          "id": "BOL",
+          "name": "Bolivia (Plurinational State of)",
+          "source_record": "Regions_clusters:Sheet1!A103:G103"
+        },
+        {
+          "id": "BRA",
+          "name": "Brazil",
+          "source_record": "Regions_clusters:Sheet1!A104:G104"
+        },
+        {
+          "id": "BRN",
+          "name": "Brunei Darussalam",
+          "source_record": "Regions_clusters:Sheet1!A113:G113"
+        },
+        {
+          "id": "BWA",
+          "name": "Botswana",
+          "source_record": "Regions_clusters:Sheet1!A123:G123"
+        },
+        {
+          "id": "CAF",
+          "name": "Central African Republic",
+          "source_record": "Regions_clusters:Sheet1!A73:G73"
+        },
+        {
+          "id": "CAN",
+          "name": "Canada",
+          "source_record": "Regions_clusters:Sheet1!A87:G87"
+        },
+        {
+          "id": "CHE",
+          "name": "Switzerland",
+          "source_record": "Regions_clusters:Sheet1!A42:G42"
+        },
+        {
+          "id": "CHL",
+          "name": "Chile",
+          "source_record": "Regions_clusters:Sheet1!A105:G105"
+        },
+        {
+          "id": "CHN",
+          "name": "China",
+          "source_record": "Regions_clusters:Sheet1!A35:G35"
+        },
+        {
+          "id": "CIV",
+          "name": "Côte d'Ivoire",
+          "source_record": "Regions_clusters:Sheet1!A138:G138"
+        },
+        {
+          "id": "CMR",
+          "name": "Cameroon",
+          "source_record": "Regions_clusters:Sheet1!A74:G74"
+        },
+        {
+          "id": "COD",
+          "name": "Democratic Republic of the Congo",
+          "source_record": "Regions_clusters:Sheet1!A75:G75"
+        },
+        {
+          "id": "COG",
+          "name": "Congo",
+          "source_record": "Regions_clusters:Sheet1!A76:G76"
+        },
+        {
+          "id": "COL",
+          "name": "Colombia",
+          "source_record": "Regions_clusters:Sheet1!A106:G106"
+        },
+        {
+          "id": "COM",
+          "name": "Comoros",
+          "source_record": "Regions_clusters:Sheet1!A22:G22"
+        },
+        {
+          "id": "CRI",
+          "name": "Costa Rica",
+          "source_record": "Regions_clusters:Sheet1!A8:G8"
+        },
+        {
+          "id": "CYP",
+          "name": "Cyprus",
+          "source_record": "Regions_clusters:Sheet1!A48:G48"
+        },
+        {
+          "id": "CZE",
+          "name": "Czechia",
+          "source_record": "Regions_clusters:Sheet1!A49:G49"
+        },
+        {
+          "id": "DEU",
+          "name": "Germany",
+          "source_record": "Regions_clusters:Sheet1!A50:G50"
+        },
+        {
+          "id": "DNK",
+          "name": "Denmark",
+          "source_record": "Regions_clusters:Sheet1!A51:G51"
+        },
+        {
+          "id": "DOM",
+          "name": "Dominican Republic",
+          "source_record": "Regions_clusters:Sheet1!A2:G2"
+        },
+        {
+          "id": "DZA",
+          "name": "Algeria",
+          "source_record": "Regions_clusters:Sheet1!A81:G81"
+        },
+        {
+          "id": "ECU",
+          "name": "Ecuador",
+          "source_record": "Regions_clusters:Sheet1!A107:G107"
+        },
+        {
+          "id": "EGY",
+          "name": "Egypt",
+          "source_record": "Regions_clusters:Sheet1!A82:G82"
+        },
+        {
+          "id": "ESP",
+          "name": "Spain",
+          "source_record": "Regions_clusters:Sheet1!A52:G52"
+        },
+        {
+          "id": "EST",
+          "name": "Estonia",
+          "source_record": "Regions_clusters:Sheet1!A53:G53"
+        },
+        {
+          "id": "ETH",
+          "name": "Ethiopia",
+          "source_record": "Regions_clusters:Sheet1!A23:G23"
+        },
+        {
+          "id": "FIN",
+          "name": "Finland",
+          "source_record": "Regions_clusters:Sheet1!A54:G54"
+        },
+        {
+          "id": "FRA",
+          "name": "France",
+          "source_record": "Regions_clusters:Sheet1!A55:G55"
+        },
+        {
+          "id": "GAB",
+          "name": "Gabon",
+          "source_record": "Regions_clusters:Sheet1!A77:G77"
+        },
+        {
+          "id": "GBR",
+          "name": "United Kingdom of Great Britain and Northern Ireland",
+          "source_record": "Regions_clusters:Sheet1!A98:G98"
+        },
+        {
+          "id": "GEO",
+          "name": "Georgia",
+          "source_record": "Regions_clusters:Sheet1!A152:G152"
+        },
+        {
+          "id": "GHA",
+          "name": "Ghana",
+          "source_record": "Regions_clusters:Sheet1!A139:G139"
+        },
+        {
+          "id": "GIN",
+          "name": "Guinea",
+          "source_record": "Regions_clusters:Sheet1!A140:G140"
+        },
+        {
+          "id": "GNQ",
+          "name": "Equatorial Guinea",
+          "source_record": "Regions_clusters:Sheet1!A78:G78"
+        },
+        {
+          "id": "GRC",
+          "name": "Greece",
+          "source_record": "Regions_clusters:Sheet1!A56:G56"
+        },
+        {
+          "id": "GTM",
+          "name": "Guatemala",
+          "source_record": "Regions_clusters:Sheet1!A9:G9"
+        },
+        {
+          "id": "HKG",
+          "name": "China, Hong Kong SAR",
+          "source_record": "Regions_clusters:Sheet1!A36:G36"
+        },
+        {
+          "id": "HND",
+          "name": "Honduras",
+          "source_record": "Regions_clusters:Sheet1!A10:G10"
+        },
+        {
+          "id": "HRV",
+          "name": "Croatia",
+          "source_record": "Regions_clusters:Sheet1!A57:G57"
+        },
+        {
+          "id": "HTI",
+          "name": "Haiti",
+          "source_record": "Regions_clusters:Sheet1!A3:G3"
+        },
+        {
+          "id": "HUN",
+          "name": "Hungary",
+          "source_record": "Regions_clusters:Sheet1!A58:G58"
+        },
+        {
+          "id": "IDN",
+          "name": "Indonesia",
+          "source_record": "Regions_clusters:Sheet1!A114:G114"
+        },
+        {
+          "id": "IND",
+          "name": "India",
+          "source_record": "Regions_clusters:Sheet1!A130:G130"
+        },
+        {
+          "id": "IRL",
+          "name": "Ireland",
+          "source_record": "Regions_clusters:Sheet1!A59:G59"
+        },
+        {
+          "id": "IRN",
+          "name": "Iran (Islamic Republic of)",
+          "source_record": "Regions_clusters:Sheet1!A131:G131"
+        },
+        {
+          "id": "IRQ",
+          "name": "Iraq",
+          "source_record": "Regions_clusters:Sheet1!A153:G153"
+        },
+        {
+          "id": "ISR",
+          "name": "Israel",
+          "source_record": "Regions_clusters:Sheet1!A154:G154"
+        },
+        {
+          "id": "ITA",
+          "name": "Italy",
+          "source_record": "Regions_clusters:Sheet1!A60:G60"
+        },
+        {
+          "id": "JAM",
+          "name": "Jamaica",
+          "source_record": "Regions_clusters:Sheet1!A4:G4"
+        },
+        {
+          "id": "JOR",
+          "name": "Jordan",
+          "source_record": "Regions_clusters:Sheet1!A155:G155"
+        },
+        {
+          "id": "JPN",
+          "name": "Japan",
+          "source_record": "Regions_clusters:Sheet1!A37:G37"
+        },
+        {
+          "id": "KAZ",
+          "name": "Kazakhstan",
+          "source_record": "Regions_clusters:Sheet1!A16:G16"
+        },
+        {
+          "id": "KEN",
+          "name": "Kenya",
+          "source_record": "Regions_clusters:Sheet1!A24:G24"
+        },
+        {
+          "id": "KGZ",
+          "name": "Kyrgyzstan",
+          "source_record": "Regions_clusters:Sheet1!A17:G17"
+        },
+        {
+          "id": "KHM",
+          "name": "Cambodia",
+          "source_record": "Regions_clusters:Sheet1!A115:G115"
+        },
+        {
+          "id": "KOR",
+          "name": "Republic of Korea",
+          "source_record": "Regions_clusters:Sheet1!A38:G38"
+        },
+        {
+          "id": "KWT",
+          "name": "Kuwait",
+          "source_record": "Regions_clusters:Sheet1!A156:G156"
+        },
+        {
+          "id": "LAO",
+          "name": "Lao People's Democratic Republic",
+          "source_record": "Regions_clusters:Sheet1!A116:G116"
+        },
+        {
+          "id": "LBN",
+          "name": "Lebanon",
+          "source_record": "Regions_clusters:Sheet1!A157:G157"
+        },
+        {
+          "id": "LKA",
+          "name": "Sri Lanka",
+          "source_record": "Regions_clusters:Sheet1!A132:G132"
+        },
+        {
+          "id": "LTU",
+          "name": "Lithuania",
+          "source_record": "Regions_clusters:Sheet1!A61:G61"
+        },
+        {
+          "id": "LUX",
+          "name": "Luxembourg",
+          "source_record": "Regions_clusters:Sheet1!A62:G62"
+        },
+        {
+          "id": "LVA",
+          "name": "Latvia",
+          "source_record": "Regions_clusters:Sheet1!A63:G63"
+        },
+        {
+          "id": "MAR",
+          "name": "Morocco",
+          "source_record": "Regions_clusters:Sheet1!A83:G83"
+        },
+        {
+          "id": "MDG",
+          "name": "Madagascar",
+          "source_record": "Regions_clusters:Sheet1!A25:G25"
+        },
+        {
+          "id": "MEX",
+          "name": "Mexico",
+          "source_record": "Regions_clusters:Sheet1!A11:G11"
+        },
+        {
+          "id": "MLI",
+          "name": "Mali",
+          "source_record": "Regions_clusters:Sheet1!A141:G141"
+        },
+        {
+          "id": "MLT",
+          "name": "Malta",
+          "source_record": "Regions_clusters:Sheet1!A64:G64"
+        },
+        {
+          "id": "MNG",
+          "name": "Mongolia",
+          "source_record": "Regions_clusters:Sheet1!A39:G39"
+        },
+        {
+          "id": "MOZ",
+          "name": "Mozambique",
+          "source_record": "Regions_clusters:Sheet1!A26:G26"
+        },
+        {
+          "id": "MRT",
+          "name": "Mauritania",
+          "source_record": "Regions_clusters:Sheet1!A142:G142"
+        },
+        {
+          "id": "MUS",
+          "name": "Mauritius",
+          "source_record": "Regions_clusters:Sheet1!A27:G27"
+        },
+        {
+          "id": "MWI",
+          "name": "Malawi",
+          "source_record": "Regions_clusters:Sheet1!A28:G28"
+        },
+        {
+          "id": "MYS",
+          "name": "Malaysia",
+          "source_record": "Regions_clusters:Sheet1!A117:G117"
+        },
+        {
+          "id": "NAM",
+          "name": "Namibia",
+          "source_record": "Regions_clusters:Sheet1!A124:G124"
+        },
+        {
+          "id": "NER",
+          "name": "Niger",
+          "source_record": "Regions_clusters:Sheet1!A143:G143"
+        },
+        {
+          "id": "NGA",
+          "name": "Nigeria",
+          "source_record": "Regions_clusters:Sheet1!A144:G144"
+        },
+        {
+          "id": "NIC",
+          "name": "Nicaragua",
+          "source_record": "Regions_clusters:Sheet1!A12:G12"
+        },
+        {
+          "id": "NLD",
+          "name": "Netherlands",
+          "source_record": "Regions_clusters:Sheet1!A65:G65"
+        },
+        {
+          "id": "NOR",
+          "name": "Norway",
+          "source_record": "Regions_clusters:Sheet1!A43:G43"
+        },
+        {
+          "id": "NPL",
+          "name": "Nepal",
+          "source_record": "Regions_clusters:Sheet1!A133:G133"
+        },
+        {
+          "id": "NZL",
+          "name": "New Zealand",
+          "source_record": "Regions_clusters:Sheet1!A91:G91"
+        },
+        {
+          "id": "OMN",
+          "name": "Oman",
+          "source_record": "Regions_clusters:Sheet1!A158:G158"
+        },
+        {
+          "id": "PAK",
+          "name": "Pakistan",
+          "source_record": "Regions_clusters:Sheet1!A134:G134"
+        },
+        {
+          "id": "PAN",
+          "name": "Panama",
+          "source_record": "Regions_clusters:Sheet1!A13:G13"
+        },
+        {
+          "id": "PER",
+          "name": "Peru",
+          "source_record": "Regions_clusters:Sheet1!A108:G108"
+        },
+        {
+          "id": "PHL",
+          "name": "Philippines",
+          "source_record": "Regions_clusters:Sheet1!A118:G118"
+        },
+        {
+          "id": "POL",
+          "name": "Poland",
+          "source_record": "Regions_clusters:Sheet1!A66:G66"
+        },
+        {
+          "id": "PRI",
+          "name": "Puerto Rico",
+          "source_record": "Regions_clusters:Sheet1!A5:G5"
+        },
+        {
+          "id": "PRT",
+          "name": "Portugal",
+          "source_record": "Regions_clusters:Sheet1!A67:G67"
+        },
+        {
+          "id": "PRY",
+          "name": "Paraguay",
+          "source_record": "Regions_clusters:Sheet1!A109:G109"
+        },
+        {
+          "id": "PSE",
+          "name": "Palestine",
+          "source_record": "Regions_clusters:Sheet1!A159:G159"
+        },
+        {
+          "id": "QAT",
+          "name": "Qatar",
+          "source_record": "Regions_clusters:Sheet1!A160:G160"
+        },
+        {
+          "id": "ROU",
+          "name": "Romania",
+          "source_record": "Regions_clusters:Sheet1!A68:G68"
+        },
+        {
+          "id": "RUS",
+          "name": "Russian Federation",
+          "source_record": "Regions_clusters:Sheet1!A94:G94"
+        },
+        {
+          "id": "RWA",
+          "name": "Rwanda",
+          "source_record": "Regions_clusters:Sheet1!A29:G29"
+        },
+        {
+          "id": "SAU",
+          "name": "Saudi Arabia",
+          "source_record": "Regions_clusters:Sheet1!A161:G161"
+        },
+        {
+          "id": "SDN",
+          "name": "Sudan",
+          "source_record": "Regions_clusters:Sheet1!A84:G84"
+        },
+        {
+          "id": "SEN",
+          "name": "Senegal",
+          "source_record": "Regions_clusters:Sheet1!A145:G145"
+        },
+        {
+          "id": "SGP",
+          "name": "Singapore",
+          "source_record": "Regions_clusters:Sheet1!A119:G119"
+        },
+        {
+          "id": "SLV",
+          "name": "El Salvador",
+          "source_record": "Regions_clusters:Sheet1!A14:G14"
+        },
+        {
+          "id": "SRB",
+          "name": "Serbia",
+          "source_record": "Regions_clusters:Sheet1!A99:G99"
+        },
+        {
+          "id": "STP",
+          "name": "São Tomé and Príncipe",
+          "source_record": "Regions_clusters:Sheet1!A79:G79"
+        },
+        {
+          "id": "SVK",
+          "name": "Slovakia",
+          "source_record": "Regions_clusters:Sheet1!A69:G69"
+        },
+        {
+          "id": "SVN",
+          "name": "Slovenia",
+          "source_record": "Regions_clusters:Sheet1!A70:G70"
+        },
+        {
+          "id": "SWE",
+          "name": "Sweden",
+          "source_record": "Regions_clusters:Sheet1!A71:G71"
+        },
+        {
+          "id": "SWZ",
+          "name": "Eswatini",
+          "source_record": "Regions_clusters:Sheet1!A125:G125"
+        },
+        {
+          "id": "SYR",
+          "name": "Syrian Arab Republic",
+          "source_record": "Regions_clusters:Sheet1!A162:G162"
+        },
+        {
+          "id": "TCD",
+          "name": "Chad",
+          "source_record": "Regions_clusters:Sheet1!A80:G80"
+        },
+        {
+          "id": "TGO",
+          "name": "Togo",
+          "source_record": "Regions_clusters:Sheet1!A146:G146"
+        },
+        {
+          "id": "THA",
+          "name": "Thailand",
+          "source_record": "Regions_clusters:Sheet1!A120:G120"
+        },
+        {
+          "id": "TJK",
+          "name": "Tajikistan",
+          "source_record": "Regions_clusters:Sheet1!A18:G18"
+        },
+        {
+          "id": "TTO",
+          "name": "Trinidad and Tobago",
+          "source_record": "Regions_clusters:Sheet1!A6:G6"
+        },
+        {
+          "id": "TUN",
+          "name": "Tunisia",
+          "source_record": "Regions_clusters:Sheet1!A85:G85"
+        },
+        {
+          "id": "TUR",
+          "name": "Türkiye",
+          "source_record": "Regions_clusters:Sheet1!A163:G163"
+        },
+        {
+          "id": "TWN",
+          "name": "Chinese Taipei",
+          "source_record": "Regions_clusters:Sheet1!A40:G40"
+        },
+        {
+          "id": "TZA",
+          "name": "United Republic of Tanzania",
+          "source_record": "Regions_clusters:Sheet1!A30:G30"
+        },
+        {
+          "id": "UGA",
+          "name": "Uganda",
+          "source_record": "Regions_clusters:Sheet1!A31:G31"
+        },
+        {
+          "id": "UKR",
+          "name": "Ukraine",
+          "source_record": "Regions_clusters:Sheet1!A95:G95"
+        },
+        {
+          "id": "URY",
+          "name": "Uruguay",
+          "source_record": "Regions_clusters:Sheet1!A110:G110"
+        },
+        {
+          "id": "USA",
+          "name": "United States of America",
+          "source_record": "Regions_clusters:Sheet1!A88:G88"
+        },
+        {
+          "id": "UZB",
+          "name": "Uzbekistan",
+          "source_record": "Regions_clusters:Sheet1!A19:G19"
+        },
+        {
+          "id": "VEN",
+          "name": "Venezuela (Bolivarian Republic of)",
+          "source_record": "Regions_clusters:Sheet1!A111:G111"
+        },
+        {
+          "id": "VNM",
+          "name": "Viet Nam",
+          "source_record": "Regions_clusters:Sheet1!A121:G121"
+        },
+        {
+          "id": "XCA",
+          "name": "Rest of Central America",
+          "source_record": "Regions_clusters:Sheet1!A15:G15"
+        },
+        {
+          "id": "XCB",
+          "name": "Rest of Caribbean",
+          "source_record": "Regions_clusters:Sheet1!A7:G7"
+        },
+        {
+          "id": "XEA",
+          "name": "Rest of East Asia",
+          "source_record": "Regions_clusters:Sheet1!A41:G41"
+        },
+        {
+          "id": "XEC",
+          "name": "Rest of Eastern Africa",
+          "source_record": "Regions_clusters:Sheet1!A32:G32"
+        },
+        {
+          "id": "XEE",
+          "name": "Rest of Eastern Europe",
+          "source_record": "Regions_clusters:Sheet1!A96:G96"
+        },
+        {
+          "id": "XEF",
+          "name": "Rest of EFTA",
+          "source_record": "Regions_clusters:Sheet1!A44:G44"
+        },
+        {
+          "id": "XER",
+          "name": "Rest of Europe",
+          "source_record": "Regions_clusters:Sheet1!A100:G100"
+        },
+        {
+          "id": "XNA",
+          "name": "Rest of North America",
+          "source_record": "Regions_clusters:Sheet1!A89:G89"
+        },
+        {
+          "id": "XNF",
+          "name": "Rest of North Africa",
+          "source_record": "Regions_clusters:Sheet1!A86:G86"
+        },
+        {
+          "id": "XOC",
+          "name": "Rest of Oceania",
+          "source_record": "Regions_clusters:Sheet1!A92:G92"
+        },
+        {
+          "id": "XSA",
+          "name": "Rest of South Asia",
+          "source_record": "Regions_clusters:Sheet1!A135:G135"
+        },
+        {
+          "id": "XSC",
+          "name": "Rest of Southern African Customs Union",
+          "source_record": "Regions_clusters:Sheet1!A126:G126"
+        },
+        {
+          "id": "XSE",
+          "name": "Rest of Southeast Asia",
+          "source_record": "Regions_clusters:Sheet1!A122:G122"
+        },
+        {
+          "id": "XSM",
+          "name": "Rest of South America",
+          "source_record": "Regions_clusters:Sheet1!A112:G112"
+        },
+        {
+          "id": "XSU",
+          "name": "Rest of Former Soviet Union",
+          "source_record": "Regions_clusters:Sheet1!A20:G20"
+        },
+        {
+          "id": "XTW",
+          "name": "Rest of the World",
+          "source_record": "Regions_clusters:Sheet1!A101:G101"
+        },
+        {
+          "id": "XWF",
+          "name": "Rest of Western Africa",
+          "source_record": "Regions_clusters:Sheet1!A147:G147"
+        },
+        {
+          "id": "XWS",
+          "name": "Rest of Western Asia",
+          "source_record": "Regions_clusters:Sheet1!A164:G164"
+        },
+        {
+          "id": "ZAF",
+          "name": "South Africa",
+          "source_record": "Regions_clusters:Sheet1!A127:G127"
+        },
+        {
+          "id": "ZMB",
+          "name": "Zambia",
+          "source_record": "Regions_clusters:Sheet1!A33:G33"
+        },
+        {
+          "id": "ZWE",
+          "name": "Zimbabwe",
+          "source_record": "Regions_clusters:Sheet1!A34:G34"
+        }
+      ],
+      "groups": [
+        {
+          "id": "AFRICA",
+          "members": [
+            "AGO",
+            "BDI",
+            "BEN",
+            "BFA",
+            "BWA",
+            "CAF",
+            "CIV",
+            "CMR",
+            "COD",
+            "COG",
+            "COM",
+            "DZA",
+            "EGY",
+            "ETH",
+            "GAB",
+            "GHA",
+            "GIN",
+            "GNQ",
+            "KEN",
+            "MAR",
+            "MDG",
+            "MLI",
+            "MOZ",
+            "MRT",
+            "MUS",
+            "MWI",
+            "NAM",
+            "NER",
+            "NGA",
+            "RWA",
+            "SDN",
+            "SEN",
+            "STP",
+            "SWZ",
+            "TCD",
+            "TGO",
+            "TUN",
+            "TZA",
+            "UGA",
+            "XEC",
+            "XNF",
+            "XSC",
+            "XWF",
+            "ZAF",
+            "ZMB",
+            "ZWE"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "AMERICA",
+          "members": [
+            "ARG",
+            "BOL",
+            "BRA",
+            "CAN",
+            "CHL",
+            "COL",
+            "CRI",
+            "DOM",
+            "ECU",
+            "GTM",
+            "HND",
+            "HTI",
+            "JAM",
+            "MEX",
+            "NIC",
+            "PAN",
+            "PER",
+            "PRI",
+            "PRY",
+            "SLV",
+            "TTO",
+            "URY",
+            "USA",
+            "VEN",
+            "XCA",
+            "XCB",
+            "XNA",
+            "XSM"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "ASIA",
+          "members": [
+            "AFG",
+            "ARE",
+            "ARM",
+            "AUS",
+            "AZE",
+            "BGD",
+            "BHR",
+            "BRN",
+            "CHN",
+            "GEO",
+            "HKG",
+            "IDN",
+            "IND",
+            "IRN",
+            "IRQ",
+            "ISR",
+            "JOR",
+            "JPN",
+            "KAZ",
+            "KGZ",
+            "KHM",
+            "KOR",
+            "KWT",
+            "LAO",
+            "LBN",
+            "LKA",
+            "MNG",
+            "MYS",
+            "NPL",
+            "NZL",
+            "OMN",
+            "PAK",
+            "PHL",
+            "PSE",
+            "QAT",
+            "SAU",
+            "SGP",
+            "SYR",
+            "THA",
+            "TJK",
+            "TUR",
+            "TWN",
+            "UZB",
+            "VNM",
+            "XEA",
+            "XOC",
+            "XSA",
+            "XSE",
+            "XSU",
+            "XWS"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "BRIC",
+          "members": [
+            "BRA",
+            "CHN",
+            "HKG",
+            "IND",
+            "RUS"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "CARIBBEAN",
+          "members": [
+            "DOM",
+            "HTI",
+            "JAM",
+            "PRI",
+            "TTO",
+            "XCB"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "CENTRAL AMERICA",
+          "members": [
+            "CRI",
+            "GTM",
+            "HND",
+            "MEX",
+            "NIC",
+            "PAN",
+            "SLV",
+            "XCA"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "CENTRAL ASIA",
+          "members": [
+            "KAZ",
+            "KGZ",
+            "TJK",
+            "UZB",
+            "XSU"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "CENTRAL, WESTERN AND SOUTHERN ASIA",
+          "members": [
+            "ARE",
+            "ARM",
+            "AZE",
+            "BHR",
+            "GEO",
+            "IRQ",
+            "ISR",
+            "JOR",
+            "KAZ",
+            "KGZ",
+            "KWT",
+            "LBN",
+            "OMN",
+            "PSE",
+            "QAT",
+            "SAU",
+            "SYR",
+            "TJK",
+            "TUR",
+            "UZB",
+            "XSU",
+            "XWS"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "EASTERN AFRICA",
+          "members": [
+            "BDI",
+            "COM",
+            "ETH",
+            "KEN",
+            "MDG",
+            "MOZ",
+            "MUS",
+            "MWI",
+            "RWA",
+            "TZA",
+            "UGA",
+            "XEC",
+            "ZMB",
+            "ZWE"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "EASTERN ASIA",
+          "members": [
+            "CHN",
+            "HKG",
+            "JPN",
+            "KOR",
+            "MNG",
+            "TWN",
+            "XEA"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "EFTA",
+          "members": [
+            "CHE",
+            "NOR",
+            "XEF"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "EU27",
+          "members": [
+            "AUT",
+            "BEL",
+            "BGR",
+            "CYP",
+            "CZE",
+            "DEU",
+            "DNK",
+            "ESP",
+            "EST",
+            "FIN",
+            "FRA",
+            "GRC",
+            "HRV",
+            "HUN",
+            "IRL",
+            "ITA",
+            "LTU",
+            "LUX",
+            "LVA",
+            "MLT",
+            "NLD",
+            "POL",
+            "PRT",
+            "ROU",
+            "SVK",
+            "SVN",
+            "SWE"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "EUROPE",
+          "members": [
+            "ALB",
+            "AUT",
+            "BEL",
+            "BGR",
+            "BLR",
+            "CHE",
+            "CYP",
+            "CZE",
+            "DEU",
+            "DNK",
+            "ESP",
+            "EST",
+            "FIN",
+            "FRA",
+            "GBR",
+            "GRC",
+            "HRV",
+            "HUN",
+            "IRL",
+            "ITA",
+            "LTU",
+            "LUX",
+            "LVA",
+            "MLT",
+            "NLD",
+            "NOR",
+            "POL",
+            "PRT",
+            "ROU",
+            "RUS",
+            "SRB",
+            "SVK",
+            "SVN",
+            "SWE",
+            "UKR",
+            "XEE",
+            "XEF",
+            "XER"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "G20",
+          "members": [
+            "ARG",
+            "AUS",
+            "AUT",
+            "BEL",
+            "BGR",
+            "CYP",
+            "CZE",
+            "DNK",
+            "ESP",
+            "EST",
+            "FIN",
+            "GRC",
+            "HRV",
+            "HUN",
+            "IDN",
+            "IRL",
+            "KOR",
+            "LTU",
+            "LUX",
+            "LVA",
+            "MEX",
+            "MLT",
+            "NLD",
+            "POL",
+            "PRT",
+            "ROU",
+            "SAU",
+            "SVK",
+            "SVN",
+            "SWE",
+            "TUR",
+            "ZAF"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "G7",
+          "members": [
+            "CAN",
+            "DEU",
+            "FRA",
+            "GBR",
+            "ITA",
+            "JPN",
+            "USA"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "GLOBAL",
+          "members": [
+            "AFG",
+            "AGO",
+            "ALB",
+            "ARE",
+            "ARG",
+            "ARM",
+            "AUS",
+            "AUT",
+            "AZE",
+            "BDI",
+            "BEL",
+            "BEN",
+            "BFA",
+            "BGD",
+            "BGR",
+            "BHR",
+            "BLR",
+            "BOL",
+            "BRA",
+            "BRN",
+            "BWA",
+            "CAF",
+            "CAN",
+            "CHE",
+            "CHL",
+            "CHN",
+            "CIV",
+            "CMR",
+            "COD",
+            "COG",
+            "COL",
+            "COM",
+            "CRI",
+            "CYP",
+            "CZE",
+            "DEU",
+            "DNK",
+            "DOM",
+            "DZA",
+            "ECU",
+            "EGY",
+            "ESP",
+            "EST",
+            "ETH",
+            "FIN",
+            "FRA",
+            "GAB",
+            "GBR",
+            "GEO",
+            "GHA",
+            "GIN",
+            "GNQ",
+            "GRC",
+            "GTM",
+            "HKG",
+            "HND",
+            "HRV",
+            "HTI",
+            "HUN",
+            "IDN",
+            "IND",
+            "IRL",
+            "IRN",
+            "IRQ",
+            "ISR",
+            "ITA",
+            "JAM",
+            "JOR",
+            "JPN",
+            "KAZ",
+            "KEN",
+            "KGZ",
+            "KHM",
+            "KOR",
+            "KWT",
+            "LAO",
+            "LBN",
+            "LKA",
+            "LTU",
+            "LUX",
+            "LVA",
+            "MAR",
+            "MDG",
+            "MEX",
+            "MLI",
+            "MLT",
+            "MNG",
+            "MOZ",
+            "MRT",
+            "MUS",
+            "MWI",
+            "MYS",
+            "NAM",
+            "NER",
+            "NGA",
+            "NIC",
+            "NLD",
+            "NOR",
+            "NPL",
+            "NZL",
+            "OMN",
+            "PAK",
+            "PAN",
+            "PER",
+            "PHL",
+            "POL",
+            "PRI",
+            "PRT",
+            "PRY",
+            "PSE",
+            "QAT",
+            "ROU",
+            "RUS",
+            "RWA",
+            "SAU",
+            "SDN",
+            "SEN",
+            "SGP",
+            "SLV",
+            "SRB",
+            "STP",
+            "SVK",
+            "SVN",
+            "SWE",
+            "SWZ",
+            "SYR",
+            "TCD",
+            "TGO",
+            "THA",
+            "TJK",
+            "TTO",
+            "TUN",
+            "TUR",
+            "TWN",
+            "TZA",
+            "UGA",
+            "UKR",
+            "URY",
+            "USA",
+            "UZB",
+            "VEN",
+            "VNM",
+            "XCA",
+            "XCB",
+            "XEA",
+            "XEC",
+            "XEE",
+            "XEF",
+            "XER",
+            "XNA",
+            "XNF",
+            "XOC",
+            "XSA",
+            "XSC",
+            "XSE",
+            "XSM",
+            "XSU",
+            "XTW",
+            "XWF",
+            "XWS",
+            "ZAF",
+            "ZMB",
+            "ZWE"
+          ],
+          "semantics": "entire_target_geography",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "LATINA AMERICA",
+          "members": [
+            "ARG",
+            "BOL",
+            "BRA",
+            "CHL",
+            "COL",
+            "CRI",
+            "DOM",
+            "ECU",
+            "GTM",
+            "HND",
+            "HTI",
+            "JAM",
+            "MEX",
+            "NIC",
+            "PAN",
+            "PER",
+            "PRI",
+            "PRY",
+            "SLV",
+            "TTO",
+            "URY",
+            "VEN",
+            "XCA",
+            "XCB",
+            "XSM"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "MIDDLE AFRICA",
+          "members": [
+            "AGO",
+            "CAF",
+            "CMR",
+            "COD",
+            "COG",
+            "GAB",
+            "GNQ",
+            "STP",
+            "TCD"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "NORTH AMERICA",
+          "members": [
+            "CAN",
+            "USA",
+            "XNA"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "NORTHERN AFRICA",
+          "members": [
+            "DZA",
+            "EGY",
+            "MAR",
+            "SDN",
+            "TUN",
+            "XNF"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "NORTHERN AMERICA",
+          "members": [
+            "CAN",
+            "USA",
+            "XNA"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "OCEANIA",
+          "members": [
+            "AUS",
+            "NZL",
+            "XOC"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "REST OF EASTERN EUROPE",
+          "members": [
+            "BLR",
+            "RUS",
+            "UKR",
+            "XEE"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "REST OF EUROPE",
+          "members": [
+            "ALB",
+            "GBR",
+            "SRB",
+            "XER"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "REST OF THE WORLD",
+          "members": [
+            "XTW"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "SOUTH AMERICA",
+          "members": [
+            "ARG",
+            "BOL",
+            "BRA",
+            "CHL",
+            "COL",
+            "ECU",
+            "PER",
+            "PRY",
+            "URY",
+            "VEN",
+            "XSM"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "SOUTH-EAST ASIA AND PACIFIC",
+          "members": [
+            "AFG",
+            "AUS",
+            "BGD",
+            "BRN",
+            "CHN",
+            "HKG",
+            "IDN",
+            "IND",
+            "IRN",
+            "JPN",
+            "KHM",
+            "KOR",
+            "LAO",
+            "LKA",
+            "MNG",
+            "MYS",
+            "NPL",
+            "NZL",
+            "PAK",
+            "PHL",
+            "SGP",
+            "THA",
+            "TWN",
+            "VNM",
+            "XEA",
+            "XOC",
+            "XSA",
+            "XSE"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "SOUTH-EASTERN ASIA",
+          "members": [
+            "BRN",
+            "IDN",
+            "KHM",
+            "LAO",
+            "MYS",
+            "PHL",
+            "SGP",
+            "THA",
+            "VNM",
+            "XSE"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "SOUTHERN AFRICA",
+          "members": [
+            "BWA",
+            "NAM",
+            "SWZ",
+            "XSC",
+            "ZAF"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "SOUTHERN ASIA",
+          "members": [
+            "AFG",
+            "BGD",
+            "IND",
+            "IRN",
+            "LKA",
+            "NPL",
+            "PAK",
+            "XSA"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "WESTERN AFRICA",
+          "members": [
+            "BEN",
+            "BFA",
+            "CIV",
+            "GHA",
+            "GIN",
+            "MLI",
+            "MRT",
+            "NER",
+            "NGA",
+            "SEN",
+            "TGO",
+            "XWF"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        },
+        {
+          "id": "WESTERN ASIA",
+          "members": [
+            "ARE",
+            "ARM",
+            "AZE",
+            "BHR",
+            "GEO",
+            "IRQ",
+            "ISR",
+            "JOR",
+            "KWT",
+            "LBN",
+            "OMN",
+            "PSE",
+            "QAT",
+            "SAU",
+            "SYR",
+            "TUR",
+            "XWS"
+          ],
+          "semantics": "explicit_membership",
+          "source_record": "Regions_clusters:Sheet1!C2:G164"
+        }
+      ]
+    }
+  ]
+}

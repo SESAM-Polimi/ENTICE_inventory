@@ -1,0 +1,1842 @@
+{
+  "captured_at_utc": "2026-10-01T10:12:10.494451+00:00",
+  "state": "Candidate sources captured; historical execution environment is not certified.",
+  "code": {
+    "entice_inventory": {
+      "head": "14fc2bf52802ca1572efd557de15c15cf4abf77d",
+      "status": " M .gitignore\n M Run.py\nR  GTAP12_X.xlsx -> data/GTAP12_X.xlsx\nRM GTAP12_matching.xlsx -> data/GTAP12_matching.xlsx\nR  Regions_clusters.xlsx -> data/Regions_clusters.xlsx\nRM \"D2.4 builder.py\" -> scripts/run_d24_pipeline.py\nRM matching_utils.py -> src/entice_inventory/core/matching_utils.py\nRM residual_sector_cluster.py -> src/entice_inventory/core/residual_sector_cluster.py\nRM build_d24_inventories.py -> src/entice_inventory/export/build_d24_inventories.py\nRM exioiot_to_inventory.py -> src/entice_inventory/inventory/exioiot_to_inventory.py\nR  template_checker.py -> src/entice_inventory/inventory/template_checker.py\nRM template_to_inventory.py -> src/entice_inventory/inventory/template_to_inventory.py\n?? README.md\n?? pyproject.toml\n?? scripts/audit_d24_baseline.py\n?? src/entice_inventory/__init__.py\n?? src/entice_inventory/core/__init__.py\n?? src/entice_inventory/core/paths.py\n?? src/entice_inventory/export/__init__.py\n?? src/entice_inventory/export/plot_d24_split.py\n?? src/entice_inventory/inventory/__init__.py\n?? src/entice_inventory/inventory/copcosts_to_inventory.py\n?? src/entice_inventory/inventory/inventory_writer.py\n",
+      "history_before_delivery": "14fc2bf52802ca1572efd557de15c15cf4abf77d 2026-06-08T17:13:07+02:00 latest devs up to final exporter in d2.4 format\nf3fdc942136e638e52e47a551ec2602401005eaf 2026-06-04T22:15:24+02:00 first export of 2.4 inventories\n0315f73eed0cf0549df1dd7b74c59e29436cedb1 2026-06-04T12:03:09+02:00 Update GTAP matching workbook and inventory scripts\ne93bc38ce247ec8faad449ee72e014b701f4bb18 2026-06-03T13:45:07+02:00 Regions mapping to GTAP code\n8cec4f24c65444e6d615076f2e84bbee0bb0893a 2026-06-01T11:36:52+02:00 Adequate management of unit processes for regions or clusters\n"
+    },
+    "mario": {
+      "head": "590426673589dc474d1d23547b1d366758d7fec7",
+      "status": " M doc/source/notebooks/parsers/exiobase/rex3.ipynb\n M mario/parsers/figaro.py\n M tests/parsers/test_figaro_parser.py\n?? test.py\n",
+      "history_before_delivery": "ea760f37b11f6786796dc486ed0882503a709d70 2026-06-15T11:58:21+02:00 Zero mask on V as well\nd35d1e524c7d6565a58b026fbf27b6acd961e085 2026-06-14T14:23:57+02:00 fix: Harden parser/export roundtrips across layouts and formats\n0147759300fa68d27387fb78de04a7d4caa8cb0c 2026-06-14T10:56:44+02:00 chore: Update CHANGELOG for v1.0.2 release and bump version to 1.0.2\n77f96df6d19afcecc150674d26dcc10b444df54f 2026-06-14T08:46:41+02:00 feat: Enhance SUT matrix handling in export and parsing\nac6ed28425077e6923892f12f8ac4a50c8011ef9 2026-06-14T08:04:47+02:00 Enhance SUT update scenarios to accept unified matrices for Z, Y, and E; add corresponding tests\n"
+    },
+    "cvxlab": {
+      "head": "1f2521b52d85ca0783dca5991d697d22bfa044a3",
+      "status": "",
+      "history_before_delivery": "6ffd5cd5ff10e8db6b2a659f4f2569ade160e849 2026-06-25T14:38:29+02:00 model.collect_ucnertainty_measures_for_run() bug fix - now works also if Split problem = False\n3d157686ae9d6929f441e8c6d7c787bae28a819f 2026-06-25T11:42:08+02:00 uncertaitnty.collect_uncertain_parameters() bug fix\n84fc12ed8143897ca7b276dbe1f864d14147fbc9 2026-06-19T14:53:10+02:00 model.run_uncertainty() aded possibility to temporaly save measures during model runs\n944571d6243e7a5b280957a6b1f08aec5c9d3a57 2026-06-18T17:31:50+02:00 added missing docstrings\n007dbac76a4855b52e9be5a1672903ae231dcd21 2026-06-18T17:10:28+02:00 added missing docstrings\n"
+    }
+  },
+  "files": [
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of rubber products.xlsx",
+      "size_bytes": 913098,
+      "mtime_ns": 1779984154726305246,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "86fcd0f6b6813eaa24289f0b4bd0c6de935bc8f6693ff1426fb5d3a92b43a259",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of heavy duty ICEV.xlsx",
+      "size_bytes": 1193651,
+      "mtime_ns": 1780995033751179695,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "a109b91376d4a5843d081d1686c5afe714fae8c23ebb7dd0d857d274a89d0afe",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of hydrogen via steam reforming.xlsx",
+      "size_bytes": 889146,
+      "mtime_ns": 1779976867242693424,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "f4e19c9704b5f84285da0970057ac0a84a149706cdb3cf4a50954cb368fa59c1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of light duty ICEV.xlsx",
+      "size_bytes": 968853,
+      "mtime_ns": 1780995833000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "62d04dda9e167744a2ef93321da0565b4a581892fb6cce9aadb2b96381401f93",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Recycling of plastics.xlsx",
+      "size_bytes": 902058,
+      "mtime_ns": 1779980574431660652,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "76116fe438caa5d88ac6c2b7a3cc9fc02249433319b32b0cacd1688875846537",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of secondary iron and steel.xlsx",
+      "size_bytes": 894624,
+      "mtime_ns": 1782393045289030551,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "ac841d43ec9598e5e664a230a73ae5030efe60477708f69d4057f0ad4bdcab34",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of ammonia.xlsx",
+      "size_bytes": 898875,
+      "mtime_ns": 1779975563328760862,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "0eb2a8c337fc1080b526ddda093b9e59c2ed17ec74c4548470da5e24c9d0d42b",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of steel via direct reduction with hydrogen.xlsx",
+      "size_bytes": 1255974,
+      "mtime_ns": 1782393092688505411,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "273553bc0dbdc54ec744a0acbaaffc4b2fd96e283095814ecb9485b496860dd1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of NCM batteries.xlsx",
+      "size_bytes": 917331,
+      "mtime_ns": 1782470689000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "afd3cbca1386422d2034c1dd9db335fce5c774a9ccca7a8db08a8da6ffe18545",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of primary aluminum.xlsx",
+      "size_bytes": 902830,
+      "mtime_ns": 1780514022000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "45a117f0afa67b6f707a051ac4b506660cf87a9dc6a3618a172cf19b789a4bb9",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of secondary plastic products.xlsx",
+      "size_bytes": 914115,
+      "mtime_ns": 1779984328304576635,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "4172899c168c78fb710b3182575b00b7d41608db313cab27529fa03b8e798289",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of traditional cement.xlsx",
+      "size_bytes": 944247,
+      "mtime_ns": 1780993831000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "628865da7518e7b8368e248f97a1de5cf9ffb7f9a39d0fb42f323edf8815ed1c",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of NCA batteries.xlsx",
+      "size_bytes": 915432,
+      "mtime_ns": 1782471276000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "75276f63a1b312298c403493f789d6110966575346c2138eadf5601313eebc4a",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of coke.xlsx",
+      "size_bytes": 3417901,
+      "mtime_ns": 1780570693000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "eb203867a47f62091895a4c7ee09c8bf28a76723af0bd9d1ca62dc3a53ba530d",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of high value chemicals.xlsx",
+      "size_bytes": 898723,
+      "mtime_ns": 1779975199642019271,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "4c6020085cd8fe505dd40dfb9f1c0d6eb49ca753cf3a786e0f517c521dce9ade",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of solar panels.xlsx",
+      "size_bytes": 918170,
+      "mtime_ns": 1780476639000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "bfbdeeed3b6a00fb8a4147891a7808aa4e18764cccf9878e4377072890ca9b8c",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of steel via direct reduction with natural gas.xlsx",
+      "size_bytes": 900600,
+      "mtime_ns": 1782393066810045719,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "7bccd39aa3c8e038e92493ee9e2b6933b597898e7a8ac0aaccf40659d7a630f1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of hydrogen via electrolysis.xlsx",
+      "size_bytes": 912361,
+      "mtime_ns": 1779976302177895784,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "4b6941e3c61c25939b1dfabff3676e349ba72328d14460a2f78f584749734ec1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of methanol.xlsx",
+      "size_bytes": 909449,
+      "mtime_ns": 1779975078805528163,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "d111177ad058abe9b0ac5c9d92239286857b7245690fc2ad275a16addc13c66a",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Transport via pipeline service.xlsx",
+      "size_bytes": 895454,
+      "mtime_ns": 1780482642000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "eba43836b8a879bfc7f720ddef6eef612e1c0629724aa4cb8ec0330cbf704924",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Recycling of Aluminum.xlsx",
+      "size_bytes": 911019,
+      "mtime_ns": 1780514181000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "b3ad7eec612a259a0a8947bd0668ce3599e9a2c257c0a48a4894b0c751787889",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of steel via BF-BOF with natural gas injection.xlsx",
+      "size_bytes": 899178,
+      "mtime_ns": 1782470626000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "896456c19a42483ad31c817c791f879332487012b2d97af12949083722dba465",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Mining of silicon.xlsx",
+      "size_bytes": 895759,
+      "mtime_ns": 1780304737000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "6610b3c77a5045dad4a5c8ace59ae109e8e95f6f8d016ffd0876881e084d673f",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of light duty HEV.xlsx",
+      "size_bytes": 1274010,
+      "mtime_ns": 1780995809000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "e6784d417d7656b0edcc874e94671ac38823b1fda8aa54eba5a6792ec819bfe5",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of LFP batteries.xlsx",
+      "size_bytes": 915511,
+      "mtime_ns": 1782470573000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "afef5e851580feb6622b752d2fd90d3822b019dcb3026746f3e0351cc7ec8ad7",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of heavy duty BEV.xlsx",
+      "size_bytes": 910794,
+      "mtime_ns": 1780992148000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "917f2026f7ae9fa4f0c0680190086f3b0db88715ebd43c60463f164ac75db014",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of coal products_ordecys.xlsx",
+      "size_bytes": 924418,
+      "mtime_ns": 1779889735000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "1b38f0b5a394a80e06e4d00f65dcd966cbea09996545569bcc6bd6b1afe62752",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of steel via BF-BOF with coke injection.xlsx",
+      "size_bytes": 899214,
+      "mtime_ns": 1782393121282659530,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "7a14fb372415bcbd4a50fb668ad00c4a6163648cabda915a58b04b863c2ed130",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of LMO batteries.xlsx",
+      "size_bytes": 914405,
+      "mtime_ns": 1782471090000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "c7f4c5170ca53fb8c88bffa51aa74945dee07de602b54e2275f52582450206ea",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of wind turbines.xlsx",
+      "size_bytes": 934826,
+      "mtime_ns": 1780304734000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "816a71d01f9967101e02c69eef1d9c14b55e04032a4af167315d732867a366f5",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of primary plastic products.xlsx",
+      "size_bytes": 907937,
+      "mtime_ns": 1779983362599795103,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "226833c2e753bb486409d82df460b95c5db590f925e8350cda5f42a5d249d8f7",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of light duty BEV.xlsx",
+      "size_bytes": 907436,
+      "mtime_ns": 1780996156000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "abe9a7f97187ba3680d2848d40307cb9503f811ccd28cbb575544d3d1ab24718",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of LCO batteries.xlsx",
+      "size_bytes": 915051,
+      "mtime_ns": 1782471023000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "79681e6ecc071b0a8a36736de7ddc4cfcedb7925efe0700bf06273b4cc194c65",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of metallurgical silicon.xlsx",
+      "size_bytes": 903784,
+      "mtime_ns": 1779984266986123800,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "073c0c045e1d4049f18859567d925af20ed95cf5e5d0a072991b799d723b537c",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Manufacture of secondary aluminum.xlsx",
+      "size_bytes": 926058,
+      "mtime_ns": 1780514773000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "009b5ee73593e859d7a3e1c9ea51a7fd0f389d7ae3dbb1b38dbdcb3d5069adf1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Partner inventories/Inventory_Cultivation of barley.xlsx",
+      "size_bytes": 907440,
+      "mtime_ns": 1776423051000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "b04401863d173e6c155b432dd1110938b41ddb4c40994524d809e1a685b06f40",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of copper ores.xlsx",
+      "size_bytes": 435250,
+      "mtime_ns": 1780066759142807960,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "a782dd7f5cd139f81c03c134dcf84ab02194155083d9452c585ef8aad9300a28",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of methanol.xlsx",
+      "size_bytes": 30783,
+      "mtime_ns": 1780069590150235414,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "25a8b31892e73764246acd178dc472d6c1a6b544df3679e0c15bfbb62adc8fbc",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of wind turbines.xlsx",
+      "size_bytes": 34847,
+      "mtime_ns": 1780516641000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "9ef19e6f9c66973c948f300601282c350d715e425762e6d03588f583f1e4138d",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of refined gallium.xlsx",
+      "size_bytes": 562394,
+      "mtime_ns": 1780479832464203596,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "4cf81276a70c1e375c282e173731785c9a73762bf91125ea0581cfea91ee55b8",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of metallurgical silicon.xlsx",
+      "size_bytes": 26440,
+      "mtime_ns": 1780066897372842788,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "f8030c685955eff3e9983ca2eeb7a481af507c6eb5b2caaae5722c675e5e1392",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of LMO batteries.xlsx",
+      "size_bytes": 27923,
+      "mtime_ns": 1782471686739354133,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "6d0121a61b79555281cdd5859f7a96f0b9cd5de44c265c9ab817a3990624cba1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of light duty BEV.xlsx",
+      "size_bytes": 30709,
+      "mtime_ns": 1780995697346241235,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "5a8610de27121921eb07b23b1c1944bd4de4c63741503c8d747599e0e1e57021",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of zinc.xlsx",
+      "size_bytes": 456634,
+      "mtime_ns": 1780478661273727416,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "334b9ecbbba61c8bae1e579d04e705a9351ceb11c897df82d97d16ab7f2a69b9",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of solar panels.xlsx",
+      "size_bytes": 28389,
+      "mtime_ns": 1780476655000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "ea216a89e39e3dc48539a2f164a4f8b2471158e1f8352c86933fd6470b25eb23",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of heavy duty ICEV.xlsx",
+      "size_bytes": 51668,
+      "mtime_ns": 1780995078109845161,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "9b31bfea8e697b3b733b8dd65cf725b0690b270d3bbb74943936b36ce5151f23",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of rubber products.xlsx",
+      "size_bytes": 94496,
+      "mtime_ns": 1782464188591468334,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "956f90f627f64227b61eaeece114a61f1915259a5f5157e95ad148301d37dfef",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of secondary iron and steel.xlsx",
+      "size_bytes": 28163,
+      "mtime_ns": 1782393170000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "860a21db29911d7a16c756da0e5397f586e5c873bca0a1d1bc3b05ae94357371",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of cobalt ores and concentrates.xlsx",
+      "size_bytes": 502419,
+      "mtime_ns": 1780477727354311466,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "ce00c820eb67df265c85d32f218701f222e8fd809cb659046348b215a819b2dd",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of LFP batteries.xlsx",
+      "size_bytes": 27749,
+      "mtime_ns": 1782471680224885702,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "d0b5bc4647a64465acb000231bc952b9f39f9f62b8016811dbbba29951c106f9",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of light duty ICEV.xlsx",
+      "size_bytes": 48605,
+      "mtime_ns": 1780995701625600337,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "00241d1cfc899d2e2aa8ec21eedc90fef2f43edc8321c3fcf30330c11e5a05c1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of secondary aluminum.xlsx",
+      "size_bytes": 88305,
+      "mtime_ns": 1780514814000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "b7bd313d331189abe00e67b40011fa5810aeff5de92363e5ad65a25041f21253",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of potassium fertilizer.xlsx",
+      "size_bytes": 560652,
+      "mtime_ns": 1780480076116151094,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "0811c0057360fbc2aea4c256cf4abf252f78398979f6d1c8d0b9984835b709d2",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of refined titanium.xlsx",
+      "size_bytes": 563675,
+      "mtime_ns": 1780479754370105981,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "2ca89ddae19973a1438ac3605073911673053f25659d313bd9028f588483fbca",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of primary copper.xlsx",
+      "size_bytes": 183854,
+      "mtime_ns": 1782511697292400121,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "e2b823c120f56f688c0d1f477e56fa8566588313723883e234bae615c4a6ecef",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of titanium.xlsx",
+      "size_bytes": 468551,
+      "mtime_ns": 1780478331824916839,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "971fe3ce511a945f2998bbe948684626c4ac5b797ed5a61e87b18ed78bf24c64",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of refined nickel.xlsx",
+      "size_bytes": 563449,
+      "mtime_ns": 1780479517747526407,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "58d09241dc7522f725fdd04acc94d12eefee8b7e4a70970b3b84354d34c11b89",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of light duty HEV.xlsx",
+      "size_bytes": 37662,
+      "mtime_ns": 1780995694307340145,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "b1ecf9e6a549d4eadc4576ccbcd8c41dc8ed34d93dc383a9e24f4c7136b87228",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Recycling of aluminum.xlsx",
+      "size_bytes": 33739,
+      "mtime_ns": 1780514168000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "48ba490828bfdde71efde7af6d049853663e1cc111e1ee45b70f5da47dc4cc28",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of silver.xlsx",
+      "size_bytes": 469013,
+      "mtime_ns": 1780478413360934257,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "d90b03281bf2141c2c2524498997c5cb9b6ecdad85976d15da3ca78c1e6d2be4",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of heavy duty BEV.xlsx",
+      "size_bytes": 29856,
+      "mtime_ns": 1780995055000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "c3d9c8a1d0fa5d07f4a757bcba507e6c661d55e5287596e5901faa4ef9a95c18",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Transport via pipeline service.xlsx",
+      "size_bytes": 25854,
+      "mtime_ns": 1780487822000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "af3fb7b505b5e7178a6a7d52bb55521220a509662c6f8c36da153df4731648d1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of lithium.xlsx",
+      "size_bytes": 468455,
+      "mtime_ns": 1780478580154430627,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "dea6e8e972667cc9b58f6c67f8e4003fe1295736655a9101b5849bfc931deea6",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of refined rare earths.xlsx",
+      "size_bytes": 563541,
+      "mtime_ns": 1780479355337639331,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "0b0e800e6c8eaceb32b2561519aa0b18d09273562d3876c77911ba33523f5faf",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of plantinum group metals.xlsx",
+      "size_bytes": 299416,
+      "mtime_ns": 1780478743486297130,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "8d13a7a341f38294b770ddf70aeda6edb6a5f5c8bee89cb9f8a732ee1fe33f06",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of LCO batteries.xlsx",
+      "size_bytes": 28023,
+      "mtime_ns": 1782471683503830909,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "8f4576b4d3c105c72b594171c25ba6ded71ce874854e532aaa52542f23169a6f",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of nitrogen fertilizer.xlsx",
+      "size_bytes": 562386,
+      "mtime_ns": 1780066982546018838,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "b0dc86ac5cb434bb4b1bfcf73a925123d4f2d9238c3283da52b049bd7ac541f8",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Recycling of copper.xlsx",
+      "size_bytes": 123276,
+      "mtime_ns": 1782511704803410053,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "1b21b80b3d55783dba439efe55c15aa8cb30d23e6f788050be727dcb80ffdaa5",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of uranium.xlsx",
+      "size_bytes": 318632,
+      "mtime_ns": 1780066841258563518,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "2ef787a0a744e6cb314fe7d2b17a0fad9d3725ba2ed4e73b7068bd89453406fd",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of steel via direct reduction with natural gas.xlsx",
+      "size_bytes": 28072,
+      "mtime_ns": 1782470680415681123,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "297f980c57a6a927e362737b25f13c29c7ef5ff9038919acde58a9990a73aaa0",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of refined zinc.xlsx",
+      "size_bytes": 571343,
+      "mtime_ns": 1780479912829070329,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "7a97423f0c84957a25f5edb674075cb301df44624c3992540e6f46dbd488289b",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of manganese ores and concentrates.xlsx",
+      "size_bytes": 469026,
+      "mtime_ns": 1780478167386291265,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "bfe914cdd103a08012b31113cc6bdd8d8b74426a0347d22851fd763c1842f8aa",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of NCM batteries.xlsx",
+      "size_bytes": 28164,
+      "mtime_ns": 1782471673732607126,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "4d19161195c4d1395df627755e593ef28c43f1ce94c5a78c5c9b4a7159fd7e4f",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of refined chromium.xlsx",
+      "size_bytes": 563589,
+      "mtime_ns": 1780479675293215274,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "af76d30d037c4101f4ba03f81b398d14eafdccc4b32e38706c9fd79a2ba9e3a5",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of aluminum ores.xlsx",
+      "size_bytes": 416532,
+      "mtime_ns": 1780066658503457546,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "df4c17d1f2471ae0e06604554d86d5d5452258b969468ae1896d32bcf5934e74",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of chromium.xlsx",
+      "size_bytes": 468534,
+      "mtime_ns": 1780478250008958339,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "3d38a2201ec43a5c99b0a5b76f27be0967c353f71b167296659194ffc544c664",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of coke.xlsx",
+      "size_bytes": 4189943,
+      "mtime_ns": 1780565504000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "c74a2cc4999553cbee760b778f7a63e365fd224e8c1bfa942eb11f1e4569bd79",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of steel via BF-BOF with natural gas injection.xlsx",
+      "size_bytes": 23917,
+      "mtime_ns": 1782491619879542827,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "65d799d5f8638a56a17bb2c220c8d0cf35bbcdd50ea6566203e42f67da565b8a",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of steel via direct reduction with hydrogen.xlsx",
+      "size_bytes": 25834,
+      "mtime_ns": 1782393177435741662,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "06c9adc753e31a918c4510e45c91341d06e27f13e121f15d188a09a18a5ef8f8",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of refined manganese.xlsx",
+      "size_bytes": 563872,
+      "mtime_ns": 1780479435717707395,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "9d4590026301effae60e2238754f7b3716b1331891aa5aab7b99db478f0cc32e",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of natural magnesium carbonate \"magnesite\"+magnesia, fused or dead-burned (sintered).xlsx",
+      "size_bytes": 498412,
+      "mtime_ns": 1780478904219259023,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "a7cb9d627eadcabb723dd3bf4ed6c69eaf79aa344c803ce5069749088cc49707",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of refined cobalt.xlsx",
+      "size_bytes": 562971,
+      "mtime_ns": 1780479596020249605,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "85105452690664b7a1af0bc75c19920aa0cd6e0f6224246fa6811480f84e1dbc",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of nickel ores and concentrates.xlsx",
+      "size_bytes": 426149,
+      "mtime_ns": 1780066433145563840,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "075bb081935114904f0369db46fb43ec5d6375167929b784ab971eb0f0319dc3",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of refined lithium.xlsx",
+      "size_bytes": 564317,
+      "mtime_ns": 1780479273934334993,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "38dcc2f3a0eaffae0ee18374e135fba7c6a966e51fd978da606856c7a29e1ffa",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of iron ores.xlsx",
+      "size_bytes": 435528,
+      "mtime_ns": 1780066534212758779,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "b27b0045853e4f24d476d940889801c05d1099e81521871689b378dd3f243e80",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of magnesium: unwrought, articles.xlsx",
+      "size_bytes": 570327,
+      "mtime_ns": 1780480236719116926,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "5e05a102d39b1ea8190bb08d85d62beed58b662235adf6426ce5f80ac9b9bded",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of natural graphite.xlsx",
+      "size_bytes": 498167,
+      "mtime_ns": 1780478823585089683,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "bdc7117328b3bf23a227e3df14ed600901db30cfc30972f3a1062267b84ae6d7",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of niobium.xlsx",
+      "size_bytes": 468773,
+      "mtime_ns": 1780478494421422004,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "36e6b54b73ee27aaa47b0dac7e97554d744ca3cef5773f1a67d5b3ca829962c0",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of traditional cement.xlsx",
+      "size_bytes": 80675,
+      "mtime_ns": 1780589822000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "12611429c5252508ffd6a814b24617e11650c5ad58b40e0ea45950f341a54b0e",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of artificial graphite.xlsx",
+      "size_bytes": 606582,
+      "mtime_ns": 1780650944000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "3d505fe1f157712a482ee6ae4f65820215915b6599b23c79d0712f538b4c2785",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of primary plastic products.xlsx",
+      "size_bytes": 105500,
+      "mtime_ns": 1780067191136212110,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "0131cf3e91af24f76ba226f60a4aac3297f8e3db8bcb107bd4b0ffeb84c90030",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of primary aluminum.xlsx",
+      "size_bytes": 95159,
+      "mtime_ns": 1780514351000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "ea2c072d282b8bcc93cd3dc668c0d3fb91f319fe4a56ea805f75bb524ebc2282",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of secondary copper.xlsx",
+      "size_bytes": 120524,
+      "mtime_ns": 1782511701098253250,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "c0d0bf621f1569c37ebad33f58062f61ea6c97efc40454c02c907caa36fe7105",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of secondary plastic products.xlsx",
+      "size_bytes": 105383,
+      "mtime_ns": 1780067216749631881,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "f44e51cfc27697464b3df3fe6c81092ea97ed2c0ad9164a10634ae1799d3a490",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of high value chemicals.xlsx",
+      "size_bytes": 31389,
+      "mtime_ns": 1780069587992916584,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "a05249f7a401eec9db8725cb99ac545c6d304a9b8bcf600eadf5f336acf28de6",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of NCA batteries.xlsx",
+      "size_bytes": 25685,
+      "mtime_ns": 1782471676947063207,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "9418a85d4e7e6fabcf6d68de766bbdf9e3b2b9fd079fd9741f14f2851dd47e57",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of hydrogen via electrolysis.xlsx",
+      "size_bytes": 56141,
+      "mtime_ns": 1780066856853241443,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "ae59bbafe4c5d66d765bc4fe900267edc8aee2a13164446d6552384b5a44d60f",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of NMC batteries.xlsx",
+      "size_bytes": 27587,
+      "mtime_ns": 1781020393000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "a2feaa81dd676cd1ad17a37f8ca511e8d62607ef53f8d30b8cc4cbdc3aea9561",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of phosphorus fertilizer.xlsx",
+      "size_bytes": 560965,
+      "mtime_ns": 1780479994237885475,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "00f84e047901969bb8001ff746b755f8d07c41e5a8a373f4249cefbcd80ce51a",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of rare earth elements.xlsx",
+      "size_bytes": 468716,
+      "mtime_ns": 1780478084750061273,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "733e7237adb7ecb4aa7df32d69e2316e81247e48b55e6d49eaca146d55ee1016",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Recycling of plastics.xlsx",
+      "size_bytes": 29005,
+      "mtime_ns": 1780067226294143915,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "f430a73e309e0edde76608423e9cbaff17eebf2fe7068ca5f4ffe7a9752bc6af",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of steel via BF-BOF with coke injection.xlsx",
+      "size_bytes": 27866,
+      "mtime_ns": 1782393173377707719,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "e888a2659e18a39bd99553fae1a6c44aff63a740c801021fd487625390d65a63",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of refined silver.xlsx",
+      "size_bytes": 569839,
+      "mtime_ns": 1780480395804577350,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "358b261536b18e3ac5c112b52c76759526aed8a6d45409585fa56c3df2542b22",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of semi-manufactured platinum group metals.xlsx",
+      "size_bytes": 569916,
+      "mtime_ns": 1780480316553491353,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "f4e30da2c7270579cb707fbc84e819853dc7f3ffc744eebf42a907ead2ecc55e",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/LIR - Manufacture of refined lithium.xlsx",
+      "size_bytes": 786367,
+      "mtime_ns": 1782563056204872846,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "237be8a3db56ba9a97cd1e4c2706e58c64957d3add530e2815efa6d3602e1bcd",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/SDH - Manufacture of steel via direct reduction with hydrogen.xlsx",
+      "size_bytes": 688999,
+      "mtime_ns": 1782563144614380598,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "df1390409f776ad73f61ca98940d8667dfdc777a03c57c41c90669c72f99e68f",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/PLR - Recycling of plastics.xlsx",
+      "size_bytes": 839151,
+      "mtime_ns": 1782563123876615285,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "2979d01494660f721f71b13bf39f29979ffe45c28d9ea03801de441e5f0c4fae",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/KFR - Manufacture of potassium fertilizer.xlsx",
+      "size_bytes": 922395,
+      "mtime_ns": 1782563048021257400,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "acc87f72c14efe563d656b220441a51d7de11af3892d301f4feaa3189b717f05",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/RBR - Manufacture of rubber products.xlsx",
+      "size_bytes": 1188962,
+      "mtime_ns": 1782563132687548875,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "86db9243fc60f61b3ab5b04eb08945f4f468df95101bf55e97e5246cd5153745",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/APS - Manufacture of secondary aluminum.xlsx",
+      "size_bytes": 684325,
+      "mtime_ns": 1782563006052958488,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "43dcec5495305eaa6a4210d6fc2ea6737cf026206f1c34beab5352d6b5578b11",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MNR - Manufacture of refined manganese.xlsx",
+      "size_bytes": 786874,
+      "mtime_ns": 1782563077376394271,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "c70b5e70dd2acfc0528531dcf15ab3e2d38e8ff9c5550746a82158531363fe2d",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/PFR - Manufacture of phosphorus fertilizer.xlsx",
+      "size_bytes": 919529,
+      "mtime_ns": 1782563114463179588,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "0223780abc35043b22a15654761b948ecf163561597179277504ad7126884514",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/SDG - Manufacture of steel via direct reduction with natural gas.xlsx",
+      "size_bytes": 690887,
+      "mtime_ns": 1782563142362526178,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "cd32e920b45fa2372cc196a75f7a5c82ef485285a50d017240641fb073fa260a",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/BVL - Manufacture of light duty BEV.xlsx",
+      "size_bytes": 844480,
+      "mtime_ns": 1782563010877539396,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "a5a50d14eee54342cc1d89619377c57a192036b12caff8365c675ebce81ac897",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/HYE - Manufacture of hydrogen via electrolysis.xlsx",
+      "size_bytes": 746523,
+      "mtime_ns": 1782563037169409513,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "184b68c10a36e2cf8cffe77dac1af1961c20d39be8e9a593aa122e9d59bbe7a7",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MUR - Mining of uranium.xlsx",
+      "size_bytes": 393034,
+      "mtime_ns": 1782563091402785301,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "8e39e6fbeda1d54bfc40203bce5b9175efef5c98384ee572b843693d299b9cf8",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MAN - Mining of manganese ores and concentrates.xlsx",
+      "size_bytes": 602735,
+      "mtime_ns": 1782563064116734504,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "584ffc9d9515966beaf2d5f84bf3fdcebba8413ffa5f26db8b5fac4d68aca203",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/TIR - Manufacture of refined titanium.xlsx",
+      "size_bytes": 803990,
+      "mtime_ns": 1782563154970749855,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "6e52670139f4e110158d39426b04bd86ebf82cf41f9bc513fc82f613fbdfd2b4",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/REE - Mining of rare earth elements.xlsx",
+      "size_bytes": 584005,
+      "mtime_ns": 1782563135136457681,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "313bdc1891efe5e0193e2cb965a86347f59634fc8b06eadf2f0ce7688d237646",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/NIO - Mining of niobium.xlsx",
+      "size_bytes": 593514,
+      "mtime_ns": 1782563104082032203,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "e2fb7dd1401e50796fd668465d783c56be9890d0aa7614e1545b8c3bd63a5175",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/TVP - Transport via pipeline service.xlsx",
+      "size_bytes": 741669,
+      "mtime_ns": 1782563161442999601,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "3285b5b15d615e0c50a5be26a4f7e07a4ed7eb0fb9adcba391181d33372ebf3e",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/RER - Manufacture of refined rare earths.xlsx",
+      "size_bytes": 794961,
+      "mtime_ns": 1782563138011443614,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "dcdecec1cdd1953a7d787af3ebd2ccb542cb2683b448e7fa0511915c5f62c58b",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MCU - Mining of copper ores.xlsx",
+      "size_bytes": 555378,
+      "mtime_ns": 1782563067942576408,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "4769417a77611cdaf8baf6ae27e36a50af13cc7688170ab9fdcf70f06dc58d54",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/APP - Manufacture of primary aluminum.xlsx",
+      "size_bytes": 683565,
+      "mtime_ns": 1782563003076801776,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "d8194c744198f0134603f12dd1bb12853852a1ad09576772ebd5f83978fd6198",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/TIT - Mining of titanium.xlsx",
+      "size_bytes": 603524,
+      "mtime_ns": 1782563157100275516,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "dd40c0001f0e37ab9c758599522cc5a1b20aed32587353a73cba83b8839c2ba1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/CHR - Mining of chromium.xlsx",
+      "size_bytes": 598083,
+      "mtime_ns": 1782563015183534383,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "cac23bd7bfd83838d37361044ad700b6bf539e4a837a2e34ef6cf067e3888337",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/PGM - Mining of plantinum group metals.xlsx",
+      "size_bytes": 390781,
+      "mtime_ns": 1782563115926726818,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "3ace68d04da5c13bda8d161887b8dba048b74170abc986b6618f55cfb8e8bc97",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/RAL - Recycling of aluminum.xlsx",
+      "size_bytes": 783737,
+      "mtime_ns": 1782563129143984794,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "8f28d3677330425abf27009446712bd0ff72cb403fb806e17bb3d8f1f0036894",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/HVC - Manufacture of high value chemicals.xlsx",
+      "size_bytes": 905372,
+      "mtime_ns": 1782563034420031309,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "8a5e12636d3960c929c80a44afa108fbeb742e7b67346d5d2f4cdb7cfec3daac",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/PLSR - Manufacture of secondary plastic products.xlsx",
+      "size_bytes": 739137,
+      "mtime_ns": 1782563126408324003,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "5e1f27f6db43b9700092926c09c482daaf1e81c285815190993213b6d56d0736",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MGC - Mining of natural magnesium carbonate magnesite and magnesia fused or dead-burned (sintered).xlsx",
+      "size_bytes": 676482,
+      "mtime_ns": 1782563072635279417,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "a0bed2e668ec44eaac94de99fd93f164011d9ec75651ed1df5252fc668efe1e2",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/AGT - Manufacture of artificial graphite.xlsx",
+      "size_bytes": 805804,
+      "mtime_ns": 1782563000772267818,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "8931dd54e5a526f8938f330d23d1b88f9655c078377c94f6e97242c6b6cd6a41",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/LMO - Manufacture of LMO batteries.xlsx",
+      "size_bytes": 713204,
+      "mtime_ns": 1782563061874824047,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "b2f94af3219f223135fac2bc79ef3420cb1f65a28e78a40e3be5fb10594c1b2e",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MUN - Manufacture of magnesium unwrought articles.xlsx",
+      "size_bytes": 753504,
+      "mtime_ns": 1782563085008725404,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "5332ff1d186c1f9479fd1de359d3132eb88943c155bb7ff56dea6f2e20c230e2",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/SIR - Manufacture of refined silver.xlsx",
+      "size_bytes": 775440,
+      "mtime_ns": 1782563149490555763,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "61dd6e5256500fcdd5d637bb48c3725d02f695ddb6f3a96379bc97af0b08e8b9",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/CRR - Manufacture of refined chromium.xlsx",
+      "size_bytes": 797528,
+      "mtime_ns": 1782563024361456394,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "f0df9af0661ae3dd55dbd6a3401c6f7e611ab0a9be055abaeb0ef6e940a3de3c",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/PLP - Manufacture of primary plastic products.xlsx",
+      "size_bytes": 739343,
+      "mtime_ns": 1782563121185352325,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "8711035d2083dffce6065eed52744c4cad67901196754ddad0590691eb1985c0",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/GRA - Mining of natural graphite.xlsx",
+      "size_bytes": 661333,
+      "mtime_ns": 1782563029035553455,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "b808811dd46d77c7c44686391f3336744d77d276c5b9733775d865dd9b2507c8",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MSI - Manufacture of metallurgical silicon.xlsx",
+      "size_bytes": 738141,
+      "mtime_ns": 1782563079777131080,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "45f8a29d640b9d285d548ceecd04cca5e580608e27e3f390dd629562af61566e",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MAO - Mining of aluminum ores.xlsx",
+      "size_bytes": 523431,
+      "mtime_ns": 1782563065962713956,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "921c13d6b2413dd03348d3831aad4f70f48cca358856485ab78a99bd4da86f0e",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/GAR - Manufacture of refined gallium.xlsx",
+      "size_bytes": 770476,
+      "mtime_ns": 1782563026742871999,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "df93cef6daa621c8e3e327747e53e1a2c1aa96d6d4a1b66a3f44756ce91fc118",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/NIK - Mining of nickel ores and concentrates.xlsx",
+      "size_bytes": 533702,
+      "mtime_ns": 1782563102007050991,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "061b1f386c03c6e9d05837720e84e85af54aba796155361a92e18737ec3e90c1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/ZIR - Manufacture of refined zinc.xlsx",
+      "size_bytes": 819345,
+      "mtime_ns": 1782563168933212041,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "cd5871a5639003848e5d75eb71284e7bd72a6cadf33a7e0f4c59633a7c341ee1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/NCA - Manufacture of NCA batteries.xlsx",
+      "size_bytes": 713194,
+      "mtime_ns": 1782563094759680747,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "3f29a58b419e7a6c1fc7d4f234fb1106122d68dcdc5afe6bff77d12d807f1ff1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/CPS - Manufacture of secondary copper.xlsx",
+      "size_bytes": 139767,
+      "mtime_ns": 1782563021558000326,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "f3dfab33b164c67316f8b39c165d0ba6eb4612d793a08efd3d5ae424077b724c",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/PGR - Manufacture of semi-manufactured platinum group metals.xlsx",
+      "size_bytes": 742300,
+      "mtime_ns": 1782563118358714103,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "37940ea6189e7c34825296f0cc577f8bcc1572933c389e67e66c0598ced056d1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/NMC - Manufacture of NMC batteries.xlsx",
+      "size_bytes": 726683,
+      "mtime_ns": 1782563108922283649,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "08522442a12cb78cdbbdc36cdb7b618f7a9e87b56ed81362c87edf5dd375c727",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/SIL - Mining of silver.xlsx",
+      "size_bytes": 590977,
+      "mtime_ns": 1782563146721668481,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "b2e1c6e1df9eff0607a8a3032801699c6b8261715083781a86649ea674336cad",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/LIT - Mining of lithium.xlsx",
+      "size_bytes": 584190,
+      "mtime_ns": 1782563058304703950,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "110091253993e9f477809da737659f29ce7950adf2fdfcc5018f340a704c9ab8",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/CPP - Manufacture of primary copper.xlsx",
+      "size_bytes": 213056,
+      "mtime_ns": 1782563020766511917,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "7024bdaaa632c715c811ac2e60643d35e9d1be88a9672ba0eb8e7732863cd571",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/PCP - Manufacture of coke.xlsx",
+      "size_bytes": 664825,
+      "mtime_ns": 1782563111575446367,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "1acffe33e8d3925e079b4951bf560bf96abad7740a4a7ce328c3832ab6434159",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/HEL - Manufacture of light duty HEV.xlsx",
+      "size_bytes": 794474,
+      "mtime_ns": 1782563031626382589,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "5efe4e471cc9410c91a8a3345f65a9f35f7434f7f58b149c0ca7a39d0638091d",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/ICH - Manufacture of heavy duty ICEV.xlsx",
+      "size_bytes": 820862,
+      "mtime_ns": 1782563039669523000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "e94cd527e979f368d5d781d86638b0f1c1d4360c032be5ea5ff2d1b5e3a64571",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/LCO - Manufacture of LCO batteries.xlsx",
+      "size_bytes": 713262,
+      "mtime_ns": 1782563051081159353,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "396e10a8cfa9675752544449f544187c340c474b03cbd2df7fff30c3cf229afb",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/COB - Mining of cobalt ores and concentrates.xlsx",
+      "size_bytes": 588907,
+      "mtime_ns": 1782563017160674810,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "3677a382b027658518c81a044266f09a5e297e2926cea7cda186259098942ea3",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/SOP - Manufacture of solar panels.xlsx",
+      "size_bytes": 879767,
+      "mtime_ns": 1782563152409706115,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "be8505ca6215354452f589970f87ca88293a5fe14d37769f4592d9675b343fb4",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/BVH - Manufacture of heavy duty BEV.xlsx",
+      "size_bytes": 633075,
+      "mtime_ns": 1782563008104447364,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "69adf382013185d229ce11c308386859e29ae133b2d65c3c9170f53466a375b3",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MUN - Manufacture of magnesium unwrought, articles.xlsx",
+      "size_bytes": 753736,
+      "mtime_ns": 1782563090219066619,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "b1208044ed42fd9c89281f0fb07e14c7040e47725444f5874a17e3225b78e40d",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/LFP - Manufacture of LFP batteries.xlsx",
+      "size_bytes": 754956,
+      "mtime_ns": 1783435213654172897,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "d31535dcd1d8ca74a6f59bb6dac17627c0bc4042d81a0f12d32d8ede67b6a5c3",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/ICL - Manufacture of light duty ICEV.xlsx",
+      "size_bytes": 1043679,
+      "mtime_ns": 1783435210018096923,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "bae6c1b119e975c1998141e868a58235f1c6aa6444073a059cc0c8249e483208",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/SCI - Manufacture of steel via BF-BOF with coke injection.xlsx",
+      "size_bytes": 626964,
+      "mtime_ns": 1782563140065840959,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "f400cca5daa37bb1be26eb95918876584daf8f2df070d99fca336004fdb026bb",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/RCP - Recycling of copper.xlsx",
+      "size_bytes": 157102,
+      "mtime_ns": 1782563133205497264,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "0172277941cef6fc3ff0d0fb2cb91623e7888bc3148606d1d9fab1fa6427050f",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/ZIN - Mining of zinc.xlsx",
+      "size_bytes": 624621,
+      "mtime_ns": 1786351584645712614,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "2292df0b8e99a50c033e8f7181ff2b4a3bbb5b7f88ca17fdd2042f6705c01408",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/COR - Manufacture of refined cobalt.xlsx",
+      "size_bytes": 773422,
+      "mtime_ns": 1782563019741766452,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "1d23e4e7adc9b80ce07a81522276ba7d1d7558f5e4a8740caa3a4a34a4a98b32",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/NCM - Manufacture of NCM batteries.xlsx",
+      "size_bytes": 713776,
+      "mtime_ns": 1782563097137189149,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "7b72a04cd4a6683a087476d752ac695cc839bde6ed6578c33e1e877b00604c4e",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MTH - Manufacture of methanol.xlsx",
+      "size_bytes": 814838,
+      "mtime_ns": 1782563082403695344,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "6b78a1cbfa455f9897d500de9225e0d9323b1f21ca23b39b55f864fafebd7ba7",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/CEM - Manufacture of traditional cement.xlsx",
+      "size_bytes": 718071,
+      "mtime_ns": 1782563013153481483,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "3361a269c7b09f01c456d8fb3a42280ffedf24f7db8c9635eae362383f9451c1",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/WNT - Manufacture of wind turbines.xlsx",
+      "size_bytes": 768412,
+      "mtime_ns": 1782563163810514211,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "e8742fe44fdb2fc7f6806a599647652987c249ab187023811ff07b20effa48da",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/ISS - Manufacture of secondary iron and steel.xlsx",
+      "size_bytes": 690833,
+      "mtime_ns": 1782563044924351215,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "ce13c97d700ab5c3b6bc7ca165ba0d6d8528f94c54e0e0ac2d088bb8d2139497",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/NIR - Manufacture of refined nickel.xlsx",
+      "size_bytes": 775067,
+      "mtime_ns": 1782563106550776004,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "3576cf74dbb9a9c6b58480872b85f528d40783c280582c3496e34512102697cb",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/NFR - Manufacture of nitrogen fertilizer.xlsx",
+      "size_bytes": 933495,
+      "mtime_ns": 1782563100219538688,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "026f2278b1181e52c287cee10acc93591e8526ea8ce925692c09e7d5c3cdad5a",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/D2.4 inventories/MIO - Mining of iron ores.xlsx",
+      "size_bytes": 563097,
+      "mtime_ns": 1782563074574855089,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "71696ec3a9344d2456cef4bb8a955ba3a53113e4779869f2a1d30a82ff52314e",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/audit_reports/mario_inventories_copy_workbook_audit.csv",
+      "size_bytes": 12135,
+      "mtime_ns": 1780595196194554140,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "bf506b0ed2fa0af5c64e6bb25b1551a8bc2a7c8811d9d74a019a3d23b72f2f26",
+      "source_changed_during_capture": true
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/audit_reports/mario_inventories_copy_summary.json",
+      "size_bytes": 204,
+      "mtime_ns": 1780595196218888521,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "332dc64b0b3fa50210ddb45ecb553e02ab4bd908660d0acfc193d99510a0cb79",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/audit_reports/mario_inventories_copy_audit.md",
+      "size_bytes": 6184,
+      "mtime_ns": 1780594454804039716,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "65dcebe7aebd17b2c722bd4ca58b456af6a459ef935684d35636500e86099173",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/audit_reports/mario_inventories_copy_sheet_audit.csv",
+      "size_bytes": 1062569,
+      "mtime_ns": 1780595196217711246,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "40a85f1bec232e9b0788b11f8acfad1663cecfb0d71391e1ad265acfaf91e853",
+      "source_changed_during_capture": true
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Required manual checks.txt",
+      "size_bytes": 222,
+      "mtime_ns": 1779875357000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "c2932e12564c665362435dbd22dbefb08a67c398973865bb353f8f53acc6db83",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning/Startup_for_adding sectors.py",
+      "size_bytes": 2628,
+      "mtime_ns": 1779975690000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "44bcb15253bdab03fb61a3ecafee3b33c7520f902de1a80046657e889c28b637",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/May13/trade.xlsx",
+      "size_bytes": 16859883,
+      "mtime_ns": 1781275952000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "e3d67566acfe0c8771a954774ff96463fbaac597f185f049fde293f41495493d",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/May13/GTAP sectors H5.xlsx",
+      "size_bytes": 465396,
+      "mtime_ns": 1780040641000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "cbd5fb51e743562e7a15a9773a75c24971cb509d0d4e433484b7c37fd51ecced",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/May13/GTAP_HS_mapping.xlsx",
+      "size_bytes": 1795205,
+      "mtime_ns": 1780052105000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "7aa202db4de6e517468126d5de69e5763ece00635d0c93b62d68d0694562b804",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/May27/EXIOIOT.csv",
+      "size_bytes": 39022126,
+      "mtime_ns": 1779866966000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "829a5a98baec516d9392db14f694b8a67bc4b95d58a7611fb96e2830610948c9",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/May27/splttargs.xlsx",
+      "size_bytes": 1510919,
+      "mtime_ns": 1780054112519408941,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "ee9444fceb1412d5ace3469a1561d18c673255660cd057bee6eb88280df733bb",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/June1/EXIOIOT.csv",
+      "size_bytes": 39022126,
+      "mtime_ns": 1780671589000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "829a5a98baec516d9392db14f694b8a67bc4b95d58a7611fb96e2830610948c9",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/June1/splttargs.xlsx",
+      "size_bytes": 1294134,
+      "mtime_ns": 1780671565000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "3a2751029418eee39a83e18589632dffe1816f6f0f9d3e149e28a967706f4f97",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/June1/COPCOSTS.csv",
+      "size_bytes": 475379,
+      "mtime_ns": 1780671589000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "40f1a4dffbe371071257a1d39ddd42ff7ad428d738efa6ba4a006319d1d07054",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/June1/COPSEC.csv",
+      "size_bytes": 63,
+      "mtime_ns": 1780671588000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "46c610d3a1b9955ca68db1a85673755f765ebef922fa341b77b8b2aafc76c475",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/June1/EXIOBASE_maps.xlsx",
+      "size_bytes": 70668,
+      "mtime_ns": 1782490877000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "d26028bd298b85e1924173aa001686f64f4d994695ed8736e3d0f018d82e74b3",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Shared material/Purdue data collection/GTAP_EXIOBASE_maps.xlsx",
+      "size_bytes": 35139,
+      "mtime_ns": 1780051194423438310,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "9e13fe6f0e973f525b1560a6dad278d837d8f8bec6dc619256294cf4dcdc762e",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "General/Deliverables/D2.4 \u2013 Enhanced GTAP Database.pdf",
+      "size_bytes": 1096159,
+      "mtime_ns": 1786441987752215147,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "57074795c20f4ddf0eab0944c3fe4ebfd803e910c468424eb4097ee0426abfbc",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "General/Administration/Grant Agreement/Grant Agreement - GAP-101184775 (2)_signed.pdf",
+      "size_bytes": 4410694,
+      "mtime_ns": 1734109054000000000,
+      "offline_before": false,
+      "status": "captured",
+      "sha256": "58e2b984b3096a62f215b683469b0cce170f0f02cf7ae7b59488092140650495",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Database/GTAP 2023/2023entice/X.parquet",
+      "size_bytes": 119052,
+      "mtime_ns": 1780567036000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "36402e2cccd00cf5b8c260e78e1828e39ce1125d50158db9359fc7e9077008e7",
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation/Database/GTAP 2023/2023entice/units.parquet",
+      "size_bytes": 3463,
+      "mtime_ns": 1780567036000000000,
+      "offline_before": true,
+      "status": "captured",
+      "sha256": "1b611e6d0204ddace95b283eee1c6e5a3db7009d61852567a42d1fca963ef644",
+      "source_changed_during_capture": false
+    }
+  ],
+  "source_root_alias": "POLIMI_ENEXTGEN_ENTICE_SHARE",
+  "local_snapshot_path": "build/audits/d24_baseline_2026-10-01/source_snapshot",
+  "status": "Candidate source snapshot; byte capture is not proof of original execution provenance.",
+  "audit_script_sha256": "bcae9c648aefad811f8c5d85a75e570a2d87ea944d199ef2551394cd450746a3",
+  "evidence_files": [
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/classification_comparison.csv",
+      "sha256": "d0b53d8fb08e5c9fd65f598e494372b5338739df2fc070eae3882455fa891e46"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/gtap_reference_check.json",
+      "sha256": "1f6992643a5477ff9f29efe224eb34be63d0359e4eece03f283020498999a53b"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/independent_verification.json",
+      "sha256": "541d6c1259a3df70a6fe8ba9463750b767c68a71ce297c9fbaa783195a81da0a"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/inventory_sums.csv",
+      "sha256": "fd2071f5af289bb0c0e5a31b94f4d64b2bde6ac3f3c3f7ff17d98e6ff9538157"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/issues.csv",
+      "sha256": "67780dc3c9c63a84f88478ace0489df3896a2f13485dcf935b46d2f22c61c6e4"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/mun_differences.json",
+      "sha256": "7c6a26455e82526f3a13778e41ebdcd2952f7e1f1a7c505555de2cb504340dfe"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/output_lineage.csv",
+      "sha256": "f9ee3727a56c5b4f5020307d23c7180384294a0ab5c5f10e7ebcee1407337643"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/parent_output_screening.csv",
+      "sha256": "54438695f38bce4207e2b45d02aae1a27881c859d5cae5ef7fc44540aa0591d1"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/published_files.json",
+      "sha256": "759f1767766f5f6d56643ac797dcca44a3beb5fa9b0b6e090d78d6ae9d89f8dc"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/sibling_output_screening.csv",
+      "sha256": "aaa80904a9733a6c1a270a3bc0d4c72de706ed45d61034035130bd8f29fde1b8"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/summary.json",
+      "sha256": "8dc257febb649414697a9bbbf057b38752966e4cd0dd6f12b600e89600bfbd55"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/template_checks.json",
+      "sha256": "9d95128326be1dcb657949b9a8d242aa9d323fd94f790b7353a75c89093ea960"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/template_issues.json",
+      "sha256": "870613840d13ecc193240a5d97ef8f06da0525a51edc3e3db4730174fdfa2688"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/template_layouts.csv",
+      "sha256": "8be2cff0e805542cc87cddce73ed675c80253aad1e17649f1ddcebe9b7d632be"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/trade_lineage.csv",
+      "sha256": "de6541a71e8bf1c706c84343807a6669d6901f7e4c1ae12b3ff1275c7717fa17"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/trade_output_screening.csv",
+      "sha256": "438205aadb8e252e4301ae3ab8d8c976fb2251031470aab2be8b0efeda1000cc"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/workbook_details.json",
+      "sha256": "4899dba29560971af5cff204708d5bde1030c9d41f44a412a4343be426e9b5ea"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/workbooks.csv",
+      "sha256": "9a47c1b839e2e354131a3b8960b2f6b1cb33ddb1d400b92411c5ee1f9bb1fcf1"
+    },
+    {
+      "path": "build/audits/d24_baseline_2026-10-01/results/workspace_comparison.csv",
+      "sha256": "b68ae29dbe1adceab0d0dd04a3c4239f154be2f0b4ec36f697c472c1f6ab17a4"
+    }
+  ]
+}

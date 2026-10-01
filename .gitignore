@@ -1,2 +1,18 @@
 *.pyc
+__pycache__/
+
+# Virtualenv
+.venv/
+
+# Packaging artifacts
+build/
+dist/
+*.egg-info/
+
+# Personal scratch runner (per-user paths)
 Run.py
+
+# Regenerable caches and generated figures
+.d24_split_cache.pkl
+.d24_split_mixed_cache.pkl
+*.png

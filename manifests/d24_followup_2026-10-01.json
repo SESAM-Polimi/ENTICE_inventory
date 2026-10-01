@@ -1,0 +1,846 @@
+{
+  "captured_at_utc": "2026-10-01T11:18:48.362850+00:00",
+  "published_record": "https://zenodo.org/records/20592036",
+  "published_archive_md5_unchanged": true,
+  "project_source_root_alias": "RCD_ENTICE_EXT_SHARE",
+  "project_folder": "General/2.Deliverables and Milestones/WP2. Improved data and empirics on trade and climate/D2.4 - Enhanced GTAP database (M18)/D2.4 Data Inventories",
+  "project_files": [
+    {
+      "file": "AGT - Manufacture of artificial graphite.xlsx",
+      "size": 855731,
+      "sha256": "8aff83ad979e4899fb930bda24d739912d8c2d3a8e46990f757e4eb8931e8786",
+      "published_sha256": "bde20ac0b55429f0810420583022cb3621cb76f3b2a8fede592f9356b41dc1b2",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "99f4a944fdcff1c841ad1f9ce03e4265729a4c998bb40d4e5571adf99479dd7e",
+      "identical_values": true
+    },
+    {
+      "file": "APP - Manufacture of primary aluminum.xlsx",
+      "size": 686182,
+      "sha256": "d8d03ff2a7338cab0fedfd565959c55b2bad6fee719f5479929e47371df58bf3",
+      "published_sha256": "358b1676a60352ff2cb3afeb1ca4d7c4f08a75c90e62f0f47f89cfd8269010ab",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "06eaccca4f3f184ca42cef0fb9bd8319c6c36f1e671e6cb1cea1f4d4925c24b5",
+      "identical_values": true
+    },
+    {
+      "file": "APS - Manufacture of secondary aluminum.xlsx",
+      "size": 687455,
+      "sha256": "5e882abbc84b5955438a019faee2a4720ef439d65d7e10929cce6b8986b67a24",
+      "published_sha256": "534f705427f6a733cc58fd52919e924dd6d5defbf13d527a23bec7687d53ddbc",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "891de39e83e37d55878c7f4a9d3db141153543ed32fdaff52046274b28ba826f",
+      "identical_values": true
+    },
+    {
+      "file": "BVH - Manufacture of heavy duty BEV.xlsx",
+      "size": 635691,
+      "sha256": "5f6859e7050f64c9ef2d3111941440eac1e856bba9979763292c6acb027ddd61",
+      "published_sha256": "6d614016558a5587d80822fe4c2c82bebb532eb31ee0914581ac2513d1becbed",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "54dcc30fda2bc0303530b4275161aad684e6f8f08ef287e9017398177dccdca9",
+      "identical_values": true
+    },
+    {
+      "file": "BVL - Manufacture of light duty BEV.xlsx",
+      "size": 847094,
+      "sha256": "35517f8f97ba6ca6ad2268a6224a98e46144bf76933ea3016185ce5f021a9d0c",
+      "published_sha256": "0637210d8f971435ad19a56dcbe20f1b1437872b71d2cba5a2cbddecad7d99ee",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "34f08625a6755652161b4e47a410a348a0fe6e60aa3af3f44cbebf1b6a35acfb",
+      "identical_values": true
+    },
+    {
+      "file": "CEM - Manufacture of traditional cement.xlsx",
+      "size": 754438,
+      "sha256": "14ca14cdb1a0e08385323538e5c2d86ab3aea6e102998ccb2aa7131c6d9704ba",
+      "published_sha256": "481101804f98bd36e38b80f292a4ef8e1f89e5d904b709dfa87360112f942c53",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "a83cd12fed987c7ab6e4c35a6a86f7e7b867811e0e4e73c291de3a5729999b9a",
+      "identical_values": true
+    },
+    {
+      "file": "CHR - Mining of chromium.xlsx",
+      "size": 601213,
+      "sha256": "ebe17bdfae83898303085a847b40c7c0693a02023ad43f8700535bdbbcdf82d8",
+      "published_sha256": "3a8015e59da0093c908f2ddc85867c84bc68bea83dd5291a5df4d09fdea81b4c",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "43c8f6d08ec39244cd54e738bb82dfecd98bcc718e0d674748b573d3d5946336",
+      "identical_values": true
+    },
+    {
+      "file": "COB - Mining of cobalt ores and concentrates.xlsx",
+      "size": 591523,
+      "sha256": "60c61c1032920a6af04845334c1dc1f7d6aec561fab9a102f66a25bc8a67bd5e",
+      "published_sha256": "85348bda88805948e47ac35fbc59da28e41235914db2694cc592328e1d6dcba1",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "c3d13e969f5b77b87202298ddae9ae805c823c965b3d261910324c79ca579ab5",
+      "identical_values": true
+    },
+    {
+      "file": "COR - Manufacture of refined cobalt.xlsx",
+      "size": 776552,
+      "sha256": "d9083ef28befd12f7e1661deffc342817360cde5971b7a4734bc9fbc7a85dbb4",
+      "published_sha256": "c4d86b3cfed4944a97d0fce931652c0ba5ba865cab38ed7d27465adfabde871d",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "93957df3506fcfc514683110a7b416da6abd3356eae1e118fa0a3f9e1ec304b6",
+      "identical_values": true
+    },
+    {
+      "file": "CPP - Manufacture of primary copper.xlsx",
+      "size": 216186,
+      "sha256": "d586ef30fb0d5d7e608c2ca127dd5208e146b6631218bbbbc765318747352f7b",
+      "published_sha256": "4cfed68ce41cd84ca022a6fc091eb10329f8a925dc08dd5c1702a5ed7d4f5919",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "ef8645c2d4618dfa7782f8010e1dadf49b1e4f14f27405a98b9caaec59a83ff7",
+      "identical_values": true
+    },
+    {
+      "file": "CPS - Manufacture of secondary copper.xlsx",
+      "size": 142896,
+      "sha256": "ce1a98de0da4716fc466a3a02e7c4d276f4bc34b4027fe01abea73fec775d79a",
+      "published_sha256": "b2ca361fbff0c9da6a3bbe213b799b29f173c1ed4db4c1ef350723b280a39d14",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "b99d168849a7c2a148e8630007ff6d1211e680fbc27b3dddc869d4796676fe2c",
+      "identical_values": true
+    },
+    {
+      "file": "CRR - Manufacture of refined chromium.xlsx",
+      "size": 800658,
+      "sha256": "bedac67713bdaf5634e58aa27730c36c6c1e72405445b882bbff427ec47fff08",
+      "published_sha256": "58db4d08ef294428f27cc135b623b0a3269c72bea0dad4eb6f9b36532fb2de4d",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "9a15ff6dfe21db54b47dff04b6b1ba2d4c21dc1eb46ee007b4cf7c0df7e0346c",
+      "identical_values": true
+    },
+    {
+      "file": "GAR - Manufacture of refined gallium.xlsx",
+      "size": 773606,
+      "sha256": "63e57bfcf1ce1e5f7731a8eb33c81ed430b62fb1bde8218806b52ad56125f4fb",
+      "published_sha256": "97ebbb235b40dea0372f03be597c7550e3a8787806ff4050abe51778ee48e742",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "0ed345d44c1ad0eecdaddf8161bf5b1f9709bf708e20b4cf12e949c9549891e4",
+      "identical_values": true
+    },
+    {
+      "file": "GRA - Mining of natural graphite.xlsx",
+      "size": 664462,
+      "sha256": "69744f227780f19e3b291f541578bb322d221d183632f0b940234288bc7690f0",
+      "published_sha256": "2dc06e13f3877e8ad15baee40e028f1ef675e9c2753aabb1e5256dc91b1283ca",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "f614f592386718ba081f757cc8445672f99d7bc601c453fb5003e73759e41503",
+      "identical_values": true
+    },
+    {
+      "file": "HEL - Manufacture of light duty HEV.xlsx",
+      "size": 797090,
+      "sha256": "e443c7d54e83fb2263f9c78156e942998d1f30396e377d7b2d921d5109092ff9",
+      "published_sha256": "e301d4acb943537c53ba8d1b0d49049987c6e4e18bfd4d5ecde32e390f0dcc74",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "b9e359fc4d8697de52bcac9fa59b4a0c1abb8586ce27d4aca1076a3d4df40d6c",
+      "identical_values": true
+    },
+    {
+      "file": "HVC - Manufacture of high value chemicals.xlsx",
+      "size": 907986,
+      "sha256": "2c07f7ecdeb5c3bf6b89e01f0f95f76caef2532eec0b849bb2c1164b48416206",
+      "published_sha256": "9990f7b909020c18ee728defc88f7cf48b91cbf97ac011baa2e168f8e37b1362",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "5a7fe5bc96b7f2d8b624c364636cadf0cc7a747bbe42c15b892caf79f109ba23",
+      "identical_values": true
+    },
+    {
+      "file": "HYE - Manufacture of hydrogen via electrolysis.xlsx",
+      "size": 749136,
+      "sha256": "f2069e68fe1e515303ea9f611109f74ce685a6ecee0969441b283fe7d7a710a5",
+      "published_sha256": "745314a94955e8427dc460ad62a008a7872729fe5b404ecbf477ce0d0e104139",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "1d3725f121215ad62a4d22849e576e7edee3790668fc0ee791ee522ed4ebd4af",
+      "identical_values": true
+    },
+    {
+      "file": "ICH - Manufacture of heavy duty ICEV.xlsx",
+      "size": 823478,
+      "sha256": "15d4f1a382a1b6da1bda67b30b8d00b503c696f734de0c5ae3c31e26ed87ce12",
+      "published_sha256": "da91792772b91e04286fb5067113c960d12f9bfd6f550c7d9a4dba8043e1c580",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "211155becb5fb056cc0411001a158816795bc504d8dfba0178734d4cf139c43f",
+      "identical_values": true
+    },
+    {
+      "file": "ICL - Manufacture of light duty ICEV.xlsx",
+      "size": 959620,
+      "sha256": "e50d7096bd77df48892c4da24aab56668fae0f8c16c2361294bc4515703331e6",
+      "published_sha256": "4890afc66e7d72157637169ede08ebc7c40b8ef63b80a834ca58ec793176f958",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "b5e9768731b67d01564030fe20288e75889bc9fe5ba02020347794b821af54ba",
+      "identical_values": true
+    },
+    {
+      "file": "ISS - Manufacture of secondary iron and steel.xlsx",
+      "size": 693447,
+      "sha256": "f2199e2a05e7ebfd5fa13febd85b3e38a6798dceb42dba4e7b7a7d216141a036",
+      "published_sha256": "dcc6353ccf4421a0553a8f03fdbb34a472c104c4e13da5651114b6ddcb62ccd6",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "118ff8778d846862cf0ec1e56eb37df93615f8c4c9691153c3c82704fafaacb1",
+      "identical_values": true
+    },
+    {
+      "file": "KFR - Manufacture of potassium fertilizer.xlsx",
+      "size": 925525,
+      "sha256": "2a08d50db71216c3426911ef14869a56f72168e36c73dda4d4decc834240888c",
+      "published_sha256": "61471bf77766a155f48e863f5000236eda519c68d59bb9c33055c6e9b2b3cb7a",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "1c6f7ccc60a3648687eeb83d00ba61a10b6f41de5901ada2f908ae446babd4da",
+      "identical_values": true
+    },
+    {
+      "file": "LCO - Manufacture of LCO batteries.xlsx",
+      "size": 716392,
+      "sha256": "a09ef5c53d9008591cd121c47d5370791691254ee73853c9cf59e76fd5bdcfc0",
+      "published_sha256": "b795031554c6da2143ceb333382d0a107e145f1b615a8f2c112878237180316f",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "41e71e6c7790d71ded0cde97cd3c7d9c4497b13392284eee81fe38cec7c8dcbd",
+      "identical_values": true
+    },
+    {
+      "file": "LFP - Manufacture of LFP batteries.xlsx",
+      "size": 715788,
+      "sha256": "c40e9b89d2cfeee0568e27b55398184d415949178a1d151b502b8d81911b791d",
+      "published_sha256": "382bcc4f20aced3a6c64027894e853a7a2abbbefcf35f71ccd5d9d0a8bcfa098",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "e123e2f9844a1acc8f1e88c246e1cc9429f54a142251ee629475df0f8cee4285",
+      "identical_values": true
+    },
+    {
+      "file": "LIR - Manufacture of refined lithium.xlsx",
+      "size": 789497,
+      "sha256": "e4e70b29cf524b6fe836ff48614d692c6fbe4942de6c8d3762d85eaace99ebcd",
+      "published_sha256": "e156ce17314b758f2dda6b72207d40902ded60535fa8ad9ec951a8dcb999f817",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "197eb7ea7f9283512094a1b4ff803144be716e929b1bb075d758a84da100a624",
+      "identical_values": true
+    },
+    {
+      "file": "LIT - Mining of lithium.xlsx",
+      "size": 587320,
+      "sha256": "b9a8460e8b4de60e2ea7f0c7349f952a7e9f0a7c282fe5de7d1eddb6e2627a9c",
+      "published_sha256": "641f24f093dcb206a0dadf8b27cacda3918711827493aed2da88f5a54f2dc63c",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "9c7e3a07b299605339d04a1efeab5c03b2586104a5a681fa40d257082ae56a26",
+      "identical_values": true
+    },
+    {
+      "file": "LMO - Manufacture of LMO batteries.xlsx",
+      "size": 716334,
+      "sha256": "14f4ffac82dd2dd9014c2a8a3bb4abe3330921e5ed1e758e96b0397bc4334dec",
+      "published_sha256": "0fa14563ee0e86360992a1fd7b220899f25ba9361f6f71e8b96da796cd79d31d",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "f1955cd611dde90bb14674f2ee772ff742f0289122e0b380e07a8833bd0b1be6",
+      "identical_values": true
+    },
+    {
+      "file": "MAN - Mining of manganese ores and concentrates.xlsx",
+      "size": 605865,
+      "sha256": "f62ad6180833078f7dbc223ae7caa9fd1a9bfb382a094dd6cb80cad9474a28d6",
+      "published_sha256": "317c84049705e8675389cc319457590109a0b4f92ada353fa3cbdf5a002ab5a6",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "81d3d5592d35c95902bbd07c6f21a233cf0c40261ff8410c6314e80c97b60b50",
+      "identical_values": true
+    },
+    {
+      "file": "MAO - Mining of aluminum ores.xlsx",
+      "size": 526561,
+      "sha256": "95d279210dd81d236ed61e6a01eeaeba2d912f4e1687a52c8de6d35c3d6bfeac",
+      "published_sha256": "4e4297ff3fdeb3ccb8a143237956145a89ad1fa9cab7a2e5f575933718927d76",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "305c1ce2f3c1b68fe6994562174e67acf65bc1196a1ae324718126c7562cbd68",
+      "identical_values": true
+    },
+    {
+      "file": "MCU - Mining of copper ores.xlsx",
+      "size": 558507,
+      "sha256": "a4e120cbb34f6dbbffa985dc7b00d24052291b59674aa54318e1260ddaa31c9b",
+      "published_sha256": "53e2ad934f42850ead90f1b962e4688264a0fefd90b9852955d6539a07cb7f4b",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "268ab7a4dff51f5add771264ea7e6cb17d2fb31e5084aa7fac46197717678cf0",
+      "identical_values": true
+    },
+    {
+      "file": "MGC - Mining of natural magnesium carbonate magnesite and magnesia fused or dead-burned (sintered).xlsx",
+      "size": 679611,
+      "sha256": "adfc54f9622a6858a293783a774b15724a59b30c3cff2c7d6a6dbb22b9e294ff",
+      "published_sha256": "1619c1f7a4f04773461dce0bd0018de5240c74f11d8f02b878e6c184b3ac2719",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "60011537f9970df1b9597aeb4c7def9e8c538dd406e6f2849d14ee37132c8f91",
+      "identical_values": true
+    },
+    {
+      "file": "MIO - Mining of iron ores.xlsx",
+      "size": 566226,
+      "sha256": "75f41e504bad74bb692e99c3fcee1b5f681496dfdeb8bca840c07bec1c1193bf",
+      "published_sha256": "d43176003184e1196a4327b24320dea153292ef9b1e7630bcf22540fc7fa6760",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "e02f907b91f781a714f2c0603fa2216416de03a2829a8dcf3fb31f28b3b65356",
+      "identical_values": true
+    },
+    {
+      "file": "MNR - Manufacture of refined manganese.xlsx",
+      "size": 790003,
+      "sha256": "41183a6470489eee58e5b1c7acb7a55d7f4c7fb382c51594139e0bf55a66c38d",
+      "published_sha256": "260abfabaa71708dba335c6a45c17fe7c63439adedfb5c33532d32da2212e882",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "d7a66f75f2b8d3a53a7632474662810e5a174a53ba863bde8f03baed452f0d41",
+      "identical_values": true
+    },
+    {
+      "file": "MSI - Manufacture of metallurgical silicon.xlsx",
+      "size": 740754,
+      "sha256": "38474e5ae798c6bd8c08c755326af03dfad5d34750f7bc80ecb860eea6a6c064",
+      "published_sha256": "b3755aa40c7ff97e942f10b39001abac0eda3667662f5f4f3171893e2d969999",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "987764bec09587a43c74cf3eb5337053ab9b9d82c3159fdd05066265889598f2",
+      "identical_values": true
+    },
+    {
+      "file": "MTH - Manufacture of methanol.xlsx",
+      "size": 815311,
+      "sha256": "9745708c39517062012a1fad2287216ff757cdd45a1cef57fbd961acc72a69fb",
+      "published_sha256": "83731cd05699de387acb9a32f709a25378a81be149dbc6091b6fa15233602354",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "9aabab508ca5ac706f6567c4dbe40c753c1878f3dbe31e7ca5f9bbe97daa21aa",
+      "identical_values": true
+    },
+    {
+      "file": "MUN - Manufacture of magnesium unwrought articles.xlsx",
+      "size": 756633,
+      "sha256": "02c15d5922896691c8024f03db0367e133b87bad86138a1d6e135dc13fbffd69",
+      "published_sha256": "e061c18ff5092006acd13d07aebe104909105619f61262bbe5d5133ddf3c091d",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "0bfa4a327f59e1c8d15bfff64939936979692f119e2a58cc20b1bdb9be8e3274",
+      "identical_values": true
+    },
+    {
+      "file": "MUN - Manufacture of magnesium unwrought, articles.xlsx",
+      "size": 756865,
+      "sha256": "8c741e55520ed977f898b9c3dc33d90d48adf9944928b3b6345f0fb034e57111",
+      "published_sha256": "3de638bfc013951914751eafac9be17445ea11514b97c4922db716facfc3b061",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "445e0625891d7aafceac4a0aa8ffb32eb52908307755aad7d69ad6d33185232a",
+      "identical_values": true
+    },
+    {
+      "file": "MUR - Mining of uranium.xlsx",
+      "size": 396163,
+      "sha256": "5eec95852a26f324ade1fb81018ee0e85ce79f7b717a73ed6fb70f9addc5e29d",
+      "published_sha256": "1cfa232688f1f362e405d10ac8484a6a8d616b24ab8562ed0dc79fc7091b3064",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "6cc357cb9c3b116115b30a02e80b0f887b6a07cff2e7080b51d2bd8ffa7b3bcb",
+      "identical_values": true
+    },
+    {
+      "file": "NCA - Manufacture of NCA batteries.xlsx",
+      "size": 716323,
+      "sha256": "9586ff109959592415f3ac9108286f39626780c9435a3f70277874ec5548166d",
+      "published_sha256": "cc37872467643e2b6b745a1b942d4e2db27744af39587f3c5c9c264b50e15009",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "452fe4910f92b49ceae7e926a0754d8bb67cf145bc68c4843c9457eb4aa1a292",
+      "identical_values": true
+    },
+    {
+      "file": "NCM - Manufacture of NCM batteries.xlsx",
+      "size": 716905,
+      "sha256": "35230991613f12fab004e4e96335a9bba52e6027c9634d1fbbaecaefd4a262c1",
+      "published_sha256": "b336f80f46a063c403f4f2478255931a2dc600d363590605297bcc2b40387726",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "48c5259dce8bf53aec3d86a7b48414fca023c59b21ed8c0b258c302a220a86d8",
+      "identical_values": true
+    },
+    {
+      "file": "NFR - Manufacture of nitrogen fertilizer.xlsx",
+      "size": 936624,
+      "sha256": "890a621119e72554abebb9479cc912473efb7ff851007ac96619005be93a2d7d",
+      "published_sha256": "093313d1ae4fbb2cb16c549fdeb18e0d6cd0d55fc43e704c7310fb0ed5407ced",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "2e30f5c8fa7d8e191fa1f9206f0ff25aec2c9241898e03a108101996020ae643",
+      "identical_values": true
+    },
+    {
+      "file": "NIK - Mining of nickel ores and concentrates.xlsx",
+      "size": 536316,
+      "sha256": "facdeb83755906e0bf057771a498c6b7dcdb6a818b2af76666afcbf55bf0745c",
+      "published_sha256": "a1059b8c446ae1dc08e2b9651d48acf0c8e0879cdcb3f32d61295015239e42cd",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "9133b9d0086f1df3ccac61593755915d7c037c984406ea054c861ddef9d06752",
+      "identical_values": true
+    },
+    {
+      "file": "NIO - Mining of niobium.xlsx",
+      "size": 596644,
+      "sha256": "486839e3b17cbcffbadcf76d41df1205c9c676b50719d298ebdab607ddbdcdda",
+      "published_sha256": "53410e6e00638ee9662582e473a4abc1c40a3c86f505af1fa31e8a125d7f6e08",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "f19cbe8fb984212eb3c431303b76bf9131d81be58fda7f83203eef145f44ef19",
+      "identical_values": true
+    },
+    {
+      "file": "NIR - Manufacture of refined nickel.xlsx",
+      "size": 778197,
+      "sha256": "8cc14e64d998f82888f6b8556f882a8117dc883d25d37f9353c2ec151f175419",
+      "published_sha256": "c6413f56627f72ddf392e06ee97bf0ff2b2a72fe510390625b57fd9cf7e9dfc1",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "ab54e6793906dd573d31210ca5c0f178de22a90ad6e69f2d38535a35a9029a41",
+      "identical_values": true
+    },
+    {
+      "file": "NMC - Manufacture of NMC batteries.xlsx",
+      "size": 729813,
+      "sha256": "d45a6c8f5b83913a35a06502e222d780cf851d2ef84811276b8d3ae3f3fbfd22",
+      "published_sha256": "3fc89a730175d9ac9e30d38ea352b19cc45213560dc169512e8cc067ec69b56a",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "a14c0320fc2492ece011069000a3be54745261c12201dc5381243c2e21a6f75d",
+      "identical_values": true
+    },
+    {
+      "file": "PCP - Manufacture of coke.xlsx",
+      "size": 667439,
+      "sha256": "d3142a17d88533f16d593dd706b1edb6ce34087f6649aad405e96f4209de258d",
+      "published_sha256": "183bf34bc83a82a2c1eaa95e7bcbb08c7634c3d4467a7e1e4ff028aa92ae3bf5",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "d429006f061853f5af7f9c3c71d26dd0c2dfffdea8c5f4587064955c0943454c",
+      "identical_values": true
+    },
+    {
+      "file": "PFR - Manufacture of phosphorus fertilizer.xlsx",
+      "size": 982094,
+      "sha256": "248bfa7d95883e6331c855a01eb57a4bb5e76ab40c77b696f97087094419c956",
+      "published_sha256": "2c1814c98dda29ef68bece60b65a01f6809c08c2ac6d3c2c78494dd7ae2fb5e7",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "27782a2761b47dfa2c019aab7e009ddbfd125a45f3aebd3b6fb5e80c175576c6",
+      "identical_values": true
+    },
+    {
+      "file": "PGM - Mining of plantinum group metals.xlsx",
+      "size": 393911,
+      "sha256": "d2c043594823f12266a40425b1e9669c26656dd3f748ceddff679b3123b81eee",
+      "published_sha256": "565ba2e646c6b710c5bbb18d9533c771c0b458e62ad66e3f26e9fd48ce14f721",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "2bdc226edc810ef31e8f32373bca3561cfd740fd3dc4b25bb9a27f12a1b8593d",
+      "identical_values": true
+    },
+    {
+      "file": "PGR - Manufacture of semi-manufactured platinum group metals.xlsx",
+      "size": 745429,
+      "sha256": "b8acd37514a04bbb810f95173e3b595e6189c02662aabceb86a9e0d8d3394d90",
+      "published_sha256": "4f31637e4fa3897c9979cd0bc8e6cb8e1f545ad8fb97c936af3f7fc9144eeac6",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "b1c4b6f700e71647ff7729a01f10a6c4a26dbff081fb0d5982062f87521d3a22",
+      "identical_values": true
+    },
+    {
+      "file": "PLP - Manufacture of primary plastic products.xlsx",
+      "size": 742472,
+      "sha256": "5798c43813ce1dbb715054523161fd2f4db6770d034d88a9876dec3680371dc2",
+      "published_sha256": "5d492582f2d30dd577392cae4d91f5e19545b13294ae0bc90eef3c18cbaa547b",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "e94c3c4c7942b7adda15382672c9af2867aaa24bcc1a246e52767968383bd3f6",
+      "identical_values": true
+    },
+    {
+      "file": "PLR - Recycling of plastics.xlsx",
+      "size": 903409,
+      "sha256": "9071b40b71f258766c2e47551cc1172f0b1f8e13520662799d218b9f382e1c17",
+      "published_sha256": "a6ba3c0dedd58cc7b03d57d030f7ba9ce2fd23aa7baa2603d7ed827df7433aae",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "9c764335ad009cec07f80050f8c3bcbe6a31c26ac934cc9931a5a4b0efacb4f7",
+      "identical_values": true
+    },
+    {
+      "file": "PLSR - Manufacture of secondary plastic products.xlsx",
+      "size": 742267,
+      "sha256": "9c72ee0a478e3165d6842ae4346bd9994b2c44ff3a8fe580c93a60a6bdb94300",
+      "published_sha256": "ca9b3b7a2fc9f1e406510d9be733e12eaff69f5c7bbc4f09d260be538dad79ea",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "2e24fb29c232bea280450a97b64d95334e4171def68d5ae527ebda9b4de8db0d",
+      "identical_values": true
+    },
+    {
+      "file": "RAL - Recycling of aluminum.xlsx",
+      "size": 786353,
+      "sha256": "99565fb21b5efc970a2565d6e68797960d74448b93a4dde18337d60306b4ba0c",
+      "published_sha256": "ddae1450eec061470eb0f55576c66f05a063c6b9589f8f37702bede78243c236",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "99a4d21a2686d8b85040a971bafe74dd87eee700cc0beee4a5467ee000da1eba",
+      "identical_values": true
+    },
+    {
+      "file": "RBR - Manufacture of rubber products.xlsx",
+      "size": 1191576,
+      "sha256": "2bd49c85c63da18305e4020569e16dff14313514b735bfabe89d789ddfad8efb",
+      "published_sha256": "64c6a3ed4c18d946e2e798407a8f71d39ca4957f3e760cf74d8daebbf50a1716",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "68fb5ad6004e9d834bbf52a0ff34506750485c9426a815c737834749cba0f70d",
+      "identical_values": true
+    },
+    {
+      "file": "RCP - Recycling of copper.xlsx",
+      "size": 160232,
+      "sha256": "6be621e2e81395c5d75a66b66028875d7447b10293b8a9e3bcd6c2aa70ed86cb",
+      "published_sha256": "5ddd7f4882a2cfc3ea24cdc8786fa081362f01c1e2138c1347fb611460102260",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "cbb198bd75506d7e072ebf7476357189fdde74f469d5ea0e0098d1d65bd987ec",
+      "identical_values": true
+    },
+    {
+      "file": "REE - Mining of rare earth elements.xlsx",
+      "size": 587135,
+      "sha256": "a3a7b70f2580c46dfc033bfad63da8a7985f980ab3c38d3b280880ffe564e885",
+      "published_sha256": "3bf87b2765ea5d71ae032466771bb1254eeb178b282024c135d89ac1730421a9",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "a210cd4db7b32bce6e6a009213835f169c03d4b8dfc60a1f7981b2c3c6998280",
+      "identical_values": true
+    },
+    {
+      "file": "RER - Manufacture of refined rare earths.xlsx",
+      "size": 798090,
+      "sha256": "5a6621cf32fac04e6950d8f66aa78b373dac11ca0860841827ed965e8b6fc3cb",
+      "published_sha256": "989d1e1c4a29bb9c0d463b2adc7f6b440d413c420edf06e722486a4f38d26c92",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "a97ccd765ffbae17fa10ad84456b5be3ee12f664e8b46c82ba9017e5842d68d9",
+      "identical_values": true
+    },
+    {
+      "file": "SCI - Manufacture of steel via BF-BOF with coke injection.xlsx",
+      "size": 630093,
+      "sha256": "2463f660b45d07b9a7a2d84d70e9fa831821f90b1d814311aa3b012f653cae1f",
+      "published_sha256": "cdbc8f280f62e75191a9fb2432277b190ce9e433b77a82f19c86236e46ca1281",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "c3ef376c2da055a38f74b63beec487afc5c68885c1a94af6c76a0b4c41e7c6b0",
+      "identical_values": true
+    },
+    {
+      "file": "SDG - Manufacture of steel via direct reduction with natural gas.xlsx",
+      "size": 694016,
+      "sha256": "50533b235148d4e13bbd2c3e25eacecd5440137f172158e3ab4f315e451aa477",
+      "published_sha256": "2d94250c8e406cf6e7e99503135b8f4fc4670bfd372dbd625c991e9262b096bc",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "f19459324040f03528b3ccd46d9fc81a82f3c3e2e683c978ae218fca381f4bbd",
+      "identical_values": true
+    },
+    {
+      "file": "SDH - Manufacture of steel via direct reduction with hydrogen.xlsx",
+      "size": 692128,
+      "sha256": "8a8ef677bbf6d636fa1c629c45f6bfb80f09c88a4d6dee1585189d8ee67f3cbc",
+      "published_sha256": "dc967054d963990dfba23d069da55a376b4ff51698881fcd219852fc4235b4bc",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "be934687f665967eee307a6aa13ff4da7d60826ec02b6e4e0febb2b0da0e7c02",
+      "identical_values": true
+    },
+    {
+      "file": "SIL - Mining of silver.xlsx",
+      "size": 594106,
+      "sha256": "82e6799fad3d4bb3c56c302468ee3b3a398e52335a4d5ca72b823a3b2e0bfac6",
+      "published_sha256": "14846ab48bd4cb8176183ca3c44a39ebbd3c2b51a8918534504273ae53d7fff7",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "c6e7e6b0df421f33df32118d165d74e2bd12387e1fe5f90119d20b309d870ce3",
+      "identical_values": true
+    },
+    {
+      "file": "SIR - Manufacture of refined silver.xlsx",
+      "size": 778570,
+      "sha256": "7d7675d5537ca7fbd70cea7532688b91a3706f49c08002d8a5690d61db69602e",
+      "published_sha256": "012329df3688d3529c7a4c5858cc34d24be2fecb09479108251ec3f9c4f1caf9",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "5112bdf0eea3cece6c6d925e340265af36709653286f80b06b68f2e5ee9cb790",
+      "identical_values": true
+    },
+    {
+      "file": "SOP - Manufacture of solar panels.xlsx",
+      "size": 882897,
+      "sha256": "1c768bf5763b80344335667dfde50a0b1ecc18075079e08d288f1be7e849b54c",
+      "published_sha256": "76501b03d20576e830dadef9b9972a974ef0457340e59701ab76618b2decdb63",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "0f9e76b919ad7eba1a39160243cbf6c9c857970412f821485bb714a95590e24e",
+      "identical_values": true
+    },
+    {
+      "file": "TIR - Manufacture of refined titanium.xlsx",
+      "size": 807120,
+      "sha256": "0852070ec7483a49d143d14ef50e3a68a2f49ef3a0cea840281ea1c423923c2a",
+      "published_sha256": "98aef5048e65e0d8cdc7f944e62db44b47705e3593e7584a4903fa6b1faf1ca5",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "c1a086ea886a5282945c8bb3a35f950faa8b9237e26afba480cde735a5d8357d",
+      "identical_values": true
+    },
+    {
+      "file": "TIT - Mining of titanium.xlsx",
+      "size": 606654,
+      "sha256": "5bf4e4affcdcbe67f4302f4e92e8461425074977935fa596db7d29c70901c796",
+      "published_sha256": "dffaa29eaa145706d9316e2f3fad47e5636e1af27ae6181a2954abb1139ad3f5",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "db5df2590db3f3aa4b81efbacbc928ad3f09607a276a2cc837dd8efa4508ad09",
+      "identical_values": true
+    },
+    {
+      "file": "TVP - Transport via pipeline service.xlsx",
+      "size": 744282,
+      "sha256": "a9e9f5f2080809f8b2f3e720ebe5ac655e1b9505062d124080c3549993392f7c",
+      "published_sha256": "b06a66b16850d4ea7ce3c6fc209487c53a05b700ab4970a49de7574097f46d09",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "ab64737a879f00a4e742d08649e340ca3689d747e391ffc36f26c707e5230216",
+      "identical_values": true
+    },
+    {
+      "file": "WNT - Manufacture of wind turbines.xlsx",
+      "size": 806169,
+      "sha256": "8d215b089c22d448e7b5a158a9ef7dd9aeb88e6543dd821ba06985a6bb264aa9",
+      "published_sha256": "d882d308ff0b1a5e541da31303b6342339ccf0ca15fd634a2e9d2aa1ea0652be",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "b2f329d1af1957f66586fa55aa1f5ea85eb07bac7ba31c584a89d6a969cd2ec2",
+      "identical_values": true
+    },
+    {
+      "file": "ZIN - Mining of zinc.xlsx",
+      "size": 588923,
+      "sha256": "fb58d5939f463c4107d086f401532725549a60995d6bd3d646fe1b1083a3636a",
+      "published_sha256": "7f4aa146f5128bb1287cacbbe96312486bbedc305e7dd1989a80e276de3128eb",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "8485d94d7bba129d82c44344852583bde7729ec82ea1428b6dd5bb2a11adf579",
+      "identical_values": true
+    },
+    {
+      "file": "ZIR - Manufacture of refined zinc.xlsx",
+      "size": 809758,
+      "sha256": "3b59689631ac75916d92cb4276b863c833e7b0c61b96ecd2e7f3980393edd708",
+      "published_sha256": "3b59689631ac75916d92cb4276b863c833e7b0c61b96ecd2e7f3980393edd708",
+      "identical_bytes": true,
+      "readable": false,
+      "error": "File is not a zip file"
+    },
+    {
+      "file": "New sectors classification.xlsx",
+      "size": 355027,
+      "sha256": "3c05f3d70b3664965d8b1636d8c174e53d0c22382d2193f80fcab72101d7467b",
+      "published_sha256": "7f84c9db1195d65c23d6ee32a95a2214ae387c52e22e3eab46e275b205500747",
+      "identical_bytes": false,
+      "readable": true,
+      "semantic_sha256": "3cfc0529c8c3656da044c0d4d32ece4dcb28684fec6ad8c14636f57f9281e0eb",
+      "identical_values": true
+    }
+  ],
+  "recovery": {
+    "method": "Rebuild central directory; original local headers and compressed payloads unchanged.",
+    "source_sha256": "3b59689631ac75916d92cb4276b863c833e7b0c61b96ecd2e7f3980393edd708",
+    "recovered_sha256": "a30d9899db104cb096201f639b15c8354fee8af003cb8026c3d6a3a08aa7b050",
+    "source_size": 809758,
+    "recovered_size": 820377,
+    "preserved_prefix_bytes": 805588
+  },
+  "recovered_unchanged_part_count": 194,
+  "recovered_file_sharepoint_path": "Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/ZIR - Manufacture of refined zinc.xlsx",
+  "recovery_status": "Container recovered and verified; original parts unchanged; no release published.",
+  "single_sector_export": {
+    "coefficient_records_compared": 14739,
+    "differences": [],
+    "outputs_equal": true,
+    "trades_equal": true
+  },
+  "environment_scope": "Export-only baseline reproduced. Full producer/solver environment is not certified.",
+  "mario_source_commit": "590426673589dc474d1d23547b1d366758d7fec7",
+  "cvxlab_current_commit": "1f2521b52d85ca0783dca5991d697d22bfa044a3",
+  "cvxlab_pre_delivery_candidate": "6ffd5cd5ff10e8db6b2a659f4f2569ade160e849",
+  "code": [
+    {
+      "path": "scripts/repair_xlsx_directory.py",
+      "sha256": "e6ef25dd1fe6a79f3f9e9543832134f0c72898b177ec5d7474acecab267fe5ae"
+    },
+    {
+      "path": "scripts/export_d24_sector.py",
+      "sha256": "113753488bcc33ac4311ff3b7be688ca4958c47259673f46bc83111896239824"
+    },
+    {
+      "path": "src/entice_inventory/export/build_d24_inventories.py",
+      "sha256": "38496f9d811f910bda71b045b06f1064a58ad45e297336ca4f06a73cdac0c6f6"
+    },
+    {
+      "path": "src/entice_inventory/core/matching_utils.py",
+      "sha256": "cfdc5536b0e38dbf281df7b220120f58faed09f94632828c19c66d7dda49fd5b"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "f316e71a4efe159ec68b6f4cdb598a060c3ec3c4e8e4c73b830dd88aafa7287e"
+    },
+    {
+      "path": "requirements/d24-export.txt",
+      "sha256": "768c39e9603da7e67714288c6b5952f6f14d722be8a701ef99354cecf80a8c37"
+    },
+    {
+      "path": "tests/test_d24_recovery.py",
+      "sha256": "b3ec5c8752e281ec464a73dc644b00fe44aaefe423ef55df4bd4f50c4b0bc018"
+    },
+    {
+      "path": "data/classification/d24_nace_review.csv",
+      "sha256": "686ac9ce6eee504b39144d38ce71f33fe597e6efa42dc3919c29f4010abcedc3"
+    },
+    {
+      "path": "config/validation-policy.json",
+      "sha256": "028646a2d23a4d9be77e2e0a6ff423c5970deb11e4a2f468a7b7ddb63b271f74"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "build/audits/d24_followup_2026-10-01/regeneration_comparison.json",
+      "sha256": "27199c845d18a9c43f5d5c3c50836981af4e110a65d9b10434fbd36502830992"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/regeneration_semantic_comparison.json",
+      "sha256": "ceb83bdce47c66345d8d43f918563268682b56459c0d60b2fe9ad1e663faa47f"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/june1_output_comparison.json",
+      "sha256": "a73e5a6d48d9e82b8b1be1b5be18b9ddf096031ba148dc3e7b330544b2ef96fe"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/zenodo_record_refreshed.json",
+      "sha256": "be5284aad110ddd9a7c592373e415f4b357b6ead1ddb123288212b5c7acce7d0"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/trade_coverage_groups.json",
+      "sha256": "40a742564ca3ac7ae1d29af1e8c7beca0b6d9c153539f5bef0966d94327a56b3"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/catalogue_duplicate_codes.json",
+      "sha256": "bae11c27eec8bfadc581c1af772888122981ff8ebf6a3b24d6d1d00f884f02cc"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/parquet_z_metadata.json",
+      "sha256": "f8b04e4a7d02783045df69b3419b7ff32fc1b619a7f42e28040e559a492f0dee"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/hs_scope_evidence.json",
+      "sha256": "742f5c002e31d5c28035c5d97a29c0534b42742c5a045126880089fbde6b211b"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/zir_zip_diagnosis.json",
+      "sha256": "c0b11069211c816e25b1d36a4b401aa2aa819fa21cbd24391ea5d69f27484faa"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/project_comparison.json",
+      "sha256": "a4eb48a5e447237c17600734d42cd003c50ba30628425d84cbdd9e4bd6496b94"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/project_differences.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/cluster_branch_impact.json",
+      "sha256": "6eb3363491f4c182cb627b3a96414f8e290702fc59f0821cef55cefc65b2ba63"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/environment.json",
+      "sha256": "548743183c5f54db4f9edd1697454b7689f20eb9c01e1707b113bc9315517851"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/coefficient_input_capture.json",
+      "sha256": "116f4173276d8084ed52ef07c0c77114867125370b70f43949a9a6ba47bdfd3b"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/trade_tolerance_sensitivity.json",
+      "sha256": "97ae06a5e5bd744dad9b78e3eaf9bca5d906eed57fed0b09c93b3b25b2f61cf7"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/environment/diagnostic_environment.json",
+      "sha256": "1a019e1b9d8f28a7029cff03705b1226379ac79b6769294225916ed6e42eff00"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/environment/explicit_split_result.json",
+      "sha256": "032806fefcddaf8a255b71b6312d11c191ad83c5fb66db780f3e0f6efcf54689"
+    },
+    {
+      "path": "build/audits/d24_followup_2026-10-01/environment/explicit_split_june_result.json",
+      "sha256": "744eefea0fd5edef4f8ec4c595b9b6a8f48c267be1ff59fba18050fb7812f890"
+    }
+  ],
+  "verification_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 6
+  },
+  "limitations": [
+    "Cell comparisons do not certify formula/style/object equality.",
+    "Scope-dependent NACE findings are not silently applied to historical data.",
+    "A successful export does not validate upstream economic assumptions or solver balance."
+  ],
+  "compact_input_export_verification": {
+    "coefficient_records_equal": 14739,
+    "output_table_equal": true,
+    "trade_table_equal": true,
+    "export_manifest_sha256": "e0ea3b97e7133e46061d9d79f86727ff0ce4048a0afaea01a97dad94d8c3309a"
+  }
+}
