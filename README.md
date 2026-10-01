@@ -27,7 +27,7 @@ includes a concrete command. The export-only dependencies are pinned in
 ## Layout
 
 ```text
-data/                         bundled input workbooks (matching, GTAP12_X, region clusters)
+data/                         bundled mappings/region definitions and local licensed inputs
 data/registry/                sector identities, GTAP12 adapter and explicit region groups
 scripts/run_d24_pipeline.py   end-to-end driver (Jupyter #%% cells)
 src/entice_inventory/
@@ -48,6 +48,16 @@ to create an isolated environment from pinned revisions, dependencies and explic
 compatibility patches. See the [producer verification and commands](docs/baseline/README.md#producer-environment-and-representative-verification)
 for the representative HYE check and its remaining numerical warnings. This is
 separate from the lightweight export-only installation.
+
+## Licensed GTAP inputs
+
+The numerical GTAP database and `GTAP12_X.xlsx` are not distributed with this
+repository. Supply them from your licensed source. Place the existing totals
+workbook at `data/GTAP12_X.xlsx` locally when using inventory construction or QA
+features that require parent output weights. The file is ignored by Git.
+Its expected sheet is `GTAP totals`, with columns `Region`, `Full name regions`,
+`Sector to`, `Sector to full name` and `X` (M USD, reference year 2023).
+Do not infer missing parent-output weights as observed zeros.
 
 ## Two pipelines
 

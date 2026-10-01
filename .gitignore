@@ -16,3 +16,6 @@ Run.py
 .d24_split_cache.pkl
 .d24_split_mixed_cache.pkl
 *.png
+
+# Licensed GTAP numerical inputs are supplied locally, never committed.
+GTAP12_X.xlsx
