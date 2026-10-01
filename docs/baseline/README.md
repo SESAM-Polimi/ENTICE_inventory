@@ -18,19 +18,38 @@ The remaining work is implementation and controlled verification. The order belo
 
 The registry now provides a common basis for the guided Excel pilot and T2.6. Next connect source observations and transformation records to it, progressively complete the remaining activity reviews, and replace legacy parent lookups during controlled sector rebuilds. Keep full-scale numerical acceptance open. The baseline-residual policy is settled: report the supplied residuals and any new extension residuals separately, without repairing GTAP.
 
-Editing remains on the current POLIMI/eNextGen SharePoint during testing. Git holds code, schemas, mappings/configuration and manifests. MARIO/CVXLAB is the selected implementation. Diagnostics are optional, with clear warnings and visible skipped checks; the final MRIO must still satisfy accounting identities within reported numerical tolerances.
+The owner has now selected the project SharePoint for operational data and editing: `Data split/ENTICE inventory`. Git holds code, schemas, mappings/configuration and manifests. MARIO/CVXLAB is the selected implementation. Diagnostics are optional, with clear warnings and visible skipped checks; the final MRIO must still satisfy accounting identities within reported numerical tolerances.
 
 Navigate to [baseline and source chain](#the-release-reference), [recovery](#why-zir-failed-and-what-was-recovered), [classification](#nace-led-parent-definitions), [consistency](#production-and-trade-consistency), [environment](#producer-environment-and-representative-verification), [Excel and T2.6](#portability-excel-and-t26), [single-sector export](#regenerating-one-sector), or [decision register](#decision-register).
 
 ## Repository integration and publication
 
-This publication candidate excludes both historical paths of `GTAP12_X.xlsx` from every reachable commit. Its commit identifiers differ from the original private history. The backup tag in this filtered history represents the corresponding code state without the numerical workbook; the exact original main and its original tag remain in the private repository and verified SharePoint bundles. The original-history findings below explain this preparation. No public visibility change has yet been made.
+The original private repository integrates all reconstruction and registry changes in merge `b5382268ccc051cac222116e7e62eb1af40ff17e`. Its first parent is the original main `14fc2bf52802ca1572efd557de15c15cf4abf77d`, also preserved by the annotated tag `backup/main-before-registry-2026-10-01`. Verified Git bundles preserve the complete history before and after integration, alongside the pre-merge working tree and staged/unstaged patches.
 
-The owner requested integration into `main` and public repository visibility on 1 October 2026. The original `main` is commit `14fc2bf52802ca1572efd557de15c15cf4abf77d`, preserved by the annotated tag `backup/main-before-registry-2026-10-01`. A verified complete Git bundle, working-tree archive, staged/unstaged patches and file hashes are stored privately on the existing SharePoint under `Repository backups/ENTICE_inventory/2026-10-01-before-main-merge/`. These copies preserve both the old main and the uncommitted work before integration.
+The public code history excludes both historical paths of the numerical `GTAP12_X.xlsx` workbook and the personal `Run.py`/`paths.yml` files. The original history remains in the private archive repository and on SharePoint. Public commit identifiers differ from the original private identifiers; a backup tag in the filtered history represents the corresponding code state without excluded files. The original main has not been lost or overwritten.
 
-**Publication issue:** `GTAP12_X.xlsx` is already present in the original main and its history. It contains 12,388 numerical output records across 163 regions and 76 sectors; relocation to `data/` does not remove that history. The [GTAP 12 terms, section 3](https://www.gtap.agecon.purdue.edu/databases/documents/GTAP12DataBase_TermsConditions.pdf) restrict redistribution of database values and large aggregations. No specific permission to publish this extract has been established. Integration can proceed while the repository remains private. Public visibility requires removing the extract from the public history while retaining the original privately, or establishing the applicable redistribution permission. Deleting the latest copy alone is insufficient. This is distinct from publishing open code and the separately released D2.4 inventories.
+The [GTAP 12 terms, section 3](https://www.gtap.agecon.purdue.edu/databases/documents/GTAP12DataBase_TermsConditions.pdf) restrict redistribution of database values and large aggregations. Public code therefore uses externally supplied licensed inputs. The working files and historical text were checked for common credential/private-key patterns, with no matches; this is a limited check, not an exhaustive security certification. Ignored numerical data, private configuration and archived evidence are not published on GitHub.
 
-The working files and historical text reachable from the original main were checked for common credential/private-key patterns, with no matches. This is a limited content check, not a claim of exhaustive secret detection. Ignored build evidence, matrices and private workbooks are excluded from the commit.
+### Project SharePoint archive
+
+The owner selected `RCD-Entice-EXT - Documents/General/2.Deliverables and Milestones/WP2. Improved data and empirics on trade and climate/Data split/ENTICE inventory` on 1 October 2026. The agreed scope is the D2.4 working data chain, verification evidence and backups, rather than the entire 129 GB historical working area.
+
+The initial transfer contains **1,170 files (approximately 2.47 GB)**. Each destination was verified against SHA-256 calculated during copying and a second read of its source. No conflicting destination was overwritten. Source files remain preserved. The one temporary OneDrive read failure was retried successfully. Local copied bytes are verified; remote SharePoint synchronisation has not been independently confirmed.
+
+| Shared subdirectory | Contents |
+|---|---|
+| `Data collection/Inventory cleaning` | Partner and MARIO inventories, D2.4 inventories and coefficient database, ZIR recovery files, supporting checks. |
+| `Database/GTAP 2023/2023entice` | The eight original baseline parquet matrices; no accounting correction. |
+| `Shared material/Purdue data collection` | May13, May27 and June1 source files and mappings. |
+| `Sectors list` | Working sector definitions and supporting classification files. |
+| `Repository inputs` | Licensed GTAP output totals and the archived personal runner/configuration. |
+| `Reference documents` | The D2.4 report and grant agreement used in the reconstruction. |
+| `Verification/2026-10-01` | Baseline and follow-up evidence, reproduction/registry checks and environment records. Software environments, caches and copied dependency repositories are excluded. |
+| `Repository backups/2026-10-01-before-main-merge` | Complete original Git bundles, working-tree archive, patches and hashes. |
+| `Archive records` | Transfer plan, verified per-file manifest and the copy script. |
+
+The pipeline, exporter and QA defaults now resolve from one local setting, `data_root` in ignored `paths.local.json`, or `ENTICE_DATA_ROOT`. Licensed totals resolve from `Repository inputs/GTAP12_X.xlsx`. The exporter now defaults to the normal MARIO folder instead of the abandoned `MARIO inventories copy` location. Repository instructions include configuration and installation examples. Historical audit paths remain preserved as provenance; the archive manifest maps each source to its new location.
+
 
 ## The release reference
 
@@ -64,7 +83,7 @@ The snapshot also preserves the available ENTICE Git revisions, the pre-existing
 
 Two existing audit CSVs changed modification time during capture after initially being cloud-only. Their captured bytes subsequently matched a fresh read of the source files. The original metadata-change flags remain in the manifest; they are not silently treated as proof of a content change.
 
-Large evidence files, source data and numerical audit reports are in the already ignored `build/` directory. The manifests and this report can be versioned without adding those payloads to Git. The separately tracked GTAP totals workbook remains a publication issue described above. Original input data and source workbooks remain unchanged. Subsequent changes added workbook recovery, a single-sector export command, atomic exporter saves and visible Python warnings; these are described below. Redundant Markdown reports have been consolidated here. The reconstruction and registry work is committed for integration; no data release has been published.
+Large evidence files, source data and numerical audit reports are in the already ignored `build/` directory. The manifests and this report can be versioned without adding those payloads to Git. The GTAP totals workbook is supplied through the private shared archive and excluded from public Git history. Original input data and source workbooks remain unchanged. Subsequent changes added workbook recovery, a single-sector export command, atomic exporter saves and visible Python warnings; these are described below. Redundant Markdown reports have been consolidated here. The reconstruction and registry work is committed for integration; no data release has been published.
 
 ## Reconstructed data chain
 
@@ -574,7 +593,7 @@ Accepted directions and their implementation status are maintained here. An acce
 | B10 | Explain the unused cluster branch before changing it. | Traced across eight templates, including HVC. Implement an explicit allocation/overlap/unit policy with a baseline comparison in a separate change. |
 | B11 | Diagnostic checks should be optional, with clear warnings and visible skipped checks. | Implemented for registry and metadata/coverage inspection, with structured actions and skipped-check lists. Extension to numerical transformations and the full runner remains. Technical failures are reported as failures. |
 | B12 | Preserve source evidence versus target-resolved values; add benchmarking when multi-MRIO work begins. | Direction accepted; benchmarking deferred. |
-| B13 | Keep data/editing on the current POLIMI/eNextGen SharePoint during testing. | Resolved for now; project-wide migration awaits a later owner decision. |
+| B13 | Use the project SharePoint `Data split/ENTICE inventory` for D2.4 data, verification and backups. | Owner-selected migration completed and verified locally. Original sources are retained; cloud synchronisation is not independently certified. |
 | B14 | SPLITCOM was a suggestion; use MARIO/CVXLAB. | Resolved by the owner; T2.6 follows this implementation choice. |
 
 Broad code/data cleanup remains a later activity; the redundant narrative reports have been consolidated into this file. Historical files and baseline manifests are not silently updated when a correction candidate is created.

@@ -49,18 +49,14 @@ import pandas as pd
 from openpyxl import load_workbook
 
 from entice_inventory.core.matching_utils import load_parent_map
-from entice_inventory.core.paths import DATA_DIR, PROJECT_ROOT
+from entice_inventory.core.paths import DATA_DIR, PROJECT_ROOT, find_data_file, project_data_root
 
 # --------------------------------------------------------------------------- #
 # Default locations
 # --------------------------------------------------------------------------- #
-DEFAULT_GTAP_X_PATH = str(DATA_DIR / "GTAP12_X.xlsx")
+DEFAULT_GTAP_X_PATH = str(find_data_file('GTAP12_X.xlsx'))
 
-_ONEDRIVE_CLEANING = (
-    "/Users/lorenzorinaldi/Library/CloudStorage/OneDrive-SharedLibraries-eNextGen/"
-    "ENTICE - Documents/WPs, Tasks & Deliverables/WP2 - Data/"
-    "T2.2 & T2.3 - GTAP disaggregation/Data collection/Inventory cleaning"
-)
+_ONEDRIVE_CLEANING = str(project_data_root()/'Data collection/Inventory cleaning')
 
 DEFAULT_D24_DIR = os.path.join(_ONEDRIVE_CLEANING, "D2.4 inventories")
 DEFAULT_MARIO_DIR = os.path.join(_ONEDRIVE_CLEANING, "MARIO inventories")

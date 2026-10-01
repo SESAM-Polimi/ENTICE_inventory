@@ -16,15 +16,12 @@ from typing import Iterable
 from openpyxl import load_workbook
 
 from entice_inventory.core.matching_utils import load_parent_map
-from entice_inventory.core.paths import DATA_DIR
+from entice_inventory.core.paths import DATA_DIR, project_data_root
 
 
-DEFAULT_DATA_ROOT = (
-    Path.home()
-    / "Library/CloudStorage/OneDrive-SharedLibraries-eNextGen/ENTICE - Documents/WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation"
-)
+DEFAULT_DATA_ROOT = project_data_root()
 DEFAULT_DB_PATH = DEFAULT_DATA_ROOT / "Database/GTAP 2023/2023entice"
-DEFAULT_SOURCE_DIR = DEFAULT_DATA_ROOT / "Data collection/Inventory cleaning/MARIO inventories copy"
+DEFAULT_SOURCE_DIR = DEFAULT_DATA_ROOT / "Data collection/Inventory cleaning/MARIO inventories"
 DEFAULT_OUTPUT_DIR = DEFAULT_DATA_ROOT / "Data collection/Inventory cleaning/D2.4 inventories"
 DEFAULT_PURDUE_SPLITARGS_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/June1/splttargs.xlsx"
 DEFAULT_PURDUE_TRADE_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/May13/trade.xlsx"

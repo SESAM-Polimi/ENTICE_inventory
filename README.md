@@ -52,9 +52,10 @@ separate from the lightweight export-only installation.
 ## Licensed GTAP inputs
 
 The numerical GTAP database and `GTAP12_X.xlsx` are not distributed with this
-repository. Supply them from your licensed source. Place the existing totals
-workbook at `data/GTAP12_X.xlsx` locally when using inventory construction or QA
-features that require parent output weights. The file is ignored by Git.
+repository. Supply them from your licensed source. The configured shared archive supplies the totals workbook from
+`Repository inputs/GTAP12_X.xlsx` for inventory construction and QA features
+that require parent output weights. An explicit local copy at
+`data/GTAP12_X.xlsx` is also supported and ignored by Git.
 Its expected sheet is `GTAP totals`, with columns `Region`, `Full name regions`,
 `Sector to`, `Sector to full name` and `X` (M USD, reference year 2023).
 Do not infer missing parent-output weights as observed zeros.
@@ -86,8 +87,22 @@ parent" residual clusters), `core.matching_utils` (read `GTAP12_matching.xlsx`).
 
 ## Running it
 
-End-to-end: open `scripts/run_d24_pipeline.py`, set `BASE` to your local OneDrive
-copy of the WP2 data folder, and run the `#%%` cells in order.
+Copy `config/paths.example.json` to `paths.local.json` in the repository root
+and set `data_root` to your local copy of `Data split/ENTICE inventory` on the
+project SharePoint. This personal configuration is ignored by Git. Alternatively,
+set `ENTICE_DATA_ROOT`; it takes precedence over the file. `ENTICE_CONFIG` selects
+a configuration stored elsewhere, including when using an installed wheel.
+
+The shared directory contains the existing `Data collection/Inventory cleaning`,
+`Database/GTAP 2023/2023entice` and `Shared material/Purdue data collection` paths.
+`Repository inputs` holds licensed local inputs, `Reference documents` holds
+supporting documents, `Verification` holds audit/reproduction evidence, and
+`Repository backups` holds the original Git history. `Archive records` contains
+the file-by-file SHA-256 transfer manifest. Access to the public code does not
+grant access to these private files.
+
+End-to-end: open `scripts/run_d24_pipeline.py` and run the `#%%` cells in order.
+The exporter and QA plots use the same configured data root.
 
 The modules with a `__main__` block can also be run from the command line, e.g.:
 
@@ -141,7 +156,7 @@ baseline-closure option has been removed. Full build acceptance remains open.
 
 ## Notes
 
-- `Run.py` + `paths.yml` are a personal scratch runner for the inventory-creation
-  pipeline (per-user paths); `Run.py` is git-ignored.
+- The legacy personal `Run.py` and `paths.yml` are archived in SharePoint under
+  `Repository inputs/Personal runners`; they are excluded from public Git history.
 - `.d24_split_cache.pkl` / `.d24_split_mixed_cache.pkl` are regenerable caches for
   `plot_d24_split` (`refresh_cache=True` rebuilds them); git-ignored.

@@ -11,6 +11,9 @@ dist/
 
 # Personal scratch runner (per-user paths)
 Run.py
+paths.yml
+paths.local.json
+external-data/
 
 # Regenerable caches and generated figures
 .d24_split_cache.pkl

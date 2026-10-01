@@ -9,8 +9,8 @@ Run as Jupyter-style cells (#%%). The flow is:
   5. Inject Purdue bilateral trade data into the exported workbooks.
   6. Plot the X / VA disaggregation of each split parent sector for QA.
 
-Edit BASE below to point at your local OneDrive copy of the WP2 data folder;
-every path is derived from it.
+Set ENTICE_DATA_ROOT or data_root in paths.local.json to the shared ENTICE
+inventory archive. Every operational path is derived from that directory.
 """
 
 #%%
@@ -23,13 +23,10 @@ from entice_inventory.export.build_d24_inventories import (
     update_trades_in_exported_inventories,
 )
 from entice_inventory.export import plot_d24_split
+from entice_inventory.core.paths import project_data_root
 
 # --- Paths (all derived from BASE) ----------------------------------------- #
-BASE = Path(
-    "/Users/lorenzorinaldi/Library/CloudStorage/OneDrive-SharedLibraries-eNextGen"
-    "/ENTICE - Documents/WPs, Tasks & Deliverables/WP2 - Data"
-    "/T2.2 & T2.3 - GTAP disaggregation"
-)
+BASE = project_data_root(required=True)
 INVENTORY_CLEANING = BASE / "Data collection/Inventory cleaning"
 GTAP_DB = BASE / "Database/GTAP 2023/2023entice"
 MARIO_INVENTORIES = INVENTORY_CLEANING / "MARIO inventories"
