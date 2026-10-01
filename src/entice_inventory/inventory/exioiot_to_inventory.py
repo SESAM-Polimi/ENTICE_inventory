@@ -1,3 +1,20 @@
+"""EXIOIOT pipeline — build Add_sector inventories from EXIOIOT.csv.
+
+For sectors flagged ``Pipeline = EXIOIOT`` in GTAP12_matching.xlsx, this module
+reads the already-normalised EXIOIOT cost structure (one row per
+cost-item x region) for the target GTAPCE code, maps each input onto a baseline
+GTAP12 sector/cluster or factor of production, pulls regional outputs from
+splttargs.xlsx (REPOUT), and writes an ``Add_sector_*.xlsx`` workbook via
+``inventory_writer.write_inventory_workbook`` so that build_d24_inventories.py
+can consume it unchanged.
+
+API
+---
+  from exioiot_to_inventory import make_inventory
+  make_inventory("Manufacture of primary copper", repo_path, exioiot_path,
+                 splttargs_path, version="Y26M05")
+"""
+
 from __future__ import annotations
 
 import csv
@@ -6,9 +23,8 @@ from pathlib import Path
 
 import openpyxl
 
-from matching_utils import find_sector_match, load_matching_rows
-from residual_sector_cluster import apply_residual_sector_clusters
-from template_to_inventory import DB_UNITS_DATA, _safe_sheet_name, _write_clusters_sheet
+from entice_inventory.inventory.inventory_writer import write_inventory_workbook
+from entice_inventory.core.matching_utils import find_sector_match, load_matching_rows
 
 
 VALUE_ADDED_CODES = {
@@ -369,103 +385,26 @@ def make_inventory(
     print(f"  Sector clusters : {list(used_sector_clusters.keys())}")
     print(f"  Factor clusters : {list(used_factor_clusters.keys())}")
 
-    regions_clusters = OrderedDict([('GLOBAL', all_regions)])
     sources = [
         ('EXIOIOT', str(exioiot_path)),
         ('splttargs / REPOUT', str(splttargs_path)),
     ]
 
-    wb_out = openpyxl.Workbook()
-    wb_out.remove(wb_out.active)
-    all_sheet_names: list[str] = []
-
-    ws_sum = wb_out.create_sheet('Summary')
-    ws_sum.cell(1, 1).value = 'INFO'
-    ws_sum.cell(2, 1).value = 'Sector'
-    ws_sum.cell(2, 2).value = sector_code
-    ws_sum.cell(2, 3).value = inventory_name
-    ws_sum.cell(3, 1).value = 'Parent sector'
-    ws_sum.cell(3, 2).value = parent_code
-    ws_sum.cell(4, 1).value = 'Inventory version'
-    ws_sum.cell(4, 2).value = version
-    ws_sum.cell(5, 1).value = 'Data collection lead'
-    ws_sum.cell(5, 2).value = 'EXIOIOT pipeline'
-    ws_sum.cell(7, 1).value = 'Sources'
-    for idx, (source_name, source_url) in enumerate(sources, start=8):
-        ws_sum.cell(idx, 1).value = source_name
-        ws_sum.cell(idx, 2).value = source_url
-
-    ws_master = wb_out.create_sheet('Master')
-    all_sheet_names.append('Master')
-    ws_master.append([
-        'Region', 'Sector', 'Inventory sheet', 'Quantity', 'Unit',
-        'Final consumption', 'Consumption category',
-        'Parent Sector', 'Leave empty', 'Source', 'Notes', 'Add or Split',
-    ])
-    for region_code in inventory_regions:
-        sheet_name = _safe_sheet_name(f"{sector_code}_{region_code}")
-        ws_master.append([
-            region_code, sector_code, sheet_name, None, 'M USD',
-            None, None, parent_code, None, None, None, 'Split',
-        ])
-
-    _write_clusters_sheet(wb_out.create_sheet('Regions Clusters'), regions_clusters)
-    all_sheet_names.append('Regions Clusters')
-
-    _write_clusters_sheet(wb_out.create_sheet('Sectors Clusters'), used_sector_clusters)
-    all_sheet_names.append('Sectors Clusters')
-
-    _write_clusters_sheet(wb_out.create_sheet('Factors Clusters'), used_factor_clusters)
-    all_sheet_names.append('Factors Clusters')
-
-    for region_code in inventory_regions:
-        sheet_name = _safe_sheet_name(f"{sector_code}_{region_code}")
-        ws_inv = wb_out.create_sheet(sheet_name)
-        ws_inv.append([
-            'Quantity', 'Unit', 'Input', 'Item type',
-            'DB Item', 'DB Region', 'Change type',
-        ])
-        for (mario_type, db_item, db_region), value in inv_by_region[region_code].items():
-            ws_inv.append([value, 'M USD', None, mario_type, db_item, db_region, 'Update'])
-        all_sheet_names.append(sheet_name)
-
-    ws_db = wb_out.create_sheet('DB units')
-    for row in DB_UNITS_DATA:
-        ws_db.append(list(row))
-    all_sheet_names.append('DB units')
-
-    ws_to = wb_out.create_sheet('Total outputs')
-    ws_to.append(['Sector', 'Region', 'Quantity', 'Unit', 'Source', 'Notes'])
-    for region_code in all_regions:
-        ws_to.append([sector_code, region_code, total_outputs.get(region_code, 0.0), 'M USD'])
-    all_sheet_names.append('Total outputs')
-
-    ws_sum.cell(1, 9).value = 'LINKS TO PAGES'
-    for idx, sheet_name in enumerate(all_sheet_names, start=2):
-        cell = ws_sum.cell(idx, 9)
-        cell.value = sheet_name
-        safe_name = sheet_name.replace("'", "''")
-        cell.hyperlink = f"#'{safe_name}'!A1"
-
-    residual_updates = apply_residual_sector_clusters(
-        wb_out,
-        repo_path,
-        residual_other_sectors_share,
+    return write_inventory_workbook(
+        output_path,
+        inventory_name=inventory_name,
         sector_code=sector_code,
+        parent_code=parent_code,
+        version=version,
+        data_collection_lead='EXIOIOT pipeline',
+        sources=sources,
+        all_regions=all_regions,
+        inventory_regions=inventory_regions,
+        inv_by_region=inv_by_region,
+        total_outputs=total_outputs,
+        used_sector_clusters=used_sector_clusters,
+        used_factor_clusters=used_factor_clusters,
+        repo_path=repo_path,
+        residual_other_sectors_share=residual_other_sectors_share,
+        print_residual_detail=True,
     )
-    if residual_updates:
-        print(
-            "  Residual sector clusters added : "
-            f"{len(residual_updates)} inventory sheet(s) "
-            f"at {residual_other_sectors_share:.2%}"
-        )
-        for update in residual_updates[:10]:
-            print(
-                f"    {update.sheet_name}: {update.cluster_name} "
-                f"({len(update.cluster_members)} member(s), "
-                f"{len(update.missing_codes)} missing code(s))"
-            )
-
-    wb_out.save(str(output_path))
-    print(f"\nInventory saved: {output_path.name}")
-    return output_path

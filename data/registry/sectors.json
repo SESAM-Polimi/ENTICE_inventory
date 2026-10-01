@@ -1,0 +1,4376 @@
+{
+  "schema_version": 1,
+  "revision": "2026-10-01",
+  "sources": {
+    "nace_review": {
+      "path": "data/classification/d24_nace_review.csv",
+      "sha256": "686ac9ce6eee504b39144d38ce71f33fe597e6efa42dc3919c29f4010abcedc3"
+    },
+    "published_classification": {
+      "path": "build/audits/d24_followup_2026-10-01/project_snapshot/New sectors classification.xlsx",
+      "sha256": "3c05f3d70b3664965d8b1636d8c174e53d0c22382d2193f80fcab72101d7467b",
+      "record_url": "https://zenodo.org/records/20592036"
+    },
+    "legacy_matching": {
+      "path": "data/GTAP12_matching.xlsx",
+      "sha256": "f5cbd619eb870c8784a488a611fdd53ceafbc1a47f3989ac1f3b5e6a7d28d6be"
+    },
+    "published_release": {
+      "path": "manifests/d24_published_release.json",
+      "sha256": "67aa0da1924a0da28abdab8265da03a57d9cfd0ac949579646d4f0520bb07b8b"
+    }
+  },
+  "sectors": [
+    {
+      "id": "AGT",
+      "name": "Manufacture of artificial graphite",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "artificial_graphite",
+            "label": "Artificial graphite, excluding electrical graphite articles",
+            "codes": [
+              "23.99"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "Artificial graphite CPA 23.99.14. Published parent is appropriate; competing CHM catalogue/NACE entries are inconsistent. Electrical graphite articles need separate scope.",
+        "review_status": "concordance_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=AGT",
+        "published_classification:ENTICE GTAP sectors!A84:E84",
+        "published_classification:ENTICE GTAP sectors!A106:E106"
+      ]
+    },
+    {
+      "id": "AMM",
+      "name": "Manufacture of ammonia",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A79:E79"
+      ]
+    },
+    {
+      "id": "APP",
+      "name": "Manufacture of primary aluminum",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=APP",
+        "published_classification:ENTICE GTAP sectors!A117:E117"
+      ]
+    },
+    {
+      "id": "APS",
+      "name": "Manufacture of secondary aluminum",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=APS",
+        "published_classification:ENTICE GTAP sectors!A118:E118"
+      ]
+    },
+    {
+      "id": "BVH",
+      "name": "Manufacture of heavy duty BEV",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=BVH",
+        "published_classification:ENTICE GTAP sectors!A143:E143"
+      ]
+    },
+    {
+      "id": "BVL",
+      "name": "Manufacture of light duty BEV",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "light_duty_vehicles",
+            "label": "Light-duty battery electric motor vehicles",
+            "codes": [
+              "29.10"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Light-duty motor vehicle manufacture. Remove unrelated division 30 from its NACE scope.",
+        "review_status": "parent_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=BVL",
+        "published_classification:ENTICE GTAP sectors!A146:E146"
+      ]
+    },
+    {
+      "id": "CEM",
+      "name": "Manufacture of traditional cement",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=CEM",
+        "published_classification:ENTICE GTAP sectors!A104:E104"
+      ]
+    },
+    {
+      "id": "CHR",
+      "name": "Mining of chromium",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=CHR",
+        "published_classification:ENTICE GTAP sectors!A51:E51"
+      ]
+    },
+    {
+      "id": "CMS",
+      "name": "Manufacture of cement with CCS",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A105:E105"
+      ]
+    },
+    {
+      "id": "COB",
+      "name": "Mining of cobalt ores and concentrates",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=COB",
+        "published_classification:ENTICE GTAP sectors!A49:E49"
+      ]
+    },
+    {
+      "id": "COR",
+      "name": "Manufacture of refined cobalt",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "cobalt_chemicals",
+            "label": "Cobalt oxides and hydroxides",
+            "codes": [
+              "20.12"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "Trade scope is cobalt oxides/hydroxides HS 282200; not refined cobalt metal.",
+        "review_status": "scope_name_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=COR",
+        "published_classification:ENTICE GTAP sectors!A89:E89"
+      ]
+    },
+    {
+      "id": "CPP",
+      "name": "Manufacture of primary copper",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=CPP",
+        "published_classification:ENTICE GTAP sectors!A120:E120"
+      ]
+    },
+    {
+      "id": "CPS",
+      "name": "Manufacture of secondary copper",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=CPS",
+        "published_classification:ENTICE GTAP sectors!A121:E121"
+      ]
+    },
+    {
+      "id": "CRR",
+      "name": "Manufacture of refined chromium",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "chromium_chemicals",
+            "label": "Chromium oxides and chromates",
+            "codes": [
+              "20.12",
+              "20.13"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "Trade covers chromium oxides and chromates. Both map to CHM; class detail should retain product distinctions.",
+        "review_status": "scope_name_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=CRR",
+        "published_classification:ENTICE GTAP sectors!A91:E91"
+      ]
+    },
+    {
+      "id": "ELZ",
+      "name": "Manufacture of electrolyzers",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A137:E137"
+      ]
+    },
+    {
+      "id": "GAR",
+      "name": "Manufacture of refined gallium",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "gallium_metal",
+            "label": "Gallium metal; multi-metal trade basket needs allocation",
+            "codes": [
+              "24.45"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Gallium metal/unwrought scope -> NFM. HS 811292 is a multi-metal product basket; current CHM and chemical EXIO proxy do not follow that scope.",
+        "review_status": "parent_and_source_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=GAR",
+        "published_classification:ENTICE GTAP sectors!A93:E93"
+      ]
+    },
+    {
+      "id": "GRA",
+      "name": "Mining of natural graphite",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=GRA",
+        "published_classification:ENTICE GTAP sectors!A60:E60"
+      ]
+    },
+    {
+      "id": "HEL",
+      "name": "Manufacture of light duty HEV",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=HEL",
+        "published_classification:ENTICE GTAP sectors!A145:E145"
+      ]
+    },
+    {
+      "id": "HVC",
+      "name": "Manufacture of high value chemicals",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=HVC",
+        "published_classification:ENTICE GTAP sectors!A83:E83"
+      ]
+    },
+    {
+      "id": "HYE",
+      "name": "Manufacture of hydrogen via electrolysis",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "review_status": "hydrogen_activity_review",
+        "scopes": [
+          {
+            "id": "hydrogen_electrolysis",
+            "label": "Hydrogen manufacture via electrolysis; excludes electrolyser equipment manufacture",
+            "codes": [
+              "20.11"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32022R2552",
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "PRODCOM 20.11.11.50 identifies hydrogen under industrial gases (NACE Rev. 2 20.11, ISIC Rev. 4 2011). The production technology distinguishes HYE from HYS within the same activity class. The legacy Summary description conflicts with the HYE identity and remains a metadata warning."
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=HYE",
+        "published_classification:ENTICE GTAP sectors!A80:E80",
+        "PRODCOM 2022:20.11.11.50"
+      ]
+    },
+    {
+      "id": "HYS",
+      "name": "Manufacture of hydrogen via steam reforming",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A81:E81"
+      ]
+    },
+    {
+      "id": "ICH",
+      "name": "Manufacture of heavy duty ICEV",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=ICH",
+        "published_classification:ENTICE GTAP sectors!A142:E142"
+      ]
+    },
+    {
+      "id": "ICL",
+      "name": "Manufacture of light duty ICEV",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=ICL",
+        "published_classification:ENTICE GTAP sectors!A144:E144"
+      ]
+    },
+    {
+      "id": "ISS",
+      "name": "Manufacture of secondary iron and steel",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=ISS",
+        "published_classification:ENTICE GTAP sectors!A113:E113"
+      ]
+    },
+    {
+      "id": "KFR",
+      "name": "Manufacture of potassium fertilizer",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=KFR",
+        "published_classification:ENTICE GTAP sectors!A98:E98"
+      ]
+    },
+    {
+      "id": "LCO",
+      "name": "Manufacture of LCO batteries",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=LCO",
+        "published_classification:ENTICE GTAP sectors!A134:E134"
+      ]
+    },
+    {
+      "id": "LFP",
+      "name": "Manufacture of LFP batteries",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=LFP",
+        "published_classification:ENTICE GTAP sectors!A133:E133"
+      ]
+    },
+    {
+      "id": "LIR",
+      "name": "Manufacture of refined lithium",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "lithium_chemicals",
+            "label": "Lithium oxide, hydroxide and carbonate; class detail remains open",
+            "codes": [
+              "20"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "Trade identifies lithium oxide/hydroxide and carbonate, not a generic refined-metal activity; refine class codes with the versioned product concordance.",
+        "review_status": "scope_name_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=LIR",
+        "published_classification:ENTICE GTAP sectors!A85:E85"
+      ]
+    },
+    {
+      "id": "LIT",
+      "name": "Mining of lithium",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=LIT",
+        "published_classification:ENTICE GTAP sectors!A61:E61"
+      ]
+    },
+    {
+      "id": "LMO",
+      "name": "Manufacture of LMO batteries",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=LMO",
+        "published_classification:ENTICE GTAP sectors!A135:E135"
+      ]
+    },
+    {
+      "id": "MAG",
+      "name": "Permanent magnets",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A138:E138"
+      ]
+    },
+    {
+      "id": "MAN",
+      "name": "Mining of manganese ores and concentrates",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=MAN",
+        "published_classification:ENTICE GTAP sectors!A47:E47"
+      ]
+    },
+    {
+      "id": "MAO",
+      "name": "Mining of aluminum ores",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=MAO",
+        "published_classification:ENTICE GTAP sectors!A57:E57"
+      ]
+    },
+    {
+      "id": "MCU",
+      "name": "Mining of copper ores",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=MCU",
+        "published_classification:ENTICE GTAP sectors!A58:E58"
+      ]
+    },
+    {
+      "id": "MGC",
+      "name": "Mining of natural magnesium carbonate \"magnesite\"+magnesia, fused or dead-burned (sintered)",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "magnesite_magnesia",
+            "label": "Magnesite and the listed fused or sintered magnesia products",
+            "codes": [
+              "08.99"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "PRODCOM 08.99.29.13/.14/.15 includes magnesite and sintered/fused magnesia. Duplicate name variants have the same parent; retain one identity and separate aliases.",
+        "review_status": "alias_resolution"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=MGC",
+        "published_classification:ENTICE GTAP sectors!A62:E62"
+      ]
+    },
+    {
+      "id": "MGR",
+      "name": "Manufacture of refined magnesium",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A94:E94"
+      ]
+    },
+    {
+      "id": "MIO",
+      "name": "Mining of iron ores",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=MIO",
+        "published_classification:ENTICE GTAP sectors!A56:E56"
+      ]
+    },
+    {
+      "id": "MNR",
+      "name": "Manufacture of refined manganese",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "manganese_oxides",
+            "label": "Manganese oxides",
+            "codes": [
+              "20.12"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "Trade scope is manganese oxides HS 282010/282090; not refined manganese metal.",
+        "review_status": "scope_name_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=MNR",
+        "published_classification:ENTICE GTAP sectors!A87:E87"
+      ]
+    },
+    {
+      "id": "MSI",
+      "name": "Manufacture of metallurgical silicon",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "silicon",
+            "label": "Silicon, excluding ferro-silicon",
+            "codes": [
+              "20.13"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "Silicon HS 280469 / PRODCOM 20.13.21.70; not mining and not ferro-silicon.",
+        "review_status": "parent_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=MSI",
+        "published_classification:ENTICE GTAP sectors!A95:E95"
+      ]
+    },
+    {
+      "id": "MTH",
+      "name": "Manufacture of methanol",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=MTH",
+        "published_classification:ENTICE GTAP sectors!A82:E82"
+      ]
+    },
+    {
+      "id": "MUN",
+      "name": "Manufacture of magnesium: unwrought, articles",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "unwrought_magnesium",
+            "label": "Unwrought magnesium; broader articles and scrap need alignment",
+            "codes": [
+              "24.45"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Unwrought magnesium -> NFM. Two files are one sector; broader articles/scrap trade coverage needs its own scope review.",
+        "review_status": "duplicate_file_review"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=MUN",
+        "published_classification:ENTICE GTAP sectors!A123:E123"
+      ]
+    },
+    {
+      "id": "MUR",
+      "name": "Mining of uranium",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=MUR",
+        "published_classification:ENTICE GTAP sectors!A59:E59"
+      ]
+    },
+    {
+      "id": "NCA",
+      "name": "Manufacture of NCA batteries",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=NCA",
+        "published_classification:ENTICE GTAP sectors!A132:E132"
+      ]
+    },
+    {
+      "id": "NCM",
+      "name": "Manufacture of NCM batteries",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "batteries",
+            "label": "Battery manufacture",
+            "codes": [
+              "27.20"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Classification uses NCM. Resolve the separate published NMC record before selecting an active inventory.",
+        "review_status": "legacy_identity_review"
+      },
+      "related_records": [
+        {
+          "sector_id": "NMC",
+          "relationship": "possible_same_activity_not_merged"
+        }
+      ],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=NCM",
+        "published_classification:ENTICE GTAP sectors!A131:E131"
+      ]
+    },
+    {
+      "id": "NFC",
+      "name": "Casting of other non-ferrous metals",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A116:E116"
+      ]
+    },
+    {
+      "id": "NFR",
+      "name": "Manufacture of nitrogen fertilizer",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=NFR",
+        "published_classification:ENTICE GTAP sectors!A96:E96"
+      ]
+    },
+    {
+      "id": "NFX",
+      "name": "Manufacture of other metals (primary, secondary and recycling)",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A126:E126"
+      ]
+    },
+    {
+      "id": "NIK",
+      "name": "Mining of nickel ores and concentrates",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=NIK",
+        "published_classification:ENTICE GTAP sectors!A48:E48"
+      ]
+    },
+    {
+      "id": "NIO",
+      "name": "Mining of niobium",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=NIO",
+        "published_classification:ENTICE GTAP sectors!A54:E54"
+      ]
+    },
+    {
+      "id": "NIR",
+      "name": "Manufacture of refined nickel",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "nickel_chemicals",
+            "label": "Nickel oxides, hydroxides and chlorides",
+            "codes": [
+              "20.12",
+              "20.13"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "Nickel oxides/hydroxides and chlorides; chemical intermediates, not nickel metal.",
+        "review_status": "scope_name_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=NIR",
+        "published_classification:ENTICE GTAP sectors!A88:E88"
+      ]
+    },
+    {
+      "id": "NMC",
+      "name": "Manufacture of NMC batteries",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "batteries",
+            "label": "Battery manufacture; not merged with NCM",
+            "codes": [
+              "27.20"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Published NMC has OME parent. Battery scope implies EEQ; NMC/NCM have different numerical profiles, so no automatic merge or deletion.",
+        "review_status": "legacy_identity_review"
+      },
+      "related_records": [
+        {
+          "sector_id": "NCM",
+          "relationship": "possible_same_activity_not_merged"
+        }
+      ],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=NMC"
+      ]
+    },
+    {
+      "id": "NMX",
+      "name": "Manufacture of other non metallic-minerals",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A107:E107"
+      ]
+    },
+    {
+      "id": "PCP",
+      "name": "Manufacture of coke",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "coke",
+            "label": "Manufacture of coke",
+            "codes": [
+              "19.10"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Coke manufacture. Broader coal-products input label must not create a second sector; GTAPCE source aliases PEP and PCP need context-specific mapping.",
+        "review_status": "alias_resolution"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=PCP",
+        "published_classification:ENTICE GTAP sectors!A77:E77"
+      ]
+    },
+    {
+      "id": "PEP",
+      "name": "Manufacture of petroleum products",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A76:E76"
+      ]
+    },
+    {
+      "id": "PFR",
+      "name": "Manufacture of phosphorus fertilizer",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=PFR",
+        "published_classification:ENTICE GTAP sectors!A97:E97"
+      ]
+    },
+    {
+      "id": "PGM",
+      "name": "Mining of platinum group metals",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=PGM",
+        "published_classification:ENTICE GTAP sectors!A55:E55"
+      ]
+    },
+    {
+      "id": "PGR",
+      "name": "Manufacture of semi-manufactured platinum group metals",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=PGR",
+        "published_classification:ENTICE GTAP sectors!A124:E124"
+      ]
+    },
+    {
+      "id": "PLP",
+      "name": "Manufacture of primary plastic products",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "scope_required",
+        "scopes": [
+          {
+            "id": "finished_plastics",
+            "label": "Finished plastic products",
+            "codes": [
+              "22"
+            ]
+          },
+          {
+            "id": "primary_polymers",
+            "label": "Plastics in primary forms",
+            "codes": [
+              "20.16"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Finished plastic products -> RPP; primary-form polymers/resins -> CHM. The word primary does not establish which product is produced.",
+        "review_status": "scope_review"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=PLP",
+        "published_classification:ENTICE GTAP sectors!A101:E101"
+      ]
+    },
+    {
+      "id": "PLR",
+      "name": "Recycling of plastics",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "scope_required",
+        "scopes": [
+          {
+            "id": "materials_recovery",
+            "label": "Materials recovery, conditional on input activity scope",
+            "codes": [
+              "38.32"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "For materials recovery, the NACE-defined parent is WTR. Current RPP and HS scrap-product mapping do not establish recovery activity scope. Recheck production/cost/trade alignment.",
+        "review_status": "conditional_parent_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=PLR",
+        "published_classification:ENTICE GTAP sectors!A103:E103"
+      ]
+    },
+    {
+      "id": "PLS",
+      "name": "Manufacture of secondary plastic products",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [
+        {
+          "sector_id": "PLSR",
+          "relationship": "possible_same_activity_not_merged"
+        }
+      ],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A102:E102"
+      ]
+    },
+    {
+      "id": "PLSR",
+      "name": "Manufacture of secondary plastic products",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "scope_required",
+        "scopes": [
+          {
+            "id": "finished_plastics",
+            "label": "Finished plastic products",
+            "codes": [
+              "22"
+            ]
+          },
+          {
+            "id": "materials_recovery",
+            "label": "Materials recovery",
+            "codes": [
+              "38.32"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Likely legacy code for catalogue PLS. Finished plastic products -> RPP; materials recovery -> WTR. Do not infer activity or withdrawal from the missing code alone.",
+        "review_status": "scope_and_alias_review"
+      },
+      "related_records": [
+        {
+          "sector_id": "PLS",
+          "relationship": "possible_same_activity_not_merged"
+        }
+      ],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=PLSR"
+      ]
+    },
+    {
+      "id": "RAL",
+      "name": "Recycling of aluminum",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "scope_required",
+        "scopes": [
+          {
+            "id": "materials_recovery",
+            "label": "Materials recovery",
+            "codes": [
+              "38.32"
+            ]
+          },
+          {
+            "id": "secondary_aluminium",
+            "label": "Secondary aluminium manufacture",
+            "codes": [
+              "24.42"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Materials recovery -> WTR; smelting/refining secondary aluminium -> NFM. Keep recovery separate from APS and avoid double counting.",
+        "review_status": "scope_review"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=RAL",
+        "published_classification:ENTICE GTAP sectors!A119:E119"
+      ]
+    },
+    {
+      "id": "RBR",
+      "name": "Manufacture of rubber products",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=RBR",
+        "published_classification:ENTICE GTAP sectors!A100:E100"
+      ]
+    },
+    {
+      "id": "RCP",
+      "name": "Recycling of copper",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "scope_required",
+        "scopes": [
+          {
+            "id": "materials_recovery",
+            "label": "Materials recovery",
+            "codes": [
+              "38.32"
+            ]
+          },
+          {
+            "id": "secondary_copper",
+            "label": "Secondary copper manufacture",
+            "codes": [
+              "24.44"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Materials recovery -> WTR; smelting/refining secondary copper -> NFM. Keep recovery separate from CPS.",
+        "review_status": "scope_review"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=RCP",
+        "published_classification:ENTICE GTAP sectors!A122:E122"
+      ]
+    },
+    {
+      "id": "REE",
+      "name": "Mining of rare earth elements",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=REE",
+        "published_classification:ENTICE GTAP sectors!A46:E46"
+      ]
+    },
+    {
+      "id": "RER",
+      "name": "Manufacture of refined rare earths",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "scope_required",
+        "scopes": [
+          {
+            "id": "chemical_compounds",
+            "label": "Rare-earth chemical compounds",
+            "codes": [
+              "20"
+            ]
+          },
+          {
+            "id": "metals",
+            "label": "Rare-earth metals",
+            "codes": [
+              "24.45"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "HS concordance combines rare-earth elements and compounds. Distinguish basic metals from chemical products before a categorical activity assignment.",
+        "review_status": "scope_review"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=RER",
+        "published_classification:ENTICE GTAP sectors!A86:E86"
+      ]
+    },
+    {
+      "id": "RIS",
+      "name": "Recycling of iron and steel",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A114:E114"
+      ]
+    },
+    {
+      "id": "SCI",
+      "name": "Manufacture of steel via BF-BOF with coke injection",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=SCI",
+        "published_classification:ENTICE GTAP sectors!A108:E108"
+      ]
+    },
+    {
+      "id": "SDG",
+      "name": "Manufacture of steel via direct reduction with natural gas",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=SDG",
+        "published_classification:ENTICE GTAP sectors!A111:E111"
+      ]
+    },
+    {
+      "id": "SDH",
+      "name": "Manufacture of steel via direct reduction with hydrogen",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=SDH",
+        "published_classification:ENTICE GTAP sectors!A112:E112"
+      ]
+    },
+    {
+      "id": "SGI",
+      "name": "Manufacture of steel via BF-BOF with natural gas injection",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A109:E109"
+      ]
+    },
+    {
+      "id": "SHI",
+      "name": "Manufacture of steel via BF-BOF with hydrogen injection",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A110:E110"
+      ]
+    },
+    {
+      "id": "SIL",
+      "name": "Mining of silver",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=SIL",
+        "published_classification:ENTICE GTAP sectors!A53:E53"
+      ]
+    },
+    {
+      "id": "SIR",
+      "name": "Manufacture of refined silver",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=SIR",
+        "published_classification:ENTICE GTAP sectors!A125:E125"
+      ]
+    },
+    {
+      "id": "SOP",
+      "name": "Manufacture of solar panels",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "photovoltaics",
+            "label": "Photovoltaic cells and modules",
+            "codes": [
+              "26.11"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "Photovoltaic cells/modules HS 854143; electrical installation and solar-thermal equipment are different activities.",
+        "review_status": "parent_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=SOP",
+        "published_classification:ENTICE GTAP sectors!A129:E129"
+      ]
+    },
+    {
+      "id": "TIR",
+      "name": "Manufacture of refined titanium",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "titanium_oxides",
+            "label": "Titanium oxides",
+            "codes": [
+              "20.12"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "Trade scope is titanium oxides HS 282300; not basic titanium metal.",
+        "review_status": "scope_name_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=TIR",
+        "published_classification:ENTICE GTAP sectors!A92:E92"
+      ]
+    },
+    {
+      "id": "TIT",
+      "name": "Mining of titanium",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=TIT",
+        "published_classification:ENTICE GTAP sectors!A52:E52"
+      ]
+    },
+    {
+      "id": "TVP",
+      "name": "Transport via pipeline service",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=TVP",
+        "published_classification:ENTICE GTAP sectors!A167:E167"
+      ]
+    },
+    {
+      "id": "WNT",
+      "name": "Manufacture of wind turbines",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "scope_required",
+        "scopes": [
+          {
+            "id": "turbine_sets",
+            "label": "Turbines and turbine-generator sets",
+            "codes": [
+              "28.11"
+            ]
+          },
+          {
+            "id": "electrical_generators",
+            "label": "Separate electrical generators",
+            "codes": [
+              "27.11"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+        ],
+        "note": "Turbines/turbine-generator sets -> OME; separate electrical generators -> EEQ. Catalogue repeats WNT with these different names; trade and inventory scopes must be separated.",
+        "review_status": "scope_review"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=WNT",
+        "published_classification:ENTICE GTAP sectors!A136:E136",
+        "published_classification:ENTICE GTAP sectors!A139:E139"
+      ]
+    },
+    {
+      "id": "XCH",
+      "name": "Manufacture of other chemicals",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A78:E78"
+      ]
+    },
+    {
+      "id": "XEL",
+      "name": "Manufacture of computer, electronic and optical products",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A128:E128"
+      ]
+    },
+    {
+      "id": "XEQ",
+      "name": "Manufacture of other electrical equipment",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A130:E130"
+      ]
+    },
+    {
+      "id": "XIS",
+      "name": "Manufacture of other iron and steel",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A115:E115"
+      ]
+    },
+    {
+      "id": "XMV",
+      "name": "Manufacture of rest of motor vehicles and parts",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A141:E141"
+      ]
+    },
+    {
+      "id": "XOO",
+      "name": "Mining of other ores",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A45:E45"
+      ]
+    },
+    {
+      "id": "XTP",
+      "name": "Other land transport",
+      "lifecycle": "catalogue_only_not_activated",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "D2.4 catalogue entry without a published inventory. Absence does not establish withdrawal.",
+        "review_status": "catalogue_only"
+      },
+      "related_records": [],
+      "source_records": [
+        "published_classification:ENTICE GTAP sectors!A166:E166"
+      ]
+    },
+    {
+      "id": "ZIN",
+      "name": "Mining of zinc",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "unreviewed",
+        "scopes": [],
+        "evidence": [],
+        "note": "Recorded source concordance; absence of a targeted finding is not full scope certification.",
+        "review_status": "no_targeted_class_level_determination"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=ZIN",
+        "published_classification:ENTICE GTAP sectors!A50:E50"
+      ]
+    },
+    {
+      "id": "ZIR",
+      "name": "Manufacture of refined zinc",
+      "lifecycle": "published_d24",
+      "classification": {
+        "system": "NACE",
+        "version": "Rev. 2",
+        "status": "reviewed_scope",
+        "scopes": [
+          {
+            "id": "zinc_chemicals",
+            "label": "Zinc oxide and peroxide",
+            "codes": [
+              "20.12"
+            ]
+          }
+        ],
+        "evidence": [
+          "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+        ],
+        "note": "Trade scope is zinc oxide/peroxide HS 281700 / CPA 20.12.11, not refined zinc metal (24.43 -> NFM). Parent CHM is consistent with the chemical scope.",
+        "review_status": "scope_name_correction"
+      },
+      "related_records": [],
+      "source_records": [
+        "data/classification/d24_nace_review.csv#sector=ZIR",
+        "published_classification:ENTICE GTAP sectors!A90:E90"
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of artificial graphite",
+      "sector_id": "AGT",
+      "source_record": "published_d24:AGT"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of artificial graphite",
+      "sector_id": "AGT",
+      "source_record": "published_classification:ENTICE GTAP sectors!B84"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of artificial graphite",
+      "sector_id": "AGT",
+      "source_record": "published_classification:ENTICE GTAP sectors!B106"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of artificial graphite",
+      "sector_id": "AGT",
+      "source_record": "GTAP12_matching:Sector!A100"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "AGT",
+      "source_record": "GTAP12_matching:Sector!D100"
+    },
+    {
+      "namespace": "published_file",
+      "value": "AGT - Manufacture of artificial graphite.xlsx",
+      "sector_id": "AGT",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/AGT - Manufacture of artificial graphite.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of ammonia",
+      "sector_id": "AMM",
+      "source_record": "published_classification:ENTICE GTAP sectors!B79"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of ammonia",
+      "sector_id": "AMM",
+      "source_record": "GTAP12_matching:Sector!A95"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "AMM",
+      "source_record": "GTAP12_matching:Sector!D95"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of primary aluminum",
+      "sector_id": "APP",
+      "source_record": "published_d24:APP"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of primary aluminum",
+      "sector_id": "APP",
+      "source_record": "published_classification:ENTICE GTAP sectors!B117"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of primary aluminum",
+      "sector_id": "APP",
+      "source_record": "GTAP12_matching:Sector!A131"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "APP",
+      "sector_id": "APP",
+      "source_record": "GTAP12_matching:Sector!D131"
+    },
+    {
+      "namespace": "published_file",
+      "value": "APP - Manufacture of primary aluminum.xlsx",
+      "sector_id": "APP",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/APP - Manufacture of primary aluminum.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of secondary aluminum",
+      "sector_id": "APS",
+      "source_record": "published_d24:APS"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of secondary aluminum",
+      "sector_id": "APS",
+      "source_record": "published_classification:ENTICE GTAP sectors!B118"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of secondary aluminum",
+      "sector_id": "APS",
+      "source_record": "GTAP12_matching:Sector!A132"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "APS",
+      "sector_id": "APS",
+      "source_record": "GTAP12_matching:Sector!D132"
+    },
+    {
+      "namespace": "published_file",
+      "value": "APS - Manufacture of secondary aluminum.xlsx",
+      "sector_id": "APS",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/APS - Manufacture of secondary aluminum.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of heavy duty BEV",
+      "sector_id": "BVH",
+      "source_record": "published_d24:BVH"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of heavy duty BEV",
+      "sector_id": "BVH",
+      "source_record": "published_classification:ENTICE GTAP sectors!B143"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of heavy duty BEV",
+      "sector_id": "BVH",
+      "source_record": "GTAP12_matching:Sector!A153"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MVH",
+      "sector_id": "BVH",
+      "source_record": "GTAP12_matching:Sector!D153"
+    },
+    {
+      "namespace": "published_file",
+      "value": "BVH - Manufacture of heavy duty BEV.xlsx",
+      "sector_id": "BVH",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/BVH - Manufacture of heavy duty BEV.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of light duty BEV",
+      "sector_id": "BVL",
+      "source_record": "published_d24:BVL"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of light duty BEV",
+      "sector_id": "BVL",
+      "source_record": "published_classification:ENTICE GTAP sectors!B146"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of light duty BEV",
+      "sector_id": "BVL",
+      "source_record": "GTAP12_matching:Sector!A157"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MVH",
+      "sector_id": "BVL",
+      "source_record": "GTAP12_matching:Sector!D157"
+    },
+    {
+      "namespace": "published_file",
+      "value": "BVL - Manufacture of light duty BEV.xlsx",
+      "sector_id": "BVL",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/BVL - Manufacture of light duty BEV.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of traditional cement",
+      "sector_id": "CEM",
+      "source_record": "published_d24:CEM"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of traditional cement",
+      "sector_id": "CEM",
+      "source_record": "published_classification:ENTICE GTAP sectors!B104"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of traditional cement",
+      "sector_id": "CEM",
+      "source_record": "GTAP12_matching:Sector!A119"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "CEMNT",
+      "sector_id": "CEM",
+      "source_record": "GTAP12_matching:Sector!D119"
+    },
+    {
+      "namespace": "published_file",
+      "value": "CEM - Manufacture of traditional cement.xlsx",
+      "sector_id": "CEM",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/CEM - Manufacture of traditional cement.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of chromium",
+      "sector_id": "CHR",
+      "source_record": "published_d24:CHR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of chromium",
+      "sector_id": "CHR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B51"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of chromium",
+      "sector_id": "CHR",
+      "source_record": "GTAP12_matching:Sector!A62"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XOM",
+      "sector_id": "CHR",
+      "source_record": "GTAP12_matching:Sector!D62"
+    },
+    {
+      "namespace": "published_file",
+      "value": "CHR - Mining of chromium.xlsx",
+      "sector_id": "CHR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/CHR - Mining of chromium.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of cement with CCS",
+      "sector_id": "CMS",
+      "source_record": "published_classification:ENTICE GTAP sectors!B105"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of cement with CCS",
+      "sector_id": "CMS",
+      "source_record": "GTAP12_matching:Sector!A120"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "CEMNT",
+      "sector_id": "CMS",
+      "source_record": "GTAP12_matching:Sector!D120"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of cobalt ores and concentrates",
+      "sector_id": "COB",
+      "source_record": "published_d24:COB"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of cobalt ores and concentrates",
+      "sector_id": "COB",
+      "source_record": "published_classification:ENTICE GTAP sectors!B49"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of cobalt ores and concentrates",
+      "sector_id": "COB",
+      "source_record": "GTAP12_matching:Sector!A60"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XOM",
+      "sector_id": "COB",
+      "source_record": "GTAP12_matching:Sector!D60"
+    },
+    {
+      "namespace": "published_file",
+      "value": "COB - Mining of cobalt ores and concentrates.xlsx",
+      "sector_id": "COB",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/COB - Mining of cobalt ores and concentrates.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of refined cobalt",
+      "sector_id": "COR",
+      "source_record": "published_d24:COR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined cobalt",
+      "sector_id": "COR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B89"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined cobalt",
+      "sector_id": "COR",
+      "source_record": "GTAP12_matching:Sector!A105"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "COR",
+      "source_record": "GTAP12_matching:Sector!D105"
+    },
+    {
+      "namespace": "published_file",
+      "value": "COR - Manufacture of refined cobalt.xlsx",
+      "sector_id": "COR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/COR - Manufacture of refined cobalt.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of primary copper",
+      "sector_id": "CPP",
+      "source_record": "published_d24:CPP"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of primary copper",
+      "sector_id": "CPP",
+      "source_record": "published_classification:ENTICE GTAP sectors!B120"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of primary copper",
+      "sector_id": "CPP",
+      "source_record": "GTAP12_matching:Sector!A134"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "CPP",
+      "sector_id": "CPP",
+      "source_record": "GTAP12_matching:Sector!D134"
+    },
+    {
+      "namespace": "published_file",
+      "value": "CPP - Manufacture of primary copper.xlsx",
+      "sector_id": "CPP",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/CPP - Manufacture of primary copper.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of secondary copper",
+      "sector_id": "CPS",
+      "source_record": "published_d24:CPS"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of secondary copper",
+      "sector_id": "CPS",
+      "source_record": "published_classification:ENTICE GTAP sectors!B121"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of secondary copper",
+      "sector_id": "CPS",
+      "source_record": "GTAP12_matching:Sector!A135"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "CPS",
+      "sector_id": "CPS",
+      "source_record": "GTAP12_matching:Sector!D135"
+    },
+    {
+      "namespace": "published_file",
+      "value": "CPS - Manufacture of secondary copper.xlsx",
+      "sector_id": "CPS",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/CPS - Manufacture of secondary copper.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of refined chromium",
+      "sector_id": "CRR",
+      "source_record": "published_d24:CRR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined chromium",
+      "sector_id": "CRR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B91"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined chromium",
+      "sector_id": "CRR",
+      "source_record": "GTAP12_matching:Sector!A107"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "CRR",
+      "source_record": "GTAP12_matching:Sector!D107"
+    },
+    {
+      "namespace": "published_file",
+      "value": "CRR - Manufacture of refined chromium.xlsx",
+      "sector_id": "CRR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/CRR - Manufacture of refined chromium.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of electrolyzers",
+      "sector_id": "ELZ",
+      "source_record": "published_classification:ENTICE GTAP sectors!B137"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of electrolyzers",
+      "sector_id": "ELZ",
+      "source_record": "GTAP12_matching:Sector!A150"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "OME",
+      "sector_id": "ELZ",
+      "source_record": "GTAP12_matching:Sector!D150"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of refined gallium",
+      "sector_id": "GAR",
+      "source_record": "published_d24:GAR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined gallium",
+      "sector_id": "GAR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B93"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined gallium",
+      "sector_id": "GAR",
+      "source_record": "GTAP12_matching:Sector!A109"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "GAR",
+      "source_record": "GTAP12_matching:Sector!D109"
+    },
+    {
+      "namespace": "published_file",
+      "value": "GAR - Manufacture of refined gallium.xlsx",
+      "sector_id": "GAR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/GAR - Manufacture of refined gallium.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of natural graphite",
+      "sector_id": "GRA",
+      "source_record": "published_d24:GRA"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of natural graphite",
+      "sector_id": "GRA",
+      "source_record": "published_classification:ENTICE GTAP sectors!B60"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of natural graphite",
+      "sector_id": "GRA",
+      "source_record": "GTAP12_matching:Sector!A72"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "NMN",
+      "sector_id": "GRA",
+      "source_record": "GTAP12_matching:Sector!D72"
+    },
+    {
+      "namespace": "published_file",
+      "value": "GRA - Mining of natural graphite.xlsx",
+      "sector_id": "GRA",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/GRA - Mining of natural graphite.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of light duty HEV",
+      "sector_id": "HEL",
+      "source_record": "published_d24:HEL"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of light duty HEV",
+      "sector_id": "HEL",
+      "source_record": "published_classification:ENTICE GTAP sectors!B145"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of light duty HEV",
+      "sector_id": "HEL",
+      "source_record": "GTAP12_matching:Sector!A156"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MVH",
+      "sector_id": "HEL",
+      "source_record": "GTAP12_matching:Sector!D156"
+    },
+    {
+      "namespace": "published_file",
+      "value": "HEL - Manufacture of light duty HEV.xlsx",
+      "sector_id": "HEL",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/HEL - Manufacture of light duty HEV.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of high value chemicals",
+      "sector_id": "HVC",
+      "source_record": "published_d24:HVC"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of high value chemicals",
+      "sector_id": "HVC",
+      "source_record": "published_classification:ENTICE GTAP sectors!B83"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of high value chemicals",
+      "sector_id": "HVC",
+      "source_record": "GTAP12_matching:Sector!A99"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "HVC",
+      "source_record": "GTAP12_matching:Sector!D99"
+    },
+    {
+      "namespace": "published_file",
+      "value": "HVC - Manufacture of high value chemicals.xlsx",
+      "sector_id": "HVC",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/HVC - Manufacture of high value chemicals.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of hydrogen via electrolysis",
+      "sector_id": "HYE",
+      "source_record": "published_d24:HYE"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of hydrogen via electrolysis",
+      "sector_id": "HYE",
+      "source_record": "published_classification:ENTICE GTAP sectors!B80"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of hydrogen via electrolysis",
+      "sector_id": "HYE",
+      "source_record": "GTAP12_matching:Sector!A96"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "HYE",
+      "source_record": "GTAP12_matching:Sector!D96"
+    },
+    {
+      "namespace": "published_file",
+      "value": "HYE - Manufacture of hydrogen via electrolysis.xlsx",
+      "sector_id": "HYE",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/HYE - Manufacture of hydrogen via electrolysis.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of hydrogen via steam reforming",
+      "sector_id": "HYS",
+      "source_record": "published_classification:ENTICE GTAP sectors!B81"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of hydrogen via steam reforming",
+      "sector_id": "HYS",
+      "source_record": "GTAP12_matching:Sector!A97"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "HYS",
+      "source_record": "GTAP12_matching:Sector!D97"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of heavy duty ICEV",
+      "sector_id": "ICH",
+      "source_record": "published_d24:ICH"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of heavy duty ICEV",
+      "sector_id": "ICH",
+      "source_record": "published_classification:ENTICE GTAP sectors!B142"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of heavy duty ICEV",
+      "sector_id": "ICH",
+      "source_record": "GTAP12_matching:Sector!A152"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MVH",
+      "sector_id": "ICH",
+      "source_record": "GTAP12_matching:Sector!D152"
+    },
+    {
+      "namespace": "published_file",
+      "value": "ICH - Manufacture of heavy duty ICEV.xlsx",
+      "sector_id": "ICH",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/ICH - Manufacture of heavy duty ICEV.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of light duty ICEV",
+      "sector_id": "ICL",
+      "source_record": "published_d24:ICL"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of light duty ICEV",
+      "sector_id": "ICL",
+      "source_record": "published_classification:ENTICE GTAP sectors!B144"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of light duty ICEV",
+      "sector_id": "ICL",
+      "source_record": "GTAP12_matching:Sector!A155"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MVH",
+      "sector_id": "ICL",
+      "source_record": "GTAP12_matching:Sector!D155"
+    },
+    {
+      "namespace": "published_file",
+      "value": "ICL - Manufacture of light duty ICEV.xlsx",
+      "sector_id": "ICL",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/ICL - Manufacture of light duty ICEV.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of secondary iron and steel",
+      "sector_id": "ISS",
+      "source_record": "published_d24:ISS"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of secondary iron and steel",
+      "sector_id": "ISS",
+      "source_record": "published_classification:ENTICE GTAP sectors!B113"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of secondary iron and steel",
+      "sector_id": "ISS",
+      "source_record": "GTAP12_matching:Sector!A128"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "ISS",
+      "sector_id": "ISS",
+      "source_record": "GTAP12_matching:Sector!D128"
+    },
+    {
+      "namespace": "published_file",
+      "value": "ISS - Manufacture of secondary iron and steel.xlsx",
+      "sector_id": "ISS",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/ISS - Manufacture of secondary iron and steel.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of potassium fertilizer",
+      "sector_id": "KFR",
+      "source_record": "published_d24:KFR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of potassium fertilizer",
+      "sector_id": "KFR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B98"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of potassium fertilizer",
+      "sector_id": "KFR",
+      "source_record": "GTAP12_matching:Sector!A113"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "OFR",
+      "sector_id": "KFR",
+      "source_record": "GTAP12_matching:Sector!D113"
+    },
+    {
+      "namespace": "published_file",
+      "value": "KFR - Manufacture of potassium fertilizer.xlsx",
+      "sector_id": "KFR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/KFR - Manufacture of potassium fertilizer.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of LCO batteries",
+      "sector_id": "LCO",
+      "source_record": "published_d24:LCO"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Lithium Cobalt Oxide batteries",
+      "sector_id": "LCO",
+      "source_record": "published_classification:ENTICE GTAP sectors!B134"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of LCO batteries",
+      "sector_id": "LCO",
+      "source_record": "GTAP12_matching:Sector!A197"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "EEQ",
+      "sector_id": "LCO",
+      "source_record": "GTAP12_matching:Sector!D197"
+    },
+    {
+      "namespace": "published_file",
+      "value": "LCO - Manufacture of LCO batteries.xlsx",
+      "sector_id": "LCO",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/LCO - Manufacture of LCO batteries.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of LFP batteries",
+      "sector_id": "LFP",
+      "source_record": "published_d24:LFP"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of LFP batteries",
+      "sector_id": "LFP",
+      "source_record": "published_classification:ENTICE GTAP sectors!B133"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of LFP batteries",
+      "sector_id": "LFP",
+      "source_record": "GTAP12_matching:Sector!A147"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "EEQ",
+      "sector_id": "LFP",
+      "source_record": "GTAP12_matching:Sector!D147"
+    },
+    {
+      "namespace": "published_file",
+      "value": "LFP - Manufacture of LFP batteries.xlsx",
+      "sector_id": "LFP",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/LFP - Manufacture of LFP batteries.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of refined lithium",
+      "sector_id": "LIR",
+      "source_record": "published_d24:LIR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined lithium",
+      "sector_id": "LIR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B85"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined lithium",
+      "sector_id": "LIR",
+      "source_record": "GTAP12_matching:Sector!A101"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "LIR",
+      "source_record": "GTAP12_matching:Sector!D101"
+    },
+    {
+      "namespace": "published_file",
+      "value": "LIR - Manufacture of refined lithium.xlsx",
+      "sector_id": "LIR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/LIR - Manufacture of refined lithium.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of lithium",
+      "sector_id": "LIT",
+      "source_record": "published_d24:LIT"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of lithium",
+      "sector_id": "LIT",
+      "source_record": "published_classification:ENTICE GTAP sectors!B61"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of lithium",
+      "sector_id": "LIT",
+      "source_record": "GTAP12_matching:Sector!A73"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XOM",
+      "sector_id": "LIT",
+      "source_record": "GTAP12_matching:Sector!D73"
+    },
+    {
+      "namespace": "published_file",
+      "value": "LIT - Mining of lithium.xlsx",
+      "sector_id": "LIT",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/LIT - Mining of lithium.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of LMO batteries",
+      "sector_id": "LMO",
+      "source_record": "published_d24:LMO"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Lithium Manganese Oxide batteries",
+      "sector_id": "LMO",
+      "source_record": "published_classification:ENTICE GTAP sectors!B135"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of LMO batteries",
+      "sector_id": "LMO",
+      "source_record": "GTAP12_matching:Sector!A198"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "EEQ",
+      "sector_id": "LMO",
+      "source_record": "GTAP12_matching:Sector!D198"
+    },
+    {
+      "namespace": "published_file",
+      "value": "LMO - Manufacture of LMO batteries.xlsx",
+      "sector_id": "LMO",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/LMO - Manufacture of LMO batteries.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Permanent magnets",
+      "sector_id": "MAG",
+      "source_record": "published_classification:ENTICE GTAP sectors!B138"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Permanent magnets",
+      "sector_id": "MAG",
+      "source_record": "GTAP12_matching:Sector!A199"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "EEQ",
+      "sector_id": "MAG",
+      "source_record": "GTAP12_matching:Sector!D199"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of manganese ores and concentrates",
+      "sector_id": "MAN",
+      "source_record": "published_d24:MAN"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of manganese ores and concentrates",
+      "sector_id": "MAN",
+      "source_record": "published_classification:ENTICE GTAP sectors!B47"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of manganese ores and concentrates",
+      "sector_id": "MAN",
+      "source_record": "GTAP12_matching:Sector!A58"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XOM",
+      "sector_id": "MAN",
+      "source_record": "GTAP12_matching:Sector!D58"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MAN - Mining of manganese ores and concentrates.xlsx",
+      "sector_id": "MAN",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MAN - Mining of manganese ores and concentrates.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of aluminum ores",
+      "sector_id": "MAO",
+      "source_record": "published_d24:MAO"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of aluminum ores",
+      "sector_id": "MAO",
+      "source_record": "published_classification:ENTICE GTAP sectors!B57"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of aluminum ores",
+      "sector_id": "MAO",
+      "source_record": "GTAP12_matching:Sector!A68"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MAO",
+      "sector_id": "MAO",
+      "source_record": "GTAP12_matching:Sector!D68"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MAO - Mining of aluminum ores.xlsx",
+      "sector_id": "MAO",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MAO - Mining of aluminum ores.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of copper ores",
+      "sector_id": "MCU",
+      "source_record": "published_d24:MCU"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of copper ores",
+      "sector_id": "MCU",
+      "source_record": "published_classification:ENTICE GTAP sectors!B58"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of copper ores",
+      "sector_id": "MCU",
+      "source_record": "GTAP12_matching:Sector!A69"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MCU",
+      "sector_id": "MCU",
+      "source_record": "GTAP12_matching:Sector!D69"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MCU - Mining of copper ores.xlsx",
+      "sector_id": "MCU",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MCU - Mining of copper ores.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of natural magnesium carbonate \"magnesite\"+magnesia, fused or dead-burned (sintered)",
+      "sector_id": "MGC",
+      "source_record": "published_d24:MGC"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of natural magnesium carbonate \"magnesite\" and magnesia",
+      "sector_id": "MGC",
+      "source_record": "published_classification:ENTICE GTAP sectors!B62"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of natural magnesium carbonate \"magnesite\"+magnesia, fused or dead-burned (sintered)",
+      "sector_id": "MGC",
+      "source_record": "GTAP12_matching:Sector!A77"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "NMN",
+      "sector_id": "MGC",
+      "source_record": "GTAP12_matching:Sector!D77"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of natural magnesium carbonate (magnesite) + magnesia, fused or dead-burned",
+      "sector_id": "MGC",
+      "source_record": "GTAP12_matching:Sector!A78"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "NMN",
+      "sector_id": "MGC",
+      "source_record": "GTAP12_matching:Sector!D78"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MGC - Mining of natural magnesium carbonate magnesite and magnesia fused or dead-burned (sintered).xlsx",
+      "sector_id": "MGC",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MGC - Mining of natural magnesium carbonate magnesite and magnesia fused or dead-burned (sintered).xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined magnesium",
+      "sector_id": "MGR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B94"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined magnesium",
+      "sector_id": "MGR",
+      "source_record": "GTAP12_matching:Sector!A110"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "MGR",
+      "source_record": "GTAP12_matching:Sector!D110"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of iron ores",
+      "sector_id": "MIO",
+      "source_record": "published_d24:MIO"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of iron ores",
+      "sector_id": "MIO",
+      "source_record": "published_classification:ENTICE GTAP sectors!B56"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of iron ores",
+      "sector_id": "MIO",
+      "source_record": "GTAP12_matching:Sector!A67"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MIO",
+      "sector_id": "MIO",
+      "source_record": "GTAP12_matching:Sector!D67"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MIO - Mining of iron ores.xlsx",
+      "sector_id": "MIO",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MIO - Mining of iron ores.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of refined manganese",
+      "sector_id": "MNR",
+      "source_record": "published_d24:MNR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined manganese",
+      "sector_id": "MNR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B87"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined manganese",
+      "sector_id": "MNR",
+      "source_record": "GTAP12_matching:Sector!A103"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "MNR",
+      "source_record": "GTAP12_matching:Sector!D103"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MNR - Manufacture of refined manganese.xlsx",
+      "sector_id": "MNR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MNR - Manufacture of refined manganese.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of metallurgical silicon",
+      "sector_id": "MSI",
+      "source_record": "published_d24:MSI"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of metallurgical silicon",
+      "sector_id": "MSI",
+      "source_record": "published_classification:ENTICE GTAP sectors!B95"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of metallurgical silicon",
+      "sector_id": "MSI",
+      "source_record": "GTAP12_matching:Sector!A200"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "MSI",
+      "source_record": "GTAP12_matching:Sector!D200"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MSI - Manufacture of metallurgical silicon.xlsx",
+      "sector_id": "MSI",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MSI - Manufacture of metallurgical silicon.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of methanol",
+      "sector_id": "MTH",
+      "source_record": "published_d24:MTH"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of methanol",
+      "sector_id": "MTH",
+      "source_record": "published_classification:ENTICE GTAP sectors!B82"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of methanol",
+      "sector_id": "MTH",
+      "source_record": "GTAP12_matching:Sector!A98"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "MTH",
+      "source_record": "GTAP12_matching:Sector!D98"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MTH - Manufacture of methanol.xlsx",
+      "sector_id": "MTH",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MTH - Manufacture of methanol.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of magnesium: unwrought, articles",
+      "sector_id": "MUN",
+      "source_record": "published_d24:MUN"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of magnesium: unwrought, articles",
+      "sector_id": "MUN",
+      "source_record": "published_classification:ENTICE GTAP sectors!B123"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of magnesium: unwrought, articles",
+      "sector_id": "MUN",
+      "source_record": "GTAP12_matching:Sector!A137"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MPPR",
+      "sector_id": "MUN",
+      "source_record": "GTAP12_matching:Sector!D137"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MUN - Manufacture of magnesium unwrought articles.xlsx",
+      "sector_id": "MUN",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MUN - Manufacture of magnesium unwrought articles.xlsx"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MUN - Manufacture of magnesium unwrought, articles.xlsx",
+      "sector_id": "MUN",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MUN - Manufacture of magnesium unwrought, articles.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of uranium",
+      "sector_id": "MUR",
+      "source_record": "published_d24:MUR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of uranium",
+      "sector_id": "MUR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B59"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of uranium",
+      "sector_id": "MUR",
+      "source_record": "GTAP12_matching:Sector!A70"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MUR",
+      "sector_id": "MUR",
+      "source_record": "GTAP12_matching:Sector!D70"
+    },
+    {
+      "namespace": "published_file",
+      "value": "MUR - Mining of uranium.xlsx",
+      "sector_id": "MUR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/MUR - Mining of uranium.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of NCA batteries",
+      "sector_id": "NCA",
+      "source_record": "published_d24:NCA"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of NCA batteries",
+      "sector_id": "NCA",
+      "source_record": "published_classification:ENTICE GTAP sectors!B132"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of NCA batteries",
+      "sector_id": "NCA",
+      "source_record": "GTAP12_matching:Sector!A146"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "EEQ",
+      "sector_id": "NCA",
+      "source_record": "GTAP12_matching:Sector!D146"
+    },
+    {
+      "namespace": "published_file",
+      "value": "NCA - Manufacture of NCA batteries.xlsx",
+      "sector_id": "NCA",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/NCA - Manufacture of NCA batteries.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of NCM batteries",
+      "sector_id": "NCM",
+      "source_record": "published_d24:NCM"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of NCM batteries",
+      "sector_id": "NCM",
+      "source_record": "published_classification:ENTICE GTAP sectors!B131"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of NCM batteries",
+      "sector_id": "NCM",
+      "source_record": "GTAP12_matching:Sector!A145"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "EEQ",
+      "sector_id": "NCM",
+      "source_record": "GTAP12_matching:Sector!D145"
+    },
+    {
+      "namespace": "published_file",
+      "value": "NCM - Manufacture of NCM batteries.xlsx",
+      "sector_id": "NCM",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/NCM - Manufacture of NCM batteries.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Casting of other non-ferrous metals",
+      "sector_id": "NFC",
+      "source_record": "published_classification:ENTICE GTAP sectors!B116"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Casting of other non-ferrous metals",
+      "sector_id": "NFC",
+      "source_record": "GTAP12_matching:Sector!A130"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "ISC_NFC",
+      "sector_id": "NFC",
+      "source_record": "GTAP12_matching:Sector!D130"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of nitrogen fertilizer",
+      "sector_id": "NFR",
+      "source_record": "published_d24:NFR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of nitrogen fertilizer",
+      "sector_id": "NFR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B96"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of nitrogen fertilizer",
+      "sector_id": "NFR",
+      "source_record": "GTAP12_matching:Sector!A111"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "NFR",
+      "sector_id": "NFR",
+      "source_record": "GTAP12_matching:Sector!D111"
+    },
+    {
+      "namespace": "published_file",
+      "value": "NFR - Manufacture of nitrogen fertilizer.xlsx",
+      "sector_id": "NFR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/NFR - Manufacture of nitrogen fertilizer.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of other metals (primary, secondary and recycling)",
+      "sector_id": "NFX",
+      "source_record": "published_classification:ENTICE GTAP sectors!B126"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of other metals (primary, secondary and recycling)",
+      "sector_id": "NFX",
+      "source_record": "GTAP12_matching:Sector!A140"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MPPR",
+      "sector_id": "NFX",
+      "source_record": "GTAP12_matching:Sector!D140"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of nickel ores and concentrates",
+      "sector_id": "NIK",
+      "source_record": "published_d24:NIK"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of nickel ores and concentrates",
+      "sector_id": "NIK",
+      "source_record": "published_classification:ENTICE GTAP sectors!B48"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of nickel ores and concentrates",
+      "sector_id": "NIK",
+      "source_record": "GTAP12_matching:Sector!A59"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "NIK",
+      "sector_id": "NIK",
+      "source_record": "GTAP12_matching:Sector!D59"
+    },
+    {
+      "namespace": "published_file",
+      "value": "NIK - Mining of nickel ores and concentrates.xlsx",
+      "sector_id": "NIK",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/NIK - Mining of nickel ores and concentrates.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of niobium",
+      "sector_id": "NIO",
+      "source_record": "published_d24:NIO"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of niobium",
+      "sector_id": "NIO",
+      "source_record": "published_classification:ENTICE GTAP sectors!B54"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of niobium",
+      "sector_id": "NIO",
+      "source_record": "GTAP12_matching:Sector!A65"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XOM",
+      "sector_id": "NIO",
+      "source_record": "GTAP12_matching:Sector!D65"
+    },
+    {
+      "namespace": "published_file",
+      "value": "NIO - Mining of niobium.xlsx",
+      "sector_id": "NIO",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/NIO - Mining of niobium.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of refined nickel",
+      "sector_id": "NIR",
+      "source_record": "published_d24:NIR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined nickel (chemical intermediates)",
+      "sector_id": "NIR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B88"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined nickel",
+      "sector_id": "NIR",
+      "source_record": "GTAP12_matching:Sector!A104"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "NIR",
+      "source_record": "GTAP12_matching:Sector!D104"
+    },
+    {
+      "namespace": "published_file",
+      "value": "NIR - Manufacture of refined nickel.xlsx",
+      "sector_id": "NIR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/NIR - Manufacture of refined nickel.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of NMC batteries",
+      "sector_id": "NMC",
+      "source_record": "published_d24:NMC"
+    },
+    {
+      "namespace": "published_file",
+      "value": "NMC - Manufacture of NMC batteries.xlsx",
+      "sector_id": "NMC",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/NMC - Manufacture of NMC batteries.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of other non metallic-minerals",
+      "sector_id": "NMX",
+      "source_record": "published_classification:ENTICE GTAP sectors!B107"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of other non metallic minerals",
+      "sector_id": "NMX",
+      "source_record": "GTAP12_matching:Sector!A121"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "NMM",
+      "sector_id": "NMX",
+      "source_record": "GTAP12_matching:Sector!D121"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of coke",
+      "sector_id": "PCP",
+      "source_record": "published_d24:PCP"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of coke",
+      "sector_id": "PCP",
+      "source_record": "published_classification:ENTICE GTAP sectors!B77"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of coal products",
+      "sector_id": "PCP",
+      "source_record": "GTAP12_matching:Sector!A93"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "PEP",
+      "sector_id": "PCP",
+      "source_record": "GTAP12_matching:Sector!D93"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of coke",
+      "sector_id": "PCP",
+      "source_record": "GTAP12_matching:Sector!A201"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "PCP",
+      "sector_id": "PCP",
+      "source_record": "GTAP12_matching:Sector!D201"
+    },
+    {
+      "namespace": "published_file",
+      "value": "PCP - Manufacture of coke.xlsx",
+      "sector_id": "PCP",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/PCP - Manufacture of coke.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of petroleum products",
+      "sector_id": "PEP",
+      "source_record": "published_classification:ENTICE GTAP sectors!B76"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of petroleum products",
+      "sector_id": "PEP",
+      "source_record": "GTAP12_matching:Sector!A92"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "PCP",
+      "sector_id": "PEP",
+      "source_record": "GTAP12_matching:Sector!D92"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of phosphorus fertilizer",
+      "sector_id": "PFR",
+      "source_record": "published_d24:PFR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of phosphorus fertilizer",
+      "sector_id": "PFR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B97"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of phosphorus fertilizer",
+      "sector_id": "PFR",
+      "source_record": "GTAP12_matching:Sector!A112"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "OFR",
+      "sector_id": "PFR",
+      "source_record": "GTAP12_matching:Sector!D112"
+    },
+    {
+      "namespace": "published_file",
+      "value": "PFR - Manufacture of phosphorus fertilizer.xlsx",
+      "sector_id": "PFR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/PFR - Manufacture of phosphorus fertilizer.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of plantinum group metals",
+      "sector_id": "PGM",
+      "source_record": "published_d24:PGM"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of platinum group metals",
+      "sector_id": "PGM",
+      "source_record": "published_classification:ENTICE GTAP sectors!B55"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of plantinum group metals",
+      "sector_id": "PGM",
+      "source_record": "GTAP12_matching:Sector!A66"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "PMO",
+      "sector_id": "PGM",
+      "source_record": "GTAP12_matching:Sector!D66"
+    },
+    {
+      "namespace": "published_file",
+      "value": "PGM - Mining of plantinum group metals.xlsx",
+      "sector_id": "PGM",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/PGM - Mining of plantinum group metals.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of semi-manufactured platinum group metals",
+      "sector_id": "PGR",
+      "source_record": "published_d24:PGR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of semi-manufactured platinum group metals",
+      "sector_id": "PGR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B124"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of semi-manufactured platinum group metals",
+      "sector_id": "PGR",
+      "source_record": "GTAP12_matching:Sector!A138"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MPR",
+      "sector_id": "PGR",
+      "source_record": "GTAP12_matching:Sector!D138"
+    },
+    {
+      "namespace": "published_file",
+      "value": "PGR - Manufacture of semi-manufactured platinum group metals.xlsx",
+      "sector_id": "PGR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/PGR - Manufacture of semi-manufactured platinum group metals.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of primary plastic products",
+      "sector_id": "PLP",
+      "source_record": "published_d24:PLP"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of primary plastic products",
+      "sector_id": "PLP",
+      "source_record": "published_classification:ENTICE GTAP sectors!B101"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of primary plastic products",
+      "sector_id": "PLP",
+      "source_record": "GTAP12_matching:Sector!A116"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "PLP",
+      "sector_id": "PLP",
+      "source_record": "GTAP12_matching:Sector!D116"
+    },
+    {
+      "namespace": "published_file",
+      "value": "PLP - Manufacture of primary plastic products.xlsx",
+      "sector_id": "PLP",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/PLP - Manufacture of primary plastic products.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Recycling of plastics",
+      "sector_id": "PLR",
+      "source_record": "published_d24:PLR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Recycling of plastics",
+      "sector_id": "PLR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B103"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Recycling of plastics",
+      "sector_id": "PLR",
+      "source_record": "GTAP12_matching:Sector!A118"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "RECYCLE",
+      "sector_id": "PLR",
+      "source_record": "GTAP12_matching:Sector!D118"
+    },
+    {
+      "namespace": "published_file",
+      "value": "PLR - Recycling of plastics.xlsx",
+      "sector_id": "PLR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/PLR - Recycling of plastics.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of secondary plastic products",
+      "sector_id": "PLS",
+      "source_record": "published_classification:ENTICE GTAP sectors!B102"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of secondary plastic products",
+      "sector_id": "PLS",
+      "source_record": "GTAP12_matching:Sector!A117"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "PLS",
+      "sector_id": "PLS",
+      "source_record": "GTAP12_matching:Sector!D117"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of secondary plastic products",
+      "sector_id": "PLSR",
+      "source_record": "published_d24:PLSR"
+    },
+    {
+      "namespace": "published_file",
+      "value": "PLSR - Manufacture of secondary plastic products.xlsx",
+      "sector_id": "PLSR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/PLSR - Manufacture of secondary plastic products.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Recycling of aluminum",
+      "sector_id": "RAL",
+      "source_record": "published_d24:RAL"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Recycling of aluminum",
+      "sector_id": "RAL",
+      "source_record": "published_classification:ENTICE GTAP sectors!B119"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Recycling of aluminum",
+      "sector_id": "RAL",
+      "source_record": "GTAP12_matching:Sector!A133"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "RECYCLE",
+      "sector_id": "RAL",
+      "source_record": "GTAP12_matching:Sector!D133"
+    },
+    {
+      "namespace": "published_file",
+      "value": "RAL - Recycling of aluminum.xlsx",
+      "sector_id": "RAL",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/RAL - Recycling of aluminum.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of rubber products",
+      "sector_id": "RBR",
+      "source_record": "published_d24:RBR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of rubber products",
+      "sector_id": "RBR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B100"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of rubber products",
+      "sector_id": "RBR",
+      "source_record": "GTAP12_matching:Sector!A115"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "RBR",
+      "sector_id": "RBR",
+      "source_record": "GTAP12_matching:Sector!D115"
+    },
+    {
+      "namespace": "published_file",
+      "value": "RBR - Manufacture of rubber products.xlsx",
+      "sector_id": "RBR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/RBR - Manufacture of rubber products.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Recycling of copper",
+      "sector_id": "RCP",
+      "source_record": "published_d24:RCP"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Recycling of copper",
+      "sector_id": "RCP",
+      "source_record": "published_classification:ENTICE GTAP sectors!B122"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Recycling of copper",
+      "sector_id": "RCP",
+      "source_record": "GTAP12_matching:Sector!A136"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "RECYCLE",
+      "sector_id": "RCP",
+      "source_record": "GTAP12_matching:Sector!D136"
+    },
+    {
+      "namespace": "published_file",
+      "value": "RCP - Recycling of copper.xlsx",
+      "sector_id": "RCP",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/RCP - Recycling of copper.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of rare earth elements",
+      "sector_id": "REE",
+      "source_record": "published_d24:REE"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of rare earth elements",
+      "sector_id": "REE",
+      "source_record": "published_classification:ENTICE GTAP sectors!B46"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of rare earth elements",
+      "sector_id": "REE",
+      "source_record": "GTAP12_matching:Sector!A57"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XOM",
+      "sector_id": "REE",
+      "source_record": "GTAP12_matching:Sector!D57"
+    },
+    {
+      "namespace": "published_file",
+      "value": "REE - Mining of rare earth elements.xlsx",
+      "sector_id": "REE",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/REE - Mining of rare earth elements.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of refined rare earths",
+      "sector_id": "RER",
+      "source_record": "published_d24:RER"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined rare earths",
+      "sector_id": "RER",
+      "source_record": "published_classification:ENTICE GTAP sectors!B86"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined rare earths",
+      "sector_id": "RER",
+      "source_record": "GTAP12_matching:Sector!A102"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "RER",
+      "source_record": "GTAP12_matching:Sector!D102"
+    },
+    {
+      "namespace": "published_file",
+      "value": "RER - Manufacture of refined rare earths.xlsx",
+      "sector_id": "RER",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/RER - Manufacture of refined rare earths.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Recycling of iron and steel",
+      "sector_id": "RIS",
+      "source_record": "published_classification:ENTICE GTAP sectors!B114"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Recycling of iron and steel",
+      "sector_id": "RIS",
+      "source_record": "GTAP12_matching:Sector!A129"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "RECYCLE",
+      "sector_id": "RIS",
+      "source_record": "GTAP12_matching:Sector!D129"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of steel via BF-BOF with coke injection",
+      "sector_id": "SCI",
+      "source_record": "published_d24:SCI"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of steel via BF-BOF with coke injection",
+      "sector_id": "SCI",
+      "source_record": "published_classification:ENTICE GTAP sectors!B108"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of steel via BF-BOF with coke injection",
+      "sector_id": "SCI",
+      "source_record": "GTAP12_matching:Sector!A122"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XIS",
+      "sector_id": "SCI",
+      "source_record": "GTAP12_matching:Sector!D122"
+    },
+    {
+      "namespace": "published_file",
+      "value": "SCI - Manufacture of steel via BF-BOF with coke injection.xlsx",
+      "sector_id": "SCI",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/SCI - Manufacture of steel via BF-BOF with coke injection.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of steel via direct reduction with natural gas",
+      "sector_id": "SDG",
+      "source_record": "published_d24:SDG"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of steel via direct reduction with natural gas",
+      "sector_id": "SDG",
+      "source_record": "published_classification:ENTICE GTAP sectors!B111"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of steel via direct reduction with natural gas",
+      "sector_id": "SDG",
+      "source_record": "GTAP12_matching:Sector!A125"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XIS",
+      "sector_id": "SDG",
+      "source_record": "GTAP12_matching:Sector!D125"
+    },
+    {
+      "namespace": "published_file",
+      "value": "SDG - Manufacture of steel via direct reduction with natural gas.xlsx",
+      "sector_id": "SDG",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/SDG - Manufacture of steel via direct reduction with natural gas.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of steel via direct reduction with hydrogen",
+      "sector_id": "SDH",
+      "source_record": "published_d24:SDH"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of steel via direct reduction with hydrogen",
+      "sector_id": "SDH",
+      "source_record": "published_classification:ENTICE GTAP sectors!B112"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of steel via direct reduction with hydrogen",
+      "sector_id": "SDH",
+      "source_record": "GTAP12_matching:Sector!A126"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XIS",
+      "sector_id": "SDH",
+      "source_record": "GTAP12_matching:Sector!D126"
+    },
+    {
+      "namespace": "published_file",
+      "value": "SDH - Manufacture of steel via direct reduction with hydrogen.xlsx",
+      "sector_id": "SDH",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/SDH - Manufacture of steel via direct reduction with hydrogen.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of steel via BF-BOF with natural gas injection",
+      "sector_id": "SGI",
+      "source_record": "published_classification:ENTICE GTAP sectors!B109"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of steel via BF-BOF with natural gas injection",
+      "sector_id": "SGI",
+      "source_record": "GTAP12_matching:Sector!A123"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XIS",
+      "sector_id": "SGI",
+      "source_record": "GTAP12_matching:Sector!D123"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of steel via BF-BOF with hydrogen injection",
+      "sector_id": "SHI",
+      "source_record": "published_classification:ENTICE GTAP sectors!B110"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of steel via BF-BOF with hydrogen injection",
+      "sector_id": "SHI",
+      "source_record": "GTAP12_matching:Sector!A124"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XIS",
+      "sector_id": "SHI",
+      "source_record": "GTAP12_matching:Sector!D124"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of silver",
+      "sector_id": "SIL",
+      "source_record": "published_d24:SIL"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of silver",
+      "sector_id": "SIL",
+      "source_record": "published_classification:ENTICE GTAP sectors!B53"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of silver",
+      "sector_id": "SIL",
+      "source_record": "GTAP12_matching:Sector!A64"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XOM",
+      "sector_id": "SIL",
+      "source_record": "GTAP12_matching:Sector!D64"
+    },
+    {
+      "namespace": "published_file",
+      "value": "SIL - Mining of silver.xlsx",
+      "sector_id": "SIL",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/SIL - Mining of silver.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of refined silver",
+      "sector_id": "SIR",
+      "source_record": "published_d24:SIR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined silver",
+      "sector_id": "SIR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B125"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined silver",
+      "sector_id": "SIR",
+      "source_record": "GTAP12_matching:Sector!A139"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MPR",
+      "sector_id": "SIR",
+      "source_record": "GTAP12_matching:Sector!D139"
+    },
+    {
+      "namespace": "published_file",
+      "value": "SIR - Manufacture of refined silver.xlsx",
+      "sector_id": "SIR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/SIR - Manufacture of refined silver.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of solar panels",
+      "sector_id": "SOP",
+      "source_record": "published_d24:SOP"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of solar panels",
+      "sector_id": "SOP",
+      "source_record": "published_classification:ENTICE GTAP sectors!B129"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of solar panels",
+      "sector_id": "SOP",
+      "source_record": "GTAP12_matching:Sector!A143"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "ELE",
+      "sector_id": "SOP",
+      "source_record": "GTAP12_matching:Sector!D143"
+    },
+    {
+      "namespace": "published_file",
+      "value": "SOP - Manufacture of solar panels.xlsx",
+      "sector_id": "SOP",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/SOP - Manufacture of solar panels.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of refined titanium",
+      "sector_id": "TIR",
+      "source_record": "published_d24:TIR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined titanium",
+      "sector_id": "TIR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B92"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined titanium",
+      "sector_id": "TIR",
+      "source_record": "GTAP12_matching:Sector!A108"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "TIR",
+      "source_record": "GTAP12_matching:Sector!D108"
+    },
+    {
+      "namespace": "published_file",
+      "value": "TIR - Manufacture of refined titanium.xlsx",
+      "sector_id": "TIR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/TIR - Manufacture of refined titanium.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of titanium",
+      "sector_id": "TIT",
+      "source_record": "published_d24:TIT"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of titanium",
+      "sector_id": "TIT",
+      "source_record": "published_classification:ENTICE GTAP sectors!B52"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of titanium",
+      "sector_id": "TIT",
+      "source_record": "GTAP12_matching:Sector!A63"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XOM",
+      "sector_id": "TIT",
+      "source_record": "GTAP12_matching:Sector!D63"
+    },
+    {
+      "namespace": "published_file",
+      "value": "TIT - Mining of titanium.xlsx",
+      "sector_id": "TIT",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/TIT - Mining of titanium.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Transport via pipeline service",
+      "sector_id": "TVP",
+      "source_record": "published_d24:TVP"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Transport via pipeline service",
+      "sector_id": "TVP",
+      "source_record": "published_classification:ENTICE GTAP sectors!B167"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Transport via pipeline service",
+      "sector_id": "TVP",
+      "source_record": "GTAP12_matching:Sector!A179"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "OTP",
+      "sector_id": "TVP",
+      "source_record": "GTAP12_matching:Sector!D179"
+    },
+    {
+      "namespace": "published_file",
+      "value": "TVP - Transport via pipeline service.xlsx",
+      "sector_id": "TVP",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/TVP - Transport via pipeline service.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of wind turbines",
+      "sector_id": "WNT",
+      "source_record": "published_d24:WNT"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of wind turbines",
+      "sector_id": "WNT",
+      "source_record": "published_classification:ENTICE GTAP sectors!B136"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Electric generators (wind)",
+      "sector_id": "WNT",
+      "source_record": "published_classification:ENTICE GTAP sectors!B139"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of wind turbines",
+      "sector_id": "WNT",
+      "source_record": "GTAP12_matching:Sector!A149"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "EEQ",
+      "sector_id": "WNT",
+      "source_record": "GTAP12_matching:Sector!D149"
+    },
+    {
+      "namespace": "published_file",
+      "value": "WNT - Manufacture of wind turbines.xlsx",
+      "sector_id": "WNT",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/WNT - Manufacture of wind turbines.xlsx"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of other chemicals",
+      "sector_id": "XCH",
+      "source_record": "published_classification:ENTICE GTAP sectors!B78"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of other chemicals",
+      "sector_id": "XCH",
+      "source_record": "GTAP12_matching:Sector!A94"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XCH_BPH",
+      "sector_id": "XCH",
+      "source_record": "GTAP12_matching:Sector!D94"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of computer, electronic and optical products",
+      "sector_id": "XEL",
+      "source_record": "published_classification:ENTICE GTAP sectors!B128"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of computer, electronic and optical products",
+      "sector_id": "XEL",
+      "source_record": "GTAP12_matching:Sector!A142"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "ELE",
+      "sector_id": "XEL",
+      "source_record": "GTAP12_matching:Sector!D142"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of other electrical equipment",
+      "sector_id": "XEQ",
+      "source_record": "published_classification:ENTICE GTAP sectors!B130"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of other electrical equipment",
+      "sector_id": "XEQ",
+      "source_record": "GTAP12_matching:Sector!A144"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "EEQ",
+      "sector_id": "XEQ",
+      "source_record": "GTAP12_matching:Sector!D144"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of other iron and steel",
+      "sector_id": "XIS",
+      "source_record": "published_classification:ENTICE GTAP sectors!B115"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of other iron and steel",
+      "sector_id": "XIS",
+      "source_record": "GTAP12_matching:Sector!A127"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "XIS",
+      "sector_id": "XIS",
+      "source_record": "GTAP12_matching:Sector!D127"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of rest of motor vehicles and parts",
+      "sector_id": "XMV",
+      "source_record": "published_classification:ENTICE GTAP sectors!B141"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of rest of motor vehicles and parts",
+      "sector_id": "XMV",
+      "source_record": "GTAP12_matching:Sector!A151"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "MVH",
+      "sector_id": "XMV",
+      "source_record": "GTAP12_matching:Sector!D151"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of other ores",
+      "sector_id": "XOO",
+      "source_record": "published_classification:ENTICE GTAP sectors!B45"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Other land transport",
+      "sector_id": "XTP",
+      "source_record": "published_classification:ENTICE GTAP sectors!B166"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Other land transport",
+      "sector_id": "XTP",
+      "source_record": "GTAP12_matching:Sector!A178"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "OTP",
+      "sector_id": "XTP",
+      "source_record": "GTAP12_matching:Sector!D178"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Mining of zinc",
+      "sector_id": "ZIN",
+      "source_record": "published_d24:ZIN"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Mining of zinc",
+      "sector_id": "ZIN",
+      "source_record": "published_classification:ENTICE GTAP sectors!B50"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Mining of zinc",
+      "sector_id": "ZIN",
+      "source_record": "GTAP12_matching:Sector!A61"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "LZT",
+      "sector_id": "ZIN",
+      "source_record": "GTAP12_matching:Sector!D61"
+    },
+    {
+      "namespace": "published_file",
+      "value": "ZIN - Mining of zinc.xlsx",
+      "sector_id": "ZIN",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/ZIN - Mining of zinc.xlsx"
+    },
+    {
+      "namespace": "published_name",
+      "value": "Manufacture of refined zinc",
+      "sector_id": "ZIR",
+      "source_record": "published_d24:ZIR"
+    },
+    {
+      "namespace": "catalogue_name",
+      "value": "Manufacture of refined zinc",
+      "sector_id": "ZIR",
+      "source_record": "published_classification:ENTICE GTAP sectors!B90"
+    },
+    {
+      "namespace": "matching_name",
+      "value": "Manufacture of refined zinc",
+      "sector_id": "ZIR",
+      "source_record": "GTAP12_matching:Sector!A106"
+    },
+    {
+      "namespace": "GTAPCE",
+      "value": "LZR",
+      "sector_id": "ZIR",
+      "source_record": "GTAP12_matching:Sector!D106"
+    },
+    {
+      "namespace": "published_file",
+      "value": "ZIR - Manufacture of refined zinc.xlsx",
+      "sector_id": "ZIR",
+      "source_record": "zenodo:20592036/D2.4 Data Inventories/ZIR - Manufacture of refined zinc.xlsx"
+    }
+  ]
+}

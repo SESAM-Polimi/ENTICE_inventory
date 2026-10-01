@@ -33,12 +33,15 @@ import argparse
 import importlib
 import openpyxl
 import statistics
-import template_checker
+import warnings
+from entice_inventory.inventory import template_checker
 from collections import OrderedDict
 from pathlib import Path
 
-from matching_utils import load_legacy_gtap12_maps
-from residual_sector_cluster import apply_residual_sector_clusters
+from entice_inventory.core.matching_utils import load_legacy_gtap12_maps, find_sector_match_by_code
+from entice_inventory.core.paths import find_data_file
+from entice_inventory.core.registry import Registry
+from entice_inventory.core.residual_sector_cluster import apply_residual_sector_clusters
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -155,7 +158,7 @@ def _name_to_code_map(repo_path) -> dict:
     compact codes for sheet names and Master rows.
     Cluster names that are not in this table are returned unchanged.
     """
-    rc_path = Path(repo_path) / 'Regions_clusters.xlsx'
+    rc_path = find_data_file('Regions_clusters.xlsx', base=repo_path)
     if not rc_path.exists():
         return {}
     rc_wb = openpyxl.load_workbook(str(rc_path), read_only=True, data_only=True)
@@ -171,7 +174,7 @@ def _name_to_code_map(repo_path) -> dict:
 
 
 def _safe_sheet_name(name: str) -> str:
-    """Return a valid Excel sheet name (max 31 chars, no \ / * ? : [ ])."""
+    r"""Return a valid Excel sheet name (max 31 chars, no \ / * ? : [ ])."""
     for ch in r'\/*?:[]':
         name = name.replace(ch, '_')
     return name[:31]
@@ -420,6 +423,7 @@ def make_inventory(inventory_path: str | Path,
                    output_path: str | Path = None,
                    version: str = '',
                    residual_other_sectors_share: float = 0.0,
+                   registry_dir: str | Path | None = None,
                    ):
     """
     Parse *template_path* with template_checker and write a MARIO
@@ -433,6 +437,9 @@ def make_inventory(inventory_path: str | Path,
                     placed next to the template
     version       : inventory version string (e.g. 'Y26M05'); shown in Summary
     repo_path     : path to repository where auxiliary excel files are stored (GTAP12_X.xlsx, GTAP12_matching.xlsx, Regions_clusters.xlsx)
+    registry_dir  : canonical registry directory (defaults to data/registry).
+                    Its GTAP12 geography defines GLOBAL and output coverage.
+                    Parent assignment still follows the legacy mapping in this importer.
 
     Returns
     -------
@@ -448,7 +455,24 @@ def make_inventory(inventory_path: str | Path,
     result = template_checker.parse_template(inventory_path)
 
     gi          = result['general_info']
-    parent_code = gi['parent_code']   # e.g. 'GRO'
+    parent_code = gi['parent_code']   # e.g. 'GRO' (from the template's D7)
+
+    # ── Authoritative parent from GTAP12_matching ────────────────────────────
+    # The parent typed in the template (D7) is only advisory: the GTAP12 parent
+    # of the new sector is whatever GTAP12_matching.xlsx maps its ENTICE code to.
+    # Override D7 with the matching when they disagree, so a wrong/stale D7 does
+    # not propagate. Fall back to D7 if the code is absent or ambiguous there.
+    try:
+        _matched_parent = find_sector_match_by_code(repo_path, sector_code).gtap12
+    except ValueError as exc:
+        _matched_parent = None
+        print(f"  Warning: parent not resolved from GTAP12_matching, "
+              f"keeping template D7 ({parent_code}): {exc}")
+    if _matched_parent and _matched_parent != parent_code:
+        print(f"  Parent override: template D7 ({parent_code}) -> "
+              f"GTAP12_matching ({_matched_parent})")
+        parent_code = _matched_parent
+
     print(f"  New sector : {gi['new_sector']}")
     print(f"  Parent     : {gi['parent_name']}  [{parent_code}]")
 
@@ -460,7 +484,7 @@ def make_inventory(inventory_path: str | Path,
     # GTAP12_matching.xlsx:
     #   key   = first column of each sheet
     #   value = 'GTAP12' column
-    _matching_path = repo_path / 'GTAP12_matching.xlsx'
+    _matching_path = find_data_file('GTAP12_matching.xlsx', base=repo_path)
     _sector_to_gtap: dict[str, str] = {}
     _factprod_to_gtap: dict[str, str] = {}
     if _matching_path.exists():
@@ -612,7 +636,7 @@ def make_inventory(inventory_path: str | Path,
 
     # ── Shared reference data (reused by synthetic UP and Total outputs) ───────
     # Load once here so we don't read the same files twice later.
-    db_X_path = (repo_path / 'GTAP12_X.xlsx')
+    db_X_path = find_data_file('GTAP12_X.xlsx', base=repo_path)
     if db_X_path.exists():
         _shared_gtap_x = template_checker._load_gtap_x(db_X_path)
     else:
@@ -620,14 +644,23 @@ def make_inventory(inventory_path: str | Path,
         print(f"  Warning: {db_X_path.name} not found – "
               "GTAP weights unavailable.")
 
-    _shared_gtap_regions: list[tuple[str, str]] = []
+    # A partner workbook can have an incomplete reference catalogue (HYE omits
+    # MRT). It must not define the target database's region universe.
+    _registry = Registry.load(registry_dir)
+    _shared_gtap_regions = [(r['name'], r['id']) for r in _registry.regions('GTAP12')]
     _ws_reg = wb['Region']
-    for _r in range(3, 166):
-        _fn_s   = _ws_reg.cell(_r, 2).value
-        _code_s = _ws_reg.cell(_r, 3).value
-        if _fn_s and str(_fn_s).strip().upper() != 'GLOBAL':
-            _shared_gtap_regions.append((str(_fn_s).strip(),
-                                         str(_code_s).strip() if _code_s else ''))
+    _template_codes = {
+        str(row[2]).strip() for row in _ws_reg.iter_rows(min_row=3, values_only=True)
+        if len(row) > 2 and row[2] and str(row[2]).strip().upper() != 'GLOBAL'
+    }
+    _missing_codes = sorted({code for _, code in _shared_gtap_regions} - _template_codes)
+    if _missing_codes:
+        warnings.warn(
+            'coverage.template_catalogue_incomplete: target regions absent from the '
+            f'partner reference list: {", ".join(_missing_codes)}. Canonical GTAP12 '
+            'coverage is used; existing estimation rules apply where observations are missing.',
+            stacklevel=2,
+        )
 
     # MARIO templates treat GLOBAL as a valid default region identifier.
     # Export it explicitly as the full GTAP region set so downstream readers
@@ -730,7 +763,7 @@ def make_inventory(inventory_path: str | Path,
     # rightward = broader) used to locate the finest cluster that contains at
     # least one covered region.  A weighted-average unit process is computed
     # from those covered contributors and registered as 'X_{cluster}'.
-    _rc_xlsx = repo_path / 'Regions_clusters.xlsx'
+    _rc_xlsx = find_data_file('Regions_clusters.xlsx', base=repo_path)
     if _has_global_up:
         print("  GLOBAL inventory present: synthetic unit processes skipped.")
     elif _rc_xlsx.exists():
@@ -945,7 +978,13 @@ def make_inventory(inventory_path: str | Path,
     _to_counts: dict[str, int] = {}
     for _fn, _rcode in _gtap_regions_to:
         _v_out, _meth = _resolved_to[_fn]
-        ws_to.append([sector_code, _rcode or rc(_fn), _v_out, 'M USD'])
+        _source, _note = None, None
+        if _rcode in _missing_codes:
+            _source = 'GTAP12_X.xlsx and template production ratios' if _meth == 'median' else 'Partner template'
+            _note = (f'Method: {_meth}. Region restored from canonical GTAP12 geography; '
+                     'absent from the partner reference catalogue. '
+                     + ('Estimated output, not an observed value.' if _meth == 'median' else ''))
+        ws_to.append([sector_code, _rcode or rc(_fn), _v_out, 'M USD', _source, _note])
         _to_counts[_meth] = _to_counts.get(_meth, 0) + 1
 
     n_tp = len(_gtap_regions_to)

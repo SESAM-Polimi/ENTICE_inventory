@@ -1,0 +1,67 @@
+--- a/setup.py
++++ b/setup.py
+@@ -61,7 +61,7 @@
+         ],
+         },
+     install_requires=[
+-        "pandas == 3.0.2",
++        "pandas == 2.3.3",
+         "numpy == 2.1.1",
+         "xlsxwriter == 3.2.9",
+         "plotly",
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -1,5 +1,5 @@
+ numpy==2.1.1
+-pandas==3.0.2
++pandas==2.3.3
+ plotly
+ nbformat>=5.10.4
+ tabulate
+--- a/mario/ops/cvxlab_bridge.py
++++ b/mario/ops/cvxlab_bridge.py
+@@ -1104,8 +1104,12 @@
+     """Read input-file storage settings from the CVXLab model instance."""
+ 
+     settings = getattr(model, "settings", {})
+-    file_extension = settings.get("input_data_files_type", "xlsx")
+-    multiple_input_files = bool(settings.get("multiple_input_files", False))
++    if hasattr(settings, "get"):
++        get_setting = settings.get
++    else:
++        get_setting = lambda key, default: getattr(settings, key, default)
++    file_extension = get_setting("input_data_files_type", "xlsx")
++    multiple_input_files = bool(get_setting("multiple_input_files", False))
+     return file_extension, multiple_input_files
+ 
+ 
+--- a/tests/ops/test_addsector.py
++++ b/tests/ops/test_addsector.py
+@@ -2202,13 +2202,21 @@
+         model_dir_name=CVXLAB_SPLIT_MODEL_NAME,
+     )
+     copied = dest / "model_settings.xlsx"
+-    if getattr(bridge_module.cl.Defaults.Labels, "NONNEG_KEY", None) is not None:
+-        assert hashlib.md5(source.read_bytes()).hexdigest() == hashlib.md5(copied.read_bytes()).hexdigest()
++    drop_nonneg = getattr(bridge_module.cl.Defaults.Labels, "NONNEG_KEY", None) is None
++    fill_problem_blanks = hasattr(bridge_module.cl.Model, "refresh_database_and_initialize_problem")
++    if not drop_nonneg and not fill_problem_blanks:
++        assert source.read_bytes() == copied.read_bytes()
+     else:
+-        source_df = pd.read_excel(source, sheet_name="structure_variables")
+-        copied_df = pd.read_excel(copied, sheet_name="structure_variables")
+-        assert "nonneg" in source_df.columns
+-        assert "nonneg" not in copied_df.columns
++        expected = pd.read_excel(source, sheet_name=None)
++        actual = pd.read_excel(copied, sheet_name=None)
++        assert set(expected) == set(actual)
++        if drop_nonneg:
++            expected["structure_variables"] = expected["structure_variables"].drop(columns=["nonneg"])
++        for name in expected:
++            # Blank strings round-trip as NaN. All model expressions and other
++            # values must survive compatibility rewriting unchanged.
++            pdt.assert_frame_equal(expected[name], actual[name], check_dtype=False)
++
+ 
+ 
+ def test_split_bridge_fills_blank_problem_cells_for_newer_cvxlab_builds(tmp_path, monkeypatch):

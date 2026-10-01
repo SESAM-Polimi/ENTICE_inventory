@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "entice-inventory"
+version = "0.1.0"
+description = "GTAP12 disaggregation toolkit for ENTICE deliverable D2.4 (enhanced GTAP database)"
+requires-python = ">=3.10"
+dependencies = [
+    "openpyxl",
+]
+
+[project.optional-dependencies]
+export = ["pandas", "pyarrow"]
+# Needed only for the QA plotting module (entice_inventory.export.plot_d24_split).
+plots = ["pandas", "numpy", "matplotlib"]
+
+# Note: the database steps in scripts/run_d24_pipeline.py also require `mario`,
+# which is installed separately (local/Git checkout), not from PyPI.
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.data-files]
+"share/entice-inventory/registry" = [
+    "data/registry/sectors.json",
+    "data/registry/regions.json",
+    "data/registry/gtap12.json",
+]

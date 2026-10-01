@@ -1,0 +1,20 @@
+{
+  "purpose": "Reproducible integration environment, not recovered historical execution.",
+  "tested_python": "3.13.14",
+  "tested_platform": "macOS arm64",
+  "dependencies": "requirements/d24-producer.txt",
+  "packages": {
+    "mario": {
+      "repository": "https://github.com/it-is-me-mario/MARIO.git",
+      "revision": "590426673589dc474d1d23547b1d366758d7fec7",
+      "patch": "requirements/patches/mario-producer-compat.patch",
+      "patch_sha256": "db21b828d0d64afaf870f5ac5ee3dc372346ab4b97bd053fe6ebf06ebc210e69"
+    },
+    "cvxlab": {
+      "repository": "https://github.com/cvxlab/cvxlab.git",
+      "revision": "1f2521b52d85ca0783dca5991d697d22bfa044a3",
+      "patch": "requirements/patches/cvxlab-producer-compat.patch",
+      "patch_sha256": "efb35ae4d4ff5d2740dacc20978122905d4d5463bb270cd9871d7b6072b93473"
+    }
+  }
+}

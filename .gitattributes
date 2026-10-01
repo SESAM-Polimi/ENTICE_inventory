@@ -1,0 +1,3 @@
+# Preserve audited CSV bytes and the significant context lines of stored patches.
+data/classification/*.csv whitespace=cr-at-eol
+requirements/patches/*.patch -whitespace

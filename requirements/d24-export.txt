@@ -1,0 +1,10 @@
+# Export-only environment exercised on Python 3.13.14, macOS arm64.
+# This is not a MARIO/CVXLAB producer or solver environment lock.
+numpy==2.1.1
+pandas==3.0.2
+pyarrow==24.0.0
+openpyxl==3.1.5
+et_xmlfile==2.0.0
+python-dateutil==2.9.0.post0
+six==1.17.0
+tzdata==2026.3

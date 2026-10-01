@@ -1,0 +1,3581 @@
+{
+  "schema_version": 1,
+  "target": "GTAP12",
+  "sector_classification": "GSC3",
+  "geography": "GTAP12",
+  "nace_version": "Rev. 2",
+  "bridge_scope": "Only reviewed activity scopes; no prefix inference or fallback to legacy parents.",
+  "bridge": [
+    {
+      "nace_code": "08.99",
+      "parent": "OXT",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+      ]
+    },
+    {
+      "nace_code": "19.10",
+      "parent": "P_C",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "20",
+      "parent": "CHM",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "20.11",
+      "parent": "CHM",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A32022R2552",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "20.12",
+      "parent": "CHM",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+      ]
+    },
+    {
+      "nace_code": "20.13",
+      "parent": "CHM",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+      ]
+    },
+    {
+      "nace_code": "20.16",
+      "parent": "CHM",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "22",
+      "parent": "RPP",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "23.99",
+      "parent": "NMM",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+      ]
+    },
+    {
+      "nace_code": "24.42",
+      "parent": "NFM",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "24.44",
+      "parent": "NFM",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "24.45",
+      "parent": "NFM",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "26.11",
+      "parent": "ELE",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32022R2552"
+      ]
+    },
+    {
+      "nace_code": "27.11",
+      "parent": "EEQ",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "27.20",
+      "parent": "EEQ",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "28.11",
+      "parent": "OME",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "29.10",
+      "parent": "MVH",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    },
+    {
+      "nace_code": "38.32",
+      "parent": "WTR",
+      "evidence": [
+        "https://www.gtap.agecon.purdue.edu/databases/contribute/concordinfo.asp",
+        "https://sfc.ec.europa.eu/system/files/documents/sfc2007/2022-10/nace-rev-2.pdf"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "sector_id": "AGT",
+      "published_parent": "NMM",
+      "catalogue_rows": [
+        {
+          "row": 84,
+          "name": "Manufacture of artificial graphite",
+          "parent": "CHM"
+        },
+        {
+          "row": 106,
+          "name": "Manufacture of artificial graphite",
+          "parent": "NMM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 100,
+          "name": "Manufacture of artificial graphite",
+          "parent": "NMM",
+          "source_code": "XCH_BPH",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "AGT - Manufacture of artificial graphite.xlsx",
+          "sha256": "bde20ac0b55429f0810420583022cb3621cb76f3b2a8fede592f9356b41dc1b2"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "AMM",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 79,
+          "name": "Manufacture of ammonia",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 95,
+          "name": "Manufacture of ammonia",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "APP",
+      "published_parent": "NFM",
+      "catalogue_rows": [
+        {
+          "row": 117,
+          "name": "Manufacture of primary aluminum",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 131,
+          "name": "Manufacture of primary aluminum",
+          "parent": "NFM",
+          "source_code": "APP",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "APP - Manufacture of primary aluminum.xlsx",
+          "sha256": "358b1676a60352ff2cb3afeb1ca4d7c4f08a75c90e62f0f47f89cfd8269010ab"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "APS",
+      "published_parent": "NFM",
+      "catalogue_rows": [
+        {
+          "row": 118,
+          "name": "Manufacture of secondary aluminum",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 132,
+          "name": "Manufacture of secondary aluminum",
+          "parent": "NFM",
+          "source_code": "APS",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "APS - Manufacture of secondary aluminum.xlsx",
+          "sha256": "534f705427f6a733cc58fd52919e924dd6d5defbf13d527a23bec7687d53ddbc"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "BVH",
+      "published_parent": "MVH",
+      "catalogue_rows": [
+        {
+          "row": 143,
+          "name": "Manufacture of heavy duty BEV",
+          "parent": "MVH"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 153,
+          "name": "Manufacture of heavy duty BEV",
+          "parent": "MVH",
+          "source_code": "MVH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "29.0",
+        "30.0"
+      ],
+      "published_files": [
+        {
+          "file": "BVH - Manufacture of heavy duty BEV.xlsx",
+          "sha256": "6d614016558a5587d80822fe4c2c82bebb532eb31ee0914581ac2513d1becbed"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "BVL",
+      "published_parent": "OTP",
+      "catalogue_rows": [
+        {
+          "row": 146,
+          "name": "Manufacture of light duty BEV",
+          "parent": "MVH"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 157,
+          "name": "Manufacture of light duty BEV",
+          "parent": "MVH",
+          "source_code": "MVH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "29.0",
+        "30.0"
+      ],
+      "published_files": [
+        {
+          "file": "BVL - Manufacture of light duty BEV.xlsx",
+          "sha256": "0637210d8f971435ad19a56dcbe20f1b1437872b71d2cba5a2cbddecad7d99ee"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "CEM",
+      "published_parent": "NMM",
+      "catalogue_rows": [
+        {
+          "row": 104,
+          "name": "Manufacture of traditional cement",
+          "parent": "NMM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 119,
+          "name": "Manufacture of traditional cement",
+          "parent": "NMM",
+          "source_code": "CEMNT",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "23.0"
+      ],
+      "published_files": [
+        {
+          "file": "CEM - Manufacture of traditional cement.xlsx",
+          "sha256": "481101804f98bd36e38b80f292a4ef8e1f89e5d904b709dfa87360112f942c53"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "CHR",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 51,
+          "name": "Mining of chromium",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 62,
+          "name": "Mining of chromium",
+          "parent": "OXT",
+          "source_code": "XOM",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "CHR - Mining of chromium.xlsx",
+          "sha256": "3a8015e59da0093c908f2ddc85867c84bc68bea83dd5291a5df4d09fdea81b4c"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "CMS",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 105,
+          "name": "Manufacture of cement with CCS",
+          "parent": "NMM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 120,
+          "name": "Manufacture of cement with CCS",
+          "parent": "NMM",
+          "source_code": "CEMNT",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "COB",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 49,
+          "name": "Mining of cobalt ores and concentrates",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 60,
+          "name": "Mining of cobalt ores and concentrates",
+          "parent": "OXT",
+          "source_code": "XOM",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "COB - Mining of cobalt ores and concentrates.xlsx",
+          "sha256": "85348bda88805948e47ac35fbc59da28e41235914db2694cc592328e1d6dcba1"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "COR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 89,
+          "name": "Manufacture of refined cobalt",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 105,
+          "name": "Manufacture of refined cobalt",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "COR - Manufacture of refined cobalt.xlsx",
+          "sha256": "c4d86b3cfed4944a97d0fce931652c0ba5ba865cab38ed7d27465adfabde871d"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "CPP",
+      "published_parent": "NFM",
+      "catalogue_rows": [
+        {
+          "row": 120,
+          "name": "Manufacture of primary copper",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 134,
+          "name": "Manufacture of primary copper",
+          "parent": "NFM",
+          "source_code": "CPP",
+          "pipeline": "COPCOSTS"
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "CPP - Manufacture of primary copper.xlsx",
+          "sha256": "4cfed68ce41cd84ca022a6fc091eb10329f8a925dc08dd5c1702a5ed7d4f5919"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "CPS",
+      "published_parent": "NFM",
+      "catalogue_rows": [
+        {
+          "row": 121,
+          "name": "Manufacture of secondary copper",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 135,
+          "name": "Manufacture of secondary copper",
+          "parent": "NFM",
+          "source_code": "CPS",
+          "pipeline": "COPCOSTS"
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "CPS - Manufacture of secondary copper.xlsx",
+          "sha256": "b2ca361fbff0c9da6a3bbe213b799b29f173c1ed4db4c1ef350723b280a39d14"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "CRR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 91,
+          "name": "Manufacture of refined chromium",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 107,
+          "name": "Manufacture of refined chromium",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "CRR - Manufacture of refined chromium.xlsx",
+          "sha256": "58db4d08ef294428f27cc135b623b0a3269c72bea0dad4eb6f9b36532fb2de4d"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "ELZ",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 137,
+          "name": "Manufacture of electrolyzers",
+          "parent": "EEQ"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 150,
+          "name": "Manufacture of electrolyzers",
+          "parent": "OME",
+          "source_code": "OME",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "GAR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 93,
+          "name": "Manufacture of refined gallium",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 109,
+          "name": "Manufacture of refined gallium",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "GAR - Manufacture of refined gallium.xlsx",
+          "sha256": "97ebbb235b40dea0372f03be597c7550e3a8787806ff4050abe51778ee48e742"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "GRA",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 60,
+          "name": "Mining of natural graphite",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 72,
+          "name": "Mining of natural graphite",
+          "parent": "OXT",
+          "source_code": "NMN",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "08"
+      ],
+      "published_files": [
+        {
+          "file": "GRA - Mining of natural graphite.xlsx",
+          "sha256": "2dc06e13f3877e8ad15baee40e028f1ef675e9c2753aabb1e5256dc91b1283ca"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "HEL",
+      "published_parent": "MVH",
+      "catalogue_rows": [
+        {
+          "row": 145,
+          "name": "Manufacture of light duty HEV",
+          "parent": "MVH"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 156,
+          "name": "Manufacture of light duty HEV",
+          "parent": "MVH",
+          "source_code": "MVH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "29.0",
+        "30.0"
+      ],
+      "published_files": [
+        {
+          "file": "HEL - Manufacture of light duty HEV.xlsx",
+          "sha256": "e301d4acb943537c53ba8d1b0d49049987c6e4e18bfd4d5ecde32e390f0dcc74"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "HVC",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 83,
+          "name": "Manufacture of high value chemicals",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 99,
+          "name": "Manufacture of high value chemicals",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "HVC - Manufacture of high value chemicals.xlsx",
+          "sha256": "9990f7b909020c18ee728defc88f7cf48b91cbf97ac011baa2e168f8e37b1362"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "HYE",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 80,
+          "name": "Manufacture of hydrogen via electrolysis",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 96,
+          "name": "Manufacture of hydrogen via electrolysis",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "HYE - Manufacture of hydrogen via electrolysis.xlsx",
+          "sha256": "745314a94955e8427dc460ad62a008a7872729fe5b404ecbf477ce0d0e104139"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "HYS",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 81,
+          "name": "Manufacture of hydrogen via steam reforming",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 97,
+          "name": "Manufacture of hydrogen via steam reforming",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "ICH",
+      "published_parent": "MVH",
+      "catalogue_rows": [
+        {
+          "row": 142,
+          "name": "Manufacture of heavy duty ICEV",
+          "parent": "MVH"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 152,
+          "name": "Manufacture of heavy duty ICEV",
+          "parent": "MVH",
+          "source_code": "MVH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "29.0",
+        "30.0"
+      ],
+      "published_files": [
+        {
+          "file": "ICH - Manufacture of heavy duty ICEV.xlsx",
+          "sha256": "da91792772b91e04286fb5067113c960d12f9bfd6f550c7d9a4dba8043e1c580"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "ICL",
+      "published_parent": "MVH",
+      "catalogue_rows": [
+        {
+          "row": 144,
+          "name": "Manufacture of light duty ICEV",
+          "parent": "MVH"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 155,
+          "name": "Manufacture of light duty ICEV",
+          "parent": "MVH",
+          "source_code": "MVH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "29.0",
+        "30.0"
+      ],
+      "published_files": [
+        {
+          "file": "ICL - Manufacture of light duty ICEV.xlsx",
+          "sha256": "4890afc66e7d72157637169ede08ebc7c40b8ef63b80a834ca58ec793176f958"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "ISS",
+      "published_parent": "I_S",
+      "catalogue_rows": [
+        {
+          "row": 113,
+          "name": "Manufacture of secondary iron and steel",
+          "parent": "I_S"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 128,
+          "name": "Manufacture of secondary iron and steel",
+          "parent": "I_S",
+          "source_code": "ISS",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "ISS - Manufacture of secondary iron and steel.xlsx",
+          "sha256": "dcc6353ccf4421a0553a8f03fdbb34a472c104c4e13da5651114b6ddcb62ccd6"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "KFR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 98,
+          "name": "Manufacture of potassium fertilizer",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 113,
+          "name": "Manufacture of potassium fertilizer",
+          "parent": "CHM",
+          "source_code": "OFR",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "KFR - Manufacture of potassium fertilizer.xlsx",
+          "sha256": "61471bf77766a155f48e863f5000236eda519c68d59bb9c33055c6e9b2b3cb7a"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "LCO",
+      "published_parent": "EEQ",
+      "catalogue_rows": [
+        {
+          "row": 134,
+          "name": "Lithium Cobalt Oxide batteries",
+          "parent": "EEQ"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 197,
+          "name": "Manufacture of LCO batteries",
+          "parent": "EEQ",
+          "source_code": "EEQ",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [
+        {
+          "file": "LCO - Manufacture of LCO batteries.xlsx",
+          "sha256": "b795031554c6da2143ceb333382d0a107e145f1b615a8f2c112878237180316f"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "LFP",
+      "published_parent": "EEQ",
+      "catalogue_rows": [
+        {
+          "row": 133,
+          "name": "Manufacture of LFP batteries",
+          "parent": "EEQ"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 147,
+          "name": "Manufacture of LFP batteries",
+          "parent": "EEQ",
+          "source_code": "EEQ",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "27.0"
+      ],
+      "published_files": [
+        {
+          "file": "LFP - Manufacture of LFP batteries.xlsx",
+          "sha256": "382bcc4f20aced3a6c64027894e853a7a2abbbefcf35f71ccd5d9d0a8bcfa098"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "LIR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 85,
+          "name": "Manufacture of refined lithium",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 101,
+          "name": "Manufacture of refined lithium",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "LIR - Manufacture of refined lithium.xlsx",
+          "sha256": "e156ce17314b758f2dda6b72207d40902ded60535fa8ad9ec951a8dcb999f817"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "LIT",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 61,
+          "name": "Mining of lithium",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 73,
+          "name": "Mining of lithium",
+          "parent": "OXT",
+          "source_code": "XOM",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "08"
+      ],
+      "published_files": [
+        {
+          "file": "LIT - Mining of lithium.xlsx",
+          "sha256": "641f24f093dcb206a0dadf8b27cacda3918711827493aed2da88f5a54f2dc63c"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "LMO",
+      "published_parent": "EEQ",
+      "catalogue_rows": [
+        {
+          "row": 135,
+          "name": "Lithium Manganese Oxide batteries",
+          "parent": "EEQ"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 198,
+          "name": "Manufacture of LMO batteries",
+          "parent": "EEQ",
+          "source_code": "EEQ",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [
+        {
+          "file": "LMO - Manufacture of LMO batteries.xlsx",
+          "sha256": "0fa14563ee0e86360992a1fd7b220899f25ba9361f6f71e8b96da796cd79d31d"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MAG",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 138,
+          "name": "Permanent magnets",
+          "parent": "EEQ"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 199,
+          "name": "Permanent magnets",
+          "parent": "EEQ",
+          "source_code": "EEQ",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MAN",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 47,
+          "name": "Mining of manganese ores and concentrates",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 58,
+          "name": "Mining of manganese ores and concentrates",
+          "parent": "OXT",
+          "source_code": "XOM",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "MAN - Mining of manganese ores and concentrates.xlsx",
+          "sha256": "317c84049705e8675389cc319457590109a0b4f92ada353fa3cbdf5a002ab5a6"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MAO",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 57,
+          "name": "Mining of aluminum ores",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 68,
+          "name": "Mining of aluminum ores",
+          "parent": "OXT",
+          "source_code": "MAO",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "MAO - Mining of aluminum ores.xlsx",
+          "sha256": "4e4297ff3fdeb3ccb8a143237956145a89ad1fa9cab7a2e5f575933718927d76"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MCU",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 58,
+          "name": "Mining of copper ores",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 69,
+          "name": "Mining of copper ores",
+          "parent": "OXT",
+          "source_code": "MCU",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "MCU - Mining of copper ores.xlsx",
+          "sha256": "53e2ad934f42850ead90f1b962e4688264a0fefd90b9852955d6539a07cb7f4b"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MGC",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 62,
+          "name": "Mining of natural magnesium carbonate \"magnesite\" and magnesia",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 77,
+          "name": "Mining of natural magnesium carbonate \"magnesite\"+magnesia, fused or dead-burned (sintered)",
+          "parent": "OXT",
+          "source_code": "NMN",
+          "pipeline": "EXIOIOT"
+        },
+        {
+          "row": 78,
+          "name": "Mining of natural magnesium carbonate (magnesite) + magnesia, fused or dead-burned",
+          "parent": "OXT",
+          "source_code": "NMN",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "08"
+      ],
+      "published_files": [
+        {
+          "file": "MGC - Mining of natural magnesium carbonate magnesite and magnesia fused or dead-burned (sintered).xlsx",
+          "sha256": "1619c1f7a4f04773461dce0bd0018de5240c74f11d8f02b878e6c184b3ac2719"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MGR",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 94,
+          "name": "Manufacture of refined magnesium",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 110,
+          "name": "Manufacture of refined magnesium",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MIO",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 56,
+          "name": "Mining of iron ores",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 67,
+          "name": "Mining of iron ores",
+          "parent": "OXT",
+          "source_code": "MIO",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "MIO - Mining of iron ores.xlsx",
+          "sha256": "d43176003184e1196a4327b24320dea153292ef9b1e7630bcf22540fc7fa6760"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MNR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 87,
+          "name": "Manufacture of refined manganese",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 103,
+          "name": "Manufacture of refined manganese",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "MNR - Manufacture of refined manganese.xlsx",
+          "sha256": "260abfabaa71708dba335c6a45c17fe7c63439adedfb5c33532d32da2212e882"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MSI",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 95,
+          "name": "Manufacture of metallurgical silicon",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 200,
+          "name": "Manufacture of metallurgical silicon",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "MSI - Manufacture of metallurgical silicon.xlsx",
+          "sha256": "b3755aa40c7ff97e942f10b39001abac0eda3667662f5f4f3171893e2d969999"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MTH",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 82,
+          "name": "Manufacture of methanol",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 98,
+          "name": "Manufacture of methanol",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "MTH - Manufacture of methanol.xlsx",
+          "sha256": "83731cd05699de387acb9a32f709a25378a81be149dbc6091b6fa15233602354"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MUN",
+      "published_parent": "NFM",
+      "catalogue_rows": [
+        {
+          "row": 123,
+          "name": "Manufacture of magnesium: unwrought, articles",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 137,
+          "name": "Manufacture of magnesium: unwrought, articles",
+          "parent": "NFM",
+          "source_code": "MPPR",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "MUN - Manufacture of magnesium unwrought articles.xlsx",
+          "sha256": "e061c18ff5092006acd13d07aebe104909105619f61262bbe5d5133ddf3c091d"
+        },
+        {
+          "file": "MUN - Manufacture of magnesium unwrought, articles.xlsx",
+          "sha256": "3de638bfc013951914751eafac9be17445ea11514b97c4922db716facfc3b061"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "MUR",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 59,
+          "name": "Mining of uranium",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 70,
+          "name": "Mining of uranium",
+          "parent": "OXT",
+          "source_code": "MUR",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "MUR - Mining of uranium.xlsx",
+          "sha256": "1cfa232688f1f362e405d10ac8484a6a8d616b24ab8562ed0dc79fc7091b3064"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "NCA",
+      "published_parent": "EEQ",
+      "catalogue_rows": [
+        {
+          "row": 132,
+          "name": "Manufacture of NCA batteries",
+          "parent": "EEQ"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 146,
+          "name": "Manufacture of NCA batteries",
+          "parent": "EEQ",
+          "source_code": "EEQ",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "27.0"
+      ],
+      "published_files": [
+        {
+          "file": "NCA - Manufacture of NCA batteries.xlsx",
+          "sha256": "cc37872467643e2b6b745a1b942d4e2db27744af39587f3c5c9c264b50e15009"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "NCM",
+      "published_parent": "EEQ",
+      "catalogue_rows": [
+        {
+          "row": 131,
+          "name": "Manufacture of NCM batteries",
+          "parent": "EEQ"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 145,
+          "name": "Manufacture of NCM batteries",
+          "parent": "EEQ",
+          "source_code": "EEQ",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "27.0"
+      ],
+      "published_files": [
+        {
+          "file": "NCM - Manufacture of NCM batteries.xlsx",
+          "sha256": "b336f80f46a063c403f4f2478255931a2dc600d363590605297bcc2b40387726"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "NFC",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 116,
+          "name": "Casting of other non-ferrous metals",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 130,
+          "name": "Casting of other non-ferrous metals",
+          "parent": "NFM",
+          "source_code": "ISC_NFC",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "NFR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 96,
+          "name": "Manufacture of nitrogen fertilizer",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 111,
+          "name": "Manufacture of nitrogen fertilizer",
+          "parent": "CHM",
+          "source_code": "NFR",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "NFR - Manufacture of nitrogen fertilizer.xlsx",
+          "sha256": "093313d1ae4fbb2cb16c549fdeb18e0d6cd0d55fc43e704c7310fb0ed5407ced"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "NFX",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 126,
+          "name": "Manufacture of other metals (primary, secondary and recycling)",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 140,
+          "name": "Manufacture of other metals (primary, secondary and recycling)",
+          "parent": "NFM",
+          "source_code": "MPPR",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "NIK",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 48,
+          "name": "Mining of nickel ores and concentrates",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 59,
+          "name": "Mining of nickel ores and concentrates",
+          "parent": "OXT",
+          "source_code": "NIK",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "NIK - Mining of nickel ores and concentrates.xlsx",
+          "sha256": "a1059b8c446ae1dc08e2b9651d48acf0c8e0879cdcb3f32d61295015239e42cd"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "NIO",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 54,
+          "name": "Mining of niobium",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 65,
+          "name": "Mining of niobium",
+          "parent": "OXT",
+          "source_code": "XOM",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "NIO - Mining of niobium.xlsx",
+          "sha256": "53410e6e00638ee9662582e473a4abc1c40a3c86f505af1fa31e8a125d7f6e08"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "NIR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 88,
+          "name": "Manufacture of refined nickel (chemical intermediates)",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 104,
+          "name": "Manufacture of refined nickel",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "NIR - Manufacture of refined nickel.xlsx",
+          "sha256": "c6413f56627f72ddf392e06ee97bf0ff2b2a72fe510390625b57fd9cf7e9dfc1"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "NMC",
+      "published_parent": "OME",
+      "catalogue_rows": [],
+      "legacy_matching_rows": [],
+      "declared_nace_codes": [],
+      "published_files": [
+        {
+          "file": "NMC - Manufacture of NMC batteries.xlsx",
+          "sha256": "3fc89a730175d9ac9e30d38ea352b19cc45213560dc169512e8cc067ec69b56a"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "NMX",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 107,
+          "name": "Manufacture of other non metallic-minerals",
+          "parent": "NMM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 121,
+          "name": "Manufacture of other non metallic minerals",
+          "parent": "NMM",
+          "source_code": "NMM",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "PCP",
+      "published_parent": "P_C",
+      "catalogue_rows": [
+        {
+          "row": 77,
+          "name": "Manufacture of coke",
+          "parent": "P_C"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 93,
+          "name": "Manufacture of coal products",
+          "parent": "P_C",
+          "source_code": "PEP",
+          "pipeline": null
+        },
+        {
+          "row": 201,
+          "name": "Manufacture of coke",
+          "parent": "P_C",
+          "source_code": "PCP",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "19.0"
+      ],
+      "published_files": [
+        {
+          "file": "PCP - Manufacture of coke.xlsx",
+          "sha256": "183bf34bc83a82a2c1eaa95e7bcbb08c7634c3d4467a7e1e4ff028aa92ae3bf5"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "PEP",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 76,
+          "name": "Manufacture of petroleum products",
+          "parent": "P_C"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 92,
+          "name": "Manufacture of petroleum products",
+          "parent": "P_C",
+          "source_code": "PCP",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "PFR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 97,
+          "name": "Manufacture of phosphorus fertilizer",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 112,
+          "name": "Manufacture of phosphorus fertilizer",
+          "parent": "CHM",
+          "source_code": "OFR",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "PFR - Manufacture of phosphorus fertilizer.xlsx",
+          "sha256": "2c1814c98dda29ef68bece60b65a01f6809c08c2ac6d3c2c78494dd7ae2fb5e7"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "PGM",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 55,
+          "name": "Mining of platinum group metals",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 66,
+          "name": "Mining of plantinum group metals",
+          "parent": "OXT",
+          "source_code": "PMO",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "PGM - Mining of plantinum group metals.xlsx",
+          "sha256": "565ba2e646c6b710c5bbb18d9533c771c0b458e62ad66e3f26e9fd48ce14f721"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "PGR",
+      "published_parent": "NFM",
+      "catalogue_rows": [
+        {
+          "row": 124,
+          "name": "Manufacture of semi-manufactured platinum group metals",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 138,
+          "name": "Manufacture of semi-manufactured platinum group metals",
+          "parent": "NFM",
+          "source_code": "MPR",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "PGR - Manufacture of semi-manufactured platinum group metals.xlsx",
+          "sha256": "4f31637e4fa3897c9979cd0bc8e6cb8e1f545ad8fb97c936af3f7fc9144eeac6"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "PLP",
+      "published_parent": "RPP",
+      "catalogue_rows": [
+        {
+          "row": 101,
+          "name": "Manufacture of primary plastic products",
+          "parent": "RPP"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 116,
+          "name": "Manufacture of primary plastic products",
+          "parent": "RPP",
+          "source_code": "PLP",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "22.0"
+      ],
+      "published_files": [
+        {
+          "file": "PLP - Manufacture of primary plastic products.xlsx",
+          "sha256": "5d492582f2d30dd577392cae4d91f5e19545b13294ae0bc90eef3c18cbaa547b"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "PLR",
+      "published_parent": "RPP",
+      "catalogue_rows": [
+        {
+          "row": 103,
+          "name": "Recycling of plastics",
+          "parent": "RPP"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 118,
+          "name": "Recycling of plastics",
+          "parent": "RPP",
+          "source_code": "RECYCLE",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "36.0",
+        "37.0",
+        "38.0",
+        "39.0"
+      ],
+      "published_files": [
+        {
+          "file": "PLR - Recycling of plastics.xlsx",
+          "sha256": "a6ba3c0dedd58cc7b03d57d030f7ba9ce2fd23aa7baa2603d7ed827df7433aae"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "PLS",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 102,
+          "name": "Manufacture of secondary plastic products",
+          "parent": "RPP"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 117,
+          "name": "Manufacture of secondary plastic products",
+          "parent": "RPP",
+          "source_code": "PLS",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "PLSR",
+      "published_parent": "RPP",
+      "catalogue_rows": [],
+      "legacy_matching_rows": [],
+      "declared_nace_codes": [],
+      "published_files": [
+        {
+          "file": "PLSR - Manufacture of secondary plastic products.xlsx",
+          "sha256": "ca9b3b7a2fc9f1e406510d9be733e12eaff69f5c7bbc4f09d260be538dad79ea"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "RAL",
+      "published_parent": "NFM",
+      "catalogue_rows": [
+        {
+          "row": 119,
+          "name": "Recycling of aluminum",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 133,
+          "name": "Recycling of aluminum",
+          "parent": "NFM",
+          "source_code": "RECYCLE",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "36.0",
+        "37.0",
+        "38.0",
+        "39.0"
+      ],
+      "published_files": [
+        {
+          "file": "RAL - Recycling of aluminum.xlsx",
+          "sha256": "ddae1450eec061470eb0f55576c66f05a063c6b9589f8f37702bede78243c236"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "RBR",
+      "published_parent": "RPP",
+      "catalogue_rows": [
+        {
+          "row": 100,
+          "name": "Manufacture of rubber products",
+          "parent": "RPP"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 115,
+          "name": "Manufacture of rubber products",
+          "parent": "RPP",
+          "source_code": "RBR",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "22.0"
+      ],
+      "published_files": [
+        {
+          "file": "RBR - Manufacture of rubber products.xlsx",
+          "sha256": "64c6a3ed4c18d946e2e798407a8f71d39ca4957f3e760cf74d8daebbf50a1716"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "RCP",
+      "published_parent": "NFM",
+      "catalogue_rows": [
+        {
+          "row": 122,
+          "name": "Recycling of copper",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 136,
+          "name": "Recycling of copper",
+          "parent": "NFM",
+          "source_code": "RECYCLE",
+          "pipeline": "COPCOSTS"
+        }
+      ],
+      "declared_nace_codes": [
+        "36.0",
+        "37.0",
+        "38.0",
+        "39.0"
+      ],
+      "published_files": [
+        {
+          "file": "RCP - Recycling of copper.xlsx",
+          "sha256": "5ddd7f4882a2cfc3ea24cdc8786fa081362f01c1e2138c1347fb611460102260"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "REE",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 46,
+          "name": "Mining of rare earth elements",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 57,
+          "name": "Mining of rare earth elements",
+          "parent": "OXT",
+          "source_code": "XOM",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "REE - Mining of rare earth elements.xlsx",
+          "sha256": "3bf87b2765ea5d71ae032466771bb1254eeb178b282024c135d89ac1730421a9"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "RER",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 86,
+          "name": "Manufacture of refined rare earths",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 102,
+          "name": "Manufacture of refined rare earths",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "RER - Manufacture of refined rare earths.xlsx",
+          "sha256": "989d1e1c4a29bb9c0d463b2adc7f6b440d413c420edf06e722486a4f38d26c92"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "RIS",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 114,
+          "name": "Recycling of iron and steel",
+          "parent": "I_S"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 129,
+          "name": "Recycling of iron and steel",
+          "parent": "I_S",
+          "source_code": "RECYCLE",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "SCI",
+      "published_parent": "I_S",
+      "catalogue_rows": [
+        {
+          "row": 108,
+          "name": "Manufacture of steel via BF-BOF with coke injection",
+          "parent": "I_S"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 122,
+          "name": "Manufacture of steel via BF-BOF with coke injection",
+          "parent": "I_S",
+          "source_code": "XIS",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "SCI - Manufacture of steel via BF-BOF with coke injection.xlsx",
+          "sha256": "cdbc8f280f62e75191a9fb2432277b190ce9e433b77a82f19c86236e46ca1281"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "SDG",
+      "published_parent": "I_S",
+      "catalogue_rows": [
+        {
+          "row": 111,
+          "name": "Manufacture of steel via direct reduction with natural gas",
+          "parent": "I_S"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 125,
+          "name": "Manufacture of steel via direct reduction with natural gas",
+          "parent": "I_S",
+          "source_code": "XIS",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "SDG - Manufacture of steel via direct reduction with natural gas.xlsx",
+          "sha256": "2d94250c8e406cf6e7e99503135b8f4fc4670bfd372dbd625c991e9262b096bc"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "SDH",
+      "published_parent": "I_S",
+      "catalogue_rows": [
+        {
+          "row": 112,
+          "name": "Manufacture of steel via direct reduction with hydrogen",
+          "parent": "I_S"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 126,
+          "name": "Manufacture of steel via direct reduction with hydrogen",
+          "parent": "I_S",
+          "source_code": "XIS",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "SDH - Manufacture of steel via direct reduction with hydrogen.xlsx",
+          "sha256": "dc967054d963990dfba23d069da55a376b4ff51698881fcd219852fc4235b4bc"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "SGI",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 109,
+          "name": "Manufacture of steel via BF-BOF with natural gas injection",
+          "parent": "I_S"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 123,
+          "name": "Manufacture of steel via BF-BOF with natural gas injection",
+          "parent": "I_S",
+          "source_code": "XIS",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "SHI",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 110,
+          "name": "Manufacture of steel via BF-BOF with hydrogen injection",
+          "parent": "I_S"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 124,
+          "name": "Manufacture of steel via BF-BOF with hydrogen injection",
+          "parent": "I_S",
+          "source_code": "XIS",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "SIL",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 53,
+          "name": "Mining of silver",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 64,
+          "name": "Mining of silver",
+          "parent": "OXT",
+          "source_code": "XOM",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "SIL - Mining of silver.xlsx",
+          "sha256": "14846ab48bd4cb8176183ca3c44a39ebbd3c2b51a8918534504273ae53d7fff7"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "SIR",
+      "published_parent": "NFM",
+      "catalogue_rows": [
+        {
+          "row": 125,
+          "name": "Manufacture of refined silver",
+          "parent": "NFM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 139,
+          "name": "Manufacture of refined silver",
+          "parent": "NFM",
+          "source_code": "MPR",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "24.0"
+      ],
+      "published_files": [
+        {
+          "file": "SIR - Manufacture of refined silver.xlsx",
+          "sha256": "012329df3688d3529c7a4c5858cc34d24be2fecb09479108251ec3f9c4f1caf9"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "SOP",
+      "published_parent": "EEQ",
+      "catalogue_rows": [
+        {
+          "row": 129,
+          "name": "Manufacture of solar panels",
+          "parent": "ELE"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 143,
+          "name": "Manufacture of solar panels",
+          "parent": "ELE",
+          "source_code": "ELE",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "26.0"
+      ],
+      "published_files": [
+        {
+          "file": "SOP - Manufacture of solar panels.xlsx",
+          "sha256": "76501b03d20576e830dadef9b9972a974ef0457340e59701ab76618b2decdb63"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "TIR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 92,
+          "name": "Manufacture of refined titanium",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 108,
+          "name": "Manufacture of refined titanium",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "TIR - Manufacture of refined titanium.xlsx",
+          "sha256": "98aef5048e65e0d8cdc7f944e62db44b47705e3593e7584a4903fa6b1faf1ca5"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "TIT",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 52,
+          "name": "Mining of titanium",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 63,
+          "name": "Mining of titanium",
+          "parent": "OXT",
+          "source_code": "XOM",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "TIT - Mining of titanium.xlsx",
+          "sha256": "dffaa29eaa145706d9316e2f3fad47e5636e1af27ae6181a2954abb1139ad3f5"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "TVP",
+      "published_parent": "OTP",
+      "catalogue_rows": [
+        {
+          "row": 167,
+          "name": "Transport via pipeline service",
+          "parent": "OTP"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 179,
+          "name": "Transport via pipeline service",
+          "parent": "OTP",
+          "source_code": "OTP",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "49.0"
+      ],
+      "published_files": [
+        {
+          "file": "TVP - Transport via pipeline service.xlsx",
+          "sha256": "b06a66b16850d4ea7ce3c6fc209487c53a05b700ab4970a49de7574097f46d09"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "WNT",
+      "published_parent": "EEQ",
+      "catalogue_rows": [
+        {
+          "row": 136,
+          "name": "Manufacture of wind turbines",
+          "parent": "EEQ"
+        },
+        {
+          "row": 139,
+          "name": "Electric generators (wind)",
+          "parent": "EEQ"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 149,
+          "name": "Manufacture of wind turbines",
+          "parent": "EEQ",
+          "source_code": "EEQ",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [
+        "28.0"
+      ],
+      "published_files": [
+        {
+          "file": "WNT - Manufacture of wind turbines.xlsx",
+          "sha256": "d882d308ff0b1a5e541da31303b6342339ccf0ca15fd634a2e9d2aa1ea0652be"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "XCH",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 78,
+          "name": "Manufacture of other chemicals",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 94,
+          "name": "Manufacture of other chemicals",
+          "parent": "CHM",
+          "source_code": "XCH_BPH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "XEL",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 128,
+          "name": "Manufacture of computer, electronic and optical products",
+          "parent": "ELE"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 142,
+          "name": "Manufacture of computer, electronic and optical products",
+          "parent": "ELE",
+          "source_code": "ELE",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "XEQ",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 130,
+          "name": "Manufacture of other electrical equipment",
+          "parent": "EEQ"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 144,
+          "name": "Manufacture of other electrical equipment",
+          "parent": "EEQ",
+          "source_code": "EEQ",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "XIS",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 115,
+          "name": "Manufacture of other iron and steel",
+          "parent": "I_S"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 127,
+          "name": "Manufacture of other iron and steel",
+          "parent": "I_S",
+          "source_code": "XIS",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "XMV",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 141,
+          "name": "Manufacture of rest of motor vehicles and parts",
+          "parent": "MVH"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 151,
+          "name": "Manufacture of rest of motor vehicles and parts",
+          "parent": "MVH",
+          "source_code": "MVH",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "XOO",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 45,
+          "name": "Mining of other ores",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "XTP",
+      "published_parent": null,
+      "catalogue_rows": [
+        {
+          "row": 166,
+          "name": "Other land transport",
+          "parent": "OTP"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 178,
+          "name": "Other land transport",
+          "parent": "OTP",
+          "source_code": "OTP",
+          "pipeline": null
+        }
+      ],
+      "declared_nace_codes": [],
+      "published_files": [],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "ZIN",
+      "published_parent": "OXT",
+      "catalogue_rows": [
+        {
+          "row": 50,
+          "name": "Mining of zinc",
+          "parent": "OXT"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 61,
+          "name": "Mining of zinc",
+          "parent": "OXT",
+          "source_code": "LZT",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "07"
+      ],
+      "published_files": [
+        {
+          "file": "ZIN - Mining of zinc.xlsx",
+          "sha256": "7f4aa146f5128bb1287cacbbe96312486bbedc305e7dd1989a80e276de3128eb"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    },
+    {
+      "sector_id": "ZIR",
+      "published_parent": "CHM",
+      "catalogue_rows": [
+        {
+          "row": 90,
+          "name": "Manufacture of refined zinc",
+          "parent": "CHM"
+        }
+      ],
+      "legacy_matching_rows": [
+        {
+          "row": 106,
+          "name": "Manufacture of refined zinc",
+          "parent": "CHM",
+          "source_code": "LZR",
+          "pipeline": "EXIOIOT"
+        }
+      ],
+      "declared_nace_codes": [
+        "20.0"
+      ],
+      "published_files": [
+        {
+          "file": "ZIR - Manufacture of refined zinc.xlsx",
+          "sha256": "3b59689631ac75916d92cb4276b863c833e7b0c61b96ecd2e7f3980393edd708"
+        }
+      ],
+      "rebuild_dependencies": [
+        "parent_input_coefficients",
+        "factor_completion",
+        "parent_output_weights",
+        "output_caps",
+        "regional_coverage",
+        "trade_scope"
+      ]
+    }
+  ],
+  "parent_catalogue": [
+    {
+      "id": "AFS",
+      "name": "Accommodation, Food and service activities"
+    },
+    {
+      "id": "ATP",
+      "name": "Air transport"
+    },
+    {
+      "id": "BPH",
+      "name": "Basic pharmaceutical products"
+    },
+    {
+      "id": "B_T",
+      "name": "Beverages and tobacco products"
+    },
+    {
+      "id": "CHM",
+      "name": "Chemical products"
+    },
+    {
+      "id": "CMN",
+      "name": "Communication"
+    },
+    {
+      "id": "CMT",
+      "name": "Bovine meat products"
+    },
+    {
+      "id": "CNS",
+      "name": "Construction"
+    },
+    {
+      "id": "COA",
+      "name": "Primary coal"
+    },
+    {
+      "id": "CTL",
+      "name": "Bovine cattle, sheep and goats, horses"
+    },
+    {
+      "id": "C_B",
+      "name": "Sugar cane, sugar beet"
+    },
+    {
+      "id": "CoalBL",
+      "name": "Coal power baseload"
+    },
+    {
+      "id": "DWE",
+      "name": "Dwellings"
+    },
+    {
+      "id": "EDU",
+      "name": "Education"
+    },
+    {
+      "id": "EEQ",
+      "name": "Rest of Electrical equipment"
+    },
+    {
+      "id": "ELE",
+      "name": "Computer, electronic and optical products"
+    },
+    {
+      "id": "FMP",
+      "name": "Metal products"
+    },
+    {
+      "id": "FRS",
+      "name": "Forestry"
+    },
+    {
+      "id": "FSH",
+      "name": "Fishing"
+    },
+    {
+      "id": "GAS",
+      "name": "Natural gas"
+    },
+    {
+      "id": "GDT",
+      "name": "Gas manufacture, distribution"
+    },
+    {
+      "id": "GRO",
+      "name": "Cereal grains nec"
+    },
+    {
+      "id": "GasBL",
+      "name": "Gas power baseload"
+    },
+    {
+      "id": "GasP",
+      "name": "Gas power peakload"
+    },
+    {
+      "id": "HHT",
+      "name": "Human health and social work activities"
+    },
+    {
+      "id": "HydroBL",
+      "name": "Hydro power baseload"
+    },
+    {
+      "id": "HydroP",
+      "name": "Hydro power peakload"
+    },
+    {
+      "id": "INS",
+      "name": "Insurance (formerly isr)"
+    },
+    {
+      "id": "I_S",
+      "name": "Iron & Steel"
+    },
+    {
+      "id": "LEA",
+      "name": "Leather products"
+    },
+    {
+      "id": "LUM",
+      "name": "Wood products"
+    },
+    {
+      "id": "MIL",
+      "name": "Dairy products"
+    },
+    {
+      "id": "MVH",
+      "name": "Motor vehicles and parts"
+    },
+    {
+      "id": "NFM",
+      "name": "Non-Ferrous Metals: production and casting of copper, aluminium, zinc, lead, gold, and silver"
+    },
+    {
+      "id": "NMM",
+      "name": "Non-metallic minerals"
+    },
+    {
+      "id": "NuclearBL",
+      "name": "Nuclear power"
+    },
+    {
+      "id": "OAP",
+      "name": "Animal products nec"
+    },
+    {
+      "id": "OBS",
+      "name": "Business services nec"
+    },
+    {
+      "id": "OCR",
+      "name": "Crops nec"
+    },
+    {
+      "id": "OFD",
+      "name": "Food products nec"
+    },
+    {
+      "id": "OFI",
+      "name": "Financial services nec"
+    },
+    {
+      "id": "OIL",
+      "name": "Crude oil"
+    },
+    {
+      "id": "OME",
+      "name": "Machinery and equipment nec"
+    },
+    {
+      "id": "OMF",
+      "name": "Other manufacturing"
+    },
+    {
+      "id": "OMT",
+      "name": "Meat products nec"
+    },
+    {
+      "id": "OSD",
+      "name": "Oil seeds"
+    },
+    {
+      "id": "OSG",
+      "name": "Public Administration and defense"
+    },
+    {
+      "id": "OTN",
+      "name": "Transport equipment nec"
+    },
+    {
+      "id": "OTP",
+      "name": "Transport nec"
+    },
+    {
+      "id": "OXT",
+      "name": "Other Mining Extraction"
+    },
+    {
+      "id": "OilBL",
+      "name": "Oil power baseload"
+    },
+    {
+      "id": "OilP",
+      "name": "Oil power peakload"
+    },
+    {
+      "id": "OtherBL",
+      "name": "Other baseload"
+    },
+    {
+      "id": "PCR",
+      "name": "Processed rice"
+    },
+    {
+      "id": "PDR",
+      "name": "Paddy rice"
+    },
+    {
+      "id": "PFB",
+      "name": "Plant-based fibers"
+    },
+    {
+      "id": "PPP",
+      "name": "Paper products, publishing"
+    },
+    {
+      "id": "P_C",
+      "name": "Petroleum, coal products"
+    },
+    {
+      "id": "RMK",
+      "name": "Raw milk"
+    },
+    {
+      "id": "ROS",
+      "name": "Recreational and other services"
+    },
+    {
+      "id": "RPP",
+      "name": "Rubber and plastic products"
+    },
+    {
+      "id": "RSA",
+      "name": "Real estate activities"
+    },
+    {
+      "id": "SGR",
+      "name": "Sugar"
+    },
+    {
+      "id": "SolarP",
+      "name": "Solar power"
+    },
+    {
+      "id": "TEX",
+      "name": "Textiles"
+    },
+    {
+      "id": "TRD",
+      "name": "Wholesale and retail trade; repair of motor vehicles and motorcycles"
+    },
+    {
+      "id": "TnD",
+      "name": "Electricity transmission and distribution"
+    },
+    {
+      "id": "VOL",
+      "name": "Vegetable oils and fats"
+    },
+    {
+      "id": "V_F",
+      "name": "Vegetables, fruit, nuts"
+    },
+    {
+      "id": "WAP",
+      "name": "Wearing apparel"
+    },
+    {
+      "id": "WHS",
+      "name": "Warehousing and support activities"
+    },
+    {
+      "id": "WHT",
+      "name": "Wheat"
+    },
+    {
+      "id": "WOL",
+      "name": "Wool, silk-worm cocoons"
+    },
+    {
+      "id": "WTP",
+      "name": "Water transport"
+    },
+    {
+      "id": "WTR",
+      "name": "Water"
+    },
+    {
+      "id": "WindBL",
+      "name": "Wind power"
+    }
+  ],
+  "parent_catalogue_source": {
+    "path": "data/GTAP12_X.xlsx",
+    "sha256": "08da5201b8ac93f470372030891489f356f248fa27e4538738870072f079f30b",
+    "sheet": "GTAP totals",
+    "columns": [
+      "Sector to",
+      "Sector to full name"
+    ],
+    "numerical_values_included": false
+  }
+}

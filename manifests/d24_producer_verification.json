@@ -1,0 +1,293 @@
+{
+  "date": "2026-10-01",
+  "scope": "Reproducible environment and representative HYE/DEU verification; not a complete historical or full-scale MRIO certification.",
+  "status": "completed_with_warnings",
+  "environment": {
+    "python": "3.13.14",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "mario": {
+        "repository": "https://github.com/it-is-me-mario/MARIO.git",
+        "revision": "590426673589dc474d1d23547b1d366758d7fec7",
+        "patch": "requirements/patches/mario-producer-compat.patch",
+        "patch_sha256": "db21b828d0d64afaf870f5ac5ee3dc372346ab4b97bd053fe6ebf06ebc210e69"
+      },
+      "cvxlab": {
+        "repository": "https://github.com/cvxlab/cvxlab.git",
+        "revision": "1f2521b52d85ca0783dca5991d697d22bfa044a3",
+        "patch": "requirements/patches/cvxlab-producer-compat.patch",
+        "patch_sha256": "efb35ae4d4ff5d2740dacc20978122905d4d5463bb270cd9871d7b6072b93473"
+      }
+    },
+    "pip_check": "passed",
+    "system_site_packages": false
+  },
+  "checks": {
+    "native_coefficient_replay": {
+      "status": "passed",
+      "scope": "Independent formula replay for HYE/DEU; native geography, not a complete database build.",
+      "published_records": 93,
+      "differences": [],
+      "maximum_absolute_difference": 2.7755575615628914e-17,
+      "GLOBAL_missing_regions": [
+        "MRT"
+      ],
+      "factor_weight_rule": "Unweighted sums of value-added coefficients across all baseline columns; these weights change when geography is aggregated first.",
+      "uncovered_origin_rule": "Parent coefficients remain for origins outside the inventory's GLOBAL cluster."
+    },
+    "input_baseline_accounting": {
+      "row_accounting": {
+        "passed": true,
+        "failed_entries": 0,
+        "non_finite_entries": 0,
+        "maximum_absolute_residual": 0.0,
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-08,
+        "failure_examples": []
+      },
+      "column_accounting": {
+        "passed": false,
+        "failed_entries": 109,
+        "non_finite_entries": 0,
+        "maximum_absolute_residual": 0.34190988074988127,
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-08,
+        "failure_examples": [
+          {
+            "row": "('DEU', 'Sector', 'AFS')",
+            "observed": 238274.7507105922,
+            "expected": 238274.73657656438,
+            "absolute_residual": 0.01413402782054618,
+            "allowance": 0.0023837473657656438
+          },
+          {
+            "row": "('DEU', 'Sector', 'BPH')",
+            "observed": 130305.6122091981,
+            "expected": 130305.59913847817,
+            "absolute_residual": 0.013070719927782193,
+            "allowance": 0.0013040559913847817
+          },
+          {
+            "row": "('DEU', 'Sector', 'B_T')",
+            "observed": 52826.761476224696,
+            "expected": 52826.7631882393,
+            "absolute_residual": 0.0017120146076194942,
+            "allowance": 0.000529267631882393
+          },
+          {
+            "row": "('DEU', 'Sector', 'CHM')",
+            "observed": 229302.0993011986,
+            "expected": 229302.0895343925,
+            "absolute_residual": 0.009766806120751426,
+            "allowance": 0.002294020895343925
+          },
+          {
+            "row": "('DEU', 'Sector', 'CMT')",
+            "observed": 16198.573160412201,
+            "expected": 16198.573724555605,
+            "absolute_residual": 0.0005641434036078863,
+            "allowance": 0.00016298573724555604
+          }
+        ]
+      },
+      "minimum_Z": 0.0,
+      "minimum_Y": 0.0,
+      "minimum_V": -25107.039600491702
+    },
+    "diagnostic_baseline_reconciliation": {
+      "method": "Diagnostic copy only: proportionally rescale value added within each column to close its accounting residual; retain factor shares and signs.",
+      "maximum_relative_factor_adjustment": 7.056119436676944e-05,
+      "maximum_absolute_factor_adjustment": 0.18373546143993735,
+      "total_value_added_adjustment": 1.234802110284965
+    },
+    "final_accounting": {
+      "row_accounting": {
+        "passed": true,
+        "failed_entries": 0,
+        "non_finite_entries": 0,
+        "maximum_absolute_residual": 0.0,
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-08,
+        "failure_examples": []
+      },
+      "column_accounting": {
+        "passed": true,
+        "failed_entries": 0,
+        "non_finite_entries": 0,
+        "maximum_absolute_residual": 0.0001864079385995865,
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-08,
+        "failure_examples": []
+      },
+      "minimum_Z": -6.083224822756221e-09,
+      "minimum_Y": -2.244924504010358e-10,
+      "minimum_V": -25107.05248222256
+    },
+    "output_target": {
+      "passed": true,
+      "failed_entries": 0,
+      "non_finite_entries": 0,
+      "maximum_absolute_residual": 2.920090480529325e-08,
+      "absolute_tolerance": 1e-06,
+      "relative_tolerance": 1e-08,
+      "failure_examples": []
+    },
+    "parent_aggregation": {
+      "Z": {
+        "passed": false,
+        "failed_entries": 2,
+        "non_finite_entries": 0,
+        "maximum_absolute_residual": 0.0004424897488206625,
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-08,
+        "failure_examples": [
+          {
+            "row": "('DEU', 'Sector', 'PDR')",
+            "column": "('ROW', 'Sector', 'CHM')",
+            "observed": 2.8613599353658767e-05,
+            "expected": 2.96458e-05,
+            "absolute_residual": 1.0322006463412332e-06,
+            "allowance": 1.000000296458e-06
+          },
+          {
+            "row": "('ROW', 'Sector', 'PDR')",
+            "column": "('DEU', 'Sector', 'CHM')",
+            "observed": 7.821952178885826e-06,
+            "expected": 1.54275e-05,
+            "absolute_residual": 7.605547821114175e-06,
+            "allowance": 1.000000154275e-06
+          }
+        ]
+      },
+      "Y": {
+        "passed": true,
+        "failed_entries": 0,
+        "non_finite_entries": 0,
+        "maximum_absolute_residual": 0.00019379286095499992,
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-08,
+        "failure_examples": []
+      },
+      "V": {
+        "passed": true,
+        "failed_entries": 0,
+        "non_finite_entries": 0,
+        "maximum_absolute_residual": 0.0002755394671112299,
+        "absolute_tolerance": 1e-06,
+        "relative_tolerance": 1e-08,
+        "failure_examples": []
+      }
+    },
+    "solver_statuses": [
+      "optimal_inaccurate"
+    ],
+    "trade_validation": {
+      "status": "skipped",
+      "reason": "No child-specific HYE trade observations are supplied; missing trade is not treated as zero."
+    }
+  },
+  "tests": {
+    "repository": {
+      "passed": 10
+    },
+    "mario_selected": {
+      "passed": 20,
+      "deselected": 43
+    },
+    "cvxlab_unit": {
+      "passed": 48
+    }
+  },
+  "preservation": {
+    "baseline_file_hashes_unchanged_between_runs": true,
+    "source_workbook_hash_unchanged_between_runs": true,
+    "previous_verified_code_files_unchanged": 9,
+    "original_workbooks_replaced": false,
+    "release_published": false
+  },
+  "input_hashes": {
+    "source_workbook": "ae59bbafe4c5d66d765bc4fe900267edc8aee2a13164446d6552384b5a44d60f",
+    "published_workbook": "184b68c10a36e2cf8cffe77dac1af1961c20d39be8e9a593aa122e9d59bbe7a7",
+    "baseline": {
+      "V.parquet": "bb6efdcb04e9813b34bd97f7a52e2d927a87b80c8bd80926c931399cdf72086d",
+      "units.parquet": "1b611e6d0204ddace95b283eee1c6e5a3db7009d61852567a42d1fca963ef644",
+      "Z.parquet": "59c37eef50ae5d3371992ee7166a62241b19405296dd0c08ebc0614e555b34c5",
+      "EY.parquet": "04d66a06c6a61b4bbec3164e37e183b74ee674a41d7404faa8a4434d1fed88f5",
+      "Y.parquet": "cbaf309ea5f45b3f42a038b43276a064d779747f770790a728b66aef8a9e3bf4",
+      "VY.parquet": "8cfbe8852e6657c5a84f7dd549717616c67c8aff3a3744c99981a8deaf168739",
+      "E.parquet": "006858714c9e00a3a9bdc7747a4e70abed23fe3111b659c00fb60cb3146931f4",
+      "X.parquet": "36402e2cccd00cf5b8c260e78e1828e39ce1125d50158db9359fc7e9077008e7"
+    }
+  },
+  "code": [
+    {
+      "path": "scripts/bootstrap_producer.py",
+      "sha256": "bc87206bddadddc86bbb90e57dba0bd36c44ff3a8d10537c46a38c94b242bf3b"
+    },
+    {
+      "path": "scripts/verify_producer.py",
+      "sha256": "7ae77d9d25120d12faefcab8c45d161ed649aa98eacf6fe0ea4f6db4c648c92b"
+    },
+    {
+      "path": "tests/test_producer.py",
+      "sha256": "363e6a84ee6b10db811ade27092348c6d90e829bac646172a0d370505ad485bd"
+    },
+    {
+      "path": "requirements/d24-producer.txt",
+      "sha256": "bce17e8bf0af6bf34f1117d7f1fdb4977b1c14b5de0ebe1bccd278856efd3be6"
+    },
+    {
+      "path": "requirements/patches/mario-producer-compat.patch",
+      "sha256": "db21b828d0d64afaf870f5ac5ee3dc372346ab4b97bd053fe6ebf06ebc210e69"
+    },
+    {
+      "path": "requirements/patches/cvxlab-producer-compat.patch",
+      "sha256": "efb35ae4d4ff5d2740dacc20978122905d4d5463bb270cd9871d7b6072b93473"
+    },
+    {
+      "path": "config/producer-environment.json",
+      "sha256": "1ea9f642810f4661980efa295970b0a374df02bd718fbc220661e174b7ac33a3"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "build/producer_verified/environment.json",
+      "sha256": "b453e51e184bf6f8e5e7a95db096c26e3c980bebfa8cf5576928377f2d83abef"
+    },
+    {
+      "path": "build/reproduction/final_hye/verification.json",
+      "sha256": "e5997622baea51d4dea7fab6edb0bc0e6502697f830e0d23458fd89a001e8a47"
+    },
+    {
+      "path": "build/reproduction/final_hye/baseline-adjustments.csv",
+      "sha256": "943b94718db857334f66cdcf104a4c0b81cc976653f143d0cc20504b48866511"
+    },
+    {
+      "path": "build/reproduction/final-tests.log",
+      "sha256": "add0d8d8d2c160706f04defd60c4e252808d6f1d1100f4e930a9bfbe9d39390d"
+    },
+    {
+      "path": "build/reproduction/mario-tests-final.log",
+      "sha256": "ad563adf2b8d399bda7e736dc267b52bdb8a629d3ade39cb0047e909a142124a"
+    },
+    {
+      "path": "build/reproduction/cvxlab-tests.log",
+      "sha256": "e710c4a993784cb85a13f17bcb5e2bee2bf824f4d36f0cb7f680a9c3f8cc3652"
+    },
+    {
+      "path": "build/reproduction/bootstrap-final.log",
+      "sha256": "fc9105e2bb61d9f9d6a5d94be33dbf56d9a1aa238b53f3e604e93f5cced98ca7"
+    },
+    {
+      "path": "build/reproduction/factor_weight_comparison.json",
+      "sha256": "bb962bc626ff298f5f2e7efbe2d997004b6cd47572b13cc156302878412d2735"
+    }
+  ],
+  "limitations": [
+    "Only a representative region/sector and aggregated two-region diagnostic were exercised.",
+    "Diagnostic value-added closure is opt-in and is not an adopted data correction policy.",
+    "The two-region diagnostic changes factor-allocation weights and can expand source-cluster coverage; the native reference is separate.",
+    "Two Z aggregation entries remain outside the stated tolerance and CLARABEL reports optimal_inaccurate.",
+    "The production runner does not yet implement the full optional validation policy."
+  ]
+}

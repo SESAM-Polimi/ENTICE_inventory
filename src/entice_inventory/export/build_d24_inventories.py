@@ -3,8 +3,11 @@ from __future__ import annotations
 import argparse
 import importlib
 import math
+import os
 import sys
+import tempfile
 import warnings
+import zipfile
 from collections import OrderedDict, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -12,8 +15,10 @@ from typing import Iterable
 
 from openpyxl import load_workbook
 
+from entice_inventory.core.matching_utils import load_parent_map
+from entice_inventory.core.paths import DATA_DIR
 
-REPO_DIR = Path(__file__).resolve().parent
+
 DEFAULT_DATA_ROOT = (
     Path.home()
     / "Library/CloudStorage/OneDrive-SharedLibraries-eNextGen/ENTICE - Documents/WPs, Tasks & Deliverables/WP2 - Data/T2.2 & T2.3 - GTAP disaggregation"
@@ -22,7 +27,9 @@ DEFAULT_DB_PATH = DEFAULT_DATA_ROOT / "Database/GTAP 2023/2023entice"
 DEFAULT_SOURCE_DIR = DEFAULT_DATA_ROOT / "Data collection/Inventory cleaning/MARIO inventories copy"
 DEFAULT_OUTPUT_DIR = DEFAULT_DATA_ROOT / "Data collection/Inventory cleaning/D2.4 inventories"
 DEFAULT_PURDUE_SPLITARGS_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/June1/splttargs.xlsx"
+DEFAULT_PURDUE_TRADE_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/May13/trade.xlsx"
 DEFAULT_GTAP_SECTORS_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/May13/GTAP sectors H5.xlsx"
+DEFAULT_MATCHING_PATH = DATA_DIR / "GTAP12_matching.xlsx"
 DEFAULT_MARIO_SRC = Path.home() / "Documents/GitHub/MARIO"
 REPORT_FILENAME = "export_d24_report.txt"
 DEFAULT_INVENTORY_SUM_CHECK_TOLERANCE = 1e-3
@@ -170,11 +177,47 @@ def load_gtap_sector_names(gtap_sectors_path: str | Path = DEFAULT_GTAP_SECTORS_
     return names_by_code
 
 
-def read_sector_templates(source_dir: str | Path) -> list[SectorTemplate]:
-    templates: list[SectorTemplate] = []
+def load_matching_parents(
+    matching_path: str | Path = DEFAULT_MATCHING_PATH,
+) -> dict[str, str]:
+    """Authoritative sub-sector code -> parent GTAP12 code, from GTAP12_matching.
 
-    for path in workbook_paths(source_dir):
+    Thin wrapper over ``matching_utils.load_parent_map`` (the single owner of the
+    matching-workbook parsing) that tolerates a missing file by returning an
+    empty mapping. The parent declared inside each inventory's Summary is used
+    only as a fallback for codes absent from the matching workbook.
+    """
+    matching_path = as_path(matching_path)
+    if not matching_path.exists():
+        return {}
+    return load_parent_map(matching_path)
+
+
+def read_sector_templates(
+    source_dir: str | Path,
+    matching_parents: dict[str, str] | None = None,
+    sector_codes: Iterable[str] | None = None,
+    source_paths: Iterable[Path] | None = None,
+) -> tuple[list[SectorTemplate], list[str]]:
+    templates: list[SectorTemplate] = []
+    skipped_workbooks: list[str] = []
+    if matching_parents is None:
+        matching_parents = load_matching_parents()
+    selected = {str(code).strip().upper() for code in sector_codes} if sector_codes is not None else None
+
+    for path in source_paths if source_paths is not None else workbook_paths(source_dir):
         wb = load_workbook(path, data_only=True, read_only=True)
+        if selected is not None and str(wb['Summary']['B2'].value).strip().upper() not in selected:
+            wb.close()
+            continue
+        if not inventory_sheet_names(wb):
+            print(
+                f"WARNING: skipping '{path.name}' — no inventory sheet found "
+                "(incomplete source workbook)."
+            )
+            skipped_workbooks.append(path.name)
+            wb.close()
+            continue
         summary = wb["Summary"]
         master = wb["Master"]
 
@@ -188,23 +231,47 @@ def read_sector_templates(source_dir: str | Path) -> list[SectorTemplate]:
             summary_sources.append((label, value))
             row += 1
 
-        first_master_row = next(master.iter_rows(min_row=2, max_row=2, values_only=True))
+        first_master_row = next(
+            master.iter_rows(min_row=2, max_row=2, values_only=True), ()
+        )
+        add_or_split = (
+            first_master_row[11]
+            if len(first_master_row) > 11 and first_master_row[11]
+            else "Split"
+        )
+        sector_code = summary["B2"].value
+        inventory_parent = summary["B3"].value
+        # GTAP12_matching is the single source of truth for the parent; fall back
+        # to the inventory's own "Parent sector" only for codes absent there.
+        parent_sector = matching_parents.get(
+            str(sector_code).strip().upper() if sector_code is not None else "",
+            inventory_parent,
+        )
+        if (
+            inventory_parent is not None
+            and parent_sector is not None
+            and str(parent_sector).strip() != str(inventory_parent).strip()
+        ):
+            print(
+                f"INFO: {sector_code}: parent set to '{parent_sector}' from "
+                f"GTAP12_matching (inventory declared '{inventory_parent}')."
+            )
         templates.append(
             SectorTemplate(
                 source_path=path,
-                sector_code=summary["B2"].value,
+                sector_code=sector_code,
                 sector_name=sector_name_from_source_path(path),
-                parent_sector=summary["B3"].value,
+                parent_sector=parent_sector,
                 parent_sector_name=None,
                 inventory_version=summary["B4"].value,
                 data_collection_lead=summary["B5"].value,
-                add_or_split=first_master_row[11] or "Split",
+                add_or_split=add_or_split,
                 summary_sources=normalize_summary_sources(summary_sources),
             )
         )
         wb.close()
 
-    return templates
+    return templates, skipped_workbooks
 
 
 def read_total_outputs(source_path: str | Path, sector_code: str) -> OrderedDict[str, float]:
@@ -241,6 +308,29 @@ def read_purdue_trade_tables(
     return dict(trades_by_sector), as_path(splitargs_path).name
 
 
+def read_purdue_trade_workbook(
+    trade_path: str | Path,
+    sheet_name: str = "NTSCIF",
+) -> tuple[dict[str, list[tuple[str, str, float]]], str]:
+    wb = load_workbook(as_path(trade_path), data_only=True, read_only=True)
+    if sheet_name not in wb.sheetnames:
+        wb.close()
+        raise KeyError(f"Sheet '{sheet_name}' not found in '{trade_path}'.")
+
+    ws = wb[sheet_name]
+
+    trades_by_sector: dict[str, list[tuple[str, str, float]]] = defaultdict(list)
+    for sector_code, region_from, region_to, quantity, *_ in ws.iter_rows(min_row=2, values_only=True):
+        if sector_code is None or region_from is None or region_to is None or quantity is None:
+            continue
+        trades_by_sector[str(sector_code).upper()].append(
+            (str(region_from).lower(), str(region_to).lower(), float(quantity))
+        )
+
+    wb.close()
+    return dict(trades_by_sector), as_path(trade_path).name
+
+
 def resolve_export_region_maps(
     db_regions: list[str],
 ) -> tuple[list[str], OrderedDict[str, list[str]], OrderedDict[str, list[str]]]:
@@ -251,6 +341,11 @@ def resolve_export_region_maps(
 
 def inventory_sheet_names(workbook) -> list[str]:
     return [name for name in workbook.sheetnames if name not in STATIC_SHEETS]
+
+
+def inventory_regions_from_workbook(workbook, sector_code: str) -> list[str]:
+    prefix = f"{sector_code}_"
+    return [sheet_name.removeprefix(prefix) for sheet_name in inventory_sheet_names(workbook) if sheet_name.startswith(prefix)]
 
 
 def clear_sheet(ws) -> None:
@@ -492,7 +587,7 @@ def build_trade_rows(
             continue
         if region_from not in exported_region_codes or region_to not in exported_region_codes:
             continue
-        rows.append([region_from, region_to, float(quantity), "M USD", "COMTRADE and BACI", None])
+        rows.append([region_from.upper(), region_to.upper(), float(quantity), "M USD", "COMTRADE and BACI", None])
 
     return rows
 
@@ -518,6 +613,7 @@ def write_export_report(
     missing_trade_sectors: list[str],
     null_inventories: OrderedDict[str, list[str]],
     non_sum_to_1_inventories: OrderedDict[str, list[str]],
+    skipped_workbooks: list[str] | None = None,
 ) -> Path:
     report_path = output_dir / REPORT_FILENAME
 
@@ -526,8 +622,17 @@ def write_export_report(
         "",
         f"Purdue trade source: {splitargs_path}",
         "",
-        "Missing trade data by sector:",
+        "Skipped workbooks (no inventory sheet):",
     ]
+    if skipped_workbooks:
+        lines.extend(f"- {name}" for name in skipped_workbooks)
+    else:
+        lines.append("- none")
+
+    lines.extend([
+        "",
+        "Missing trade data by sector:",
+    ])
     if missing_trade_sectors:
         lines.extend(f"- {sector_code}" for sector_code in missing_trade_sectors)
     else:
@@ -598,6 +703,30 @@ def aggregate_sector_coefficients(
 
 def reorder_sheets(workbook, ordered_names: list[str]) -> None:
     workbook._sheets = [workbook[name] for name in ordered_names]
+
+
+def save_workbook_atomic(workbook, output_path: str | Path) -> None:
+    """Validate a completed temporary XLSX before replacing the destination."""
+    output_path = as_path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(
+        dir=output_path.parent, prefix=f'.{output_path.stem}.', suffix='.xlsx', delete=False
+    ) as temporary:
+        temporary_path = Path(temporary.name)
+    try:
+        workbook.save(temporary_path)
+        with zipfile.ZipFile(temporary_path) as archive:
+            if archive.testzip() is not None:
+                raise RuntimeError(f'Invalid ZIP payload while saving {output_path.name}.')
+        check = load_workbook(temporary_path, read_only=True)
+        try:
+            if check.sheetnames != workbook.sheetnames:
+                raise RuntimeError(f'Incomplete sheet catalogue while saving {output_path.name}.')
+        finally:
+            check.close()
+        os.replace(temporary_path, output_path)
+    finally:
+        temporary_path.unlink(missing_ok=True)
 
 
 def create_output_workbook(
@@ -692,9 +821,55 @@ def create_output_workbook(
         "DB units",
     ]
     reorder_sheets(wb, ordered_names)
-    wb.save(output_path)
+    save_workbook_atomic(wb, output_path)
     wb.close()
     return output_path
+
+
+def update_trades_in_exported_inventories(
+    output_dir: str | Path = DEFAULT_OUTPUT_DIR,
+    purdue_trade_path: str | Path = DEFAULT_PURDUE_TRADE_PATH,
+    tolerance: float = 1e-12,
+) -> list[Path]:
+    output_dir = as_path(output_dir)
+    purdue_trade_path = as_path(purdue_trade_path)
+
+    workbook_files = workbook_paths(output_dir)
+    if not workbook_files:
+        raise RuntimeError(f"No .xlsx D2.4 inventory workbooks found in '{output_dir}'.")
+
+    trades_by_sector, _ = read_purdue_trade_workbook(purdue_trade_path)
+
+    updated_files: list[Path] = []
+    for workbook_path in workbook_files:
+        wb = load_workbook(workbook_path)
+        summary_ws = wb["Summary"]
+        sector_code = str(summary_ws["B2"].value).strip().upper()
+        exported_regions = inventory_regions_from_workbook(wb, sector_code)
+        trade_rows = build_trade_rows(
+            sector_code,
+            trades_by_sector.get(sector_code),
+            exported_regions,
+            tolerance,
+        )
+
+        trades_ws = wb["Trades"] if "Trades" in wb.sheetnames else wb.create_sheet("Trades")
+        template = SectorTemplate(
+            source_path=workbook_path,
+            sector_code=sector_code,
+            sector_name=sector_name_from_source_path(workbook_path),
+            parent_sector=str(summary_ws["B3"].value).strip() if summary_ws["B3"].value is not None else "",
+            inventory_version=summary_ws["B4"].value,
+            data_collection_lead=summary_ws["B5"].value,
+            add_or_split="",
+            summary_sources=[],
+        )
+        rewrite_trades(trades_ws, template, trade_rows)
+        save_workbook_atomic(wb, workbook_path)
+        wb.close()
+        updated_files.append(workbook_path)
+
+    return updated_files
 
 
 def export_d24_inventories(
@@ -709,7 +884,7 @@ def export_d24_inventories(
     output_dir = as_path(output_dir)
     purdue_splitargs_path = as_path(purdue_splitargs_path)
 
-    templates = read_sector_templates(source_dir)
+    templates, skipped_workbooks = read_sector_templates(source_dir)
     if not templates:
         raise RuntimeError(f"No .xlsx sector inventory workbooks found in '{source_dir}'.")
 
@@ -785,13 +960,13 @@ def export_d24_inventories(
         missing_trade_sectors,
         null_inventories,
         non_sum_to_1_inventories,
+        skipped_workbooks,
     )
     return written_files
 
 
 def main() -> None:
     args = parse_args()
-    warnings.filterwarnings("ignore")
 
     mario = ensure_mario_import(args.mario_src)
 

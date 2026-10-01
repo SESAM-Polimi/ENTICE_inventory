@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "Accepted design direction; not yet connected to the production runner",
+  "checks_optional": true,
+  "default_action": "warn_and_continue",
+  "skipped_checks_must_be_listed": true,
+  "technical_read_write_failures_must_not_be_reported_as_success": true,
+  "screening_tolerances": {
+    "output_vs_observed_exports": {
+      "enabled": true,
+      "relative": 0.01,
+      "absolute_MUSD": 1e-06,
+      "rule": "observed_exports > output + absolute_MUSD + relative * abs(output)",
+      "interpretation": "Initial review threshold only. Check valuation, scope and re-exports before interpreting as an error."
+    },
+    "monetary_coefficient_sum": {
+      "enabled": true,
+      "absolute": 0.01,
+      "exclude_satellite_accounts": true
+    }
+  },
+  "reconciliation": {
+    "output_equals_total_exports": false,
+    "accounting_identities": "Enforce within declared solver numerical tolerances and report post-solve residuals.",
+    "observed_target_bands": "Configurable by source and observation; the warning threshold is not an assumed statistical uncertainty.",
+    "publish_adjustments": true
+  },
+  "warning_fields": [
+    "check_id",
+    "severity",
+    "sector",
+    "region",
+    "source_record",
+    "observed",
+    "reference",
+    "tolerance",
+    "message",
+    "suggested_action"
+  ],
+  "baseline_policy": {
+    "mode": "preserve_as_supplied",
+    "correction_allowed": false,
+    "diagnostics": "Record existing accounting residuals separately from changes introduced by disaggregation.",
+    "solver_incompatibility": "Report an incompatibility with the selected constraints; never repair baseline matrices to obtain a pass."
+  }
+}

@@ -5,6 +5,8 @@ from pathlib import Path
 
 import openpyxl
 
+from entice_inventory.core.paths import find_data_file
+
 
 @dataclass(frozen=True)
 class SectorMatch:
@@ -32,7 +34,9 @@ def _header_key(value) -> str:
 
 def _resolve_matching_path(path_or_repo: str | Path) -> Path:
     path = Path(path_or_repo)
-    return path / 'GTAP12_matching.xlsx' if path.is_dir() else path
+    if path.is_dir():
+        return find_data_file('GTAP12_matching.xlsx', base=path)
+    return path
 
 
 def _header_indices(ws) -> dict[str, int]:
@@ -141,6 +145,25 @@ def load_matching_rows(path_or_repo: str | Path) -> tuple[list[SectorMatch], lis
         )
 
     return sector_rows, factor_rows
+
+
+def load_parent_map(path_or_repo: str | Path) -> dict[str, str]:
+    """Legacy sub-sector code -> parent GTAP12 code, for historical pipelines.
+
+    Built from the 'Sector' sheet of GTAP12_matching.xlsx
+    ('GTAP ENTICE CODES' -> 'GTAP12'). This workbook is not NACE certification.
+    New consumers should use Registry.parent(), which exposes unresolved scopes
+    and never falls back to these labels. Codes are upper-cased; historical
+    callers retain the first occurrence of each code.
+    """
+    sector_rows, _ = load_matching_rows(path_or_repo)
+    parents: dict[str, str] = {}
+    for row in sector_rows:
+        code = row.entice_code.strip().upper()
+        parent = row.gtap12.strip()
+        if code and parent:
+            parents.setdefault(code, parent)
+    return parents
 
 
 def find_sector_match(

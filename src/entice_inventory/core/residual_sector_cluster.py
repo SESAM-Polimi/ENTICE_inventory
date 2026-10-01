@@ -4,7 +4,7 @@ from collections import OrderedDict, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
-from matching_utils import load_matching_rows
+from entice_inventory.core.matching_utils import load_matching_rows
 
 
 def _string(value) -> str:
