@@ -24,6 +24,8 @@ Navigate to [baseline and source chain](#the-release-reference), [recovery](#why
 
 ## Repository integration and publication
 
+Publication completed on 1 October 2026: [ENTICE_inventory](https://github.com/SESAM-Polimi/ENTICE_inventory) is the public code repository; [ENTICE_inventory_archive](https://github.com/SESAM-Polimi/ENTICE_inventory_archive) retains the original private history. A fresh clone from GitHub was checked before changing visibility. Its complete reachable history excludes the three file names listed below, including both historical locations of the licensed totals workbook.
+
 The original private repository integrates all reconstruction and registry changes in merge `b5382268ccc051cac222116e7e62eb1af40ff17e`. Its first parent is the original main `14fc2bf52802ca1572efd557de15c15cf4abf77d`, also preserved by the annotated tag `backup/main-before-registry-2026-10-01`. Verified Git bundles preserve the complete history before and after integration, alongside the pre-merge working tree and staged/unstaged patches.
 
 The public code history excludes both historical paths of the numerical `GTAP12_X.xlsx` workbook and the personal `Run.py`/`paths.yml` files. The original history remains in the private archive repository and on SharePoint. Public commit identifiers differ from the original private identifiers; a backup tag in the filtered history represents the corresponding code state without excluded files. The original main has not been lost or overwritten.
@@ -50,6 +52,7 @@ The initial transfer contains **1,170 files (approximately 2.47 GB)**. Each dest
 
 The pipeline, exporter and QA defaults now resolve from one local setting, `data_root` in ignored `paths.local.json`, or `ENTICE_DATA_ROOT`. Licensed totals resolve from `Repository inputs/GTAP12_X.xlsx`. The exporter now defaults to the normal MARIO folder instead of the abandoned `MARIO inventories copy` location. Repository instructions include configuration and installation examples. Historical audit paths remain preserved as provenance; the archive manifest maps each source to its new location.
 
+All 23 tests passed in the pinned producer environment, including three configuration/path tests. Read-only checks found the eight baseline matrices, source/output directories, trade workbook and licensed totals under the configured group SharePoint root. This verifies the migration and path resolution; it does not certify a full MRIO rebuild.
 
 ## The release reference
 
@@ -559,7 +562,7 @@ python scripts/audit_d24_baseline.py \
   --published-zip /path/to/published_d24.zip \
   --cleaning-dir /path/to/Inventory\ cleaning \
   --matching data/GTAP12_matching.xlsx \
-  --gtap-totals data/GTAP12_X.xlsx \
+  --gtap-totals '/path/to/Data split/ENTICE inventory/Repository inputs/GTAP12_X.xlsx' \
   --output-dir build/audits/my_run
 ```
 
