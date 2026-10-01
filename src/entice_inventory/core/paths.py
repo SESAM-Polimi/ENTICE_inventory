@@ -1,10 +1,9 @@
 """Project paths and data-file resolution.
 
-Auxiliary workbooks (GTAP12_matching.xlsx, GTAP12_X.xlsx, Regions_clusters.xlsx)
-live in ``<project_root>/data``. ``find_data_file`` locates them there, while
-still honouring an explicit ``base`` directory passed by a caller (so the
-upstream ``make_inventory(repo_path=...)`` API keeps working whether it is given
-the project root or the data folder directly).
+Classification workbooks live in ``<project_root>/data``. Licensed GTAP totals
+live in the configured shared data root. ``find_data_file`` honours an explicit
+``base`` directory first, so ``make_inventory(repo_path=...)`` accepts either
+the project root or a data folder directly.
 """
 
 from __future__ import annotations
@@ -51,10 +50,10 @@ def project_data_root(required: bool = False) -> Path:
 
 
 def find_data_file(name: str, base: str | Path | None = None) -> Path:
-    """Resolve a bundled data workbook by name.
+    """Resolve a classification or externally supplied data workbook by name.
 
-    Search order: ``base/name``, ``base/data/name``, then ``DATA_DIR/name``.
-    Licensed GTAP totals additionally resolve in the configured shared data root.
+    Search order: ``base/name``, ``base/data/name``, the configured shared
+    location for licensed GTAP totals, then ``DATA_DIR/name``.
     Returns the first path that exists, or ``DATA_DIR/name`` as a default so the
     caller gets a sensible (if missing) path to report.
     """
