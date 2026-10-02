@@ -1,0 +1,1159 @@
+{
+  "date": "2026-10-02",
+  "project_root": "Data split",
+  "private_root": "eNextGen ENTICE / Inventory archive",
+  "policy": "No source numerical edits. Private copies verified before removal from project storage. Placeholder files renamed without asserting content verification. Remote cloud sync not verified.",
+  "actions": [
+    {
+      "source": "project:Inventory generation/Repository backups/.DS_Store",
+      "destination": "private_archive:Repository backups/.DS_Store",
+      "sha256": "d53f32cf8f07cd5f6c9d6ba9566017646adb79116414a087979d9904ea51b16c",
+      "reason": "Private original Git history; excluded from public and consortium storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository backups/2026-10-01-before-main-merge/backup.json",
+      "destination": "private_archive:Repository backups/2026-10-01-before-main-merge/backup.json",
+      "sha256": "baec5050a2b1eb5d23f3f2c7ed40f5b89a652569a3da0fdf4bb06aa6aeb042cc",
+      "reason": "Private original Git history; excluded from public and consortium storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository backups/2026-10-01-before-main-merge/merged-history-private.bundle",
+      "destination": "private_archive:Repository backups/2026-10-01-before-main-merge/merged-history-private.bundle",
+      "sha256": "1142540f55513a70a1e1494ee98827d164db802772958b4103ff4b14d78692ab",
+      "reason": "Private original Git history; excluded from public and consortium storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository backups/2026-10-01-before-main-merge/original-history.bundle",
+      "destination": "private_archive:Repository backups/2026-10-01-before-main-merge/original-history.bundle",
+      "sha256": "398d3c55d322ef89f6578653c300e93802a855308fbe2db157b029eefca57700",
+      "reason": "Private original Git history; excluded from public and consortium storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository backups/2026-10-01-before-main-merge/staged.patch",
+      "destination": "private_archive:Repository backups/2026-10-01-before-main-merge/staged.patch",
+      "sha256": "70fd289976a0aca67c9b1896f74c7b03699d56484d2b60d96c10300850d55e26",
+      "reason": "Private original Git history; excluded from public and consortium storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository backups/2026-10-01-before-main-merge/unstaged.patch",
+      "destination": "private_archive:Repository backups/2026-10-01-before-main-merge/unstaged.patch",
+      "sha256": "d180237f4e524bf808072914f6318e14a39f3845e89504b415f852abb4a81d6d",
+      "reason": "Private original Git history; excluded from public and consortium storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository backups/2026-10-01-before-main-merge/working-tree-before-merge.tar.gz",
+      "destination": "private_archive:Repository backups/2026-10-01-before-main-merge/working-tree-before-merge.tar.gz",
+      "sha256": "8f584dfd08d1ba30fa72e9a99b81a96c2315e4af981cf21c482d30ffa69cf0a6",
+      "reason": "Private original Git history; excluded from public and consortium storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository backups/2026-10-01-publication/public-history.bundle",
+      "destination": "private_archive:Repository backups/2026-10-01-publication/public-history.bundle",
+      "sha256": "002f8e26fda1b34fedc7d1948c897c6389f486a8d5452c39ec501b5e41217f22",
+      "reason": "Private original Git history; excluded from public and consortium storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Archive records/copy_verified.py",
+      "destination": "private_archive:Archive records/copy_verified.py",
+      "sha256": "4a208344aeeb7fca07ea4d5d9526eabb7bee157f080ee245af556440b87a8a4f",
+      "reason": "Original transfer logs and personal paths; portable summaries live in Git",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Archive records/plan-2026-10-01.json",
+      "destination": "private_archive:Archive records/plan-2026-10-01.json",
+      "sha256": "275e6e4811b2f37fe93e6e37dfc41d4f0382ea180b011bfebeb923bf14bb1058",
+      "reason": "Original transfer logs and personal paths; portable summaries live in Git",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Archive records/publication-2026-10-01.json",
+      "destination": "private_archive:Archive records/publication-2026-10-01.json",
+      "sha256": "d76c36553d990dbc3b5ae94c9a11cb4b682877ea216e7296912384ed5fcd5c1b",
+      "reason": "Original transfer logs and personal paths; portable summaries live in Git",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Archive records/transfer-2026-10-01.json",
+      "destination": "private_archive:Archive records/transfer-2026-10-01.json",
+      "sha256": "678ab4e19a1638febfdd4e105380f80ebe8f67584e2b04778683e34115516f9a",
+      "reason": "Original transfer logs and personal paths; portable summaries live in Git",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository inputs/Personal runners/Run.py",
+      "destination": "private_archive:Personal runners/Run.py",
+      "sha256": "d670cebe215c3784d8ea6009e161abfaa3172169d770bcb0d4478a493f9d0d3b",
+      "reason": "Historical personal scripts; not operational partner inputs",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository inputs/Personal runners/paths.yml",
+      "destination": "private_archive:Personal runners/paths.yml",
+      "sha256": "6b972e4d5ae906d498c3a49e28cc2ceb7c8cd07725d1f0d02c00d878907d2160",
+      "reason": "Historical personal scripts; not operational partner inputs",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/archive.json",
+      "destination": "private_archive:Regeneration 20261001/archive.json",
+      "sha256": "99bbcce4564fd922a27926dd41a58c64ca31648b1254ee6858a8c9c17e05cfd4",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/archive_standard.py",
+      "destination": "private_archive:Regeneration 20261001/archive_standard.py",
+      "sha256": "4e3c157fda5f03ffc152f4a6d30460f99550be6dcfbf351aafbb8867533e1a10",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/compare_inventories.py",
+      "destination": "private_archive:Regeneration 20261001/compare_inventories.py",
+      "sha256": "28c223ed748cc51a13ff58e26e14ed111cdabdfba349a813558712e8d71dde3a",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/comparison.json",
+      "destination": "private_archive:Regeneration 20261001/comparison.json",
+      "sha256": "22b965845a2540ee9be9e1a1fa830b72fb9c08f68059d9081b7db8a5dfd7eb86",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/coverage.json",
+      "destination": "private_archive:Regeneration 20261001/coverage.json",
+      "sha256": "051d22a70278a49a1d61c9b4c8fb80511454d8499c7cdd1f8a49c343b508b200",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/database/coefficients/EY.parquet",
+      "destination": "private_archive:Regeneration 20261001/database/coefficients/EY.parquet",
+      "sha256": "e459552fa5fa0a7b86134cfdd063c977ef5b3103d17660f7c2240ca79a2a2b05",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/database/coefficients/VY.parquet",
+      "destination": "private_archive:Regeneration 20261001/database/coefficients/VY.parquet",
+      "sha256": "885631611925dceddf549ee244e2b1bd48f68b3017978bc408fa5576a5cf7640",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/database/coefficients/Y.parquet",
+      "destination": "private_archive:Regeneration 20261001/database/coefficients/Y.parquet",
+      "sha256": "4f610f0416f7bfa0391dc3e045c6565dd2565c74d2902814da92760d221625cf",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/database/coefficients/e.parquet",
+      "destination": "private_archive:Regeneration 20261001/database/coefficients/e.parquet",
+      "sha256": "6ac011086e48e32deb1a3189f682afca0baca3b88a09eb6c9a6858924ee917be",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/database/coefficients/units.parquet",
+      "destination": "private_archive:Regeneration 20261001/database/coefficients/units.parquet",
+      "sha256": "f8376f38c3c6484eef3de7cd31d131fb7673ff2019cb16e62e33d0784e1fe47e",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/database/coefficients/v.parquet",
+      "destination": "private_archive:Regeneration 20261001/database/coefficients/v.parquet",
+      "sha256": "4566c10f8de26f0215686cccba80aa18ebc13b148091cb543c1a1918f8d6c5df",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/database/coefficients/z.parquet",
+      "destination": "private_archive:Regeneration 20261001/database/coefficients/z.parquet",
+      "sha256": "9f68ee1b9bd0851b110b98008f59beeff6c8192d9dd497c08f62209891380b5d",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/executed_pipeline.py",
+      "destination": "private_archive:Regeneration 20261001/executed_pipeline.py",
+      "sha256": "cff798aba808cb87ed2f3b8ce971d0f6014ef8057f48b158a7b913e87eac472e",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/export_d24_report.txt",
+      "destination": "private_archive:Regeneration 20261001/export_d24_report.txt",
+      "sha256": "6dc9ce5231b503819fa9563c6fd9c787ef3f15bd8b94dfdfcd8ae0bb1a28a11b",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/input_manifest.json",
+      "destination": "private_archive:Regeneration 20261001/input_manifest.json",
+      "sha256": "44964c6d18aec4277adb670b3eb1d5c18537cb86e516cc221449ec6151708535",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/inventory-preview.png",
+      "destination": "private_archive:Regeneration 20261001/inventory-preview.png",
+      "sha256": "34c08df497c79eb7f6eeecf7867519789d7dd9387cf9dc207bf5e7b1aad8544a",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/inventory_sums.csv",
+      "destination": "private_archive:Regeneration 20261001/inventory_sums.csv",
+      "sha256": "7ee77858a962686ec4e47d69b57532928d62b327c4f816b2ec70856f6f8a5ca5",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/mario_source_check.json",
+      "destination": "private_archive:Regeneration 20261001/mario_source_check.json",
+      "sha256": "109f8ac13e51ba50c1903cdd3753122c16ade16e9f77d4775cb6ae1dc5e4761a",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/preflight.json",
+      "destination": "private_archive:Regeneration 20261001/preflight.json",
+      "sha256": "da8bb82db9e6c56567db608a7da5d1cb53e5fd45f5276c964c786f4b7abffe08",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/producer_environment.json",
+      "destination": "private_archive:Regeneration 20261001/producer_environment.json",
+      "sha256": "b453e51e184bf6f8e5e7a95db096c26e3c980bebfa8cf5576928377f2d83abef",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/run.json",
+      "destination": "private_archive:Regeneration 20261001/run.json",
+      "sha256": "3d14e6df78910334e4da3fce89c19ac1d9c01d06c1c75f039136c3f48727974f",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/run_standard.py",
+      "destination": "private_archive:Regeneration 20261001/run_standard.py",
+      "sha256": "17cff679ff58b3ea767e634eb207d65cb17458162cf344e5271b2bc99292b34e",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/standard_run.log",
+      "destination": "private_archive:Regeneration 20261001/standard_run.log",
+      "sha256": "dfdfdb2ee909b162f7f72cf836a68a3df1e0ca8cbe9353e9abfb011ead0af921",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/summary-preview.png",
+      "destination": "private_archive:Regeneration 20261001/summary-preview.png",
+      "sha256": "2e9f6f6a7bcb34f2c30982684b6b5dc2ed2c9fcffb8df78ea6d2d6cc403ca5cd",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/trades-preview.png",
+      "destination": "private_archive:Regeneration 20261001/trades-preview.png",
+      "sha256": "6dc8479fccffbf9bdd401f3f28aa2ceb0ae847f74f8a19aa3291c422678ee58b",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/verification_summary.json",
+      "destination": "private_archive:Regeneration 20261001/verification_summary.json",
+      "sha256": "395402639a7129409014e3ea61a0f95a40371272b43b95ab9fd079a38267d821",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/visual-inspection.jsonl",
+      "destination": "private_archive:Regeneration 20261001/visual-inspection.jsonl",
+      "sha256": "595e8e71b00546bac87470120eca76c8d757175e67b21162018bc98812b12dbf",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/visual_check.log",
+      "destination": "private_archive:Regeneration 20261001/visual_check.log",
+      "sha256": "6990953392fade4a41609ebd72f87055c2746fde80ff81195cfb4eaa949823b2",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Inventories/20261001/evidence/visual_check.mjs",
+      "destination": "private_archive:Regeneration 20261001/visual_check.mjs",
+      "sha256": "93b161a1e278757c2f1b2dc4f73f4edfd989d8270e79a5d7a895803e55edb130",
+      "reason": "Technical verification and coefficient database; inventory folder contains outputs only",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Database/GTAP Power 2023/E.parquet",
+      "destination": "project:Inventory generation/Database/GTAP Power 2023/Cache/E.parquet",
+      "sha256": "006858714c9e00a3a9bdc7747a4e70abed23fe3111b659c00fb60cb3146931f4",
+      "reason": "Preserved D2.4 MARIO baseline cache; no numerical change",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Database/GTAP Power 2023/EY.parquet",
+      "destination": "project:Inventory generation/Database/GTAP Power 2023/Cache/EY.parquet",
+      "sha256": "04d66a06c6a61b4bbec3164e37e183b74ee674a41d7404faa8a4434d1fed88f5",
+      "reason": "Preserved D2.4 MARIO baseline cache; no numerical change",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Database/GTAP Power 2023/V.parquet",
+      "destination": "project:Inventory generation/Database/GTAP Power 2023/Cache/V.parquet",
+      "sha256": "bb6efdcb04e9813b34bd97f7a52e2d927a87b80c8bd80926c931399cdf72086d",
+      "reason": "Preserved D2.4 MARIO baseline cache; no numerical change",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Database/GTAP Power 2023/VY.parquet",
+      "destination": "project:Inventory generation/Database/GTAP Power 2023/Cache/VY.parquet",
+      "sha256": "8cfbe8852e6657c5a84f7dd549717616c67c8aff3a3744c99981a8deaf168739",
+      "reason": "Preserved D2.4 MARIO baseline cache; no numerical change",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Database/GTAP Power 2023/X.parquet",
+      "destination": "project:Inventory generation/Database/GTAP Power 2023/Cache/X.parquet",
+      "sha256": "36402e2cccd00cf5b8c260e78e1828e39ce1125d50158db9359fc7e9077008e7",
+      "reason": "Preserved D2.4 MARIO baseline cache; no numerical change",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Database/GTAP Power 2023/Y.parquet",
+      "destination": "project:Inventory generation/Database/GTAP Power 2023/Cache/Y.parquet",
+      "sha256": "cbaf309ea5f45b3f42a038b43276a064d779747f770790a728b66aef8a9e3bf4",
+      "reason": "Preserved D2.4 MARIO baseline cache; no numerical change",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Database/GTAP Power 2023/Z.parquet",
+      "destination": "project:Inventory generation/Database/GTAP Power 2023/Cache/Z.parquet",
+      "sha256": "59c37eef50ae5d3371992ee7166a62241b19405296dd0c08ebc0614e555b34c5",
+      "reason": "Preserved D2.4 MARIO baseline cache; no numerical change",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Database/GTAP Power 2023/units.parquet",
+      "destination": "project:Inventory generation/Database/GTAP Power 2023/Cache/units.parquet",
+      "sha256": "1b611e6d0204ddace95b283eee1c6e5a3db7009d61852567a42d1fca963ef644",
+      "reason": "Preserved D2.4 MARIO baseline cache; no numerical change",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository inputs/GTAP12_X.xlsx",
+      "destination": "project:Inventory generation/Database/GTAP Power 2023/Cache/GTAP12_X.xlsx",
+      "sha256": "08da5201b8ac93f470372030891489f356f248fa27e4538738870072f079f30b",
+      "reason": "Derived licensed output totals used for weights, caps and QA",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Repository inputs/.DS_Store",
+      "destination": "private_archive:Personal runners/Repository-inputs.DS_Store",
+      "sha256": "f7af52b03aec4ad8d296e323a8dc4eb624ca3200817951bb7a517a3510b98d8f",
+      "reason": "Retained folder metadata",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Sectors list/GTAP HS concordance.xlsx",
+      "destination": "project:Inventory generation/Classifications/_sources/GTAP HS concordance.xlsx",
+      "sha256": "c8267296f2f832e68060174339ed7ee2a205d32464a7e1177c7cc833ca5a9706",
+      "reason": "Preserved source classification workbooks",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Sectors list/NACERev2_ISIC4_Table.xls",
+      "destination": "project:Inventory generation/Classifications/_sources/NACERev2_ISIC4_Table.xls",
+      "sha256": "c7709c5a24267af3195f71fd053b0dd016de16fa25ad6ddf6eb0584588aa8a98",
+      "reason": "Preserved source classification workbooks",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Sectors list/New sectors classification.xlsx",
+      "destination": "project:Inventory generation/Classifications/_sources/New sectors classification.xlsx",
+      "sha256": null,
+      "reason": "Preserved source classification workbooks",
+      "copied_to_private_archive": false,
+      "content_verified": false
+    },
+    {
+      "source": "project:Inventory generation/Sectors list/Regions in models.xlsx",
+      "destination": "project:Inventory generation/Classifications/_sources/Regions in models.xlsx",
+      "sha256": "ae6594f797dc6feccf4fe32aa69dbf1fef42b8e1c20e20b6e5c9915293d2f83e",
+      "reason": "Preserved source classification workbooks",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Sectors list/Rueda_Cantuche2020_Supplementary_GTAP9_NACE2.docx",
+      "destination": "project:Inventory generation/Classifications/_sources/Rueda_Cantuche2020_Supplementary_GTAP9_NACE2.docx",
+      "sha256": "cd3693a2fad647d8e051567bfe80f5780667e82b7f7c692d11aaa6b4d3cc440c",
+      "reason": "Preserved source classification workbooks",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Sectors list/Sectors list GTAP-NACE-ENTICE.xlsx",
+      "destination": "project:Inventory generation/Classifications/_sources/Sectors list GTAP-NACE-ENTICE.xlsx",
+      "sha256": "7fe864cb7258ec25c90a61a770d076661d9ac447f3506cfeeb52c14d82447906",
+      "reason": "Preserved source classification workbooks",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Sectors list/region_clustering.xlsx",
+      "destination": "project:Inventory generation/Classifications/_sources/region_clustering.xlsx",
+      "sha256": "34ebb18214328cc168f57838105b4fd8817a0b172bb7282b8c86b5b20adad3f4",
+      "reason": "Preserved source classification workbooks",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Sectors list/sectors_of_interest_revPOLIMI.xlsx",
+      "destination": "project:Inventory generation/Classifications/_sources/sectors_of_interest_revPOLIMI.xlsx",
+      "sha256": "ee69d00cbc1b61fb859476d112ed3fe99f6215269bbf1fd3935b0b29bd833e01",
+      "reason": "Preserved source classification workbooks",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/CRPSEC.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/CRPSEC.csv",
+      "sha256": "9a3ba50a6ee82405d94b8602b2514d4fb4557f1fb3a366e2b8e059e2dbf12e6f",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/EXIOIOT.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/EXIOIOT.csv",
+      "sha256": "829a5a98baec516d9392db14f694b8a67bc4b95d58a7611fb96e2830610948c9",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/FRTCOM.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/FRTCOM.csv",
+      "sha256": "ff461f6c87601c290c0e4afa7a250857dde6d98040708da44b00f70eb64a2cd6",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/FRTUSESHR.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/FRTUSESHR.csv",
+      "sha256": "ac4a6d85deafb37cb76e11a2056eb12f88e3b55728d3ddacc525b53d7f34e641",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/GCEROWS.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/GCEROWS.csv",
+      "sha256": "cbbc689e69803dbedc73cb4c6397be69b969479b55dfa24231d4a30f4d2fe945",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/KFCOSTS.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/KFCOSTS.csv",
+      "sha256": "375f50c1e01556600c765cd8872cb5dbf3ea66bbca03b68be03b755e22846145",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/KFCOSTSHR.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/KFCOSTSHR.csv",
+      "sha256": "90fcfaf2bee6ff637e921bb3c730ba4a9dfdeaa836d43692c8d5bb205c5243ff",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/MUTSEC.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/MUTSEC.csv",
+      "sha256": "ab58c453770f00aee2e83b552c37950c8acb38e3e03b68bddde8096d2d636f0b",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/NFCOSTS.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/NFCOSTS.csv",
+      "sha256": "37089d5c7b67da50206092d6ab82e5916e61463f2b0f8153f3534afc68cf720c",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/NFCOSTSHR.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/NFCOSTSHR.csv",
+      "sha256": "bc21bbcba71afdce884318e23ad3f50607700d0f4b3f03a9ea78c0cda55f1b4a",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/PFCOSTS.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/PFCOSTS.csv",
+      "sha256": "1019f06b47f382c935bb50dcbcb6d7b3f0cd54701337259ccd4fbd23c17334f3",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/PFCOSTSHR.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/PFCOSTSHR.csv",
+      "sha256": "dfc086ca7f902ba4515ac73fbd7b6d1b004f5bb9a814165ae5e2096f27d61e64",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/costsup.gdx",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/costsup.gdx",
+      "sha256": "4aac6f304edb9cda9007459a920eefb19277b77ba899f7a7921ee0f0c2e8f974",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/splttargs.gdx",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/splttargs.gdx",
+      "sha256": "bc9e0c96c122999cad3bc16cb0c5ac4e8f1c9b64da75dd672be92ac2f7696038",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May27/splttargs.xlsx",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/May27/splttargs.xlsx",
+      "sha256": "ee9444fceb1412d5ace3469a1561d18c673255660cd057bee6eb88280df733bb",
+      "reason": "Older delivery: 11 exact duplicates plus four different retained versions",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May13/GTAP sectors H5.xlsx",
+      "destination": "project:Inventory generation/Classifications/_sources/Purdue/GTAP sectors H5.xlsx",
+      "sha256": "cbd5fb51e743562e7a15a9773a75c24971cb509d0d4e433484b7c37fd51ecced",
+      "reason": "May13 trade source or trade concordance retained by data type",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May13/GTAP_HS_mapping.xlsx",
+      "destination": "project:Inventory generation/Classifications/_sources/Purdue/GTAP_HS_mapping.xlsx",
+      "sha256": "7aa202db4de6e517468126d5de69e5763ece00635d0c93b62d68d0694562b804",
+      "reason": "May13 trade source or trade concordance retained by data type",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May13/trade.gdx",
+      "destination": "project:Data collection/PURDUE/Shared material/Trades/trade.gdx",
+      "sha256": "459bb8decf1ae6ed634f2ad2ef9b67be9ea514f870499d2ac0d7cea561c94507",
+      "reason": "May13 trade source or trade concordance retained by data type",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/May13/trade.xlsx",
+      "destination": "project:Data collection/PURDUE/Shared material/Trades/trade.xlsx",
+      "sha256": "e3d67566acfe0c8771a954774ff96463fbaac597f185f049fde293f41495493d",
+      "reason": "May13 trade source or trade concordance retained by data type",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/CMDEMD.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/CMDEMD.csv",
+      "sha256": "d3b6f556222b90079bfc0043cb4e068ce346a2b657457135faba23afb1ae6fe8",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/COPCOSTS.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/COPCOSTS.csv",
+      "sha256": "40f1a4dffbe371071257a1d39ddd42ff7ad428d738efa6ba4a006319d1d07054",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/COPSEC.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/COPSEC.csv",
+      "sha256": "46c610d3a1b9955ca68db1a85673755f765ebef922fa341b77b8b2aafc76c475",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/CRPSEC.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/CRPSEC.csv",
+      "sha256": "9a3ba50a6ee82405d94b8602b2514d4fb4557f1fb3a366e2b8e059e2dbf12e6f",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/EXIOBASE_maps.xlsx",
+      "destination": "project:Inventory generation/Classifications/_sources/Purdue/EXIOBASE_maps.xlsx",
+      "sha256": "d26028bd298b85e1924173aa001686f64f4d994695ed8736e3d0f018d82e74b3",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/EXIOIOT.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/EXIOIOT.csv",
+      "sha256": "829a5a98baec516d9392db14f694b8a67bc4b95d58a7611fb96e2830610948c9",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/FRTCOM.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/FRTCOM.csv",
+      "sha256": "ff461f6c87601c290c0e4afa7a250857dde6d98040708da44b00f70eb64a2cd6",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/FRTUSESHR.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/FRTUSESHR.csv",
+      "sha256": "ac4a6d85deafb37cb76e11a2056eb12f88e3b55728d3ddacc525b53d7f34e641",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/GCEROWS.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/GCEROWS.csv",
+      "sha256": "cbbc689e69803dbedc73cb4c6397be69b969479b55dfa24231d4a30f4d2fe945",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/GlobalSet.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/GlobalSet.csv",
+      "sha256": "33188e0515fce069fc423e9e7fc2e428d124fd101886e0d87bb9c77e77f3f9c5",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/KFCOSTS.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/KFCOSTS.csv",
+      "sha256": "375f50c1e01556600c765cd8872cb5dbf3ea66bbca03b68be03b755e22846145",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/KFCOSTSHR.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/KFCOSTSHR.csv",
+      "sha256": "90fcfaf2bee6ff637e921bb3c730ba4a9dfdeaa836d43692c8d5bb205c5243ff",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/MINMSEC.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/MINMSEC.csv",
+      "sha256": "dce415318a99b159fa4aff0e67ce932af441fc3f9675a07f73a54530668ba238",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/MINSUP.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/MINSUP.csv",
+      "sha256": "7a3b0744504c41e65c99e556cb0541055fba295a21f8920508d46d3fe6f74a58",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/MUTSEC.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/MUTSEC.csv",
+      "sha256": "ab58c453770f00aee2e83b552c37950c8acb38e3e03b68bddde8096d2d636f0b",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/NFCOSTS.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/NFCOSTS.csv",
+      "sha256": "37089d5c7b67da50206092d6ab82e5916e61463f2b0f8153f3534afc68cf720c",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/NFCOSTSHR.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/NFCOSTSHR.csv",
+      "sha256": "45ddd0c0f95aa90da9b27373560ce0a3f99bf39de48316d57646e6a061aa1d6b",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/PFCOSTS.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/PFCOSTS.csv",
+      "sha256": "1019f06b47f382c935bb50dcbcb6d7b3f0cd54701337259ccd4fbd23c17334f3",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/PFCOSTSHR.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/PFCOSTSHR.csv",
+      "sha256": "dfc086ca7f902ba4515ac73fbd7b6d1b004f5bb9a814165ae5e2096f27d61e64",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/REG.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/REG.csv",
+      "sha256": "756defcf2ac3f9189da1207a048cbc3e9ece6fb8f6ba867706567bc46ccd63d0",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/SUPCATS.csv",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/Supporting data/SUPCATS.csv",
+      "sha256": "592164f585582a237ac609413cff119664965fead52c68df163db5a0a55810b0",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/costsup.gdx",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/costsup.gdx",
+      "sha256": "a6e444a8f136bfe54ac104237289243561abcde1a74abe5534e1f2a033f073b2",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/costsup.xlsx",
+      "destination": "project:Data collection/PURDUE/Shared material/Cost structures/costsup.xlsx",
+      "sha256": "1cd8a5627afede867084fe86f4d30b93fb3b26dceea2daa1f376ee3f25488502",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/splttargs.gdx",
+      "destination": "project:Data collection/PURDUE/Shared material/Output and trade targets/splttargs.gdx",
+      "sha256": "68c3909c415adeb181bfa14dd9bb14bec6343c8dcf17652378023a5dc78e3dda",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/June1/splttargs.xlsx",
+      "destination": "project:Data collection/PURDUE/Shared material/Output and trade targets/splttargs.xlsx",
+      "sha256": "3a2751029418eee39a83e18589632dffe1816f6f0f9d3e149e28a967706f4f97",
+      "reason": "June1 data retained by content; supporting datasets are not declared obsolete",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/GTAP_EXIOBASE_maps.xlsx",
+      "destination": "project:Inventory generation/Classifications/_sources/Purdue/GTAP_EXIOBASE_maps.xlsx",
+      "sha256": "9e13fe6f0e973f525b1560a6dad278d837d8f8bec6dc619256294cf4dcdc762e",
+      "reason": "Sector and geography mapping source",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/PURDUE/Shared material/GDX_to_excel.py",
+      "destination": "project:Data collection/PURDUE/Shared material/_old/GDX_to_excel.py",
+      "sha256": "5ccc477ef2a1042658d2021c9c122910a5cb867c8b12e9913049205606cd985f",
+      "reason": "Historical conversion helper; raw containers and extracted data retained",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of natural magnesium carbonate \"magnesite\"+magnesia, fused or dead-burned (sintered).xlsx",
+      "destination": "project:Inventory generation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Mining of natural magnesium carbonate magnesite+magnesia, fused or dead-burned (sintered).xlsx",
+      "sha256": "a7cb9d627eadcabb723dd3bf4ed6c69eaf79aa344c803ce5069749088cc49707",
+      "reason": "Remove SharePoint-incompatible filename characters; workbook bytes unchanged",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of magnesium: unwrought, articles.xlsx",
+      "destination": "project:Inventory generation/Data collection/Inventory cleaning/MARIO inventories/Add_sector_Manufacture of magnesium - unwrought, articles.xlsx",
+      "sha256": "5e05a102d39b1ea8190bb08d85d62beed58b662235adf6426ce5f80ac9b9bded",
+      "reason": "Remove SharePoint-incompatible filename characters; workbook bytes unchanged",
+      "copied_to_private_archive": false,
+      "content_verified": true
+    },
+    {
+      "source": "project:Data collection/ICCS/01 Traditional cement/COST STRUCTURE BY COUNTRY/Costa Rica_Manufacture of traditional cementManufacture of cement, lime, gypsum and concrete products, cement and gypsum and other non-metallic minerals, n.e.c..xlsx",
+      "destination": "project:Data collection/ICCS/01 Traditional cement/COST STRUCTURE BY COUNTRY/Costa Rica cement.xlsx",
+      "sha256": null,
+      "reason": "Shorten repeated activity text in a supporting filename",
+      "copied_to_private_archive": false,
+      "content_verified": false
+    },
+    {
+      "source": "project:Data collection/ICCS/01 Traditional cement/support/Costa Rica_Manufacture of traditional cementManufacture of cement, lime, gypsum and concrete products, cement and gypsum and other non-metallic minerals, n.e.c..xlsx",
+      "destination": "project:Data collection/ICCS/01 Traditional cement/support/Costa Rica cement.xlsx",
+      "sha256": null,
+      "reason": "Shorten repeated activity text in a supporting filename",
+      "copied_to_private_archive": false,
+      "content_verified": false
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/audit_reports/mario_inventories_copy_audit.md",
+      "destination": "private_archive:Legacy audits/mario_inventories_copy_audit.md",
+      "sha256": "65dcebe7aebd17b2c722bd4ca58b456af6a459ef935684d35636500e86099173",
+      "reason": "Historical diagnostics kept outside partner storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/audit_reports/mario_inventories_copy_sheet_audit.csv",
+      "destination": "private_archive:Legacy audits/mario_inventories_copy_sheet_audit.csv",
+      "sha256": "40a85f1bec232e9b0788b11f8acfad1663cecfb0d71391e1ad265acfaf91e853",
+      "reason": "Historical diagnostics kept outside partner storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/audit_reports/mario_inventories_copy_summary.json",
+      "destination": "private_archive:Legacy audits/mario_inventories_copy_summary.json",
+      "sha256": "332dc64b0b3fa50210ddb45ecb553e02ab4bd908660d0acfc193d99510a0cb79",
+      "reason": "Historical diagnostics kept outside partner storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/audit_reports/mario_inventories_copy_workbook_audit.csv",
+      "destination": "private_archive:Legacy audits/mario_inventories_copy_workbook_audit.csv",
+      "sha256": "bf506b0ed2fa0af5c64e6bb25b1551a8bc2a7c8811d9d74a019a3d23b72f2f26",
+      "reason": "Historical diagnostics kept outside partner storage",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/Recovery notes.txt",
+      "destination": "private_archive:ZIR recovery/2026-10-01/Recovery notes.txt",
+      "sha256": "95b5b269e1882f6f260ac43cb87eb8a2cb23f9bd05f1e3e74e6da657cbd23dd1",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/ZIR - Manufacture of refined zinc.recovery.json",
+      "destination": "private_archive:ZIR recovery/2026-10-01/ZIR - Manufacture of refined zinc.recovery.json",
+      "sha256": "54fe06d43a2c9ba96cf1065ce1a897b50611af0878867d668a9f9f765a6afef9",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/ZIR - Manufacture of refined zinc.xlsx",
+      "destination": "private_archive:ZIR recovery/2026-10-01/ZIR - Manufacture of refined zinc.xlsx",
+      "sha256": "a30d9899db104cb096201f639b15c8354fee8af003cb8026c3d6a3a08aa7b050",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/followup_manifest.json",
+      "destination": "private_archive:ZIR recovery/2026-10-01/followup_manifest.json",
+      "sha256": "889814d196db1fbb60bffefbfc0b0b7fa14db1acc39ab71e9aabb3dc5f2374d0",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/rebuild_inputs/Add_sector_Manufacture of refined zinc.xlsx",
+      "destination": "private_archive:ZIR recovery/2026-10-01/rebuild_inputs/Add_sector_Manufacture of refined zinc.xlsx",
+      "sha256": "7a97423f0c84957a25f5edb674075cb301df44624c3992540e6f46dbd488289b",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/rebuild_inputs/ZIR/e.parquet",
+      "destination": "private_archive:ZIR recovery/2026-10-01/rebuild_inputs/ZIR/e.parquet",
+      "sha256": "7ebd1bbe22fcc23f5f42d9399a761dd62632c32b582942eeb358432d48622a59",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/rebuild_inputs/ZIR/units.parquet",
+      "destination": "private_archive:ZIR recovery/2026-10-01/rebuild_inputs/ZIR/units.parquet",
+      "sha256": "5669b27c5dad7a07b177526ba9ed25fe4f904a4b78fb0ab81e9aba47e9dd04ef",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/rebuild_inputs/ZIR/v.parquet",
+      "destination": "private_archive:ZIR recovery/2026-10-01/rebuild_inputs/ZIR/v.parquet",
+      "sha256": "f625fd0bf999554526b22cc5d43d3670bf766566b6b0fd726806b8fa579aa2d0",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/rebuild_inputs/ZIR/z.parquet",
+      "destination": "private_archive:ZIR recovery/2026-10-01/rebuild_inputs/ZIR/z.parquet",
+      "sha256": "1d9309d3b09629fbf246eb969886f9f3cd1a887ee20c05f41e7fa3be9cafd432",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/rebuild_inputs/coefficient_input_capture.json",
+      "destination": "private_archive:ZIR recovery/2026-10-01/rebuild_inputs/coefficient_input_capture.json",
+      "sha256": "116f4173276d8084ed52ef07c0c77114867125370b70f43949a9a6ba47bdfd3b",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/rebuild_inputs/trade.xlsx",
+      "destination": "private_archive:ZIR recovery/2026-10-01/rebuild_inputs/trade.xlsx",
+      "sha256": "e3d67566acfe0c8771a954774ff96463fbaac597f185f049fde293f41495493d",
+      "reason": "Recovered release candidate and reproducibility evidence retained privately",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/Required manual checks.txt",
+      "destination": "private_archive:Personal runners/Required manual checks.txt",
+      "sha256": "c2932e12564c665362435dbd22dbefb08a67c398973865bb353f8f53acc6db83",
+      "reason": "Historical technical checklist or personal runner",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    },
+    {
+      "source": "project:Inventory generation/Data collection/Inventory cleaning/Startup_for_adding sectors.py",
+      "destination": "private_archive:Personal runners/Startup_for_adding sectors.py",
+      "sha256": "44bcb15253bdab03fb61a3ecafee3b33c7520f902de1a80046657e889c28b637",
+      "reason": "Historical technical checklist or personal runner",
+      "copied_to_private_archive": true,
+      "content_verified": true
+    }
+  ],
+  "verification": {
+    "verified_unchanged": {
+      "baseline_matrices": 8,
+      "mario_inputs": 68,
+      "reference_inventories": 68,
+      "regenerated_inventories": 67
+    },
+    "configured_paths_present": 14,
+    "verification_scope": "Baseline matrices are byte-identical. XLSX files either match the run hash or all worksheet/value parts and original workbook relationships match preserved local workbooks. Added customXml relationships and package metadata changes are recorded separately.",
+    "inventories_folder_contains_only_67_excel_files": true,
+    "move_counts": {
+      "private": 61,
+      "project": 67
+    },
+    "hash_verified_moves": 125,
+    "project_file_count": 552,
+    "longest_local_path": 384,
+    "path_name_candidates": [],
+    "cloud_sync_confirmed": false,
+    "xlsx_package_metadata_updates_count": 203,
+    "updated_packages_matching_original_run_snapshot_count": 203
+  },
+  "classification_verification": {
+    "sheets": {
+      "ENTICE sectors": 88,
+      "Activity scopes": 33,
+      "GTAP sectors": 76,
+      "Regions": 163,
+      "Region groups": 610,
+      "EXIOBASE bridge": 345,
+      "Legacy concordance": 178,
+      "Partner vocabulary": 3302,
+      "Working catalogue": 187,
+      "Source concordances": 621,
+      "Sector": 200,
+      "Factor of production": 14,
+      "Sources": 57
+    },
+    "records_match_sources": true,
+    "legacy_pipeline_records_unchanged": true,
+    "identifier_text_and_leading_zeros_preserved": true,
+    "filtered_tables": 13,
+    "rendered_all_sheets": true,
+    "note": "Preview renderer strips some numeric-looking text formatting; saved Excel cells retain the exact text identifiers."
+  },
+  "export_regression": {
+    "sector": "ZIR",
+    "record_counts": {
+      "coefficients": 14739,
+      "outputs": 163,
+      "trades": 1805
+    },
+    "numeric_records_identical": true,
+    "output_folder_contains_only_inventory": true,
+    "technical_record_saved_separately": true
+  },
+  "working_vs_published_classification": {
+    "published_rows": 181,
+    "working_rows": 187,
+    "working_only_codes": [
+      "?",
+      "CPH",
+      "FCH",
+      "ISC",
+      "QRZ",
+      "XNM",
+      "XOM"
+    ],
+    "published_only_codes": [
+      "XOO"
+    ],
+    "changed_names_or_parents": [
+      {
+        "code": "MGC",
+        "published": [
+          [
+            "Mining of natural magnesium carbonate \"magnesite\" and magnesia",
+            "OXT",
+            "Other Mining Extraction"
+          ]
+        ],
+        "working": [
+          [
+            "Mining of natural magnesium carbonate \"magnesite\"+magnesia, fused or dead-burned (sintered)",
+            "OXT",
+            "Other Mining Extraction"
+          ]
+        ]
+      },
+      {
+        "code": "NMX",
+        "published": [
+          [
+            "Manufacture of other non metallic-minerals",
+            "NMM",
+            "Non-metallic minerals"
+          ]
+        ],
+        "working": [
+          [
+            "Manufacture of other non metallic minerals",
+            "NMM",
+            "Non-metallic minerals"
+          ]
+        ]
+      },
+      {
+        "code": "PGM",
+        "published": [
+          [
+            "Mining of platinum group metals",
+            "OXT",
+            "Other Mining Extraction"
+          ]
+        ],
+        "working": [
+          [
+            "Mining of plantinum group metals",
+            "OXT",
+            "Other Mining Extraction"
+          ]
+        ]
+      }
+    ],
+    "note": "Lifecycle columns use different concepts: Deliverable versus Split in D2.4. Not compared as equivalent."
+  },
+  "cloud_read_status": "All seven initially unreadable inspection sources were read after reopening OneDrive; remote sync is unconfirmed."
+}

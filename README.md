@@ -8,9 +8,9 @@ plots.
 The [maintained project report](docs/baseline/README.md) is the single place for
 baseline findings, current status, agreed decisions and next steps towards D2.8
 and T2.6. This README covers installation and usage. The report is updated in
-place; new narrative audit/follow-up reports are not created. Historical build
-reproduction remains unverified; preserved source and release manifests are in
-`manifests/`.
+place; new narrative audit/follow-up reports are not created. All 67 D2.4
+inventories have been reproduced from the preserved MARIO inputs; full split
+MRIO certification remains open. Source and release manifests are in `manifests/`.
 
 `data/GTAP12_matching.xlsx` currently supplies the runner's GTAP parent mapping.
 It is not an independently validated NACE registry: the reconstruction identified
@@ -53,7 +53,7 @@ separate from the lightweight export-only installation.
 
 The numerical GTAP database and `GTAP12_X.xlsx` are not distributed with this
 repository. Supply them from your licensed source. The configured shared archive supplies the totals workbook from
-`Repository inputs/GTAP12_X.xlsx` for inventory construction and QA features
+`Database/GTAP Power 2023/Cache/GTAP12_X.xlsx` for inventory construction and QA features
 that require parent output weights. An explicit local copy at
 `data/GTAP12_X.xlsx` is also supported and ignored by Git.
 Its expected sheet is `GTAP totals`, with columns `Region`, `Full name regions`,
@@ -88,21 +88,56 @@ parent" residual clusters), `core.matching_utils` (read `GTAP12_matching.xlsx`).
 ## Running it
 
 Copy `config/paths.example.json` to `paths.local.json` in the repository root
-and set `data_root` to your local copy of `Data split/ENTICE inventory` on the
+and set `data_root` to your local copy of `Data split/Inventory generation` on the
 project SharePoint. This personal configuration is ignored by Git. Alternatively,
 set `ENTICE_DATA_ROOT`; it takes precedence over the file. `ENTICE_CONFIG` selects
 a configuration stored elsewhere, including when using an installed wheel.
 
-The shared directory contains the existing `Data collection/Inventory cleaning`,
-`Database/GTAP 2023/2023entice` and `Shared material/Purdue data collection` paths.
-`Repository inputs` holds licensed local inputs, `Reference documents` holds
-supporting documents, `Verification` holds audit/reproduction evidence, and
-`Repository backups` holds the original Git history. `Archive records` contains
-the file-by-file SHA-256 transfer manifest. Access to the public code does not
-grant access to these private files.
+The `paths` object can override individual data roles without changing source
+code. Relative paths are resolved from `data_root`, including sibling paths
+such as `../Data collection/PURDUE/Shared material/Trades/trade.xlsx`.
+`core.paths.data_path()` resolves the same roles for the driver, export and QA.
+
+The shared layout is:
+
+```text
+Data split/
+  Data collection/                 partner submissions and Shared sources.xlsx
+    PURDUE/Shared material/
+      Cost structures/            EXIOIOT, copper and supporting cost data
+      Output and trade targets/   June1 splttargs.xlsx and original GDX
+      Trades/                     May13 trade.xlsx and original GDX
+      _old/May27/                 preserved older delivery
+  Inventory generation/
+    Classifications/
+      ENTICE classifications.xlsx consolidated review view
+      _sources/                   original specialist concordances
+    Database/GTAP Power 2023/
+      Original/                   licensed original CSV archive
+      Cache/                      preserved D2.4 parquet baseline and output totals
+    Data collection/Inventory cleaning/  preserved partner/MARIO intermediates
+    Inventories/<run-id>/         generated inventory Excel files only
+```
+
+Technical evidence, personal runners and original Git backups are held in the
+private eNextGen `Inventory archive`. Portable file roles and hashes are in
+`manifests/data_sources.json` and the storage-reorganisation manifest in Git.
+Access to the code does not grant access to private or licensed payloads.
+
+`baseline_format` selects `mario_parquet` (the verified D2.4 replay), `gtap_csv`
+or `gtap_gdx`. For an original GTAP bundle, extract it first, point `paths.baseline`
+to its directory and select the corresponding format. This delegates directly
+to MARIO's native `parse_gtap`; GDX also requires its GAMS runtime dependencies.
+It does not silently fall back to cached matrices. The original CSV archive has
+been preserved, but equivalence of a fresh parse to the historical D2.4 cache
+has not yet been certified. Other MRIOs need their own parser and target adapter;
+adding their files does not make them supported automatically.
 
 End-to-end: open `scripts/run_d24_pipeline.py` and run the `#%%` cells in order.
-The exporter and QA plots use the same configured data root.
+Each run creates a new date/time directory, with short sector-code filenames.
+Coefficients and the export diagnostic report go to ignored `build/runs/<run-id>`.
+MARIO's insertion settings are unchanged. The exporter and QA plots use the same
+configured data roles.
 
 The modules with a `__main__` block can also be run from the command line, e.g.:
 
@@ -118,6 +153,25 @@ identities, source aliases and NACE Rev. 2 scopes; `gtap12.json` holds the revie
 NACE-to-GTAP bridge and historical mappings; `regions.json` holds geography and
 explicit cluster membership. They include source references and hashes. The
 older NACE CSV is preserved review evidence, not a second live mapping.
+
+`Classifications/ENTICE classifications.xlsx` is the consolidated, filterable
+review view of this registry, operational compatibility tables, preserved partner
+vocabularies and inherited crosswalks. The source of truth remains the versioned
+registry and operational mapping workbook in Git. Unreviewed NACE declarations
+and EXIOBASE crosswalks are explicitly labelled; they are not promoted to resolved
+parents. Edit the maintained source records, then regenerate the view:
+
+```bash
+python scripts/export_classification_tables.py --output-dir build/classifications
+node scripts/build_classification_workbook.mjs \
+  build/classifications/classification_tables.json \
+  build/classifications/ENTICE-classifications.xlsx \
+  /path/to/bundled/node_modules
+```
+
+The builder uses the bundled `@oai/artifact-tool` runtime. Review the generated
+workbook before replacing the shared view. Legacy parent lookups have not been
+silently migrated to newly reviewed parents.
 
 ```bash
 python scripts/registry.py sector BVL
@@ -156,7 +210,7 @@ baseline-closure option has been removed. Full build acceptance remains open.
 
 ## Notes
 
-- The legacy personal `Run.py` and `paths.yml` are archived in SharePoint under
-  `Repository inputs/Personal runners`; they are excluded from public Git history.
+- The legacy personal `Run.py` and `paths.yml` are in the private eNextGen
+  `Inventory archive/Personal runners`; they are excluded from public Git history.
 - `.d24_split_cache.pkl` / `.d24_split_mixed_cache.pkl` are regenerable caches for
   `plot_d24_split` (`refresh_cache=True` rebuilds them); git-ignored.

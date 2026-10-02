@@ -15,6 +15,7 @@ inventory archive. Every operational path is derived from that directory.
 
 #%%
 from pathlib import Path
+from datetime import datetime
 
 import mario
 
@@ -23,20 +24,25 @@ from entice_inventory.export.build_d24_inventories import (
     update_trades_in_exported_inventories,
 )
 from entice_inventory.export import plot_d24_split
-from entice_inventory.core.paths import project_data_root
+from entice_inventory.core.paths import project_data_root, data_path, PROJECT_ROOT
+from entice_inventory.core.baseline import load_baseline
 
 # --- Paths (all derived from BASE) ----------------------------------------- #
 BASE = project_data_root(required=True)
-INVENTORY_CLEANING = BASE / "Data collection/Inventory cleaning"
-GTAP_DB = BASE / "Database/GTAP 2023/2023entice"
-MARIO_INVENTORIES = INVENTORY_CLEANING / "MARIO inventories"
-D24_INVENTORIES = INVENTORY_CLEANING / "D2.4 inventories"
-D24_DATABASE = INVENTORY_CLEANING / "D2.4 database"
-PURDUE_TRADE = BASE / "Shared material/Purdue data collection/May13/trade.xlsx"
+RUN_ID = datetime.now().strftime('%Y%m%d-%H%M%S')
+GTAP_DB = data_path('baseline', required=True)
+MARIO_INVENTORIES = data_path('mario_inventories', required=True)
+D24_INVENTORIES = data_path('inventory_runs') / RUN_ID
+# Numerical work files and logs stay outside the partner-facing output folder.
+D24_WORK = PROJECT_ROOT / 'build' / 'runs' / RUN_ID
+D24_DATABASE = D24_WORK / 'database'
+PURDUE_TRADE = data_path('purdue_trade', required=True)
+D24_INVENTORIES.mkdir(parents=True, exist_ok=False)
+D24_WORK.mkdir(parents=True, exist_ok=False)
 
 #%%
 # 1. Baseline GTAP database (flows).
-db = mario.parse_from_parquet(str(GTAP_DB), table="IOT", mode="flows")
+db = load_baseline(GTAP_DB)
 
 #%%
 # 2. Read the MARIO add_sector inventories and apply them.
@@ -62,6 +68,7 @@ export_d24_inventories(
     output_dir=str(D24_INVENTORIES),
     tolerance=1e-12,
     inventory_sum_check_tolerance=0.01,
+    report_dir=D24_WORK,
 )
 
 #%%

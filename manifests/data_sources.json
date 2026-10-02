@@ -1,0 +1,837 @@
+{
+  "schema_version": 1,
+  "root": "Data split",
+  "review_date": "2026-10-02",
+  "selection_policy": "June1 cost and output inputs, May13 final trade inputs. Older May27 delivery retained under _old. No new merger of trade sources.",
+  "assets": [
+    {
+      "path": "Inventory generation/Classifications/_sources/Purdue/GTAP_EXIOBASE_maps.xlsx",
+      "role": "Sector and regional crosswalks",
+      "use": "Included in the consolidated classification view as inherited mappings",
+      "state": "retained",
+      "bytes": 35139,
+      "sha256": "9e13fe6f0e973f525b1560a6dad278d837d8f8bec6dc619256294cf4dcdc762e",
+      "sheets": [
+        {
+          "name": "Sectoral_maps",
+          "rows": 183,
+          "columns": 15
+        },
+        {
+          "name": "Regions_map",
+          "rows": 164,
+          "columns": 2
+        }
+      ]
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/splttargs.xlsx",
+      "role": "Output and bilateral trade targets",
+      "use": "REG, REPSEC, REPOUT and BLTTRD; June1 used by importers and preliminary export",
+      "state": "archived_previous_delivery",
+      "bytes": 1510919,
+      "sha256": "ee9444fceb1412d5ace3469a1561d18c673255660cd057bee6eb88280df733bb",
+      "sheets": [
+        {
+          "name": "GlobalSet",
+          "rows": 201,
+          "columns": 2
+        },
+        {
+          "name": "REG",
+          "rows": 164,
+          "columns": 2
+        },
+        {
+          "name": "REPSEC",
+          "rows": 38,
+          "columns": 2
+        },
+        {
+          "name": "REPOUT",
+          "rows": 1743,
+          "columns": 3
+        },
+        {
+          "name": "BLTTRD",
+          "rows": 42990,
+          "columns": 4
+        }
+      ]
+    },
+    {
+      "path": "Inventory generation/Classifications/_sources/Purdue/GTAP_HS_mapping.xlsx",
+      "role": "HS version concordances with ENTICE mapping",
+      "use": "Retained as a specialist classification source",
+      "state": "retained",
+      "bytes": 1795205,
+      "sha256": "7aa202db4de6e517468126d5de69e5763ece00635d0c93b62d68d0694562b804",
+      "sheets": [
+        {
+          "name": "H6",
+          "rows": 5614,
+          "columns": 10
+        },
+        {
+          "name": "H5",
+          "rows": 6276,
+          "columns": 6
+        },
+        {
+          "name": "H4",
+          "rows": 5638,
+          "columns": 6
+        },
+        {
+          "name": "H3",
+          "rows": 5801,
+          "columns": 6
+        },
+        {
+          "name": "H2",
+          "rows": 5441,
+          "columns": 6
+        },
+        {
+          "name": "H1",
+          "rows": 5213,
+          "columns": 6
+        },
+        {
+          "name": "H0",
+          "rows": 5390,
+          "columns": 6
+        }
+      ]
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Trades/trade.xlsx",
+      "role": "Trade values and tariff data",
+      "use": "May13 NTSCIF supplies final D2.4 trades; NTSTAR and MTRAT are retained but not used by that export",
+      "state": "retained",
+      "bytes": 16859883,
+      "sha256": "e3d67566acfe0c8771a954774ff96463fbaac597f185f049fde293f41495493d",
+      "sheets": [
+        {
+          "name": "GlobalSet",
+          "rows": 235,
+          "columns": 2
+        },
+        {
+          "name": "NEWTRDSEC",
+          "rows": 72,
+          "columns": 2
+        },
+        {
+          "name": "REG",
+          "rows": 164,
+          "columns": 2
+        },
+        {
+          "name": "NTSCIF",
+          "rows": 272146,
+          "columns": 5
+        },
+        {
+          "name": "NTSTAR",
+          "rows": 113876,
+          "columns": 5
+        },
+        {
+          "name": "MTRAT",
+          "rows": 130893,
+          "columns": 5
+        }
+      ]
+    },
+    {
+      "path": "Inventory generation/Classifications/_sources/Purdue/GTAP sectors H5.xlsx",
+      "role": "ENTICE sector and HS definitions",
+      "use": "Finalized GTAP sectors used by the exporter for descriptions; HS concordance retained",
+      "state": "retained",
+      "bytes": 465396,
+      "sha256": "cbd5fb51e743562e7a15a9773a75c24971cb509d0d4e433484b7c37fd51ecced",
+      "sheets": [
+        {
+          "name": "Finalized GTAP sectors",
+          "rows": 160,
+          "columns": 10
+        },
+        {
+          "name": "HS_6to5_codes",
+          "rows": 2257,
+          "columns": 12
+        },
+        {
+          "name": "JobID-104_Concordance_H6_to_H5",
+          "rows": 5614,
+          "columns": 4
+        }
+      ]
+    },
+    {
+      "path": "Inventory generation/Classifications/_sources/Purdue/EXIOBASE_maps.xlsx",
+      "role": "Detailed working crosswalks",
+      "use": "Retained in Classifications/_sources; not declared equivalent to GTAP_EXIOBASE_maps.xlsx",
+      "state": "retained",
+      "bytes": 70668,
+      "sha256": "d26028bd298b85e1924173aa001686f64f4d994695ed8736e3d0f018d82e74b3",
+      "sheets": [
+        {
+          "name": "Sec_targ",
+          "rows": 161,
+          "columns": 34
+        },
+        {
+          "name": "Sec_mut",
+          "rows": 317,
+          "columns": 38
+        },
+        {
+          "name": "Reg",
+          "rows": 164,
+          "columns": 7
+        },
+        {
+          "name": "GTAP_CM_ENTICE",
+          "rows": 160,
+          "columns": 9
+        }
+      ]
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/costsup.xlsx",
+      "role": "Supporting sets and fertilizer tables",
+      "use": "Contains definitions and fertilizer shares; does not contain the full EXIOIOT or COPCOSTS tables",
+      "state": "retained",
+      "bytes": 46339,
+      "sha256": "1cd8a5627afede867084fe86f4d30b93fb3b26dceea2daa1f376ee3f25488502",
+      "sheets": [
+        {
+          "name": "GlobalSet",
+          "rows": 364,
+          "columns": 2
+        },
+        {
+          "name": "REG",
+          "rows": 164,
+          "columns": 2
+        },
+        {
+          "name": "NFCOSTS",
+          "rows": 5,
+          "columns": 2
+        },
+        {
+          "name": "PFCOSTS",
+          "rows": 6,
+          "columns": 2
+        },
+        {
+          "name": "KFCOSTS",
+          "rows": 11,
+          "columns": 2
+        },
+        {
+          "name": "GCEROWS",
+          "rows": 99,
+          "columns": 2
+        },
+        {
+          "name": "MUTSEC",
+          "rows": 90,
+          "columns": 2
+        },
+        {
+          "name": "MINMSEC",
+          "rows": 16,
+          "columns": 2
+        },
+        {
+          "name": "SUPCATS",
+          "rows": 21,
+          "columns": 2
+        },
+        {
+          "name": "FRTCOM",
+          "rows": 4,
+          "columns": 2
+        },
+        {
+          "name": "CRPSEC",
+          "rows": 9,
+          "columns": 2
+        },
+        {
+          "name": "CMDEMD",
+          "rows": 143,
+          "columns": 2
+        },
+        {
+          "name": "COPSEC",
+          "rows": 4,
+          "columns": 2
+        },
+        {
+          "name": "NFCOSTSHR",
+          "rows": 517,
+          "columns": 3
+        },
+        {
+          "name": "PFCOSTSHR",
+          "rows": 6,
+          "columns": 2
+        },
+        {
+          "name": "KFCOSTSHR",
+          "rows": 11,
+          "columns": 2
+        }
+      ]
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Output and trade targets/splttargs.xlsx",
+      "role": "Output and bilateral trade targets",
+      "use": "REG, REPSEC, REPOUT and BLTTRD; June1 used by importers and preliminary export",
+      "state": "retained",
+      "bytes": 1294134,
+      "sha256": "3a2751029418eee39a83e18589632dffe1816f6f0f9d3e149e28a967706f4f97",
+      "sheets": [
+        {
+          "name": "GlobalSet",
+          "rows": 201,
+          "columns": 2
+        },
+        {
+          "name": "REG",
+          "rows": 164,
+          "columns": 2
+        },
+        {
+          "name": "REPSEC",
+          "rows": 38,
+          "columns": 2
+        },
+        {
+          "name": "REPOUT",
+          "rows": 1752,
+          "columns": 3
+        },
+        {
+          "name": "BLTTRD",
+          "rows": 43198,
+          "columns": 4
+        }
+      ]
+    },
+    {
+      "path": "Data collection/PURDUE/GTAP_energy_prices.xlsx",
+      "role": "Energy prices",
+      "use": "Average basic prices in domestic absorption for coal, oil, gas, petroleum products and electricity; USD/toe at 2017 and 2023 prices in separate sheets. Not automatically used to convert observations.",
+      "state": "retained",
+      "bytes": 30909,
+      "sha256": "ddbd3899fb6b218c665b40d3fec02861256f80da7410403a32609d7abc6263a2",
+      "sheets": [
+        {
+          "name": "2017",
+          "rows": 162,
+          "columns": 25
+        },
+        {
+          "name": "2023",
+          "rows": 165,
+          "columns": 6
+        }
+      ]
+    },
+    {
+      "path": "Data collection/PURDUE/Livestock/Bilat_trade.CSV",
+      "role": "Livestock bilateral trade",
+      "use": "REG \u00d7 REG \u00d7 LVSSEC, 160 \u00d7 160 \u00d7 25 source dimensions; million USD. Retained distinct source, not automatically merged into current D2.4 trades.",
+      "state": "retained",
+      "bytes": 10046595,
+      "sha256": "21fd3dbecefb31e5e38b583a011457e681abef22514640c571a3f310fbf2196d",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Livestock/Emission_raw.CSV",
+      "role": "Livestock emissions",
+      "use": "REG \u00d7 LVSSEC \u00d7 NGHG, 160 \u00d7 25 \u00d7 2 source dimensions; ktCO2e.",
+      "state": "retained",
+      "bytes": 185564,
+      "sha256": "b22d885ee46eba6b8b90e5ffef8a4493a13ef3e092736f588ef96ebf2f95f930",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Livestock/Feed.CSV",
+      "role": "Livestock feed use",
+      "use": "REG \u00d7 LVSSEC \u00d7 FEEDC, 160 \u00d7 25 \u00d7 12 source dimensions; tonnes.",
+      "state": "retained",
+      "bytes": 1202750,
+      "sha256": "4f605abac3bf187550984dcfc419464ad853e29b44ee700bbba7b38851a2db9b",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Livestock/Output.CSV",
+      "role": "Livestock output",
+      "use": "LVSSEC \u00d7 REG, 25 \u00d7 160 source dimensions; million USD.",
+      "state": "retained",
+      "bytes": 82025,
+      "sha256": "66d22320142cfc9c7d9548517653dd6ab5dc6c9f5453439bedf8a001bb1aa009",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/CMDEMD.csv",
+      "role": "Critical-material demand sector set",
+      "use": "Definition set retained with supporting source data",
+      "state": "retained",
+      "bytes": 2649,
+      "sha256": "d3b6f556222b90079bfc0043cb4e068ce346a2b657457135faba23afb1ae6fe8",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/COPCOSTS.csv",
+      "role": "Copper cost coefficients",
+      "use": "Used by the COPCOSTS importer",
+      "state": "retained",
+      "bytes": 475379,
+      "sha256": "40f1a4dffbe371071257a1d39ddd42ff7ad428d738efa6ba4a006319d1d07054",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/COPSEC.csv",
+      "role": "Copper sector set",
+      "use": "Used by the COPCOSTS importer",
+      "state": "retained",
+      "bytes": 63,
+      "sha256": "46c610d3a1b9955ca68db1a85673755f765ebef922fa341b77b8b2aafc76c475",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/CRPSEC.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "retained",
+      "bytes": 153,
+      "sha256": "9a3ba50a6ee82405d94b8602b2514d4fb4557f1fb3a366e2b8e059e2dbf12e6f",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/EXIOIOT.csv",
+      "role": "Cost structure source",
+      "use": "Used by the EXIOIOT importer; June1 and May27 bytes are identical",
+      "state": "retained",
+      "bytes": 39022126,
+      "sha256": "829a5a98baec516d9392db14f694b8a67bc4b95d58a7611fb96e2830610948c9",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/FRTCOM.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "retained",
+      "bytes": 63,
+      "sha256": "ff461f6c87601c290c0e4afa7a250857dde6d98040708da44b00f70eb64a2cd6",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/FRTUSESHR.csv",
+      "role": "Fertilizer use shares",
+      "use": "Supplementary dataset; not directly read by the three current inventory importers",
+      "state": "retained",
+      "bytes": 131676,
+      "sha256": "ac4a6d85deafb37cb76e11a2056eb12f88e3b55728d3ddacc525b53d7f34e641",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/GCEROWS.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "retained",
+      "bytes": 1822,
+      "sha256": "cbbc689e69803dbedc73cb4c6397be69b969479b55dfa24231d4a30f4d2fe945",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/GlobalSet.csv",
+      "role": "Combined symbol set",
+      "use": "Definition set; not an observation table",
+      "state": "retained",
+      "bytes": 6681,
+      "sha256": "33188e0515fce069fc423e9e7fc2e428d124fd101886e0d87bb9c77e77f3f9c5",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/KFCOSTS.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "retained",
+      "bytes": 189,
+      "sha256": "375f50c1e01556600c765cd8872cb5dbf3ea66bbca03b68be03b755e22846145",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/KFCOSTSHR.csv",
+      "role": "Potassium fertilizer cost shares",
+      "use": "Supplementary dataset retained",
+      "state": "retained",
+      "bytes": 261,
+      "sha256": "90fcfaf2bee6ff637e921bb3c730ba4a9dfdeaa836d43692c8d5bb205c5243ff",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/MINMSEC.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "retained",
+      "bytes": 279,
+      "sha256": "dce415318a99b159fa4aff0e67ce932af441fc3f9675a07f73a54530668ba238",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/MINSUP.csv",
+      "role": "Mineral supply and trade observations",
+      "use": "Dimensions mineral, supply category and region; units require source metadata",
+      "state": "retained",
+      "bytes": 168015,
+      "sha256": "7a3b0744504c41e65c99e556cb0541055fba295a21f8920508d46d3fe6f74a58",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/MUTSEC.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "retained",
+      "bytes": 1626,
+      "sha256": "ab58c453770f00aee2e83b552c37950c8acb38e3e03b68bddde8096d2d636f0b",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/NFCOSTS.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "retained",
+      "bytes": 81,
+      "sha256": "37089d5c7b67da50206092d6ab82e5916e61463f2b0f8153f3534afc68cf720c",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/NFCOSTSHR.csv",
+      "role": "Nitrogen fertilizer cost shares",
+      "use": "June1 differs from May27; older version preserved in _old",
+      "state": "retained",
+      "bytes": 14765,
+      "sha256": "45ddd0c0f95aa90da9b27373560ce0a3f99bf39de48316d57646e6a061aa1d6b",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/PFCOSTS.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "retained",
+      "bytes": 101,
+      "sha256": "1019f06b47f382c935bb50dcbcb6d7b3f0cd54701337259ccd4fbd23c17334f3",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/PFCOSTSHR.csv",
+      "role": "Phosphorus fertilizer cost shares",
+      "use": "Supplementary dataset retained",
+      "state": "retained",
+      "bytes": 135,
+      "sha256": "dfc086ca7f902ba4515ac73fbd7b6d1b004f5bb9a814165ae5e2096f27d61e64",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/REG.csv",
+      "role": "Region set",
+      "use": "Definition set; importers currently read REG from splttargs.xlsx",
+      "state": "retained",
+      "bytes": 2943,
+      "sha256": "756defcf2ac3f9189da1207a048cbc3e9ece6fb8f6ba867706567bc46ccd63d0",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/Supporting data/SUPCATS.csv",
+      "role": "Supply categories",
+      "use": "Definition set for production/import/export and other categories",
+      "state": "retained",
+      "bytes": 373,
+      "sha256": "592164f585582a237ac609413cff119664965fead52c68df163db5a0a55810b0",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Cost structures/costsup.gdx",
+      "role": "Original cost and supporting data container",
+      "use": "Mixed source container retained; current importers use extracted CSV files",
+      "state": "retained",
+      "bytes": 11940327,
+      "sha256": "a6e444a8f136bfe54ac104237289243561abcde1a74abe5534e1f2a033f073b2",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Output and trade targets/splttargs.gdx",
+      "role": "Original output and trade container",
+      "use": "Preserved Purdue source container; direct GDX reading not required by the current inventory exporter",
+      "state": "retained",
+      "bytes": 478911,
+      "sha256": "68c3909c415adeb181bfa14dd9bb14bec6343c8dcf17652378023a5dc78e3dda",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/Trades/trade.gdx",
+      "role": "Original trade container",
+      "use": "Preserved original corresponding to the Excel trade extraction",
+      "state": "retained",
+      "bytes": 5216384,
+      "sha256": "459bb8decf1ae6ed634f2ad2ef9b67be9ea514f870499d2ac0d7cea561c94507",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/CRPSEC.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "archived_previous_delivery",
+      "bytes": 153,
+      "sha256": "9a3ba50a6ee82405d94b8602b2514d4fb4557f1fb3a366e2b8e059e2dbf12e6f",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/EXIOIOT.csv",
+      "role": "Cost structure source",
+      "use": "Used by the EXIOIOT importer; June1 and May27 bytes are identical",
+      "state": "archived_previous_delivery",
+      "bytes": 39022126,
+      "sha256": "829a5a98baec516d9392db14f694b8a67bc4b95d58a7611fb96e2830610948c9",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/FRTCOM.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "archived_previous_delivery",
+      "bytes": 63,
+      "sha256": "ff461f6c87601c290c0e4afa7a250857dde6d98040708da44b00f70eb64a2cd6",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/FRTUSESHR.csv",
+      "role": "Fertilizer use shares",
+      "use": "Supplementary dataset; not directly read by the three current inventory importers",
+      "state": "archived_previous_delivery",
+      "bytes": 131676,
+      "sha256": "ac4a6d85deafb37cb76e11a2056eb12f88e3b55728d3ddacc525b53d7f34e641",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/GCEROWS.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "archived_previous_delivery",
+      "bytes": 1822,
+      "sha256": "cbbc689e69803dbedc73cb4c6397be69b969479b55dfa24231d4a30f4d2fe945",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/KFCOSTS.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "archived_previous_delivery",
+      "bytes": 189,
+      "sha256": "375f50c1e01556600c765cd8872cb5dbf3ea66bbca03b68be03b755e22846145",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/KFCOSTSHR.csv",
+      "role": "Potassium fertilizer cost shares",
+      "use": "Supplementary dataset retained",
+      "state": "archived_previous_delivery",
+      "bytes": 261,
+      "sha256": "90fcfaf2bee6ff637e921bb3c730ba4a9dfdeaa836d43692c8d5bb205c5243ff",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/MUTSEC.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "archived_previous_delivery",
+      "bytes": 1626,
+      "sha256": "ab58c453770f00aee2e83b552c37950c8acb38e3e03b68bddde8096d2d636f0b",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/NFCOSTS.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "archived_previous_delivery",
+      "bytes": 81,
+      "sha256": "37089d5c7b67da50206092d6ab82e5916e61463f2b0f8153f3534afc68cf720c",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/NFCOSTSHR.csv",
+      "role": "Nitrogen fertilizer cost shares",
+      "use": "June1 differs from May27; older version preserved in _old",
+      "state": "archived_previous_delivery",
+      "bytes": 15977,
+      "sha256": "bc21bbcba71afdce884318e23ad3f50607700d0f4b3f03a9ea78c0cda55f1b4a",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/PFCOSTS.csv",
+      "role": "Supporting definition set",
+      "use": "Preserved; absence from the current importer is not evidence that the data are obsolete",
+      "state": "archived_previous_delivery",
+      "bytes": 101,
+      "sha256": "1019f06b47f382c935bb50dcbcb6d7b3f0cd54701337259ccd4fbd23c17334f3",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/PFCOSTSHR.csv",
+      "role": "Phosphorus fertilizer cost shares",
+      "use": "Supplementary dataset retained",
+      "state": "archived_previous_delivery",
+      "bytes": 135,
+      "sha256": "dfc086ca7f902ba4515ac73fbd7b6d1b004f5bb9a814165ae5e2096f27d61e64",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/costsup.gdx",
+      "role": "Original cost and supporting data container",
+      "use": "Mixed source container retained; current importers use extracted CSV files",
+      "state": "archived_previous_delivery",
+      "bytes": 11739702,
+      "sha256": "4aac6f304edb9cda9007459a920eefb19277b77ba899f7a7921ee0f0c2e8f974",
+      "sheets": []
+    },
+    {
+      "path": "Data collection/PURDUE/Shared material/_old/May27/splttargs.gdx",
+      "role": "Original output and trade container",
+      "use": "Preserved Purdue source container; direct GDX reading not required by the current inventory exporter",
+      "state": "archived_previous_delivery",
+      "bytes": 476550,
+      "sha256": "bc9e0c96c122999cad3bc16cb0c5ac4e8f1c9b64da75dd672be92ac2f7696038",
+      "sheets": []
+    },
+    {
+      "path": "Inventory generation/Classifications/ENTICE classifications.xlsx",
+      "bytes": 232815,
+      "sha256": "78c0148b2a3a2a9d1e1736f1b8256a7fa1be3a2c94154fed7764328025f95021",
+      "role": "Consolidated classification review view",
+      "state": "generated_view",
+      "use": "Rebuild from the Git registry, operational mappings and preserved classification sources; not an independent live mapping.",
+      "sha256_after_cloud_reopen": "0908fd5fe0f42bfc6623fc4dfaa0ec4efca7ab2cb30d497f289b00314a25af82",
+      "bytes_after_cloud_reopen": 240996,
+      "all_saved_cells_match_generated_view": true
+    },
+    {
+      "path": "Inventory generation/Database/GTAP Power 2023/Original/2023_csv.zip",
+      "role": "Original licensed GTAP Power 2023 CSV archive",
+      "state": "preserved_original",
+      "use": "Native MARIO parsing available; numerical equivalence to D2.4 cache not yet verified",
+      "sha256": "0e9844736cbd5cd89287fd3a0da245d4c5dcfb3dc68dcfd44754e20cdc4b51d4",
+      "bytes": 956283934,
+      "members": [
+        {
+          "name": "GSDF.csv",
+          "bytes": 35537523
+        },
+        {
+          "name": "GSDFEMI.csv",
+          "bytes": 2756541236
+        },
+        {
+          "name": "GSDFNRG.csv",
+          "bytes": 888548023
+        },
+        {
+          "name": "GSDFSRCxDST.csv",
+          "bytes": 3293116122
+        },
+        {
+          "name": "GSDFXTAX.csv",
+          "bytes": 9265607
+        }
+      ],
+      "archive_bytes_verified": true,
+      "member_crc_checked": false,
+      "numerical_equivalence_to_d24_cache_verified": false
+    },
+    {
+      "path": "Inventory generation/Classifications/_sources/New sectors classification.xlsx",
+      "role": "Working classification source",
+      "use": "187 working catalogue rows, distinct from the published catalogue; additional source CPC/NACE/ISIC/HS concordances. Preserved and consolidated without activating unreviewed mappings.",
+      "state": "retained",
+      "bytes": 382433,
+      "sha256": "e1ea586a773826625c52e96bab2c54c0f1e26a74f89551f0a8654de5fd0f42b3",
+      "sheets": [
+        {
+          "name": "New GTAP sectors list",
+          "rows": 188,
+          "columns": 8
+        },
+        {
+          "name": "Outdated new GTAP sectors",
+          "rows": 180,
+          "columns": 7
+        },
+        {
+          "name": "Sectors by team",
+          "rows": 174,
+          "columns": 7
+        },
+        {
+          "name": "New GTAP - HS concordance",
+          "rows": 5613,
+          "columns": 17
+        },
+        {
+          "name": "New GTAP - CPC concordances",
+          "rows": 230,
+          "columns": 4
+        },
+        {
+          "name": "New GTAP - NACE-ISIC levels",
+          "rows": 237,
+          "columns": 4
+        },
+        {
+          "name": "GTAP-CPC",
+          "rows": 84,
+          "columns": 3
+        },
+        {
+          "name": "GTAP-ISIC-NACE",
+          "rows": 74,
+          "columns": 4
+        },
+        {
+          "name": "First draft sectors list",
+          "rows": 184,
+          "columns": 3
+        },
+        {
+          "name": "NACE-ISIC",
+          "rows": 997,
+          "columns": 5
+        }
+      ]
+    },
+    {
+      "path": "Data collection/Shared sources.xlsx",
+      "role": "Source reference index",
+      "use": "Links and notes for classifications, exchange rates, deflators and other data references.",
+      "state": "retained",
+      "bytes": 20895,
+      "sha256": "a938e55e9586dca93bf9560ebd65a4737829e11e0708a327d305653f2b88c07e",
+      "sheets": [
+        {
+          "name": "Source",
+          "rows": 29,
+          "columns": 3
+        }
+      ]
+    }
+  ],
+  "cloud_read_status": "All seven initially unavailable inspection sources became readable after the OneDrive reopen command. Remote synchronisation not verified."
+}

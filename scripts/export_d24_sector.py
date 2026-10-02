@@ -15,6 +15,7 @@ import json
 import math
 import sys
 import warnings
+from datetime import datetime
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -58,6 +59,8 @@ def main():
     ap.add_argument('--parent-policy', choices=['source', 'matching'], required=True)
     ap.add_argument('--matching', type=Path)
     ap.add_argument('--output-dir', type=Path, required=True)
+    ap.add_argument('--evidence-dir', type=Path,
+                    help='Technical record directory; defaults to ignored build/reexports/<timestamp>.')
     ap.add_argument('--tolerance', type=float, default=1e-12)
     args = ap.parse_args()
     if not math.isfinite(args.tolerance) or args.tolerance < 0:
@@ -76,7 +79,7 @@ def main():
     if len(templates) != 1:
         raise ValueError(f'Expected one usable source for {code}, found {len(templates)}; skipped: {skipped}')
     template = templates[0]
-    if any(args.output_dir.glob(f'{code} - *.xlsx')):
+    if (args.output_dir / f'{code}.xlsx').exists() or any(args.output_dir.glob(f'{code} - *.xlsx')):
         raise FileExistsError(f'{code} already exists in the output directory; choose a fresh directory.')
     frames = {name: load_sector_frame(args.coefficients_dir/f'{name}.parquet', code) for name in ('z', 'v', 'e')}
     units_frame = pd.read_parquet(args.coefficients_dir/'units.parquet')
@@ -98,7 +101,9 @@ def main():
                 'inventory_regions': len(inventories), 'trade_rows': len(trade_rows),
                 'source_sha256': hashlib.sha256(template.source_path.read_bytes()).hexdigest(),
                 'trade_workbook_sha256': hashlib.sha256(args.trade_workbook.read_bytes()).hexdigest()}
-    (args.output_dir/f'{code}.export.json').write_text(json.dumps(manifest,indent=2)+'\n')
+    evidence_dir = args.evidence_dir or Path(__file__).resolve().parents[1]/'build/reexports'/datetime.now().strftime('%Y%m%d-%H%M%S-%f')
+    evidence_dir.mkdir(parents=True, exist_ok=True)
+    (evidence_dir/f'{code}.export.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print(json.dumps(manifest,indent=2))
 
 

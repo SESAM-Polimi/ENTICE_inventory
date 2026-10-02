@@ -40,6 +40,26 @@ class SharedPathsTests(unittest.TestCase):
                 (root/'paths.local.json').write_text('{"data_root": []}')
                 with self.assertRaises(ValueError):paths.project_data_root()
 
+    def test_dataset_roles_survive_sibling_folder_moves(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.dict(os.environ, {}, clear=True):
+            root=Path(tmp).resolve();shared=root/'Inventory generation';shared.mkdir()
+            trade=root/'Data collection/PURDUE/Trades/trade.xlsx'
+            trade.parent.mkdir(parents=True);trade.write_bytes(b'path fixture')
+            config=root/'paths.json'
+            config.write_text(json.dumps({'data_root':str(shared),'paths':{
+                'purdue_trade':'../Data collection/PURDUE/Trades/trade.xlsx'}}))
+            with patch.dict(os.environ,{'ENTICE_CONFIG':str(config)}):
+                self.assertEqual(paths.data_path('purdue_trade',required=True),trade)
+                with self.assertRaises(KeyError):paths.data_path('made_up_role')
+                with self.assertRaises(FileNotFoundError):paths.data_path('baseline',required=True)
+
+    def test_invalid_dataset_path_is_not_silently_ignored(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.dict(os.environ, {}, clear=True):
+            root=Path(tmp).resolve();config=root/'paths.json'
+            config.write_text(json.dumps({'data_root':str(root),'paths':{'baseline':[]}}))
+            with patch.dict(os.environ,{'ENTICE_CONFIG':str(config)}):
+                with self.assertRaises(ValueError):paths.data_path('baseline')
+
 
 if __name__=='__main__':
     unittest.main()

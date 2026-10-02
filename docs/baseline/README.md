@@ -1,16 +1,18 @@
 # ENTICE inventory: reconstruction and implementation plan
 
-Updated 1 October 2026. This is the single maintained report for the D2.4 reconstruction, consistency findings, agreed decisions and work towards D2.8 and T2.6. Update it in place; do not create separate follow-up, decision or audit Markdown reports. The [repository README](../../README.md) is the installation and usage guide. CSV/JSON evidence and manifests retain their separate purpose: reproducible records that this report references.
+Updated 2 October 2026. This is the single maintained report for the D2.4 reconstruction, consistency findings, agreed decisions and work towards D2.8 and T2.6. Update it in place; do not create separate follow-up, decision or audit Markdown reports. The [repository README](../../README.md) is the installation and usage guide. CSV/JSON evidence and manifests retain their separate purpose: reproducible records that this report references.
 
 ## Current status and next steps
 
 The published baseline and its available source chain have been identified. Project SharePoint matches the published cached values; the damaged ZIR workbook has been recovered without changing its workbook parts. Re-exporting ZIR alone reproduces its numerical records. A clean, pinned MARIO/CVXLAB environment and the native HYE coefficient replay are available. The first canonical registry is implemented: 67 published records, 21 inactive catalogue-only records, NACE-led target resolution and 163 explicit GTAP regions. The HYE geography defect has been traced and corrected in the template importer. **Full MRIO certification remains open. The GTAP baseline must remain as supplied; its accounting discrepancies are diagnostics, not an inventory-project correction task.**
 
+The [full inventory regeneration](#full-d24-inventory-regeneration) completed on 2 October 2026 using the unchanged native MARIO workflow. All 67 distinct released sectors were recalculated from the supplied baseline and existing MARIO inputs. Their coefficient, output and trade records reproduce the operational D2.4 reference exactly. Three legacy parent-label overrides and existing numerical warnings remain visible. Verified copies use short code filenames under `Inventories/20261001` in the project SharePoint data root; originals remain unchanged.
+
 The remaining work is implementation and controlled verification. The order below reflects dependencies, with no calendar commitments:
 
 | Order | Concrete work | Completion evidence |
 |---|---|---|
-| 1. Reproducible build | Implemented: pinned installer, compatibility patches, native HYE coefficient replay and a representative end-to-end check. Remaining: full split acceptance with the baseline preserved. | The installer passes dependency checks; HYE/DEU reproduces 93 coefficients. The earlier reconciled diagnostic remains historical evidence only. No new baseline closure is allowed. |
+| 1. Reproducible build | Implemented: pinned installer, compatibility patches, native HYE replay, representative end-to-end check and all-sector D2.4 inventory regeneration. Remaining: full split acceptance with the baseline preserved. | All 67 regenerated inventories reproduce reference coefficients, outputs and trades exactly. The earlier reconciled diagnostic remains historical evidence only. No new baseline closure is allowed. |
 | 2. Canonical sector and region registry | Implemented: three purpose-specific JSON files, Python API, CLI, explicit scope/alias warnings and canonical geography in the template importer. Classification review remains partial. | 88 identities, including 67 published records; 25 have reviewed activity definitions/options. Ambiguous aliases never select a first row. HYE regeneration restores MRT and records its estimated output. |
 | 3. Transformations and diagnostics | Implement the agreed optional warning policy; make trade-source selection and normalisation/caps/factor completion traceable. Repair cluster allocation after defining units, overlaps and direct-observation precedence. | Warnings and skipped checks visible; input-to-output changes traceable; targeted regression comparisons, including HVC cluster totals and production/trade screening. |
 | 4. Guided Excel pilot | Build one compact HYE workbook on the existing SharePoint, with filterable tables for metadata/sources, cost inputs, production and trade. Preserve unavailable original observations as unavailable and identify inherited baseline values. | A colleague can edit an observation in Excel; a recorded snapshot can be validated and that sector regenerated; the numerical change and any warnings can be reviewed. Assess layout/usability before migrating all sectors. |
@@ -18,7 +20,7 @@ The remaining work is implementation and controlled verification. The order belo
 
 The registry now provides a common basis for the guided Excel pilot and T2.6. Next connect source observations and transformation records to it, progressively complete the remaining activity reviews, and replace legacy parent lookups during controlled sector rebuilds. Keep full-scale numerical acceptance open. The baseline-residual policy is settled: report the supplied residuals and any new extension residuals separately, without repairing GTAP.
 
-The owner has now selected the project SharePoint for operational data and editing: `Data split/ENTICE inventory`. Git holds code, schemas, mappings/configuration and manifests. MARIO/CVXLAB is the selected implementation. Diagnostics are optional, with clear warnings and visible skipped checks; the final MRIO must still satisfy accounting identities within reported numerical tolerances.
+The owner has now selected the project SharePoint for operational data and editing: `Data split/Inventory generation`. Git holds code, schemas, mappings/configuration and manifests. MARIO/CVXLAB is the selected implementation. Diagnostics are optional, with clear warnings and visible skipped checks; the final MRIO must still satisfy accounting identities within reported numerical tolerances.
 
 Navigate to [baseline and source chain](#the-release-reference), [recovery](#why-zir-failed-and-what-was-recovered), [classification](#nace-led-parent-definitions), [consistency](#production-and-trade-consistency), [environment](#producer-environment-and-representative-verification), [Excel and T2.6](#portability-excel-and-t26), [single-sector export](#regenerating-one-sector), or [decision register](#decision-register).
 
@@ -32,27 +34,95 @@ The public code history excludes both historical paths of the numerical `GTAP12_
 
 The [GTAP 12 terms, section 3](https://www.gtap.agecon.purdue.edu/databases/documents/GTAP12DataBase_TermsConditions.pdf) restrict redistribution of database values and large aggregations. Public code therefore uses externally supplied licensed inputs. The working files and historical text were checked for common credential/private-key patterns, with no matches; this is a limited check, not an exhaustive security certification. Ignored numerical data, private configuration and archived evidence are not published on GitHub.
 
-### Project SharePoint archive
+### Project SharePoint organisation
 
-The owner selected `RCD-Entice-EXT - Documents/General/2.Deliverables and Milestones/WP2. Improved data and empirics on trade and climate/Data split/ENTICE inventory` on 1 October 2026. The agreed scope is the D2.4 working data chain, verification evidence and backups, rather than the entire 129 GB historical working area.
+The current operational root is `Data split/Inventory generation`. Partner submissions and `Shared sources.xlsx` are in the sibling `Data split/Data collection`. The owner reorganised the initial archive on 2 October; the configuration and source catalogue now follow that structure. The initial 1 October copy contained 1,170 files (approximately 2.47 GB), verified against source and destination SHA-256. That historical transfer is not the current folder inventory. Original eNextGen source files were retained.
 
-The initial transfer contains **1,170 files (approximately 2.47 GB)**. Each destination was verified against SHA-256 calculated during copying and a second read of its source. No conflicting destination was overwritten. Source files remain preserved. The one temporary OneDrive read failure was retried successfully. Local copied bytes are verified; remote SharePoint synchronisation has not been independently confirmed.
-
-| Shared subdirectory | Contents |
+| Current location | Purpose |
 |---|---|
-| `Data collection/Inventory cleaning` | Partner and MARIO inventories, D2.4 inventories and coefficient database, ZIR recovery files, supporting checks. |
-| `Database/GTAP 2023/2023entice` | The eight original baseline parquet matrices; no accounting correction. |
-| `Shared material/Purdue data collection` | May13, May27 and June1 source files and mappings. |
-| `Sectors list` | Working sector definitions and supporting classification files. |
-| `Repository inputs` | Licensed GTAP output totals and the archived personal runner/configuration. |
-| `Reference documents` | The D2.4 report and grant agreement used in the reconstruction. |
-| `Verification/2026-10-01` | Baseline and follow-up evidence, reproduction/registry checks and environment records. Software environments, caches and copied dependency repositories are excluded. |
-| `Repository backups/2026-10-01-before-main-merge` | Complete original Git bundles, working-tree archive, patches and hashes. |
-| `Archive records` | Transfer plan, verified per-file manifest and the copy script. |
+| `Data collection/PURDUE/Shared material/Cost structures` | June1 EXIOIOT and copper data; original cost container and supporting tables. |
+| `Data collection/PURDUE/Shared material/Output and trade targets` | June1 `splttargs.xlsx` and its original GDX. |
+| `Data collection/PURDUE/Shared material/Trades` | May13 `trade.xlsx` and its original GDX. |
+| `Data collection/PURDUE/Shared material/_old/May27` | Previous delivery, preserved for comparison. |
+| `Inventory generation/Classifications` | One consolidated review workbook; original specialist files under `_sources`. |
+| `Inventory generation/Database/GTAP Power 2023/Original` | Original licensed Purdue CSV archive. |
+| `Inventory generation/Database/GTAP Power 2023/Cache` | The eight unchanged D2.4 baseline parquet matrices and `GTAP12_X.xlsx`. |
+| `Inventory generation/Data collection/Inventory cleaning` | Preserved partner/MARIO intermediate inputs, historical D2.4 inventories and coefficients. |
+| `Inventory generation/Inventories/20261001` | Only the 67 regenerated inventory workbooks. |
 
-The pipeline, exporter and QA defaults now resolve from one local setting, `data_root` in ignored `paths.local.json`, or `ENTICE_DATA_ROOT`. Licensed totals resolve from `Repository inputs/GTAP12_X.xlsx`. The exporter now defaults to the normal MARIO folder instead of the abandoned `MARIO inventories copy` location. Repository instructions include configuration and installation examples. Historical audit paths remain preserved as provenance; the archive manifest maps each source to its new location.
+`Repository inputs` was a staging folder, not a separate database or classification layer: it held the licensed numerical `GTAP12_X.xlsx` and personal runners. It has been removed after relocating those contents. **GTAP12_X is not a mapping:** it holds regional GTAP output totals used for weights, caps and QA. It therefore belongs beside the baseline cache, not in Classifications.
 
-All 23 tests passed in the pinned producer environment, including three configuration/path tests. Read-only checks found the eight baseline matrices, source/output directories, trade workbook and licensed totals under the configured group SharePoint root. This verifies the migration and path resolution; it does not certify a full MRIO rebuild.
+The private eNextGen `ENTICE - Documents/Inventory archive` now holds `Repository backups`, `Archive records`, `Personal runners`, `Regeneration 20261001`, `Legacy audits` and `ZIR recovery`. `Archive records` held transfer scripts and copy logs with personal paths. Their portable file roles, relative locations and hashes are recorded in Git; the raw private records stay off public GitHub. The run's fresh coefficient database and verification evidence are preserved privately, rather than deleted or shown beside partner outputs. The owner's deleted `Reference documents` and `Verification` folders were not recreated; local evidence and original source documents remain available.
+
+The [source catalogue](../../manifests/data_sources.json) records file purposes; the [reorganisation manifest](../../manifests/storage_reorganization_2026-10-02.json) records 128 moves: 61 to private storage and 67 within the project tree. 125 were hash-verified. Three cloud placeholders were renamed without claiming content verification: `New sectors classification.xlsx` and two ICCS Costa Rica support workbooks. No numeric source data were edited.
+
+#### What the Purdue deliveries contain
+
+| File or group | Content and current use |
+|---|---|
+| `EXIOIOT.csv` | Source matrix used to derive cost structures; raw entries are not assumed to be normalised coefficients. |
+| `COPCOSTS.csv`, `COPSEC.csv` | Copper cost coefficients and their sector definitions. |
+| `costsup.gdx`, `costsup.xlsx` | Original mixed cost/support container and a partial Excel extraction containing sets and fertilizer shares. The Excel file is not a complete replacement for all extracted CSV tables. |
+| `splttargs.xlsx` | June1 region/sector sets, output targets (`REPOUT`) and preliminary bilateral trade (`BLTTRD`). |
+| `trade.xlsx` | May13 trade values and tariff data. `NTSCIF` supplies final D2.4 trades; `NTSTAR` and `MTRAT` are preserved but not used by that export. |
+| `Cost structures/Supporting data` | Fertilizer use/cost shares, mineral supply observations and definition sets. Absence from the present importer does not establish obsolescence. |
+
+May27 contains **11 byte-identical duplicates** of June1 and **four different older files**: `NFCOSTSHR.csv`, `costsup.gdx`, `splttargs.gdx` and `splttargs.xlsx`. The whole previous delivery is retained under `_old/May27`; the four differing versions were not discarded or silently merged. The existing June1-cost/output and May13-final-trade selection is unchanged. Purdue sector/HS/EXIOBASE concordances now sit in `Classifications/_sources/Purdue`.
+
+#### Original database and derived cache
+
+The original eNextGen `Database/GTAP 2023/12a csv/2023_csv.zip` was copied to `Database/GTAP Power 2023/Original/2023_csv.zip`, retaining its source. Its 956,283,934 bytes match SHA-256 `0e9844736cbd5cd89287fd3a0da245d4c5dcfb3dc68dcfd44754e20cdc4b51d4` on both sides and on a second source read. It contains the five original GSDF CSV tables. Member CRC checks and numerical equivalence of a fresh parse to the D2.4 cache have **not** yet been verified.
+
+The parquet files remain necessary for reproducing the verified D2.4 baseline until that comparison is done; their presence does not establish that they are an interchangeable representation of every original GTAP delivery. `baseline_format` now selects the existing native MARIO parquet, GTAP CSV or GTAP GDX reader. CSV/GDX input must be extracted and configured explicitly; there is no silent fallback or accounting repair. GDX requires its GAMS dependencies. No MARIO source, insertion setting or numerical rule was changed. Other MRIOs may be stored as separate database directories but still require a parser and a target adapter before use.
+
+#### One classification review workbook
+
+`Classifications/ENTICE classifications.xlsx` consolidates **13 filterable sheets**: ENTICE sectors (88), activity scopes (33 rows), GTAP Power sectors (76), regions (163, including MRT), region-group membership (610 rows), inherited EXIOBASE bridge (345 rows), legacy concordance (178 rows), partner vocabulary (3,302 distinct rows from 36 preserved templates), the current working catalogue (187 rows), inherited CPC/NACE/ISIC source concordances (621 rows), and the unchanged operational Sector (200) and Factor of production (14) tables, plus Sources.
+
+The workbook distinguishes reviewed NACE scopes from inherited declarations. For the 88 activities, **18 parents resolve, 7 require an activity scope and 63 remain unreviewed**. Old GTAP9/11/11Power labels are not presented as a verified GTAP12 NACE concordance. The EXIOBASE crosswalk groups sectors rather than asserting one-to-one matches; regional groups other than the complete GLOBAL universe retain their inherited review limitations. Specialist HS and other source tables remain in `_sources` rather than being flattened into misleading matches.
+
+This is a generated review view. The maintained registry and operational compatibility workbook remain versioned in Git; editing the view alone does not change the pipeline. `scripts/export_classification_tables.py` prepares the source tables and `scripts/build_classification_workbook.mjs` builds the view with the bundled artifact runtime. Corrections should be applied to maintained source records and then regenerated. All saved rows were checked against their sources, all 13 sheets rendered for inspection, and text identifiers such as `29.10`, `01.12` and `0113` verified without truncation or loss of leading zeroes. No parent mapping was silently activated by consolidation.
+
+#### Validation and remaining cloud limitation
+
+All 14 configured data roles resolve after relocation. Before reopening OneDrive, SHA-256 checks confirmed that the eight baseline matrices, 68 MARIO inputs, 68 reference inventories and 67 regenerated workbooks were byte-identical to the run records. A subsequent check after reopening confirms unchanged baseline bytes and unchanged worksheet/value parts and original workbook relationships in every Excel file. Cloud-side packaging added or updated metadata/custom-XML relationships in 203 Excel containers; those hash changes do not represent numerical edits. The local preserved snapshots retain their original bytes. All 28 tests pass in the pinned producer environment. A real ZIR export through the relocated inputs reproduces 14,739 coefficient, 163 output and 1,805 trade records exactly; its technical record is saved outside the inventory folder. Future full runs use date/time output folders and local ignored build directories for coefficients and diagnostic reports. Single-sector export likewise keeps evidence separate.
+
+The final local tree has 552 files, a longest absolute path of 384 characters and no candidates from the checked reserved-character, 255-character segment and 400-character local-path screens. Two long ICCS filenames and two MARIO filenames with reserved punctuation were shortened; readable workbook bytes are unchanged. This local screen is not certification of SharePoint's server-side paths or successful cloud sync.
+
+OneDrive was reported closed or blocked. Seven source files initially timed out: `New sectors classification.xlsx`, `Shared sources.xlsx`, `GTAP_energy_prices.xlsx` and four Purdue Livestock CSVs. After a command to reopen OneDrive, **all seven became readable** and were hashed and inspected. Remote synchronisation is still unconfirmed.
+
+`GTAP_energy_prices.xlsx` contains average basic energy prices in domestic absorption, USD/toe, in separate 2017 and 2023 sheets. `Shared sources.xlsx` is a reference/link index. The Livestock files contain bilateral trade and output (million USD), feed use (tonnes) and emissions (ktCO2e), on a 160-region source geography. They are distinct supporting datasets, retained in place; they are not automatically merged into the current D2.4 workflow.
+
+The now-readable working `New sectors classification.xlsx` is **not the published workbook** used to initialise the registry. Its main catalogue has 187 rows versus 181 in that published snapshot. It contains seven additional codes (`?`, `CPH`, `FCH`, `ISC`, `QRZ`, `XNM`, `XOM`), while `XOO` appears only in the published catalogue. Three common codes have changed descriptions (MGC, NMX, PGM); no common-code parent change was found. Its split flag also differs conceptually from the published deliverable field. The unified view therefore includes this working catalogue and its CPC/NACE/ISIC declarations separately, without silently replacing published identities or treating the placeholder `?` as a valid new sector.
+
+### Full D2.4 inventory regeneration
+
+Run `D24-20261001` started on 1 October and completed on 2 October 2026 at 06:34 UTC. It executed steps 1–5 of `scripts/run_d24_pipeline.py` from public commit `d23e531b580450c7a08c29dd55be52bc33752141`. Only the two output destinations were replaced; the optional final QA plot was omitted. The native call remained `add_sectors(split=False, VA_fix=True, accept_non_unitary_sum=True)`. No MARIO engine, method or numerical setting was changed for this run. Hashes of the installed insertion engine, workbook reader and database API still match the prepared producer environment after completion.
+
+The workflow read the original GTAP flow database and normal `MARIO inventories` directory, calculated fresh coefficients, saved and reloaded a new coefficient database, exported the workbooks and replaced their trade sheets with May13 `NTSCIF` using the existing runner. Previously archived D2.4 coefficients were not used as the calculation source. Experimental attempts were discarded and are excluded from these results and from the shared run archive.
+
+**67 new workbooks cover all 67 distinct released sector codes.** The 68-file operational reference contains two MUN workbooks; both were compared with the single regenerated MUN. The empty BF-BOF natural-gas-injection source has no inventory sheet and was skipped by the existing workflow; it is not an omitted released sector. The normal MARIO inputs were used unchanged, including their existing geography. The earlier HYE/MRT pilot was not substituted into this run.
+
+| Verification | Result |
+|---|---|
+| Workbook integrity | All 67 ZIP containers and worksheets read successfully; no Excel error cells, uncached formulas, missing Master sheet links or duplicate numeric keys. |
+| Coefficients | 840,203 keyed records; no changed, added or removed keys against either applicable reference; maximum absolute difference 0. |
+| Total outputs | 9,830 keyed records; same keys and values; maximum absolute difference 0. |
+| Bilateral trades | 90,332 keyed records; same keys and values; maximum absolute difference 0. |
+| Coverage | No missing or unexpected sector codes. All 68 operational reference files were readable. |
+| Source preservation | All 147 data/reference files and the repository matching workbook retained their recorded SHA-256 hashes. |
+
+The reference for this comparison is the operational D2.4 folder transferred from POLIMI/eNextGen into project SharePoint. The earlier section documents its relationship to Zenodo; this run did not download Zenodo again. Comparisons align records by database identity, unit, region and change type, rather than Excel row position or display labels. Comparison tolerances were relative `1e-10` and absolute `1e-12`; the observed maximum difference was zero for every numeric category.
+
+Three metadata differences reproduce the current exporter's historical mapping overrides: **BVL: OTP → MVH; MSI: OXT → CHM; SOP: EEQ → ELE**. MARIO insertion still uses the source Master definitions, while the exporter resolves parent metadata through `GTAP12_matching.xlsx`. These overrides do not establish a newly reviewed NACE parent or a recalculation under the displayed parent. They remain a mapping-consistency issue to resolve separately.
+
+Existing numerical diagnostics are preserved: **2,017 of 9,830 regional monetary profiles** fall outside `1 ± 0.01`, excluding satellite rows; 7,161 coefficient values are negative; 21 sectors have empty final trade sheets. Negative values are diagnostic observations, not automatically errors. Exact reproduction shows that these values were already in the reference. The earlier published-package count of 2,007 distinct sum warnings excluded ZIR; its ten warnings account for the difference. The native `export_d24_report.txt` describes preliminary June1 trade coverage before replacement; final trade coverage is recorded separately in `verification_summary.json`. A read-only HYE preview confirms rendering but retains the native narrow columns, which clip some labels and numbers. No workbook formatting was changed.
+
+The run's current shared location is `Data split/Inventory generation/Inventories/20261001`: 67 files named by sector code, such as `HYE.xlsx` and `ZIR.xlsx`. Its fresh coefficient database, executed pipeline, environment/source hashes, comparison results, warning details and copy manifest have moved to the private eNextGen `Inventory archive/Regeneration 20261001`.
+
+All 95 files (approximately 1.24 GB) were hash-verified during the original run transfer; `archive.json` retains its historical paths. The reorganisation manifest records subsequent moves. The date in the inventory directory is the run start date. No original inventory or database was overwritten. Remote SharePoint synchronisation has not been independently confirmed. Local execution evidence remains in ignored `build/rebuild_d24_2026-10-01/`.
+
+This completes regeneration of the D2.4 inventory package with the original MARIO behaviour. It does not certify a balanced split MRIO: `split=False` was retained, existing data warnings were not corrected, and the supplied GTAP baseline was not repaired.
 
 ## The release reference
 
@@ -127,7 +197,7 @@ This separates inventory production from the subsequent balanced database disagg
 
 The captured baseline output matrix contains 163 regions and 76 sectors, or 12,388 region-sector observations. Every `GTAP12_X.xlsx` entry matches `2023entice/X.parquet` within an absolute difference of `1e-8`; the maximum observed difference is approximately `9.31e-9`. This supports using that workbook as the output reference for this audit.
 
-The original audit did not load or recompute the full baseline matrices. The subsequent ZIR export read the required columns from saved D2.4 coefficients and recorded original-file and projected-file hashes. This verifies export from those coefficients; a complete upstream database build and balanced split remain unverified.
+The original audit did not load or recompute the full baseline matrices. The subsequent ZIR export read the required columns from saved D2.4 coefficients and recorded original-file and projected-file hashes. The later [full inventory regeneration](#full-d24-inventory-regeneration) recalculated all 67 sectors from the supplied baseline and MARIO sources; balanced split acceptance remains unverified.
 
 ## Project folder versus Zenodo
 
@@ -151,10 +221,10 @@ The XLSX is a ZIP container. Its 194 local file entries are complete and pass th
 
 The exact operation that truncated the file cannot be identified from its bytes. An interrupted save, copy or synchronisation is possible. The verified outer Zenodo ZIP contains this damaged payload, and the project folder contains the same bytes: the defect is not explained by a bad local download alone.
 
-The recovered workbook and its per-part recovery manifest are saved in the existing shared area:
+The recovered workbook and its per-part recovery manifest are now preserved in the private eNextGen archive:
 
 ```text
-Data collection/Inventory cleaning/D2.4 recovery/2026-10-01/
+Inventory archive/ZIR recovery/2026-10-01/
   ZIR - Manufacture of refined zinc.xlsx
   ZIR - Manufacture of refined zinc.recovery.json
 ```
@@ -165,7 +235,7 @@ This is a reviewable recovery candidate. Publishing a replacement or a new Zenod
 
 Both MUN files contain the same sector code, description, NFM parent, regional coefficients, output and trade. Their `DB units` catalogues differ: the filename without the comma contains 127 sectors; the filename with the comma contains 143. The latter has 16 additional sector entries. Consequently, the files are not identical apart from their names.
 
-Both the committed and current exporter construct output filenames from the intermediate filename's descriptive text and do not remove previous filenames. A descriptive-name change between exports can therefore leave two MUN files. The different unit catalogues support different database/export states; the exact rename event has not been recovered. There is no evidence here of two different intended MUN activities or competing MUN parents.
+The historical exporter constructed output filenames from the intermediate filename's descriptive text and did not remove previous filenames. The current exporter uses stable sector-code filenames and new run directories. That historical naming behaviour could leave two MUN files after a description changed. The different unit catalogues support different database/export states; the exact rename event has not been recovered. There is no evidence here of two different intended MUN activities or competing MUN parents.
 
 Use one stable sector identity, keep alternate names as aliases, and create each release in a fresh output directory. For this baseline, the comma version's catalogue is consistent with the 143-sector database used in the single-sector trial. The original files remain preserved; no silent deletion has been made.
 
@@ -503,7 +573,7 @@ Original observations and target-resolved values may both be needed. Their prove
 
 ### Excel on SharePoint and reproducibility in Git
 
-Decision for testing: retain the existing POLIMI/eNextGen SharePoint as the authoring/data location. Project-wide migration will follow only when the owner selects it after testing. Git continues to hold code, schemas, mapping/configuration evidence and manifests. The earlier proposal is not an instruction to migrate now.
+The owner subsequently selected the project SharePoint `Data split/Inventory generation` as the operational data and authoring location. The scoped migration is recorded above; the original POLIMI/eNextGen files remain preserved. Git continues to hold code, schemas, mapping/configuration evidence and manifests.
 
 Each accepted input revision must be ingested as a fixed snapshot, recording file identity, available SharePoint version identity, content hash and validation result. A reproducible run refers to that snapshot rather than an unfixed live workbook. SharePoint history supports collaboration; a checksum and captured payload identify the exact bytes used by a build. Machine-readable exports are generated from the accepted Excel version and are not a second independently editable source of truth.
 
@@ -551,7 +621,7 @@ Exporter saves now write a temporary file, verify its ZIP checksums and workbook
 
 The exercised export environment is recorded in `requirements/d24-export.txt` and the audit environment manifest. It is separate from the full MARIO/CVXLAB production environment.
 
-A compact capture of the ZIR coefficient columns, intermediate source and trade workbook is retained under `D2.4 recovery/2026-10-01/rebuild_inputs` in the existing shared area. It supports repeating this export without loading the full coefficient matrix. These are internal build inputs, not an additional public release. Original coefficient-file hashes and projected-file hashes are recorded separately.
+A compact capture of the ZIR coefficient columns, intermediate source and trade workbook is retained under `Inventory archive/ZIR recovery/2026-10-01/rebuild_inputs` in private eNextGen storage. It supports repeating this export without loading the full coefficient matrix. These are internal build inputs, not an additional public release. Original coefficient-file hashes and projected-file hashes are recorded separately.
 
 ## Running and inspecting the audit
 
@@ -562,7 +632,7 @@ python scripts/audit_d24_baseline.py \
   --published-zip /path/to/published_d24.zip \
   --cleaning-dir /path/to/Inventory\ cleaning \
   --matching data/GTAP12_matching.xlsx \
-  --gtap-totals '/path/to/Data split/ENTICE inventory/Repository inputs/GTAP12_X.xlsx' \
+  --gtap-totals '/path/to/Data split/Inventory generation/Database/GTAP Power 2023/Cache/GTAP12_X.xlsx' \
   --output-dir build/audits/my_run
 ```
 
@@ -596,7 +666,7 @@ Accepted directions and their implementation status are maintained here. An acce
 | B10 | Explain the unused cluster branch before changing it. | Traced across eight templates, including HVC. Implement an explicit allocation/overlap/unit policy with a baseline comparison in a separate change. |
 | B11 | Diagnostic checks should be optional, with clear warnings and visible skipped checks. | Implemented for registry and metadata/coverage inspection, with structured actions and skipped-check lists. Extension to numerical transformations and the full runner remains. Technical failures are reported as failures. |
 | B12 | Preserve source evidence versus target-resolved values; add benchmarking when multi-MRIO work begins. | Direction accepted; benchmarking deferred. |
-| B13 | Use the project SharePoint `Data split/ENTICE inventory` for D2.4 data, verification and backups. | Owner-selected migration completed and verified locally. Original sources are retained; cloud synchronisation is not independently certified. |
+| B13 | Use project SharePoint `Data split/Inventory generation` for operational data; keep technical evidence and original repository backups on private eNextGen storage. | Reorganised and verified locally on 2 October. Portable records remain in Git. Cloud synchronisation is not independently certified. |
 | B14 | SPLITCOM was a suggestion; use MARIO/CVXLAB. | Resolved by the owner; T2.6 follows this implementation choice. |
 
 Broad code/data cleanup remains a later activity; the redundant narrative reports have been consolidated into this file. Historical files and baseline manifests are not silently updated when a correction candidate is created.

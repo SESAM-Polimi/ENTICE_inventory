@@ -49,21 +49,17 @@ import pandas as pd
 from openpyxl import load_workbook
 
 from entice_inventory.core.matching_utils import load_parent_map
-from entice_inventory.core.paths import DATA_DIR, PROJECT_ROOT, find_data_file, project_data_root
+from entice_inventory.core.paths import DATA_DIR, PROJECT_ROOT, find_data_file, data_path
 
 # --------------------------------------------------------------------------- #
 # Default locations
 # --------------------------------------------------------------------------- #
 DEFAULT_GTAP_X_PATH = str(find_data_file('GTAP12_X.xlsx'))
 
-_ONEDRIVE_CLEANING = str(project_data_root()/'Data collection/Inventory cleaning')
-
-DEFAULT_D24_DIR = os.path.join(_ONEDRIVE_CLEANING, "D2.4 inventories")
-DEFAULT_MARIO_DIR = os.path.join(_ONEDRIVE_CLEANING, "MARIO inventories")
-DEFAULT_VA_PATH = os.path.join(_ONEDRIVE_CLEANING, "VA.xlsx")
-DEFAULT_V_PARQUET_PATH = os.path.join(
-    _ONEDRIVE_CLEANING, "D2.4 database", "coefficients", "v.parquet"
-)
+DEFAULT_D24_DIR = str(data_path('reference_inventories'))
+DEFAULT_MARIO_DIR = str(data_path('mario_inventories'))
+DEFAULT_VA_PATH = str(data_path('value_added'))
+DEFAULT_V_PARQUET_PATH = str(data_path('reference_coefficients') / 'v.parquet')
 
 # authoritative sub-sector -> parent (GTAP12) mapping
 DEFAULT_MATCHING_PATH = str(DATA_DIR / "GTAP12_matching.xlsx")

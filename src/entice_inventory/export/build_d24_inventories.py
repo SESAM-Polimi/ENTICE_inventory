@@ -10,22 +10,24 @@ import warnings
 import zipfile
 from collections import OrderedDict, defaultdict
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Iterable
 
 from openpyxl import load_workbook
 
 from entice_inventory.core.matching_utils import load_parent_map
-from entice_inventory.core.paths import DATA_DIR, project_data_root
+from entice_inventory.core.paths import DATA_DIR, PROJECT_ROOT, project_data_root, data_path
+from entice_inventory.core.baseline import load_baseline
 
 
 DEFAULT_DATA_ROOT = project_data_root()
-DEFAULT_DB_PATH = DEFAULT_DATA_ROOT / "Database/GTAP 2023/2023entice"
-DEFAULT_SOURCE_DIR = DEFAULT_DATA_ROOT / "Data collection/Inventory cleaning/MARIO inventories"
-DEFAULT_OUTPUT_DIR = DEFAULT_DATA_ROOT / "Data collection/Inventory cleaning/D2.4 inventories"
-DEFAULT_PURDUE_SPLITARGS_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/June1/splttargs.xlsx"
-DEFAULT_PURDUE_TRADE_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/May13/trade.xlsx"
-DEFAULT_GTAP_SECTORS_PATH = DEFAULT_DATA_ROOT / "Shared material/Purdue data collection/May13/GTAP sectors H5.xlsx"
+DEFAULT_DB_PATH = data_path('baseline')
+DEFAULT_SOURCE_DIR = data_path('mario_inventories')
+DEFAULT_OUTPUT_DIR = data_path('inventory_runs') / datetime.now().strftime('%Y%m%d-%H%M%S-%f')
+DEFAULT_PURDUE_SPLITARGS_PATH = data_path('purdue_split_targets')
+DEFAULT_PURDUE_TRADE_PATH = data_path('purdue_trade')
+DEFAULT_GTAP_SECTORS_PATH = data_path('gtap_sector_names')
 DEFAULT_MATCHING_PATH = DATA_DIR / "GTAP12_matching.xlsx"
 DEFAULT_MARIO_SRC = Path.home() / "Documents/GitHub/MARIO"
 REPORT_FILENAME = "export_d24_report.txt"
@@ -68,6 +70,8 @@ def parse_args() -> argparse.Namespace:
         )
     )
     parser.add_argument("--db-path", type=Path, default=DEFAULT_DB_PATH)
+    parser.add_argument("--baseline-format", choices=['mario_parquet', 'gtap_csv', 'gtap_gdx'],
+                        help="Native reader to use; defaults to baseline_format in the local config.")
     parser.add_argument("--source-dir", type=Path, default=DEFAULT_SOURCE_DIR)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--purdue-splitargs-path", type=Path, default=DEFAULT_PURDUE_SPLITARGS_PATH)
@@ -737,7 +741,7 @@ def create_output_workbook(
     trade_rows: list[list[object]],
 ) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / f"{template.sector_code} - {template.sector_name}.xlsx"
+    output_path = output_dir / f"{template.sector_code}.xlsx"
 
     wb = load_workbook(template.source_path)
     inventory_templates = inventory_sheet_names(wb)
@@ -876,10 +880,13 @@ def export_d24_inventories(
     purdue_splitargs_path: str | Path = DEFAULT_PURDUE_SPLITARGS_PATH,
     tolerance: float = 1e-12,
     inventory_sum_check_tolerance: float = DEFAULT_INVENTORY_SUM_CHECK_TOLERANCE,
+    report_dir: str | Path | None = None,
 ) -> list[Path]:
     source_dir = as_path(source_dir)
     output_dir = as_path(output_dir)
     purdue_splitargs_path = as_path(purdue_splitargs_path)
+    report_dir = as_path(report_dir) if report_dir is not None else PROJECT_ROOT / 'build/export-reports' / output_dir.name
+    report_dir.mkdir(parents=True, exist_ok=True)
 
     templates, skipped_workbooks = read_sector_templates(source_dir)
     if not templates:
@@ -952,7 +959,7 @@ def export_d24_inventories(
         written_files.append(output_path)
 
     write_export_report(
-        output_dir,
+        report_dir,
         purdue_splitargs_path,
         missing_trade_sectors,
         null_inventories,
@@ -968,7 +975,7 @@ def main() -> None:
     mario = ensure_mario_import(args.mario_src)
 
     print(f"Loading GTAP database from {args.db_path}")
-    db = mario.parse_from_parquet(str(args.db_path), table="IOT", mode="flows")
+    db = load_baseline(args.db_path, args.baseline_format)
 
     print(f"Reading add-sector workbooks from {args.source_dir}")
     db.read_add_sectors_excel(path=str(args.source_dir), read_inventories=True, split=False)
